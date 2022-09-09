@@ -98,7 +98,7 @@
     "itemTitle": "Unavailable Item",
     "pickupDelay": 15,
     "hideInJEI": true,
-    "canPickup": false,
+    "canPickup": true,
     "containerListWhitelist": false,
     "checkPlayerInventory": true,
     "checkPlayerEquipment": true,
