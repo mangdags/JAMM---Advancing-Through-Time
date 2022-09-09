@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/bottom_wood_platform",
+	"textures": {
+		"log_top": "minecraft:block/stripped_birch_log_top",
+		"log_side": "minecraft:block/stripped_birch_log",
+		"planks": "minecraft:block/birch_planks",
+		"particle": "minecraft:block/birch_planks"
+	}
+}

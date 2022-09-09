@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"axis=x": {"model": "projectbrazier:block/bottom_dark_oak_platform"},
+		"axis=z": {"model": "projectbrazier:block/bottom_dark_oak_platform", "y":  90, "uvlock": true}
+	}
+}

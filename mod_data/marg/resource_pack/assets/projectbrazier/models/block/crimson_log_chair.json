@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/log_chair",
+	"textures": {
+		"particle": "minecraft:block/crimson_stem",
+		"log": "minecraft:block/crimson_stem",
+		"inner_log": "projectbrazier:block/small_crimson_cut_log",
+		"top_log": "projectbrazier:block/small_crimson_log_top"
+	}
+}

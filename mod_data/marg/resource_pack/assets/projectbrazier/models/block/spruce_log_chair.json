@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/log_chair",
+	"textures": {
+		"particle": "minecraft:block/spruce_log",
+		"log": "minecraft:block/spruce_log",
+		"inner_log": "projectbrazier:block/small_spruce_cut_log",
+		"top_log": "projectbrazier:block/small_spruce_log_top"
+	}
+}

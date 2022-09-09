@@ -1,0 +1,9 @@
+{
+	"loader": "projectbrazier:builtin_mixed",
+	"parent": "projectbrazier:block/flower_bucket",
+	"textures": {
+		"particle": "projectbrazier:block/warped_bucket_side",
+		"side": "projectbrazier:block/warped_bucket_side",
+		"planks": "minecraft:block/warped_planks"
+	}
+}

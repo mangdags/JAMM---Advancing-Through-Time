@@ -1,0 +1,179 @@
+---- Minecraft Crash Report ----
+// You're mean.
+
+Time: 9/3/22, 1:33 PM
+Description: Ticking player
+
+java.lang.RuntimeException: Provider mc.Mitchellbrine.diseasecraft.capability.ImmuneProvider.getCapability() returned null; return LazyOptional.empty() instead!
+	at net.minecraftforge.common.capabilities.CapabilityDispatcher.getCapability(CapabilityDispatcher.java:94) ~[forge-1.18.2-40.1.74-universal.jar%2398!/:?] {re:classloading}
+	at net.minecraftforge.common.capabilities.CapabilityProvider.getCapability(CapabilityProvider.java:183) ~[forge-1.18.2-40.1.74-universal.jar%2398!/:?] {re:computing_frames,re:mixin,re:classloading}
+	at net.minecraft.world.entity.LivingEntity.getCapability(LivingEntity.java:3303) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:dynamiclightsreforged.mixins.json:lightsource.LivingEntityMixin,pl:mixin:APP:curios.mixins.json:MixinLivingEntity,pl:mixin:APP:bookshelf.common.mixins.json:entity.AccessorLivingEntity,pl:mixin:A}
+	at net.minecraft.world.entity.player.Player.getCapability(Player.java:2079) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:dynamiclightsreforged.mixins.json:lightsource.PlayerEntityMixin,pl:mixin:A}
+	at net.minecraftforge.common.capabilities.ICapabilityProvider.getCapability(ICapabilityProvider.java:34) ~[forge-1.18.2-40.1.74-universal.jar%2398!/:?] {re:computing_frames,re:mixin,re:classloading}
+	at top.theillusivec4.curios.common.CuriosHelper.getCuriosHandler(CuriosHelper.java:79) ~[curios-forge-1.18.2-5.0.7.1.jar%2361!/:1.18.2-5.0.7.1] {re:classloading}
+	at top.theillusivec4.curios.common.event.CuriosEventHandler.tick(CuriosEventHandler.java:448) ~[curios-forge-1.18.2-5.0.7.1.jar%2361!/:1.18.2-5.0.7.1] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_327_CuriosEventHandler_tick_LivingUpdateEvent.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-5.0.3.jar%232!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:302) ~[eventbus-5.0.3.jar%232!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:283) ~[eventbus-5.0.3.jar%232!/:?] {}
+	at net.minecraftforge.common.ForgeHooks.onLivingUpdate(ForgeHooks.java:297) ~[forge-1.18.2-40.1.74-universal.jar%2398!/:?] {re:mixin,re:classloading}
+	at net.minecraft.world.entity.LivingEntity.m_8119_(LivingEntity.java:2214) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:dynamiclightsreforged.mixins.json:lightsource.LivingEntityMixin,pl:mixin:APP:curios.mixins.json:MixinLivingEntity,pl:mixin:APP:bookshelf.common.mixins.json:entity.AccessorLivingEntity,pl:mixin:A}
+	at net.minecraft.world.entity.player.Player.m_8119_(Player.java:235) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:dynamiclightsreforged.mixins.json:lightsource.PlayerEntityMixin,pl:mixin:A}
+	at net.minecraft.server.level.ServerPlayer.m_9240_(ServerPlayer.java:439) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.m_9933_(ServerGamePacketListenerImpl.java:207) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.network.Connection.m_129483_(Connection.java:245) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:classloading}
+	at net.minecraft.server.network.ServerConnectionListener.m_9721_(ServerConnectionListener.java:143) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.m_5703_(MinecraftServer.java:916) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:APP:crafttweaker.mixins.json:common.access.server.AccessMinecraftServer,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_5705_(MinecraftServer.java:842) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:APP:crafttweaker.mixins.json:common.access.server.AccessMinecraftServer,pl:mixin:A}
+	at net.minecraft.client.server.IntegratedServer.m_5705_(IntegratedServer.java:84) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:685) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:APP:crafttweaker.mixins.json:common.access.server.AccessMinecraftServer,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_177918_(MinecraftServer.java:261) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:APP:crafttweaker.mixins.json:common.access.server.AccessMinecraftServer,pl:mixin:A}
+	at java.lang.Thread.run(Thread.java:833) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraftforge.common.capabilities.CapabilityDispatcher.getCapability(CapabilityDispatcher.java:94) ~[forge-1.18.2-40.1.74-universal.jar%2398!/:?] {re:classloading}
+	at net.minecraftforge.common.capabilities.CapabilityProvider.getCapability(CapabilityProvider.java:183) ~[forge-1.18.2-40.1.74-universal.jar%2398!/:?] {re:computing_frames,re:mixin,re:classloading}
+	at net.minecraft.world.entity.LivingEntity.getCapability(LivingEntity.java:3303) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:dynamiclightsreforged.mixins.json:lightsource.LivingEntityMixin,pl:mixin:APP:curios.mixins.json:MixinLivingEntity,pl:mixin:APP:bookshelf.common.mixins.json:entity.AccessorLivingEntity,pl:mixin:A}
+	at net.minecraft.world.entity.player.Player.getCapability(Player.java:2079) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:dynamiclightsreforged.mixins.json:lightsource.PlayerEntityMixin,pl:mixin:A}
+	at net.minecraftforge.common.capabilities.ICapabilityProvider.getCapability(ICapabilityProvider.java:34) ~[forge-1.18.2-40.1.74-universal.jar%2398!/:?] {re:computing_frames,re:mixin,re:classloading}
+	at top.theillusivec4.curios.common.CuriosHelper.getCuriosHandler(CuriosHelper.java:79) ~[curios-forge-1.18.2-5.0.7.1.jar%2361!/:1.18.2-5.0.7.1] {re:classloading}
+	at top.theillusivec4.curios.common.event.CuriosEventHandler.tick(CuriosEventHandler.java:448) ~[curios-forge-1.18.2-5.0.7.1.jar%2361!/:1.18.2-5.0.7.1] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_327_CuriosEventHandler_tick_LivingUpdateEvent.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-5.0.3.jar%232!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:302) ~[eventbus-5.0.3.jar%232!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:283) ~[eventbus-5.0.3.jar%232!/:?] {}
+	at net.minecraftforge.common.ForgeHooks.onLivingUpdate(ForgeHooks.java:297) ~[forge-1.18.2-40.1.74-universal.jar%2398!/:?] {re:mixin,re:classloading}
+	at net.minecraft.world.entity.LivingEntity.m_8119_(LivingEntity.java:2214) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:dynamiclightsreforged.mixins.json:lightsource.LivingEntityMixin,pl:mixin:APP:curios.mixins.json:MixinLivingEntity,pl:mixin:APP:bookshelf.common.mixins.json:entity.AccessorLivingEntity,pl:mixin:A}
+	at net.minecraft.world.entity.player.Player.m_8119_(Player.java:235) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:dynamiclightsreforged.mixins.json:lightsource.PlayerEntityMixin,pl:mixin:A}
+-- Player being ticked --
+Details:
+	Entity Type: minecraft:player (net.minecraft.server.level.ServerPlayer)
+	Entity ID: 402
+	Entity Name: MangDags
+	Entity's Exact location: -0.50, 103.00, -2.50
+	Entity's Block location: World: (-1,103,-3), Section: (at 15,7,13 in -1,6,-1; chunk contains blocks -16,-64,-16 to -1,959,-1), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,-64,-512 to -1,959,-1)
+	Entity's Momentum: 0.00, 0.00, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at net.minecraft.server.level.ServerPlayer.m_9240_(ServerPlayer.java:439) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.m_9933_(ServerGamePacketListenerImpl.java:207) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.network.Connection.m_129483_(Connection.java:245) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:classloading}
+	at net.minecraft.server.network.ServerConnectionListener.m_9721_(ServerConnectionListener.java:143) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.m_5703_(MinecraftServer.java:916) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:APP:crafttweaker.mixins.json:common.access.server.AccessMinecraftServer,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_5705_(MinecraftServer.java:842) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:APP:crafttweaker.mixins.json:common.access.server.AccessMinecraftServer,pl:mixin:A}
+	at net.minecraft.client.server.IntegratedServer.m_5705_(IntegratedServer.java:84) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:685) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:APP:crafttweaker.mixins.json:common.access.server.AccessMinecraftServer,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_177918_(MinecraftServer.java:261) ~[client-1.18.2-20220404.173914-srg.jar%2393!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:APP:crafttweaker.mixins.json:common.access.server.AccessMinecraftServer,pl:mixin:A}
+	at java.lang.Thread.run(Thread.java:833) [?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.18.2
+	Minecraft Version ID: 1.18.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 17.0.1, Microsoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Microsoft
+	Memory: 2049892752 bytes (1954 MiB) / 3674210304 bytes (3504 MiB) up to 12884901888 bytes (12288 MiB)
+	CPUs: 4
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 3 2200G with Radeon Vega Graphics    
+	Identifier: AuthenticAMD Family 23 Model 17 Stepping 0
+	Microarchitecture: Zen
+	Frequency (GHz): 3.49
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 4
+	Graphics card #0 name: Radeon RX 570 Series
+	Graphics card #0 vendor: Advanced Micro Devices, Inc. (0x1002)
+	Graphics card #0 VRAM (MB): 4095.00
+	Graphics card #0 deviceId: 0x67df
+	Graphics card #0 versionInfo: DriverVersion=30.0.13023.4001
+	Memory slot #0 capacity (MB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 2.67
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 2.67
+	Memory slot #1 type: DDR4
+	Virtual memory max (MB): 30156.69
+	Virtual memory used (MB): 18691.56
+	Swap memory total (MB): 13824.00
+	Swap memory used (MB): 206.33
+	JVM Flags: 4 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xss1M -Xmx12288m -Xms256m
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['MangDags'/402, l='ServerLevel[New Game Mechs]', x=-0.50, y=103.00, z=-2.50]]
+	Data Packs: vanilla, mod:lod (incompatible), mod:dynamiclightsreforged (incompatible), mod:enchdesc (incompatible), mod:theoneprobe (incompatible), mod:mousetweaks (incompatible), mod:diseasecraft, mod:customgamerules (incompatible), mod:jei (incompatible), mod:jeiintegration (incompatible), mod:rubidium (incompatible), mod:curios (incompatible), mod:timestages (incompatible), mod:forgeendertech, mod:terraforged, mod:clumps (incompatible), mod:controlling (incompatible), mod:justenoughprofessions (incompatible), mod:configured (incompatible), mod:gamestageconditions (incompatible), mod:bookshelf, mod:dynamic_player_progression_and_player_difficulty, mod:architectury (incompatible), mod:ftblibrary (incompatible), mod:itemfilters (incompatible), mod:balm (incompatible), mod:jeitweaker (incompatible), mod:flib (incompatible), mod:natprog (incompatible), mod:adpother, mod:jeresources (incompatible), mod:crafttweaker (incompatible), mod:gamestages, mod:rubidium_extras (incompatible), mod:ftbteams (incompatible), mod:ftbquests (incompatible), mod:forge, mod:fastleafdecay, mod:geckolib3 (incompatible), mod:jeienchantmentinfo (incompatible), mod:oretweaker (incompatible), mod:defaultoptions (incompatible), file/TerraForged.zip
+	World Generation: Stable
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'; Server brand changed to 'forge'
+	ModLauncher: 9.1.3+9.1.3+main.9b69c82a
+	ModLauncher launch target: forgeclient
+	ModLauncher naming: srg
+	ModLauncher services: 
+		 mixin PLUGINSERVICE 
+		 eventbus PLUGINSERVICE 
+		 slf4jfixer PLUGINSERVICE 
+		 object_holder_definalize PLUGINSERVICE 
+		 runtime_enum_extender PLUGINSERVICE 
+		 capability_token_subclass PLUGINSERVICE 
+		 accesstransformer PLUGINSERVICE 
+		 runtimedistcleaner PLUGINSERVICE 
+		 mixin TRANSFORMATIONSERVICE 
+		 fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		client-1.18.2-20220404.173914-srg.jar             |Minecraft                     |minecraft                     |1.18.2              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		DistantHorizons-1.6.5a-1.18.2.jar                 |Distant Horizons              |lod                           |1.6.5a              |DONE      |Manifest: NOSIGNATURE
+		dynamiclightsreforged-1.18.2_v1.3.3.jar           |Rubidium Dynamic Lights       |dynamiclightsreforged         |1.18.2_v1.3.3       |DONE      |Manifest: NOSIGNATURE
+		EnchantmentDescriptions-Forge-1.18.2-10.0.8.jar   |EnchantmentDescriptions       |enchdesc                      |10.0.8              |DONE      |Manifest: eb:c4:b1:67:8b:f9:0c:db:dc:4f:01:b1:8e:61:64:39:4c:10:85:0b:a6:c4:c7:48:f0:fa:95:f2:cb:08:3a:e5
+		theoneprobe-1.18-5.1.1.jar                        |The One Probe                 |theoneprobe                   |1.18-5.1.1          |DONE      |Manifest: NOSIGNATURE
+		MouseTweaks-forge-mc1.18-2.21.jar                 |Mouse Tweaks                  |mousetweaks                   |2.21                |DONE      |Manifest: NOSIGNATURE
+		Diseasecraft (Remastered)-0.1.0.jar               |DiseaseCraft (Remastered)     |diseasecraft                  |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		customgamerules-1.18.2-2.0.0.jar                  |Powerful Game Rules           |customgamerules               |1.18.2-2.0.0        |DONE      |Manifest: NOSIGNATURE
+		jei-1.18.2-9.7.1.255.jar                          |Just Enough Items             |jei                           |9.7.1.255           |DONE      |Manifest: NOSIGNATURE
+		jeiintegration_1.18.2-9.0.0.37.jar                |JEI Integration               |jeiintegration                |9.0.0.37            |DONE      |Manifest: NOSIGNATURE
+		rubidium-0.5.3a.jar                               |Rubidium                      |rubidium                      |0.5.3a              |DONE      |Manifest: NOSIGNATURE
+		curios-forge-1.18.2-5.0.7.1.jar                   |Curios API                    |curios                        |1.18.2-5.0.7.1      |DONE      |Manifest: NOSIGNATURE
+		Time-stages-1.18.2-1.4.1.jar                      |Time Stages                   |timestages                    |1.4.1               |DONE      |Manifest: NOSIGNATURE
+		ForgeEndertech-1.18.2-9.0.5.0-build.1061.jar      |ForgeEndertech                |forgeendertech                |9.0.5.0             |DONE      |Manifest: NOSIGNATURE
+		TerraForged-1.18.2-0.3.1-alpha-2.jar              |TerraForged                   |terraforged                   |0.3.1               |DONE      |Manifest: NOSIGNATURE
+		Clumps-forge-1.18.2-8.0.0+15.jar                  |Clumps                        |clumps                        |8.0.0+15            |DONE      |Manifest: NOSIGNATURE
+		Controlling-forge-1.18.2-9.0+22.jar               |Controlling                   |controlling                   |9.0+22              |DONE      |Manifest: NOSIGNATURE
+		JustEnoughProfessions-1.18.2-1.2.2.jar            |Just Enough Professions (JEP) |justenoughprofessions         |1.2.2               |DONE      |Manifest: NOSIGNATURE
+		configured-1.5.4-1.18.2.jar                       |Configured                    |configured                    |1.5.4               |DONE      |Manifest: NOSIGNATURE
+		gamestageconditions-1.18.2-2.0.jar                |Gamestage Conditions          |gamestageconditions           |1.18.2-2.0          |DONE      |Manifest: NOSIGNATURE
+		Bookshelf-Forge-1.18.2-13.2.47.jar                |Bookshelf                     |bookshelf                     |13.2.47             |DONE      |Manifest: eb:c4:b1:67:8b:f9:0c:db:dc:4f:01:b1:8e:61:64:39:4c:10:85:0b:a6:c4:c7:48:f0:fa:95:f2:cb:08:3a:e5
+		dynamic_player_progression_and_player_difficulty_1|Dynamic Player Progression and|dynamic_player_progression_and|0.11.1              |DONE      |Manifest: NOSIGNATURE
+		architectury-4.9.83-forge.jar                     |Architectury                  |architectury                  |4.9.83              |DONE      |Manifest: NOSIGNATURE
+		ftb-library-forge-1802.3.6-build.140.jar          |FTB Library                   |ftblibrary                    |1802.3.6-build.140  |DONE      |Manifest: NOSIGNATURE
+		item-filters-forge-1802.2.7-build.33.jar          |Item Filters                  |itemfilters                   |1802.2.7-build.33   |DONE      |Manifest: NOSIGNATURE
+		balm-3.2.0+0.jar                                  |Balm                          |balm                          |3.2.0+0             |DONE      |Manifest: NOSIGNATURE
+		JEITweaker-1.18.2-3.0.0.9.jar                     |JEI Tweaker                   |jeitweaker                    |3.0.0.9             |DONE      |Manifest: NOSIGNATURE
+		flib-1.18.2-0.0.2.jar                             |flib                          |flib                          |1.18.2-0.0.2        |DONE      |Manifest: 1f:47:ac:b1:61:82:96:b8:47:19:16:d2:61:81:11:60:3a:06:4b:61:31:56:7d:44:31:1e:0c:6f:22:5b:4c:ed
+		NaturalProgression-1.18.2-2.3.4.jar               |Natural Progression           |natprog                       |2.3.4               |DONE      |Manifest: NOSIGNATURE
+		AdPother-1.18.2-6.0.6.0-build.1061.jar            |Pollution of the Realms       |adpother                      |6.0.6.0             |DONE      |Manifest: NOSIGNATURE
+		JustEnoughResources-1.18.2-0.14.1.171.jar         |Just Enough Resources         |jeresources                   |0.14.1.171          |DONE      |Manifest: NOSIGNATURE
+		CraftTweaker-forge-1.18.2-9.1.185.jar             |CraftTweaker                  |crafttweaker                  |9.1.185             |DONE      |Manifest: NOSIGNATURE
+		GameStages-Forge-1.18.2-8.0.2.jar                 |GameStages                    |gamestages                    |8.0.2               |DONE      |Manifest: eb:c4:b1:67:8b:f9:0c:db:dc:4f:01:b1:8e:61:64:39:4c:10:85:0b:a6:c4:c7:48:f0:fa:95:f2:cb:08:3a:e5
+		rubidium_extras-1.18.2_v1.3.2.jar                 |Rubidium Extras               |rubidium_extras               |1.18.2_v1.3.2       |DONE      |Manifest: NOSIGNATURE
+		ftb-teams-forge-1802.2.6-build.51.jar             |FTB Teams                     |ftbteams                      |1802.2.6-build.51   |DONE      |Manifest: NOSIGNATURE
+		ftb-quests-forge-1802.3.8-build.101.jar           |FTB Quests                    |ftbquests                     |1802.3.8-build.101  |DONE      |Manifest: NOSIGNATURE
+		forge-1.18.2-40.1.74-universal.jar                |Forge                         |forge                         |40.1.74             |DONE      |Manifest: 84:ce:76:e8:45:35:e4:0e:63:86:df:47:59:80:0f:67:6c:c1:5f:6e:5f:4d:b3:54:47:1a:9f:7f:ed:5e:f2:90
+		FastLeafDecay-28.jar                              |FastLeafDecay                 |fastleafdecay                 |28                  |DONE      |Manifest: NOSIGNATURE
+		geckolib-forge-1.18-3.0.36.jar                    |GeckoLib                      |geckolib3                     |3.0.36              |DONE      |Manifest: NOSIGNATURE
+		JEIEnchantmentInfo-1.17.1-2.0.0.jar               |JEI Enchantment Info          |jeienchantmentinfo            |1.17.1-2.0.0        |DONE      |Manifest: NOSIGNATURE
+		OreTweaker-1.18.2-3.3.0.jar                       |Ore Tweaker                   |oretweaker                    |3.3.0               |DONE      |Manifest: NOSIGNATURE
+		defaultoptions-forge-1.18.2-14.1.1.jar            |Default Options               |defaultoptions                |14.1.1              |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 4f9e28bf-1438-4188-a49a-59baf48ea605
+	FML: 40.1
+	Forge: net.minecraftforge:40.1.74

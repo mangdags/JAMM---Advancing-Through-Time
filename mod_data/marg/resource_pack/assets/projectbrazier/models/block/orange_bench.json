@@ -1,0 +1,35 @@
+{
+	"loader": "projectbrazier:axis_connected_model",
+	"default": {
+		"parent": "projectbrazier:block/default_bench",
+		"textures": {
+			"stripped_log_side": "projectbrazier:block/woods/orange/stripped_orange_log",
+			"planks": "projectbrazier:block/woods/orange/orange_planks",
+			"particle": "projectbrazier:block/woods/orange/orange_planks"
+		}
+	},
+	"positive": {
+		"parent": "projectbrazier:block/positive_bench",
+		"textures": {
+			"stripped_log_side": "projectbrazier:block/woods/orange/stripped_orange_log",
+			"planks": "projectbrazier:block/woods/orange/orange_planks",
+			"particle": "projectbrazier:block/woods/orange/orange_planks"
+		}
+	},
+	"negative": {
+		"parent": "projectbrazier:block/negative_bench",
+		"textures": {
+			"stripped_log_side": "projectbrazier:block/woods/orange/stripped_orange_log",
+			"planks": "projectbrazier:block/woods/orange/orange_planks",
+			"particle": "projectbrazier:block/woods/orange/orange_planks"
+		}
+	},
+	"centered": {
+		"parent": "projectbrazier:block/centered_bench",
+		"textures": {
+			"stripped_log_side": "projectbrazier:block/woods/orange/stripped_orange_log",
+			"planks": "projectbrazier:block/woods/orange/orange_planks",
+			"particle": "projectbrazier:block/woods/orange/orange_planks"
+		}
+	}
+}

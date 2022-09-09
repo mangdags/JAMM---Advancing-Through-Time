@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"axis=x": {"model": "projectbrazier:block/lime_polstered_jungle_bench"},
+		"axis=z": {"model": "projectbrazier:block/lime_polstered_jungle_bench", "y":  90}
+	}
+}

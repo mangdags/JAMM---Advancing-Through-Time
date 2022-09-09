@@ -1,0 +1,113 @@
+
+[common]
+	#Whether or not the mace is craftable.
+	mace_enabled = true
+	#Whether or not the hammer is craftable.
+	hammer_enabled = true
+	#Whether or not the flail is craftable.
+	flail_enabled = true
+	#Whether or not the spear is craftable.
+	spear_enabled = true
+	#Whether or not the dagger is craftable.
+	dagger_enabled = true
+	#Whether or not the quiver is craftable.
+	quiver_enabled = true
+	#Whether or not the scabbard is craftable.
+	scabbard_enabled = true
+	#Can flaming arrows ignite blocks?
+	flaming_arrow_griefing = true
+	#Does the piercing enchant cause armor penetrating damage?
+	ap_piercing = true
+	#Can spectral arrows reveal mobs around their impact point?
+	sonic_spectral_arrows = true
+	#When enabled, potion arrows with no negative effects deal 0 damage
+	picky_potion_arrows = true
+	#Whether parrying is enabled or not.
+	parry_enabled = true
+	#The maximum angle that you can be aiming relative to the attacker. -1 represents pointing exactly away from the attacker, and 1 represents pointing exactly towards the attacker0.5 represents 45 degrees
+	#Range: -1.0 ~ 1.0
+	parry_angle = 0.5
+	#The penalty to parry angle for parrying at low attack recharge.
+	#Range: 0.0 ~ 1.0
+	parry_penalty = 0.15
+	#Whether dual wielding is enabled or not.
+	dual_wielding_enabled = true
+	#Whether certain weapons disable dual wielding
+	two_handed_enabled = true
+	#Whether shield bashing is enabled or not.
+	bash_enabled = true
+	#The maximum angle that you can be aiming relative to the target. -1 represents pointing exactly away from the attacker, and 1 represents pointing exactly towards the attacker
+	#Range: -1.0 ~ 1.0
+	bash_angle = 0.85
+	#The base cooldown, in ticks, for a successful shield bash. Each target adds one second to the cooldown. There are 20 ticks in a second.
+	#Range: > 0
+	bash_base_cooldown = 80
+	#The cooldown, in ticks, for missing a shield bash. There are 20 ticks in a second.
+	#Range: > 0
+	bash_miss_cooldown = 20
+	#The number of targets a shield bash can hit. Each level of Bashing adds 1 to this number
+	#Range: > 1
+	bash_targets = 3
+	#Whether backstabbing is enabled or not
+	backstab_enabled = true
+	#The maximum angle that you can be aiming relative to the target. -1 represents pointing exactly away from the target, and 1 represents pointing exactly towards the target
+	#Range: -1.0 ~ 1.0
+	backstab_angle = 0.8
+	#The amount to multiply incoming damage by with a successful backstab.
+	#Range: 1.0 ~ 99999.0
+	backstab_multiplier = 3.0
+	#Any entity with health greater than this is immune to backstab
+	#Range: 1 ~ 99999
+	backstab_max_health = 20
+	#Whether dodging is enabled or not.
+	dodge_enabled = true
+	#How much power does the dodge have?
+	#Range: 0.0 ~ 99999.0
+	dodge_power = 0.5
+	#The time in seconds before you can dodge again
+	#Range: 0.0 ~ 99999.0
+	dodge_cooldown = 1.5
+	#Whether or not the deflection enchantment is enabled
+	deflection_enabled = true
+	#Whether or not the riposte enchantment is enabled
+	riposte_enabled = true
+	#The time in seconds before you can draw or sheathe again
+	#Range: 0.0 ~ 99999.0
+	draw_cooldown = 1.0
+	#Whether or not the crippling enchantment is enabled
+	crippling_enabled = true
+	#Whether or not the bashing enchantment is enabled
+	bashing_enabled = true
+	#Whether or not the treachery enchantment is enabled
+	treachery_enabled = true
+	#Whether or not the jousting enchantment is enabled
+	jousting_enabled = true
+	#Whether or not the venomous enchantment is enabled
+	venomous_enabled = true
+	#Whether or not the providence enchantment is enabled
+	providence_enabled = true
+	#Whether or not the swift strike enchantment is enabled
+	swift_strike_enabled = true
+	#Whether or not the fragile curse is enabled
+	fragile_enabled = true
+	#Whether or not the phasing curse is enabled
+	phasing_enabled = true
+	#Whether or not the intrusion curse is enabled
+	intrusion_enabled = true
+	#Whether or not the fragile curse is treasure only
+	is_fragile_treasure = true
+	#Whether or not the phasing curse is treasure only
+	is_phasing_treasure = true
+	#Whether or not intrusion curse is treasure only
+	is_intrusion_treasure = true
+	#Whether or not the providence enchantment is treasure only
+	is_providence_treasure = true
+	#Whether or not the swift strike enchantment is treasure only
+	is_swift_strike_treasure = true
+	#Easy way to disable chainmail crafting without a datapack
+	is_chainmail_craftable = true
+	#Does the scoped crossbow fire arrows with no gravity?
+	zero_gravity_bolts = true
+	#Are pets immune to damage from their owners?
+	protect_pets = true
+

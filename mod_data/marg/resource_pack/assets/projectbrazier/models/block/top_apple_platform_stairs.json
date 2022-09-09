@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/top_wood_platform_stairs",
+	"textures": {
+		"log_top": "projectbrazier:block/woods/apple/stripped_apple_log_top",
+		"log_side": "projectbrazier:block/woods/apple/stripped_apple_log",
+		"planks": "projectbrazier:block/woods/apple/apple_planks",
+		"particle": "projectbrazier:block/woods/apple/apple_planks"
+	}
+}

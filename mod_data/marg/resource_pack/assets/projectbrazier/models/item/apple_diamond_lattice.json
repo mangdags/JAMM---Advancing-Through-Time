@@ -1,0 +1,7 @@
+{
+	"parent": "projectbrazier:block/lattices/diamond/item",
+	"textures": {
+		"particle": "projectbrazier:block/woods/apple/apple_planks",
+		"wood": "projectbrazier:block/woods/apple/apple_planks"
+	}
+}

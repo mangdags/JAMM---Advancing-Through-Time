@@ -1,0 +1,7 @@
+{
+	"parent": "projectbrazier:block/lattices/cross/item",
+	"textures": {
+		"particle": "minecraft:block/jungle_planks",
+		"wood": "minecraft:block/jungle_planks"
+	}
+}

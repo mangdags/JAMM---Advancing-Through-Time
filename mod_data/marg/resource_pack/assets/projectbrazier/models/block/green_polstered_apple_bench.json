@@ -1,0 +1,39 @@
+{
+	"loader": "projectbrazier:axis_connected_model",
+	"default": {
+		"parent": "projectbrazier:block/default_polstered_bench",
+		"textures": {
+			"stripped_log_side": "projectbrazier:block/woods/apple/stripped_apple_log",
+			"planks": "projectbrazier:block/woods/apple/apple_planks",
+			"particle": "projectbrazier:block/woods/apple/apple_planks",
+			"wool": "minecraft:block/green_wool"
+		}
+	},
+	"positive": {
+		"parent": "projectbrazier:block/positive_polstered_bench",
+		"textures": {
+			"stripped_log_side": "projectbrazier:block/woods/apple/stripped_apple_log",
+			"planks": "projectbrazier:block/woods/apple/apple_planks",
+			"particle": "projectbrazier:block/woods/apple/apple_planks",
+			"wool": "minecraft:block/green_wool"
+		}
+	},
+	"negative": {
+		"parent": "projectbrazier:block/negative_polstered_bench",
+		"textures": {
+			"stripped_log_side": "projectbrazier:block/woods/apple/stripped_apple_log",
+			"planks": "projectbrazier:block/woods/apple/apple_planks",
+			"particle": "projectbrazier:block/woods/apple/apple_planks",
+			"wool": "minecraft:block/green_wool"
+		}
+	},
+	"centered": {
+		"parent": "projectbrazier:block/centered_polstered_bench",
+		"textures": {
+			"stripped_log_side": "projectbrazier:block/woods/apple/stripped_apple_log",
+			"planks": "projectbrazier:block/woods/apple/apple_planks",
+			"particle": "projectbrazier:block/woods/apple/apple_planks",
+			"wool": "minecraft:block/green_wool"
+		}
+	}
+}

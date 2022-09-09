@@ -1,0 +1,10 @@
+#618 minecraft:basalt_deltas
+#140 terraforged:cave
+#570 minecraft:crimson_forest
+#705 minecraft:deep_frozen_ocean
+#653 minecraft:nether_wastes
+#3F6 terraforged:oak_forest
+#1DF minecraft:old_growth_birch_forest
+#73A minecraft:old_growth_pine_taiga
+#721 minecraft:soul_sand_valley
+#628 minecraft:warped_forest

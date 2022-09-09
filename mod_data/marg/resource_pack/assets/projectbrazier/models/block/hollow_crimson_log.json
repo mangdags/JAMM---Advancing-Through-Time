@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/hollow_log",
+	"textures": {
+		"particle": "minecraft:block/crimson_stem",
+		"inside": "minecraft:block/stripped_crimson_stem",
+		"bark": "minecraft:block/crimson_stem",
+		"top": "projectbrazier:block/hollow_crimson_log"
+	}
+}

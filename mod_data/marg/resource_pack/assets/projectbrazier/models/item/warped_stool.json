@@ -1,0 +1,7 @@
+{
+	"parent": "projectbrazier:block/stool",
+	"textures": {
+		"particle": "minecraft:block/warped_planks",
+		"planks": "minecraft:block/warped_planks"
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"loader": "projectbrazier:axis_connected_model",
+	"single": {
+		"parent": "projectbrazier:block/log_bench/log_bench_single",
+		"textures": {
+			"log_top": "projectbrazier:block/woods/apple/stripped_apple_log_top",
+			"bark": "projectbrazier:block/woods/apple/stripped_apple_log",
+			"stripped_log": "projectbrazier:block/woods/apple/stripped_apple_log",
+			"cut_log": "projectbrazier:block/woods/apple/stripped_apple_log",
+			"particle": "projectbrazier:block/woods/apple/stripped_apple_log"
+		}
+	},
+	"multi": {
+		"parent": "projectbrazier:block/log_bench/log_bench_multi",
+		"textures": {
+			"log_top": "projectbrazier:block/woods/apple/stripped_apple_log_top",
+			"bark": "projectbrazier:block/woods/apple/stripped_apple_log",
+			"stripped_log": "projectbrazier:block/woods/apple/stripped_apple_log",
+			"cut_log": "projectbrazier:block/woods/apple/stripped_apple_log",
+			"particle": "projectbrazier:block/woods/apple/stripped_apple_log"
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/log_chair",
+	"textures": {
+		"particle": "minecraft:block/stripped_warped_stem",
+		"log": "minecraft:block/stripped_warped_stem",
+		"inner_log": "minecraft:block/stripped_warped_stem",
+		"top_log": "minecraft:block/stripped_warped_stem_top"
+	}
+}

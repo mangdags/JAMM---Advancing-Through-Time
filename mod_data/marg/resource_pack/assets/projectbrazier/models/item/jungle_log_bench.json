@@ -1,0 +1,23 @@
+{
+	"loader": "projectbrazier:axis_connected_model",
+	"single": {
+		"parent": "projectbrazier:block/log_bench/log_bench_single",
+		"textures": {
+			"log_top": "projectbrazier:block/small_jungle_log_top",
+			"bark": "minecraft:block/jungle_log",
+			"stripped_log": "minecraft:block/stripped_jungle_log",
+			"cut_log": "projectbrazier:block/small_jungle_cut_log",
+			"particle": "projectbrazier:block/small_jungle_cut_log"
+		}
+	},
+	"multi": {
+		"parent": "projectbrazier:block/log_bench/log_bench_multi",
+		"textures": {
+			"log_top": "projectbrazier:block/small_jungle_log_top",
+			"bark": "minecraft:block/jungle_log",
+			"stripped_log": "minecraft:block/stripped_jungle_log",
+			"cut_log": "projectbrazier:block/small_jungle_cut_log",
+			"particle": "projectbrazier:block/small_jungle_cut_log"
+		}
+	}
+}

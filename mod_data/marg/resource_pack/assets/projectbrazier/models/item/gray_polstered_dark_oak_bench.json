@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/default_polstered_bench",
+	"textures": {
+		"stripped_log_side": "minecraft:block/stripped_dark_oak_log",
+		"planks": "minecraft:block/dark_oak_planks",
+		"particle": "minecraft:block/dark_oak_planks",
+		"wool": "minecraft:block/gray_wool"
+	}
+}

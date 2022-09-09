@@ -1,0 +1,35 @@
+{
+	"loader": "projectbrazier:axis_connected_model",
+	"default": {
+		"parent": "projectbrazier:block/default_bench",
+		"textures": {
+			"stripped_log_side": "minecraft:block/stripped_oak_log",
+			"planks": "minecraft:block/oak_planks",
+			"particle": "minecraft:block/oak_planks"
+		}
+	},
+	"positive": {
+		"parent": "projectbrazier:block/positive_bench",
+		"textures": {
+			"stripped_log_side": "minecraft:block/stripped_oak_log",
+			"planks": "minecraft:block/oak_planks",
+			"particle": "minecraft:block/oak_planks"
+		}
+	},
+	"negative": {
+		"parent": "projectbrazier:block/negative_bench",
+		"textures": {
+			"stripped_log_side": "minecraft:block/stripped_oak_log",
+			"planks": "minecraft:block/oak_planks",
+			"particle": "minecraft:block/oak_planks"
+		}
+	},
+	"centered": {
+		"parent": "projectbrazier:block/centered_bench",
+		"textures": {
+			"stripped_log_side": "minecraft:block/stripped_oak_log",
+			"planks": "minecraft:block/oak_planks",
+			"particle": "minecraft:block/oak_planks"
+		}
+	}
+}

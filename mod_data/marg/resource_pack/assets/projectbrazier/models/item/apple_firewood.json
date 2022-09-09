@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/firewood_0",
+	"textures": {
+		"particle": "projectbrazier:block/apple_log_inside",
+		"inside": "projectbrazier:block/apple_log_inside",
+		"bark": "projectbrazier:block/woods/apple/apple_log",
+		"top": "projectbrazier:block/woods/apple/apple_log_top"
+	}
+}

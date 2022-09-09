@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"axis=x": {"model": "projectbrazier:block/bottom_jungle_platform"},
+		"axis=z": {"model": "projectbrazier:block/bottom_jungle_platform", "y":  90, "uvlock": true}
+	}
+}

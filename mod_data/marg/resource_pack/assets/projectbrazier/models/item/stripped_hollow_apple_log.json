@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/hollow_log",
+	"textures": {
+		"particle": "projectbrazier:block/woods/apple/stripped_apple_log",
+		"inside": "projectbrazier:block/woods/apple/stripped_apple_log",
+		"bark": "projectbrazier:block/woods/apple/stripped_apple_log",
+		"top": "projectbrazier:block/stripped_hollow_apple_log"
+	}
+}

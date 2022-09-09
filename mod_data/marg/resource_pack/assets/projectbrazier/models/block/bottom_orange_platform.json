@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/bottom_wood_platform",
+	"textures": {
+		"log_top": "projectbrazier:block/woods/orange/stripped_orange_log_top",
+		"log_side": "projectbrazier:block/woods/orange/stripped_orange_log",
+		"planks": "projectbrazier:block/woods/orange/orange_planks",
+		"particle": "projectbrazier:block/woods/orange/orange_planks"
+	}
+}

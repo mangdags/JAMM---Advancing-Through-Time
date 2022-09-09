@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/log_chair",
+	"textures": {
+		"particle": "minecraft:block/stripped_dark_oak_log",
+		"log": "minecraft:block/stripped_dark_oak_log",
+		"inner_log": "minecraft:block/stripped_dark_oak_log",
+		"top_log": "minecraft:block/stripped_dark_oak_log_top"
+	}
+}

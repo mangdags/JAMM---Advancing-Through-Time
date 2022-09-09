@@ -1,0 +1,7 @@
+{
+	"parent": "projectbrazier:block/zipline_anchor",
+	"textures": {
+		"log_side": "minecraft:block/stripped_acacia_log",
+		"log_end": "minecraft:block/stripped_acacia_log_top"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "projectbrazier:block/lattices/dense_vertical/item",
+	"textures": {
+		"particle": "minecraft:block/crimson_planks",
+		"wood": "minecraft:block/crimson_planks"
+	}
+}

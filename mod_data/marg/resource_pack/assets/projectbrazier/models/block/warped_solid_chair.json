@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/solid_chair",
+	"textures": {
+		"particle": "minecraft:block/warped_planks",
+		"planks": "minecraft:block/warped_planks",
+		"stripped_log": "minecraft:block/stripped_warped_stem",
+		"stripped_log_top": "minecraft:block/stripped_warped_stem_top"
+	}
+}

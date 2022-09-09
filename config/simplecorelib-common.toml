@@ -1,0 +1,22 @@
+
+[General]
+	#true enables ore gen test
+	EnableTestOreGen = false
+	#test shears durability value (tests initializing properties from config)
+	#Range: 1 ~ 99999
+	TestShearDurability = 1500
+
+["Test Ore Gen"]
+	#Test ore vein size
+	#Range: 1 ~ 99
+	OreVeinSize = 6
+	#Test ore vein count
+	#Range: 1 ~ 99
+	OreVeinCount = 10
+	#Test ore bottom Height
+	#Range: -63 ~ 254
+	OreBottomHeight = -63
+	#Test ore top height
+	#Range: -62 ~ 255
+	OreTopHeight = 128
+

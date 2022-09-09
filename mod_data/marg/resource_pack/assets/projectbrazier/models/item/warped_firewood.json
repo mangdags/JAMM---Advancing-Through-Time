@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/firewood_0",
+	"textures": {
+		"particle": "projectbrazier:block/warped_log_inside",
+		"inside": "projectbrazier:block/warped_log_inside",
+		"bark": "minecraft:block/warped_stem",
+		"top": "minecraft:block/warped_stem_top"
+	}
+}

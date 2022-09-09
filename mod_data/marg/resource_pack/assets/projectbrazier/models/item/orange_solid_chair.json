@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/solid_chair",
+	"textures": {
+		"particle": "projectbrazier:block/woods/orange/orange_planks",
+		"planks": "projectbrazier:block/woods/orange/orange_planks",
+		"stripped_log": "projectbrazier:block/woods/orange/stripped_orange_log",
+		"stripped_log_top": "projectbrazier:block/woods/orange/stripped_orange_log_top"
+	}
+}

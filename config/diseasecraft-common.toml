@@ -1,0 +1,17 @@
+
+#DISEASECRAFT CONFIG (COMMON)
+#
+#These will affect gameplay and will affect all gameplay.
+[common]
+	#Should all effects be ticked?
+	#
+	#This is an alternate to "universalBloodCellCount"
+	#Set to true for every effect to be ticked, regardless of blood cell count.
+	tickAllEffects = false
+	#How long should each disease tick for before notifying the player?
+	#
+	#If set to 0 or higher, this will universally set all incubation levels to that value.
+	#-1 will disable the debug test.
+	#Range: > -1
+	universalIncubation = -1
+

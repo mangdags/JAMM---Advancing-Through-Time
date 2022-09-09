@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/open_barrel",
+	"textures": {
+		"particle": "projectbrazier:block/jungle_barrel_side",
+		"side": "projectbrazier:block/jungle_barrel_side",
+		"top": "projectbrazier:block/jungle_barrel_top",
+		"inside": "projectbrazier:block/jungle_barrel_inside"
+	}
+}

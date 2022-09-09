@@ -1,0 +1,7 @@
+{
+	"parent": "projectbrazier:block/lattices/dense_vertical/item",
+	"textures": {
+		"particle": "projectbrazier:block/woods/orange/orange_planks",
+		"wood": "projectbrazier:block/woods/orange/orange_planks"
+	}
+}

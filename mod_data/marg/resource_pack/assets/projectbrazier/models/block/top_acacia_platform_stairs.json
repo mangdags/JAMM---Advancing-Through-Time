@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/top_wood_platform_stairs",
+	"textures": {
+		"log_top": "minecraft:block/stripped_acacia_log_top",
+		"log_side": "minecraft:block/stripped_acacia_log",
+		"planks": "minecraft:block/acacia_planks",
+		"particle": "minecraft:block/acacia_planks"
+	}
+}

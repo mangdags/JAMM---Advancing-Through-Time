@@ -1,0 +1,10 @@
+{
+	"loader": "projectbrazier:builtin_mixed",
+	"parent": "projectbrazier:block/flower_barrel",
+	"textures": {
+		"particle": "projectbrazier:block/spruce_barrel_side",
+		"side": "projectbrazier:block/spruce_barrel_side",
+		"top": "projectbrazier:block/spruce_barrel_top",
+		"inside": "projectbrazier:block/spruce_barrel_inside"
+	}
+}

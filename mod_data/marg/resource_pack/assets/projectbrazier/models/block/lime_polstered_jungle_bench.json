@@ -1,0 +1,39 @@
+{
+	"loader": "projectbrazier:axis_connected_model",
+	"default": {
+		"parent": "projectbrazier:block/default_polstered_bench",
+		"textures": {
+			"stripped_log_side": "minecraft:block/stripped_jungle_log",
+			"planks": "minecraft:block/jungle_planks",
+			"particle": "minecraft:block/jungle_planks",
+			"wool": "minecraft:block/lime_wool"
+		}
+	},
+	"positive": {
+		"parent": "projectbrazier:block/positive_polstered_bench",
+		"textures": {
+			"stripped_log_side": "minecraft:block/stripped_jungle_log",
+			"planks": "minecraft:block/jungle_planks",
+			"particle": "minecraft:block/jungle_planks",
+			"wool": "minecraft:block/lime_wool"
+		}
+	},
+	"negative": {
+		"parent": "projectbrazier:block/negative_polstered_bench",
+		"textures": {
+			"stripped_log_side": "minecraft:block/stripped_jungle_log",
+			"planks": "minecraft:block/jungle_planks",
+			"particle": "minecraft:block/jungle_planks",
+			"wool": "minecraft:block/lime_wool"
+		}
+	},
+	"centered": {
+		"parent": "projectbrazier:block/centered_polstered_bench",
+		"textures": {
+			"stripped_log_side": "minecraft:block/stripped_jungle_log",
+			"planks": "minecraft:block/jungle_planks",
+			"particle": "minecraft:block/jungle_planks",
+			"wool": "minecraft:block/lime_wool"
+		}
+	}
+}

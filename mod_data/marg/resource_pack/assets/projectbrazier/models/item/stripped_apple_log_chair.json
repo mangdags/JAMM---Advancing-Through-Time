@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/log_chair",
+	"textures": {
+		"particle": "projectbrazier:block/woods/apple/stripped_apple_log",
+		"log": "projectbrazier:block/woods/apple/stripped_apple_log",
+		"inner_log": "projectbrazier:block/woods/apple/stripped_apple_log",
+		"top_log": "projectbrazier:block/woods/apple/stripped_apple_log_top"
+	}
+}

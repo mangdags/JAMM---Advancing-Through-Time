@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/hollow_log",
+	"textures": {
+		"particle": "minecraft:block/warped_stem",
+		"inside": "minecraft:block/stripped_warped_stem",
+		"bark": "minecraft:block/warped_stem",
+		"top": "projectbrazier:block/hollow_warped_log"
+	}
+}

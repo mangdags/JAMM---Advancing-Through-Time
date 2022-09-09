@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"axis=x": {"model": "projectbrazier:block/orange_polstered_acacia_bench"},
+		"axis=z": {"model": "projectbrazier:block/orange_polstered_acacia_bench", "y":  90}
+	}
+}

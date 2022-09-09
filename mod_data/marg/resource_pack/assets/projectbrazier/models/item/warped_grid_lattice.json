@@ -1,0 +1,7 @@
+{
+	"parent": "projectbrazier:block/lattices/grid/item",
+	"textures": {
+		"particle": "minecraft:block/warped_planks",
+		"wood": "minecraft:block/warped_planks"
+	}
+}

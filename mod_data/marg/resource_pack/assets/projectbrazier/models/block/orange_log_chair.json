@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/log_chair",
+	"textures": {
+		"particle": "projectbrazier:block/woods/orange/orange_log",
+		"log": "projectbrazier:block/woods/orange/orange_log",
+		"inner_log": "projectbrazier:block/small_orange_cut_log",
+		"top_log": "projectbrazier:block/small_orange_log_top"
+	}
+}

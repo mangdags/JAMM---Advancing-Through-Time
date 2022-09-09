@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"facing=north": {"model": "projectbrazier:block/bottom_jungle_platform_stairs"},
+		"facing=east": {"model": "projectbrazier:block/bottom_jungle_platform_stairs", "y":  90, "uvlock": true},
+		"facing=south": {"model": "projectbrazier:block/bottom_jungle_platform_stairs", "y": 180, "uvlock": true},
+		"facing=west": {"model": "projectbrazier:block/bottom_jungle_platform_stairs", "y":  270, "uvlock": true}
+	}
+}

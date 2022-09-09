@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"axis=x": {"model": "projectbrazier:block/top_warped_platform"},
+		"axis=z": {"model": "projectbrazier:block/top_warped_platform", "y":  90, "uvlock": true}
+	}
+}

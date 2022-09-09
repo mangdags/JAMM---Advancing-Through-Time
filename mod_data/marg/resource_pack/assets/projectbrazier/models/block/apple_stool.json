@@ -1,0 +1,7 @@
+{
+	"parent": "projectbrazier:block/stool",
+	"textures": {
+		"particle": "projectbrazier:block/woods/apple/apple_planks",
+		"planks": "projectbrazier:block/woods/apple/apple_planks"
+	}
+}

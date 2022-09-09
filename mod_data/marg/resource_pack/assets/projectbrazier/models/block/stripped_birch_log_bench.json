@@ -1,0 +1,23 @@
+{
+	"loader": "projectbrazier:axis_connected_model",
+	"single": {
+		"parent": "projectbrazier:block/log_bench/log_bench_single",
+		"textures": {
+			"log_top": "minecraft:block/stripped_birch_log_top",
+			"bark": "minecraft:block/stripped_birch_log",
+			"stripped_log": "minecraft:block/stripped_birch_log",
+			"cut_log": "minecraft:block/stripped_birch_log",
+			"particle": "minecraft:block/stripped_birch_log"
+		}
+	},
+	"multi": {
+		"parent": "projectbrazier:block/log_bench/log_bench_multi",
+		"textures": {
+			"log_top": "minecraft:block/stripped_birch_log_top",
+			"bark": "minecraft:block/stripped_birch_log",
+			"stripped_log": "minecraft:block/stripped_birch_log",
+			"cut_log": "minecraft:block/stripped_birch_log",
+			"particle": "minecraft:block/stripped_birch_log"
+		}
+	}
+}

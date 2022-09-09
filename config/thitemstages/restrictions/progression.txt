@@ -1,0 +1,13 @@
+Prehistoric - Flint
+	Paleolithic - Wooden
+	Mesolithic - Early Stone Age
+	Neolithic - Stone
+	Calcolithic - Copper
+Ancient History
+	Bronze Age - gold and other alloys
+	Iron Age - unlocks diamonds
+	Renaissance - architectury, concrete, shops, ships/boats, artifacts
+Modern History
+	Industrial Age
+	Machine Age - multiblocks, more advanced
+	Atomic Age - nuclear

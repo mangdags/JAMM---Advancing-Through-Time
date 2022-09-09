@@ -1,0 +1,18 @@
+{
+	"loader": "projectbrazier:quality_model",
+	"2": {
+		"parent": "projectbrazier:block/firewood_1",
+		"textures": {
+			"particle": "projectbrazier:block/crimson_log_inside",
+			"inside": "projectbrazier:block/crimson_log_inside",
+			"bark": "minecraft:block/crimson_stem",
+			"top": "minecraft:block/crimson_stem_top"
+		}
+	},
+	"0": {
+		"parent": "block/cube_all",
+		"textures": {
+			"all": "projectbrazier:wip"
+		}
+	}
+}

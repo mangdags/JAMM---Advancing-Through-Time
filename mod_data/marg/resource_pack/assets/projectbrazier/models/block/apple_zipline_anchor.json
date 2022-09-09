@@ -1,0 +1,7 @@
+{
+	"parent": "projectbrazier:block/zipline_anchor",
+	"textures": {
+		"log_side": "projectbrazier:block/woods/apple/stripped_apple_log",
+		"log_end": "projectbrazier:block/woods/apple/stripped_apple_log_top"
+	}
+}

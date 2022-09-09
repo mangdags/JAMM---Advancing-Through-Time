@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/open_barrel",
+	"textures": {
+		"particle": "projectbrazier:block/birch_barrel_side",
+		"side": "projectbrazier:block/birch_barrel_side",
+		"top": "projectbrazier:block/birch_barrel_top",
+		"inside": "projectbrazier:block/birch_barrel_inside"
+	}
+}

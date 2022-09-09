@@ -1,0 +1,27 @@
+
+[General]
+	#Allow Classical Alchemy loot to be added to chests?
+	AddChestLoot = true
+	#Enable fusion furnace recycling of mod items
+	EnableRecycling = true
+
+[Stannum]
+	#Enable fusion furnace creation of stannum items
+	EnableStannumMaking = true
+
+[Cuprum]
+	#Enable fusion furnace creation of cuprum items
+	EnableCuprumMaking = true
+
+["Pyropus Bronze"]
+	#Enable fusion furnace creation of pyropus bronze items
+	EnablePyropusBronzeMaking = true
+
+["Pulchrum Bronze"]
+	#Enable fusion furnace creation of pulchrum bronze items
+	EnablePulchrumBronzeMaking = true
+
+["Tomb Bronze"]
+	#Enable fusion furnace creation of tomb bronze items (if Arsenic & Lace mod loaded)
+	EnableTombBronzeMaking = true
+

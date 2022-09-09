@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/firewood_0",
+	"textures": {
+		"particle": "projectbrazier:block/birch_log_inside",
+		"inside": "projectbrazier:block/birch_log_inside",
+		"bark": "minecraft:block/birch_log",
+		"top": "minecraft:block/birch_log_top"
+	}
+}

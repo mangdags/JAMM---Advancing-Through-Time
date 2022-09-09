@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/hollow_log",
+	"textures": {
+		"particle": "minecraft:block/acacia_log",
+		"inside": "minecraft:block/stripped_acacia_log",
+		"bark": "minecraft:block/acacia_log",
+		"top": "projectbrazier:block/hollow_acacia_log"
+	}
+}

@@ -1,0 +1,277 @@
+{
+	id: "4DC60A1627FF2B89"
+	group: ""
+	order_index: 0
+	filename: "prehistoric_age"
+	title: "Advancing Through Time"
+	icon: "supplementaries:clock_block"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "JAMP: ADVANCING THROUGH TIME"
+			x: 0.0d
+			y: 0.0d
+			shape: "octagon"
+			subtitle: "The first humans walked the earth. Advance through time and conquer the world of minecraft!"
+			description: ["Craft, acquire, or do the tasks to unlock specific ages of time"]
+			hide_dependency_lines: false
+			size: 1.5d
+			id: "5FB926D8E69C1F15"
+			tasks: [{
+				id: "1BA9D062941B7CD8"
+				type: "item"
+				item: "natprog:stone_pebble"
+			}]
+			rewards: [
+				{
+					id: "2ADE061BE1D15DF4"
+					type: "command"
+					title: "Prehistoric Age"
+					icon: "minecraft:flint"
+					team_reward: false
+					auto: "enabled"
+					command: "/thitemstages add @p prehistoric_age true"
+					player_command: true
+				}
+				{
+					id: "648062940CCE6BE6"
+					type: "advancement"
+					title: "Prehistoric Advancement"
+					team_reward: false
+					auto: "enabled"
+					advancement: "advancementsages:prehistoric_age"
+					criterion: ""
+				}
+			]
+		}
+		{
+			title: "PALEOLITHIC AGE"
+			x: 0.5d
+			y: 5.0d
+			subtitle: "The age of wooden tools and items"
+			description: [
+				""
+				"Items should be obtained through crafting"
+			]
+			hide_dependency_lines: false
+			dependencies: ["709F215FB2009216"]
+			hide_text_until_complete: false
+			id: "01DD6734D944719A"
+			tasks: [
+				{
+					id: "055A5A9992431023"
+					type: "item"
+					item: {
+						id: "minecraft:wooden_pickaxe"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					only_from_crafting: true
+				}
+				{
+					id: "6A84CC04F844D868"
+					type: "item"
+					item: {
+						id: "minecraft:wooden_sword"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					only_from_crafting: true
+				}
+				{
+					id: "28C1531BD8AC64DA"
+					type: "item"
+					item: {
+						id: "minecraft:wooden_shovel"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					only_from_crafting: true
+				}
+				{
+					id: "0800FFF46FD50C00"
+					type: "item"
+					item: {
+						id: "minecraft:wooden_hoe"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					only_from_crafting: true
+				}
+				{
+					id: "33AEB4956320D159"
+					type: "item"
+					item: {
+						id: "minecraft:wooden_axe"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					only_from_crafting: true
+				}
+			]
+			rewards: [
+				{
+					id: "5DEAED18750C4ABF"
+					type: "command"
+					title: "Mesolithic Age"
+					icon: "minecraft:stone_bricks"
+					team_reward: false
+					auto: "enabled"
+					command: "/thitemstages add @p mesolithic_age true"
+					player_command: true
+				}
+				{
+					id: "7D45E76A1046BBFD"
+					type: "advancement"
+					title: "Mesolithic Advancement"
+					icon: "supplementaries:stone_tile"
+					team_reward: false
+					auto: "enabled"
+					advancement: "advancementsages:mesolithic_age"
+					criterion: ""
+				}
+			]
+		}
+		{
+			title: "PREHISTORIC AGE"
+			x: -2.0d
+			y: 2.5d
+			subtitle: "Prehistoric age is when basic tools and items are needed to survive"
+			description: ["Craft the required items to unlock Paleolithic Age"]
+			dependencies: ["5FB926D8E69C1F15"]
+			id: "709F215FB2009216"
+			tasks: [
+				{
+					id: "029915C80292E8B6"
+					type: "item"
+					item: {
+						id: "farmersdelight:flint_knife"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					only_from_crafting: true
+				}
+				{
+					id: "1FC2BF8907543470"
+					type: "item"
+					item: {
+						id: "natprog:flint_hatchet"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					only_from_crafting: true
+				}
+				{
+					id: "1BBBD07AB3B74221"
+					type: "item"
+					item: {
+						id: "natprog:basic_saw"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					only_from_crafting: true
+				}
+				{
+					id: "14AC94432771462C"
+					type: "item"
+					title: "Any #minecraft:wool"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "minecraft:wool"
+						}
+					}
+				}
+				{
+					id: "2835F2A41AC84CCE"
+					type: "item"
+					title: "Any #minecraft:logs"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "minecraft:logs"
+						}
+					}
+				}
+				{
+					id: "69B2C4A12714E634"
+					type: "item"
+					item: "minecraft:crafting_table"
+					only_from_crafting: true
+				}
+				{
+					id: "257BA2323395D2F2"
+					type: "item"
+					title: "Any #minecraft:planks"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "minecraft:planks"
+						}
+					}
+					only_from_crafting: true
+				}
+				{
+					id: "1BD41EB74525B389"
+					type: "item"
+					title: "Any #minecraft:beds"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "minecraft:beds"
+						}
+					}
+					only_from_crafting: true
+				}
+			]
+			rewards: [
+				{
+					id: "7EEAE7172664AD38"
+					type: "command"
+					title: "Paleolithic Stage"
+					icon: {
+						id: "minecraft:wooden_pickaxe"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					team_reward: false
+					auto: "enabled"
+					command: "/thitemstages add @p paleolithic_age"
+					player_command: true
+				}
+				{
+					id: "7FEBD4DC9C62D3E0"
+					type: "advancement"
+					title: "Paleolithic Advancement"
+					team_reward: false
+					auto: "enabled"
+					advancement: "advancementsages:paleolithic_age"
+					criterion: ""
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "projectbrazier:block/lattices/vertical/item",
+	"textures": {
+		"particle": "minecraft:block/acacia_planks",
+		"wood": "minecraft:block/acacia_planks"
+	}
+}

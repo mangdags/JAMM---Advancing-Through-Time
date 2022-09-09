@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/default_polstered_bench",
+	"textures": {
+		"stripped_log_side": "minecraft:block/stripped_jungle_log",
+		"planks": "minecraft:block/jungle_planks",
+		"particle": "minecraft:block/jungle_planks",
+		"wool": "minecraft:block/pink_wool"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"parent": "projectbrazier:block/default_polstered_bench",
+	"textures": {
+		"stripped_log_side": "minecraft:block/stripped_warped_stem",
+		"planks": "minecraft:block/warped_planks",
+		"particle": "minecraft:block/warped_planks",
+		"wool": "minecraft:block/white_wool"
+	}
+}
