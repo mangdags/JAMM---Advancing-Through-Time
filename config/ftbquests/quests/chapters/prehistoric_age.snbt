@@ -47,6 +47,13 @@
 		}
 		{
 			title: "Paleolithic Age"
+			icon: {
+				id: "minecraft:wooden_pickaxe"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
 			x: -4.5d
 			y: 7.0d
 			subtitle: "The age of wooden tools and items"
@@ -146,6 +153,13 @@
 		}
 		{
 			title: "Prehistoric Age"
+			icon: {
+				id: "natprog:flint_hatchet"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
 			x: -3.0d
 			y: 3.0d
 			subtitle: "Prehistoric age is when basic tools and items are needed to survive"
@@ -353,6 +367,7 @@
 		}
 		{
 			title: "Sailor"
+			icon: "smallships:sail_item"
 			x: 4.0d
 			y: 6.0d
 			subtitle: "Explore the seven seas with ships!"
@@ -493,6 +508,7 @@
 			icon: "ftbic:antimatter"
 			x: 14.5d
 			y: 10.0d
+			subtitle: "JUST DON'T BUILD AN ATOM BOMB!"
 			dependencies: ["1775FE0CC0A7D1F2"]
 			size: 1.5d
 			id: "5E69E05DDA61D000"
@@ -531,8 +547,8 @@
 		{
 			title: "Cook"
 			icon: "farmersdelight:smoked_ham"
-			x: -0.5d
-			y: 17.5d
+			x: 0.5d
+			y: 16.0d
 			dependencies: ["21D16B3C36F89CA4"]
 			id: "3F5594169C747803"
 			tasks: [{
