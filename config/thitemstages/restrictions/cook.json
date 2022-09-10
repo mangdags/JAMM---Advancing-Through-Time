@@ -1,0 +1,44 @@
+{
+  "Restriction Data": {
+    "stage": "cook",
+    "itemList": [
+    ],
+    "blockList": [
+    ],
+    "modList": [
+      "farmersdelight"
+    ],
+    "tagList": [
+      
+    ],
+    "exceptionList": [
+      "farmersdelight:golden_knife",
+      "farmersdelight:skillet",
+      "farmersdelight:stove",
+      "farmersdelight:cooking_pot"
+    ],
+    "containerList": [
+      "net.minecraft.inventory.container.WorkbenchContainer", 
+      "thitemstages.inventoryMenu.CraftingGrid",
+      "top.theillusivec4.curios.common.inventory.container.CuriosContainer",
+      "net.minecraft.world.inventory.ChestMenu",
+      "net.minecraft.world.inventory.FurnaceMenu"
+    ],
+    "dimensionList": [
+      "minecraft:the_nether",
+      "minecraft:the_end"
+    ]
+  },
+  "Settings": {
+    "advancedTooltips": "ALWAYS",
+    "itemTitle": "Unavailable Item",
+    "pickupDelay": 15,
+    "hideInJEI": true,
+    "canPickup": false,
+    "containerListWhitelist": false,
+    "checkPlayerInventory": true,
+    "checkPlayerEquipment": true,
+    "usableItems": false,
+    "usableBlocks": false
+  }
+}

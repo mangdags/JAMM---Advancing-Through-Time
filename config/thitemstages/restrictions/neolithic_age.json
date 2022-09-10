@@ -117,10 +117,10 @@
     ],
     "tagList": [
       "forge:stone",
-      "forge:cobblestone",
       "minecraft:stone_bricks",
       "minecraft:slabs",
-      "minecraft:walls"
+      "minecraft:walls",
+      "minecraft:candles"
     ],
     "exceptionList": [
       "minecraft:red_nether_brick_stairs",

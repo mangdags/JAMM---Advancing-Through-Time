@@ -38,7 +38,9 @@
       "minecraft:coal_ore",
       "minecraft:deepslate_coal_ore",
       "minecraft:coal_block",
-      "minecraft:coals"
+      "minecraft:coals",
+      "minecraft:scute",
+      "minecraft:turtle_helmet"
     ],
     "blockList": [
     ],

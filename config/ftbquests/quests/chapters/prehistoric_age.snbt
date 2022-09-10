@@ -47,8 +47,8 @@
 		}
 		{
 			title: "PALEOLITHIC AGE"
-			x: 0.5d
-			y: 5.0d
+			x: -4.5d
+			y: 7.0d
 			subtitle: "The age of wooden tools and items"
 			description: [
 				""
@@ -145,8 +145,8 @@
 		}
 		{
 			title: "PREHISTORIC AGE"
-			x: -2.0d
-			y: 2.5d
+			x: -3.0d
+			y: 3.0d
 			subtitle: "Prehistoric age is when basic tools and items are needed to survive"
 			description: ["Craft the required items to unlock Paleolithic Age"]
 			dependencies: ["5FB926D8E69C1F15"]
@@ -272,6 +272,163 @@
 					criterion: ""
 				}
 			]
+		}
+		{
+			x: 9.0d
+			y: 4.0d
+			dependencies: ["6CE7181F609F1D80"]
+			id: "7869A6F66C889EAE"
+			tasks: [{
+				id: "68A459DF3D5D66FC"
+				type: "custom"
+				title: "Renaissance Age"
+			}]
+		}
+		{
+			title: "Fisherman"
+			icon: "minecraft:tropical_fish"
+			x: -1.0d
+			y: 5.0d
+			subtitle: "Become a fisherman and unlock ships!"
+			dependencies: ["01DD6734D944719A"]
+			optional: true
+			id: "7975FBD66E441EC0"
+			tasks: [{
+				id: "6F73678B5B703830"
+				type: "item"
+				item: "alexsmobs:spawn_egg_seal"
+			}]
+		}
+		{
+			title: "Sailor"
+			x: 2.5d
+			y: 3.0d
+			subtitle: "Explore the seven seas with ships!"
+			dependencies: [
+				"7975FBD66E441EC0"
+				"7869A6F66C889EAE"
+			]
+			optional: true
+			id: "6B4B0AE28E57D03A"
+			tasks: [{
+				id: "6B719D361491AA6C"
+				type: "item"
+				item: "smallships:sail_item"
+			}]
+			rewards: [{
+				id: "308C27C78BBECD43"
+				type: "command"
+				title: "SHIPS!"
+				icon: "smallships:oak_cog"
+				team_reward: false
+				auto: "disabled"
+				command: "/thitemstage add @p small_ships true"
+				player_command: true
+			}]
+		}
+		{
+			title: "Mesolithic Age"
+			icon: "minecraft:cobblestone"
+			x: -5.5d
+			y: 10.5d
+			dependencies: ["01DD6734D944719A"]
+			id: "1089E7E3DAFD02BA"
+			tasks: [{
+				id: "3B8B748E271B33D9"
+				type: "item"
+				item: "minecraft:cobblestone"
+			}]
+		}
+		{
+			title: "Neolithic Age"
+			icon: "minecraft:smooth_stone"
+			x: -1.0d
+			y: 13.0d
+			dependencies: ["1089E7E3DAFD02BA"]
+			id: "1BD4EBA81DCC76F0"
+			tasks: [{
+				id: "23086033DB2508BC"
+				type: "item"
+				item: "minecraft:smooth_stone"
+			}]
+		}
+		{
+			title: "Calcolithic Age"
+			icon: "minecraft:copper_ingot"
+			x: 3.5d
+			y: 14.0d
+			dependencies: ["1BD4EBA81DCC76F0"]
+			id: "7F763CD6C735CFD3"
+			tasks: [{
+				id: "154B2E8C89C2CE78"
+				type: "item"
+				item: "minecraft:copper_ingot"
+			}]
+		}
+		{
+			title: "Bronze Age"
+			icon: "ftbic:bronze_ingot"
+			x: 7.5d
+			y: 13.0d
+			dependencies: ["7F763CD6C735CFD3"]
+			id: "7E915B28ED227BE1"
+			tasks: [{
+				id: "326EE6FDFD3432A9"
+				type: "item"
+				item: "ftbic:bronze_ingot"
+			}]
+		}
+		{
+			title: "Iron Age"
+			icon: "minecraft:iron_ingot"
+			x: 7.0d
+			y: 9.0d
+			dependencies: ["7E915B28ED227BE1"]
+			id: "6CE7181F609F1D80"
+			tasks: [{
+				id: "0CA371165116DBF3"
+				type: "item"
+				item: "minecraft:iron_ingot"
+			}]
+		}
+		{
+			title: "Industrial Age"
+			icon: "create:mechanical_arm"
+			x: 15.0d
+			y: 5.5d
+			dependencies: ["7869A6F66C889EAE"]
+			id: "665105B2710CEE56"
+			tasks: [{
+				id: "0164FB4E0793C14E"
+				type: "item"
+				item: "create:mechanical_arm"
+			}]
+		}
+		{
+			title: "Machine Age"
+			icon: "create:track"
+			x: 12.0d
+			y: 8.0d
+			dependencies: ["665105B2710CEE56"]
+			id: "1775FE0CC0A7D1F2"
+			tasks: [{
+				id: "6F02A9FEC6F2F5F0"
+				type: "item"
+				item: "create:track"
+			}]
+		}
+		{
+			title: "Atomic Age"
+			icon: "ftbic:antimatter"
+			x: 14.5d
+			y: 10.0d
+			dependencies: ["1775FE0CC0A7D1F2"]
+			id: "5E69E05DDA61D000"
+			tasks: [{
+				id: "0FEC9BDEA7588422"
+				type: "item"
+				item: "ftbic:antimatter"
+			}]
 		}
 	]
 }

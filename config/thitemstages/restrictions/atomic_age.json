@@ -35,7 +35,10 @@
       "mcwfences:railing_end_brick_wall",
       "mcwfences:end_brick_railing_gate",
       "natprog:cobbled_end_stone",
-      "minecraft:end_portal_frame"
+      "minecraft:end_portal_frame",
+      "alcocraft:spruce_mug_chorus_ale",
+      "alcocraft:spruce_mug_nether_star_lager",
+      "minecraft:elytra"
     ],
     "blockList": [
     ],

@@ -2,7 +2,7 @@
 	version: 1
 	uuid: "9ac63ce77d8e45818a68f0fb66c53bd9"
 	name: "MangDags"
-	can_edit: false
+	can_edit: true
 	lock: false
 	auto_pin: false
 	task_progress: {

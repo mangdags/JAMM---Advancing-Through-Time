@@ -23,6 +23,7 @@
       "parrying:stone_dagger",
       "parrying:stone_flail",
       "parrying:stone_spear",
+      "silentgear:template_board",
       "silentgear:rod_template",
       "silentgear:tip_template",
       "silentgear:coating_template",
@@ -63,8 +64,32 @@
       "mcwfurnitures:stripped_spruce_end_table",
       "mcwfurnitures:stripped_jungle_end_table",
       "mcwfurnitures:stripped_acacia_end_table",
-      "mcwfurnitures:stripped_dark_oak_end_table"
-    ],
+      "mcwfurnitures:stripped_dark_oak_end_table",
+      "minecraft:lapis_ore",
+      "minecraft:deepslate_lapis_ore",
+      "minecraft:lapis_block",
+      "minecraft:lapis_lazuli",
+      "minecraft:bamboo",
+      "mcwbridges:bamboo_bridge",
+      "mcwbridges:dry_bamboo_bridge",
+      "mcwbridges:bamboo_bridge_pier",
+      "mcwbridges:dry_bamboo_bridge_pier",
+      "mcwbridges:bamboo_bridge_stair",
+      "mcwbridges:dry_bamboo_bridge_stair",
+      "mcwfences:bamboo_fence",
+      "supplementaries:bamboo_spikes",
+      "supplementaries:flute",
+      "minecraft:scaffolding",
+      "minecraft:bow",
+      "silentgear:rough_rod",
+      "silentgear:fine_silk_cloth",
+      "silentgear:fine_silk",
+      "silentgear:fluffy_puff",
+      "silentgear:fluffy_feather",
+      "silentgear:fluffy_string",
+      "silentgear:fluffy_fabric",
+      "silentgear:stone_rod"
+          ],
     "blockList": [
     ],
     "modList": [
@@ -73,7 +98,10 @@
     "tagList": [
       "forge:cobblestone",
       "cfm:fences/picket",
-      "cfm:fences/upgraded"
+      "cfm:fences/upgraded",
+      "cfm:fence_gates/picket",
+      "cfm:fence_gates/upgraded",
+      "forge:dyes"
     ],
     "exceptionList": [
       "minecraft:red_nether_brick_stairs",

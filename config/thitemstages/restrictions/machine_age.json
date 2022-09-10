@@ -33,7 +33,8 @@
       "silentgear:metal_alloyer",
       "silentgear:recrystallizer",
       "silentgear:refabricator",
-      "silentgear:metal_press"
+      "silentgear:metal_press",
+      "minecraft:lodestone"
     ],
     "blockList": [
     ],
@@ -84,7 +85,8 @@
       "ftbic:aluminum_nugget"
     ],
     "containerList": [
-      "net.minecraft.inventory.container.WorkbenchContainer", "thitemstages.inventoryMenu.CraftingGrid",
+      "net.minecraft.inventory.container.WorkbenchContainer", 
+      "thitemstages.inventoryMenu.CraftingGrid",
       "top.theillusivec4.curios.common.inventory.container.CuriosContainer",
       "net.minecraft.world.inventory.ChestMenu",
       "net.minecraft.world.inventory.FurnaceMenu"

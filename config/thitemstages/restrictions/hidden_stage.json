@@ -97,7 +97,13 @@
       "silentgear:boots",
       "silentgear:elytra",
       "silentgear:ring",
-      "silentgear:bracelet"
+      "silentgear:bracelet",
+      "projectbrazier:silver_spyglass",
+      "fusion:bronze_dust",
+      "fusion:steel_dust",
+      "fusion:sinisite_dust",
+      "fusion:thyrium_dust",
+      "uraniumsword"
     ],
     "blockList": [
     ],
