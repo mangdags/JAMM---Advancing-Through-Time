@@ -92,7 +92,8 @@
       "fusion:steel_door",
       "fusion:thyrium_door",
       "fusion:sinisite_door",
-      "minecraft:stairs"
+      "minecraft:stairs",
+      "silentgear:netherwood_slab"
     ],
     "containerList": [
       "net.minecraft.inventory.container.WorkbenchContainer", 

@@ -1,148 +1,732 @@
-[19:50:21.239][INFO]: Successfully identified and loaded plugin jeitweaker:default
-[19:50:21.260][INFO]: Successfully identified and loaded plugin crafttweaker:builtin
-[19:50:21.262][INFO]: Successfully identified and loaded plugin immersiveengineering:ct_module
-[19:50:23.560][INFO]: The following mods have explicit CraftTweaker support through the default plugin:
-[19:50:23.563][INFO]: - 'crafttweaker' at version '9.1.185'
-[19:50:23.563][INFO]: - 'createtweaker' at version '2.0.0.16'
-[19:50:23.563][INFO]: - 'gamestages' at version '8.0.2'
-[19:50:23.563][INFO]: - 'immersiveengineering' at version '1.18.2-8.2.2-154'
-[19:50:23.563][INFO]: - 'jeitweaker' at version '3.0.0.9'
-[19:50:23.564][INFO]: - 'recipestages' at version '3.0.0.7'
-[19:50:23.564][INFO]: - 'timestages' at version '1.4.1'
-[19:51:41.293][INFO]: Started loading scripts for loader 'initialize'
-[19:51:41.910][INFO]: Compiling and executing scripts
-[19:51:41.962][INFO]: Successfully initialized modules [crafttweaker, expansions]
-[19:51:42.065][INFO]: Execution for loader 'initialize' completed successfully
-[19:52:59.548][INFO]: Started loading scripts for loader 'tags'
-[19:52:59.664][INFO]: Compiling and executing scripts
-[19:52:59.696][INFO]: Successfully initialized modules [crafttweaker, expansions]
-[19:52:59.811][INFO]: Execution for loader 'tags' completed successfully
-[19:53:08.217][INFO]: Started loading scripts for loader 'crafttweaker'
-[19:53:08.288][INFO]: Compiling and executing scripts
-[19:53:09.319][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
-[19:53:09.319][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
-[19:53:09.321][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
-[19:53:09.322][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
-[19:53:09.374][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:stone_pickaxe' that outputs: '<item:minecraft:stone_pickaxe>'
-[19:53:09.376][INFO]: Set show JEI Label to false
-[19:53:09.378][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@44b98030'
-[19:53:09.557][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@45f1534e'
-[19:53:09.560][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@cb91b68f'
-[19:53:09.563][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a7afd211'
-[19:53:09.566][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@5eb1a457'
-[19:53:09.573][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@58a3793d'
-[19:53:09.577][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3c8b9e4e'
-[19:53:09.579][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@f6452760'
-[19:53:09.582][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3253c6d0'
-[19:53:09.586][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b1ca82af'
-[19:53:09.589][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@1a624435'
-[19:53:09.592][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@18f76416'
-[19:53:09.594][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@c9b859d9'
-[19:53:09.597][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6fad2716'
-[19:53:09.599][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@88bb720a'
-[19:53:09.604][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3149031e'
-[19:53:09.606][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@44d23aa3'
-[19:53:09.608][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@fb32e3f4'
-[19:53:09.610][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a2f891ee'
-[19:53:09.612][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@affaa9d3'
-[19:53:09.614][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@ae818db1'
-[19:53:09.617][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@c4cb77ec'
-[19:53:09.619][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@c9b859d9'
-[19:53:09.624][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@815667ed'
-[19:53:09.626][INFO]: Execution for loader 'crafttweaker' completed successfully
-[19:53:09.630][INFO]: This reload was made possible by Angelo A and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod
-[20:00:09.268][INFO]: Started loading scripts for loader 'tags'
-[20:00:09.268][INFO]: Undoing previous actions
-[20:00:09.287][INFO]: Compiling and executing scripts
-[20:00:09.291][INFO]: Successfully initialized modules [crafttweaker, expansions]
-[20:00:09.300][INFO]: Execution for loader 'tags' completed successfully
-[20:00:13.595][INFO]: Started loading scripts for loader 'crafttweaker'
-[20:00:13.595][INFO]: Undoing previous actions
-[20:00:13.595][INFO]: Set show JEI Label to true
-[20:00:13.618][INFO]: Compiling and executing scripts
-[20:00:13.774][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
-[20:00:13.774][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
-[20:00:13.774][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
-[20:00:13.774][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
-[20:00:13.793][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:stone_pickaxe' that outputs: '<item:minecraft:stone_pickaxe>'
-[20:00:13.793][INFO]: Set show JEI Label to false
-[20:00:13.793][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@44b98030'
-[20:00:13.834][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@45f1534e'
-[20:00:13.837][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@cb91b68f'
-[20:00:13.840][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a7afd211'
-[20:00:13.843][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@5eb1a457'
-[20:00:13.846][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@58a3793d'
-[20:00:13.848][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3c8b9e4e'
-[20:00:13.851][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@f6452760'
-[20:00:13.854][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3253c6d0'
-[20:00:13.867][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b1ca82af'
-[20:00:13.869][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@1a624435'
-[20:00:13.880][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@18f76416'
-[20:00:13.884][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@c9b859d9'
-[20:00:13.887][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6fad2716'
-[20:00:13.890][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@88bb720a'
-[20:00:13.893][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3149031e'
-[20:00:13.895][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@44d23aa3'
-[20:00:13.898][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@fb32e3f4'
-[20:00:13.900][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a2f891ee'
-[20:00:13.903][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@affaa9d3'
-[20:00:13.906][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@ae818db1'
-[20:00:13.908][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@c4cb77ec'
-[20:00:13.911][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@c9b859d9'
-[20:00:13.913][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@815667ed'
-[20:00:13.916][INFO]: Execution for loader 'crafttweaker' completed successfully
-[20:00:13.917][INFO]: This reload was made possible by DreamThorn and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod
-[20:38:29.242][INFO]: Inventory items
-<item:supplementaries:daub>
-<item:supplementaries:daub_frame>
-<item:supplementaries:daub_brace>
-<item:supplementaries:daub_cross_brace>
-<item:supplementaries:timber_frame>
-<item:supplementaries:timber_brace>
-<item:supplementaries:timber_cross_brace>
-<item:supplementaries:ash_bricks>
-<item:supplementaries:ash_bricks_slab>
-<item:supplementaries:ash_bricks_stairs>
-<item:supplementaries:stone_lamp>
-<item:supplementaries:deepslate_lamp>
-[20:39:20.359][INFO]: Started loading scripts for loader 'tags'
-[20:39:20.360][INFO]: Undoing previous actions
-[20:39:20.384][INFO]: Compiling and executing scripts
-[20:39:20.390][INFO]: Successfully initialized modules [crafttweaker, expansions]
-[20:39:20.408][INFO]: Execution for loader 'tags' completed successfully
-[20:39:24.611][INFO]: Started loading scripts for loader 'crafttweaker'
-[20:39:24.611][INFO]: Undoing previous actions
-[20:39:24.611][INFO]: Set show JEI Label to true
-[20:39:24.626][INFO]: Compiling and executing scripts
-[20:39:24.805][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
-[20:39:24.805][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
-[20:39:24.806][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
-[20:39:24.806][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
-[20:39:24.826][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:stone_pickaxe' that outputs: '<item:minecraft:stone_pickaxe>'
-[20:39:24.827][INFO]: Set show JEI Label to false
-[20:39:24.827][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@44b98030'
-[20:39:24.872][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@45f1534e'
-[20:39:24.874][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@cb91b68f'
-[20:39:24.875][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a7afd211'
-[20:39:24.877][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@5eb1a457'
-[20:39:24.879][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@58a3793d'
-[20:39:24.882][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3c8b9e4e'
-[20:39:24.884][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@f6452760'
-[20:39:24.886][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3253c6d0'
-[20:39:24.889][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b1ca82af'
-[20:39:24.891][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@1a624435'
-[20:39:24.893][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@18f76416'
-[20:39:24.911][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@c9b859d9'
-[20:39:24.913][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6fad2716'
-[20:39:24.916][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@88bb720a'
-[20:39:24.919][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3149031e'
-[20:39:24.921][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@44d23aa3'
-[20:39:24.923][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@fb32e3f4'
-[20:39:24.925][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a2f891ee'
-[20:39:24.927][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@affaa9d3'
-[20:39:24.929][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@ae818db1'
-[20:39:24.931][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@c4cb77ec'
-[20:39:24.934][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@c9b859d9'
-[20:39:24.936][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@815667ed'
-[20:39:24.938][INFO]: Execution for loader 'crafttweaker' completed successfully
-[20:39:24.939][INFO]: This reload was made possible by MT7658 and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod
+[21:23:18.844][INFO]: Successfully identified and loaded plugin jeitweaker:default
+[21:23:18.881][INFO]: Successfully identified and loaded plugin crafttweaker:builtin
+[21:23:18.883][INFO]: Successfully identified and loaded plugin immersiveengineering:ct_module
+[21:23:20.433][INFO]: The following mods have explicit CraftTweaker support through the default plugin:
+[21:23:20.434][INFO]: - 'crafttweaker' at version '9.1.185'
+[21:23:20.434][INFO]: - 'createtweaker' at version '2.0.0.16'
+[21:23:20.434][INFO]: - 'gamestages' at version '8.0.2'
+[21:23:20.434][INFO]: - 'immersiveengineering' at version '1.18.2-8.2.2-154'
+[21:23:20.434][INFO]: - 'jeitweaker' at version '3.0.0.9'
+[21:23:20.435][INFO]: - 'recipestages' at version '3.0.0.7'
+[21:23:20.435][INFO]: - 'timestages' at version '1.4.1'
+[21:24:40.796][INFO]: Started loading scripts for loader 'initialize'
+[21:24:41.508][INFO]: Compiling and executing scripts
+[21:24:41.582][INFO]: Successfully initialized modules [crafttweaker, expansions]
+[21:24:41.733][INFO]: Execution for loader 'initialize' completed successfully
+[21:26:45.238][INFO]: Started loading scripts for loader 'tags'
+[21:26:45.268][INFO]: Compiling and executing scripts
+[21:26:45.293][INFO]: Successfully initialized modules [crafttweaker, expansions]
+[21:26:45.311][INFO]: Execution for loader 'tags' completed successfully
+[21:26:51.541][INFO]: Started loading scripts for loader 'crafttweaker'
+[21:26:51.633][INFO]: Compiling and executing scripts
+[21:26:53.549][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
+[21:26:53.550][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
+[21:26:53.551][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
+[21:26:53.552][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
+[21:26:53.718][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:stone_pickaxe' that outputs: '<item:minecraft:stone_pickaxe>'
+[21:26:53.720][INFO]: Set show JEI Label to false
+[21:26:53.723][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d5360fc8'
+[21:26:54.065][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d17980af'
+[21:26:54.074][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b82c8bcb'
+[21:26:54.078][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@60769181'
+[21:26:54.081][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@68d8f24e'
+[21:26:54.085][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@733dd81d'
+[21:26:54.090][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@92ac8705'
+[21:26:54.097][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@cfa37f59'
+[21:26:54.101][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@f146b764'
+[21:26:54.103][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7025ea42'
+[21:26:54.106][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b134bdb3'
+[21:26:54.109][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6c9fff3f'
+[21:26:54.112][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[21:26:54.115][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a23f667b'
+[21:26:54.119][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@43347f'
+[21:26:54.122][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8978a489'
+[21:26:54.123][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d82416f3'
+[21:26:54.126][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3ce4db30'
+[21:26:54.128][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@2ae722c'
+[21:26:54.129][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@780d5c92'
+[21:26:54.131][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@14cb56d4'
+[21:26:54.134][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3887485e'
+[21:26:54.136][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[21:26:54.138][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d2afd04a'
+[21:26:54.143][INFO]: Execution for loader 'crafttweaker' completed successfully
+[21:26:54.145][INFO]: This reload was made possible by Zuniroa and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod
+[22:47:09.190][INFO]: Started loading scripts for loader 'tags'
+[22:47:09.191][INFO]: Undoing previous actions
+[22:47:09.219][INFO]: Compiling and executing scripts
+[22:47:09.223][INFO]: Successfully initialized modules [crafttweaker, expansions]
+[22:47:09.235][INFO]: Execution for loader 'tags' completed successfully
+[22:47:13.561][INFO]: Started loading scripts for loader 'crafttweaker'
+[22:47:13.561][INFO]: Undoing previous actions
+[22:47:13.562][INFO]: Set show JEI Label to true
+[22:47:13.578][INFO]: Compiling and executing scripts
+[22:47:13.755][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
+[22:47:13.756][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
+[22:47:13.756][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
+[22:47:13.756][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
+[22:47:13.782][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:stone_pickaxe' that outputs: '<item:minecraft:stone_pickaxe>'
+[22:47:13.782][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:cog_block' that outputs: '<item:supplementaries:cog_block>'
+[22:47:13.782][INFO]: Set show JEI Label to false
+[22:47:13.782][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d5360fc8'
+[22:47:13.819][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d17980af'
+[22:47:13.821][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b82c8bcb'
+[22:47:13.823][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@60769181'
+[22:47:13.826][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@68d8f24e'
+[22:47:13.828][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@733dd81d'
+[22:47:13.830][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@92ac8705'
+[22:47:13.834][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@cfa37f59'
+[22:47:13.836][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@f146b764'
+[22:47:13.838][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7025ea42'
+[22:47:13.840][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b134bdb3'
+[22:47:13.845][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6c9fff3f'
+[22:47:13.847][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[22:47:13.850][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a23f667b'
+[22:47:13.852][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@43347f'
+[22:47:13.862][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8978a489'
+[22:47:13.865][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d82416f3'
+[22:47:13.867][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3ce4db30'
+[22:47:13.869][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@2ae722c'
+[22:47:13.871][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@780d5c92'
+[22:47:13.874][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@14cb56d4'
+[22:47:13.876][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3887485e'
+[22:47:13.879][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[22:47:13.881][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d2afd04a'
+[22:47:13.883][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@5e27e4e8'
+[22:47:13.885][INFO]: Execution for loader 'crafttweaker' completed successfully
+[22:47:13.886][INFO]: This reload was made possible by Robijnvogel and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod
+[22:50:12.763][INFO]: Started loading scripts for loader 'tags'
+[22:50:12.763][INFO]: Undoing previous actions
+[22:50:12.780][INFO]: Compiling and executing scripts
+[22:50:12.783][INFO]: Successfully initialized modules [crafttweaker, expansions]
+[22:50:12.797][INFO]: Execution for loader 'tags' completed successfully
+[22:50:16.844][INFO]: Started loading scripts for loader 'crafttweaker'
+[22:50:16.844][INFO]: Undoing previous actions
+[22:50:16.844][INFO]: Set show JEI Label to true
+[22:50:16.862][INFO]: Compiling and executing scripts
+[22:50:16.982][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
+[22:50:16.982][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
+[22:50:16.982][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
+[22:50:16.983][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
+[22:50:17.001][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:stone_pickaxe' that outputs: '<item:minecraft:stone_pickaxe>'
+[22:50:17.001][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:cog_block' that outputs: '<item:supplementaries:cog_block>'
+[22:50:17.002][INFO]: Set show JEI Label to false
+[22:50:17.002][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d5360fc8'
+[22:50:17.032][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d17980af'
+[22:50:17.033][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b82c8bcb'
+[22:50:17.035][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@60769181'
+[22:50:17.036][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@68d8f24e'
+[22:50:17.038][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@733dd81d'
+[22:50:17.040][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@92ac8705'
+[22:50:17.041][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@cfa37f59'
+[22:50:17.043][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@f146b764'
+[22:50:17.045][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7025ea42'
+[22:50:17.047][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b134bdb3'
+[22:50:17.049][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6c9fff3f'
+[22:50:17.050][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[22:50:17.052][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a23f667b'
+[22:50:17.054][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@43347f'
+[22:50:17.055][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8978a489'
+[22:50:17.057][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d82416f3'
+[22:50:17.059][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3ce4db30'
+[22:50:17.061][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@2ae722c'
+[22:50:17.063][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@780d5c92'
+[22:50:17.065][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@14cb56d4'
+[22:50:17.066][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3887485e'
+[22:50:17.068][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[22:50:17.069][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d2afd04a'
+[22:50:17.071][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@5e27e4e8'
+[22:50:17.073][INFO]: Execution for loader 'crafttweaker' completed successfully
+[22:50:17.074][INFO]: This reload was made possible by Belathus and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod
+[22:53:32.459][INFO]: Started loading scripts for loader 'tags'
+[22:53:32.460][INFO]: Undoing previous actions
+[22:53:32.475][INFO]: Compiling and executing scripts
+[22:53:32.478][INFO]: Successfully initialized modules [crafttweaker, expansions]
+[22:53:32.486][INFO]: Execution for loader 'tags' completed successfully
+[22:53:36.479][INFO]: Started loading scripts for loader 'crafttweaker'
+[22:53:36.480][INFO]: Undoing previous actions
+[22:53:36.480][INFO]: Set show JEI Label to true
+[22:53:36.495][INFO]: Compiling and executing scripts
+[22:53:36.609][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
+[22:53:36.609][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
+[22:53:36.610][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
+[22:53:36.611][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
+[22:53:36.636][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:stone_pickaxe' that outputs: '<item:minecraft:stone_pickaxe>'
+[22:53:36.636][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:cog_block' that outputs: '<item:supplementaries:cog_block>'
+[22:53:36.636][INFO]: Set show JEI Label to false
+[22:53:36.636][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d5360fc8'
+[22:53:36.669][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d17980af'
+[22:53:36.671][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b82c8bcb'
+[22:53:36.673][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@60769181'
+[22:53:36.674][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@68d8f24e'
+[22:53:36.676][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@733dd81d'
+[22:53:36.678][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@92ac8705'
+[22:53:36.680][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@cfa37f59'
+[22:53:36.682][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@f146b764'
+[22:53:36.683][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7025ea42'
+[22:53:36.685][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b134bdb3'
+[22:53:36.687][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6c9fff3f'
+[22:53:36.688][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[22:53:36.690][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a23f667b'
+[22:53:36.692][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@43347f'
+[22:53:36.694][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8978a489'
+[22:53:36.695][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d82416f3'
+[22:53:36.697][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3ce4db30'
+[22:53:36.699][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@2ae722c'
+[22:53:36.701][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@780d5c92'
+[22:53:36.703][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@14cb56d4'
+[22:53:36.705][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3887485e'
+[22:53:36.707][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[22:53:36.708][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d2afd04a'
+[22:53:36.713][INFO]: JEI Hiding recipe: supplementaries:cog_block in category: minecraft:crafting
+[22:53:36.714][INFO]: Execution for loader 'crafttweaker' completed successfully
+[22:53:36.715][INFO]: This reload was made possible by WaterMoon and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod
+[22:57:13.780][INFO]: Started loading scripts for loader 'tags'
+[22:57:13.781][INFO]: Undoing previous actions
+[22:57:13.796][INFO]: Compiling and executing scripts
+[22:57:13.798][INFO]: Successfully initialized modules [crafttweaker, expansions]
+[22:57:13.806][INFO]: Execution for loader 'tags' completed successfully
+[22:57:17.770][INFO]: Started loading scripts for loader 'crafttweaker'
+[22:57:17.770][INFO]: Undoing previous actions
+[22:57:17.770][INFO]: Set show JEI Label to true
+[22:57:17.771][INFO]: Undoing JEI hiding recipe: supplementaries:cog_block in category: minecraft:crafting
+[22:57:17.789][INFO]: Compiling and executing scripts
+[22:57:17.892][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
+[22:57:17.892][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
+[22:57:17.893][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
+[22:57:17.893][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
+[22:57:17.907][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:stone_pickaxe' that outputs: '<item:minecraft:stone_pickaxe>'
+[22:57:17.907][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@5e27e4e8'
+[22:57:17.965][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:cog_block' that outputs: '<item:supplementaries:cog_block>'
+[22:57:17.966][INFO]: Set show JEI Label to false
+[22:57:17.966][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d5360fc8'
+[22:57:17.968][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d17980af'
+[22:57:17.970][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b82c8bcb'
+[22:57:17.973][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@60769181'
+[22:57:17.975][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@68d8f24e'
+[22:57:17.977][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@733dd81d'
+[22:57:17.979][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@92ac8705'
+[22:57:17.983][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@cfa37f59'
+[22:57:17.986][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@f146b764'
+[22:57:17.987][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7025ea42'
+[22:57:17.989][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b134bdb3'
+[22:57:17.992][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6c9fff3f'
+[22:57:17.994][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[22:57:17.997][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a23f667b'
+[22:57:17.999][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@43347f'
+[22:57:18.001][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8978a489'
+[22:57:18.003][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d82416f3'
+[22:57:18.005][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3ce4db30'
+[22:57:18.007][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@2ae722c'
+[22:57:18.010][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@780d5c92'
+[22:57:18.012][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@14cb56d4'
+[22:57:18.014][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3887485e'
+[22:57:18.016][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[22:57:18.018][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d2afd04a'
+[22:57:18.020][INFO]: Execution for loader 'crafttweaker' completed successfully
+[22:57:18.022][INFO]: This reload was made possible by Pongo Sapiens and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod
+[23:05:51.333][INFO]: Started loading scripts for loader 'tags'
+[23:05:51.333][INFO]: Undoing previous actions
+[23:05:51.349][INFO]: Compiling and executing scripts
+[23:05:51.352][INFO]: Successfully initialized modules [crafttweaker, expansions]
+[23:05:51.364][INFO]: Execution for loader 'tags' completed successfully
+[23:05:55.796][INFO]: Started loading scripts for loader 'crafttweaker'
+[23:05:55.796][INFO]: Undoing previous actions
+[23:05:55.796][INFO]: Set show JEI Label to true
+[23:05:55.811][INFO]: Compiling and executing scripts
+[23:05:55.947][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
+[23:05:55.947][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
+[23:05:55.948][ERROR]: Could not get item with name: <item:minecraft:planks>! Item does not appear to exist!
+[23:05:55.950][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
+[23:05:55.952][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
+[23:05:55.952][ERROR]: Error while running scripts:
+org.openzen.zenscript.lexer.ParseException: utils\add_recipe.zs:27:5: Invalid parameters to BEP item: '<item:minecraft:planks>. There may be more information about this in the log.
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.plugin.core.ValidatedEscapableBracketParser.parse(ValidatedEscapableBracketParser.java:179)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.scriptrun.runner.IgnorePrefixCasingBracketParser.parse(IgnorePrefixCasingBracketParser.java:37)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readPrimaryExpression(ParsedExpression.java:562)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readPostfixExpression(ParsedExpression.java:364)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readUnaryExpression(ParsedExpression.java:359)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readMulExpression(ParsedExpression.java:288)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAddExpression(ParsedExpression.java:258)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readShiftExpression(ParsedExpression.java:237)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readCompareExpression(ParsedExpression.java:166)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndExpression(ParsedExpression.java:156)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readXorExpression(ParsedExpression.java:146)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrExpression(ParsedExpression.java:136)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndAndExpression(ParsedExpression.java:126)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrOrExpression(ParsedExpression.java:110)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readConditionalExpression(ParsedExpression.java:97)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAssignExpression(ParsedExpression.java:49)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readPrimaryExpression(ParsedExpression.java:465)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readPostfixExpression(ParsedExpression.java:364)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readUnaryExpression(ParsedExpression.java:359)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readMulExpression(ParsedExpression.java:288)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAddExpression(ParsedExpression.java:258)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readShiftExpression(ParsedExpression.java:237)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readCompareExpression(ParsedExpression.java:166)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndExpression(ParsedExpression.java:156)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readXorExpression(ParsedExpression.java:146)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrExpression(ParsedExpression.java:136)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndAndExpression(ParsedExpression.java:126)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrOrExpression(ParsedExpression.java:110)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readConditionalExpression(ParsedExpression.java:97)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAssignExpression(ParsedExpression.java:49)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readPrimaryExpression(ParsedExpression.java:465)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readPostfixExpression(ParsedExpression.java:364)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readUnaryExpression(ParsedExpression.java:359)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readMulExpression(ParsedExpression.java:288)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAddExpression(ParsedExpression.java:258)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readShiftExpression(ParsedExpression.java:237)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readCompareExpression(ParsedExpression.java:166)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndExpression(ParsedExpression.java:156)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readXorExpression(ParsedExpression.java:146)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrExpression(ParsedExpression.java:136)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndAndExpression(ParsedExpression.java:126)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrOrExpression(ParsedExpression.java:110)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readConditionalExpression(ParsedExpression.java:97)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAssignExpression(ParsedExpression.java:49)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.parse(ParsedExpression.java:40)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedCallArguments.parse(ParsedCallArguments.java:46)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readPostfixExpression(ParsedExpression.java:399)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readUnaryExpression(ParsedExpression.java:359)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readMulExpression(ParsedExpression.java:288)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAddExpression(ParsedExpression.java:258)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readShiftExpression(ParsedExpression.java:237)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readCompareExpression(ParsedExpression.java:166)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndExpression(ParsedExpression.java:156)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readXorExpression(ParsedExpression.java:146)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrExpression(ParsedExpression.java:136)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndAndExpression(ParsedExpression.java:126)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrOrExpression(ParsedExpression.java:110)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readConditionalExpression(ParsedExpression.java:97)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAssignExpression(ParsedExpression.java:49)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.parse(ParsedExpression.java:40)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.statements.ParsedStatement.parse(ParsedStatement.java:299)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.statements.ParsedStatement.parse(ParsedStatement.java:81)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.ParsedFile.parse(ParsedFile.java:215)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.ParsedFile.parse(ParsedFile.java:158)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zencode.java.ScriptingEngine.createScriptedModule(ScriptingEngine.java:123)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.scriptrun.runner.ScriptRunner.runScripts(ScriptRunner.java:86)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.scriptrun.runner.ScriptRunner.run(ScriptRunner.java:69)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.scriptrun.DecoratedRunKind$DecoratedScriptRunner.run(DecoratedRunKind.java:27)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.scriptrun.ScriptRun.executeRun(ScriptRun.java:88)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.scriptrun.ScriptRun.execute(ScriptRun.java:54)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.ScriptReloadListener.apply(ScriptReloadListener.java:78)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.ScriptReloadListener.m_5787_(ScriptReloadListener.java:37)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.packs.resources.SimplePreparableReloadListener.m_10789_(SimplePreparableReloadListener.java:13)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.packs.resources.SimpleReloadInstance.m_143940_(SimpleReloadInstance.java:69)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.TickTask.run(TickTask.java:18)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.BlockableEventLoop.m_6367_(BlockableEventLoop.java:157)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.ReentrantBlockableEventLoop.m_6367_(ReentrantBlockableEventLoop.java:23)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_6367_(MinecraftServer.java:799)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_6367_(MinecraftServer.java:164)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.BlockableEventLoop.m_7245_(BlockableEventLoop.java:131)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_129961_(MinecraftServer.java:782)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_7245_(MinecraftServer.java:776)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.BlockableEventLoop.m_18701_(BlockableEventLoop.java:140)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_129861_(MinecraftServer.java:1340)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.commands.ReloadCommand.m_138235_(ReloadCommand.java:22)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.commands.ReloadCommand.m_138228_(ReloadCommand.java:53)
+	at MC-BOOTSTRAP/brigadier@1.0.18/com.mojang.brigadier.CommandDispatcher.execute(CommandDispatcher.java:263)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.commands.Commands.m_82117_(Commands.java:234)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.network.ServerGamePacketListenerImpl.m_9957_(ServerGamePacketListenerImpl.java:1150)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.network.ServerGamePacketListenerImpl.m_143628_(ServerGamePacketListenerImpl.java:1129)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.network.ServerGamePacketListenerImpl.m_7388_(ServerGamePacketListenerImpl.java:1115)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.network.protocol.game.ServerboundChatPacket.m_5797_(ServerboundChatPacket.java:30)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.network.protocol.game.ServerboundChatPacket.m_5797_(ServerboundChatPacket.java:7)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.network.protocol.PacketUtils.m_131356_(PacketUtils.java:22)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.TickTask.run(TickTask.java:18)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.BlockableEventLoop.m_6367_(BlockableEventLoop.java:157)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.ReentrantBlockableEventLoop.m_6367_(ReentrantBlockableEventLoop.java:23)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_6367_(MinecraftServer.java:799)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_6367_(MinecraftServer.java:164)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.BlockableEventLoop.m_7245_(BlockableEventLoop.java:131)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_129961_(MinecraftServer.java:782)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_7245_(MinecraftServer.java:776)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.BlockableEventLoop.m_18701_(BlockableEventLoop.java:140)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_130012_(MinecraftServer.java:762)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:689)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_177918_(MinecraftServer.java:261)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[23:05:55.954][ERROR]: Scripts are invalid!
+[23:05:55.955][INFO]: Execution for loader 'crafttweaker' completed successfully
+[23:05:55.957][INFO]: This reload was made possible by Lion01 and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod
+[23:07:24.049][INFO]: Started loading scripts for loader 'tags'
+[23:07:24.049][INFO]: Undoing previous actions
+[23:07:24.064][INFO]: Compiling and executing scripts
+[23:07:24.066][INFO]: Successfully initialized modules [crafttweaker, expansions]
+[23:07:24.076][INFO]: Execution for loader 'tags' completed successfully
+[23:07:28.163][INFO]: Started loading scripts for loader 'crafttweaker'
+[23:07:28.163][INFO]: Undoing previous actions
+[23:07:28.183][INFO]: Compiling and executing scripts
+[23:07:28.299][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
+[23:07:28.300][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
+[23:07:28.302][ERROR]: Could not get item with name: <item:forge:chests>! Item does not appear to exist!
+[23:07:28.303][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
+[23:07:28.303][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
+[23:07:28.304][ERROR]: Error while running scripts:
+org.openzen.zenscript.lexer.ParseException: utils\add_recipe.zs:28:5: Invalid parameters to BEP item: '<item:forge:chests>. There may be more information about this in the log.
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.plugin.core.ValidatedEscapableBracketParser.parse(ValidatedEscapableBracketParser.java:179)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.scriptrun.runner.IgnorePrefixCasingBracketParser.parse(IgnorePrefixCasingBracketParser.java:37)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readPrimaryExpression(ParsedExpression.java:562)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readPostfixExpression(ParsedExpression.java:364)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readUnaryExpression(ParsedExpression.java:359)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readMulExpression(ParsedExpression.java:288)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAddExpression(ParsedExpression.java:258)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readShiftExpression(ParsedExpression.java:237)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readCompareExpression(ParsedExpression.java:166)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndExpression(ParsedExpression.java:156)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readXorExpression(ParsedExpression.java:146)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrExpression(ParsedExpression.java:136)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndAndExpression(ParsedExpression.java:126)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrOrExpression(ParsedExpression.java:110)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readConditionalExpression(ParsedExpression.java:97)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAssignExpression(ParsedExpression.java:49)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readPrimaryExpression(ParsedExpression.java:465)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readPostfixExpression(ParsedExpression.java:364)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readUnaryExpression(ParsedExpression.java:359)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readMulExpression(ParsedExpression.java:288)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAddExpression(ParsedExpression.java:258)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readShiftExpression(ParsedExpression.java:237)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readCompareExpression(ParsedExpression.java:166)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndExpression(ParsedExpression.java:156)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readXorExpression(ParsedExpression.java:146)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrExpression(ParsedExpression.java:136)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndAndExpression(ParsedExpression.java:126)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrOrExpression(ParsedExpression.java:110)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readConditionalExpression(ParsedExpression.java:97)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAssignExpression(ParsedExpression.java:49)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readPrimaryExpression(ParsedExpression.java:465)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readPostfixExpression(ParsedExpression.java:364)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readUnaryExpression(ParsedExpression.java:359)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readMulExpression(ParsedExpression.java:288)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAddExpression(ParsedExpression.java:258)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readShiftExpression(ParsedExpression.java:237)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readCompareExpression(ParsedExpression.java:166)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndExpression(ParsedExpression.java:156)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readXorExpression(ParsedExpression.java:146)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrExpression(ParsedExpression.java:136)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndAndExpression(ParsedExpression.java:126)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrOrExpression(ParsedExpression.java:110)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readConditionalExpression(ParsedExpression.java:97)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAssignExpression(ParsedExpression.java:49)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.parse(ParsedExpression.java:40)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedCallArguments.parse(ParsedCallArguments.java:46)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readPostfixExpression(ParsedExpression.java:399)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readUnaryExpression(ParsedExpression.java:359)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readMulExpression(ParsedExpression.java:288)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAddExpression(ParsedExpression.java:258)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readShiftExpression(ParsedExpression.java:237)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readCompareExpression(ParsedExpression.java:166)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndExpression(ParsedExpression.java:156)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readXorExpression(ParsedExpression.java:146)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrExpression(ParsedExpression.java:136)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAndAndExpression(ParsedExpression.java:126)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readOrOrExpression(ParsedExpression.java:110)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readConditionalExpression(ParsedExpression.java:97)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.readAssignExpression(ParsedExpression.java:49)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.expression.ParsedExpression.parse(ParsedExpression.java:40)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.statements.ParsedStatement.parse(ParsedStatement.java:299)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.statements.ParsedStatement.parse(ParsedStatement.java:81)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.ParsedFile.parse(ParsedFile.java:215)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zenscript.parser.ParsedFile.parse(ParsedFile.java:158)
+	at TRANSFORMER/crafttweaker@9.1.185/org.openzen.zencode.java.ScriptingEngine.createScriptedModule(ScriptingEngine.java:123)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.scriptrun.runner.ScriptRunner.runScripts(ScriptRunner.java:86)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.scriptrun.runner.ScriptRunner.run(ScriptRunner.java:69)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.scriptrun.DecoratedRunKind$DecoratedScriptRunner.run(DecoratedRunKind.java:27)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.scriptrun.ScriptRun.executeRun(ScriptRun.java:88)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.scriptrun.ScriptRun.execute(ScriptRun.java:54)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.ScriptReloadListener.apply(ScriptReloadListener.java:78)
+	at TRANSFORMER/crafttweaker@9.1.185/com.blamejared.crafttweaker.impl.script.ScriptReloadListener.m_5787_(ScriptReloadListener.java:37)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.packs.resources.SimplePreparableReloadListener.m_10789_(SimplePreparableReloadListener.java:13)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.packs.resources.SimpleReloadInstance.m_143940_(SimpleReloadInstance.java:69)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.TickTask.run(TickTask.java:18)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.BlockableEventLoop.m_6367_(BlockableEventLoop.java:157)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.ReentrantBlockableEventLoop.m_6367_(ReentrantBlockableEventLoop.java:23)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_6367_(MinecraftServer.java:799)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_6367_(MinecraftServer.java:164)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.BlockableEventLoop.m_7245_(BlockableEventLoop.java:131)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_129961_(MinecraftServer.java:782)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_7245_(MinecraftServer.java:776)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.BlockableEventLoop.m_18701_(BlockableEventLoop.java:140)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_129861_(MinecraftServer.java:1340)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.commands.ReloadCommand.m_138235_(ReloadCommand.java:22)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.commands.ReloadCommand.m_138228_(ReloadCommand.java:53)
+	at MC-BOOTSTRAP/brigadier@1.0.18/com.mojang.brigadier.CommandDispatcher.execute(CommandDispatcher.java:263)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.commands.Commands.m_82117_(Commands.java:234)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.network.ServerGamePacketListenerImpl.m_9957_(ServerGamePacketListenerImpl.java:1150)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.network.ServerGamePacketListenerImpl.m_143628_(ServerGamePacketListenerImpl.java:1129)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.network.ServerGamePacketListenerImpl.m_7388_(ServerGamePacketListenerImpl.java:1115)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.network.protocol.game.ServerboundChatPacket.m_5797_(ServerboundChatPacket.java:30)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.network.protocol.game.ServerboundChatPacket.m_5797_(ServerboundChatPacket.java:7)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.network.protocol.PacketUtils.m_131356_(PacketUtils.java:22)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.TickTask.run(TickTask.java:18)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.BlockableEventLoop.m_6367_(BlockableEventLoop.java:157)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.ReentrantBlockableEventLoop.m_6367_(ReentrantBlockableEventLoop.java:23)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_6367_(MinecraftServer.java:799)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_6367_(MinecraftServer.java:164)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.BlockableEventLoop.m_7245_(BlockableEventLoop.java:131)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_129961_(MinecraftServer.java:782)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_7245_(MinecraftServer.java:776)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.util.thread.BlockableEventLoop.m_18701_(BlockableEventLoop.java:140)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_130012_(MinecraftServer.java:762)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:689)
+	at TRANSFORMER/minecraft@1.18.2/net.minecraft.server.MinecraftServer.m_177918_(MinecraftServer.java:261)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[23:07:28.304][ERROR]: Scripts are invalid!
+[23:07:28.305][INFO]: Execution for loader 'crafttweaker' completed successfully
+[23:07:28.307][INFO]: This reload was made possible by Robijnvogel and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod
+[23:08:43.764][INFO]: Started loading scripts for loader 'tags'
+[23:08:43.764][INFO]: Undoing previous actions
+[23:08:43.779][INFO]: Compiling and executing scripts
+[23:08:43.781][INFO]: Successfully initialized modules [crafttweaker, expansions]
+[23:08:43.789][INFO]: Execution for loader 'tags' completed successfully
+[23:08:47.915][INFO]: Started loading scripts for loader 'crafttweaker'
+[23:08:47.915][INFO]: Undoing previous actions
+[23:08:47.943][INFO]: Compiling and executing scripts
+[23:08:48.052][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
+[23:08:48.052][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
+[23:08:48.053][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
+[23:08:48.054][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
+[23:08:48.077][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:stone_pickaxe' that outputs: '<item:minecraft:stone_pickaxe>'
+[23:08:48.078][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@5e27e4e8'
+[23:08:48.116][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:cog_block' that outputs: '<item:supplementaries:cog_block>'
+[23:08:48.116][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7fbab2c2'
+[23:08:48.123][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:inventory_connector' that outputs: '<item:toms_storage:ts.inventory_connector>'
+[23:08:48.123][INFO]: Set show JEI Label to false
+[23:08:48.123][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d5360fc8'
+[23:08:48.125][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d17980af'
+[23:08:48.129][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b82c8bcb'
+[23:08:48.132][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@60769181'
+[23:08:48.134][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@68d8f24e'
+[23:08:48.136][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@733dd81d'
+[23:08:48.139][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@92ac8705'
+[23:08:48.141][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@cfa37f59'
+[23:08:48.143][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@f146b764'
+[23:08:48.145][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7025ea42'
+[23:08:48.149][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b134bdb3'
+[23:08:48.151][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6c9fff3f'
+[23:08:48.153][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[23:08:48.156][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a23f667b'
+[23:08:48.160][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@43347f'
+[23:08:48.162][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8978a489'
+[23:08:48.164][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d82416f3'
+[23:08:48.166][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3ce4db30'
+[23:08:48.168][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@2ae722c'
+[23:08:48.172][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@780d5c92'
+[23:08:48.174][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@14cb56d4'
+[23:08:48.176][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3887485e'
+[23:08:48.178][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[23:08:48.180][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d2afd04a'
+[23:08:48.182][INFO]: Execution for loader 'crafttweaker' completed successfully
+[23:08:48.183][INFO]: This reload was made possible by NerdyWhiteGuy and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod
+[23:20:07.640][INFO]: Started loading scripts for loader 'tags'
+[23:20:07.640][INFO]: Undoing previous actions
+[23:20:07.654][INFO]: Compiling and executing scripts
+[23:20:07.657][INFO]: Successfully initialized modules [crafttweaker, expansions]
+[23:20:07.664][INFO]: Execution for loader 'tags' completed successfully
+[23:20:11.681][INFO]: Started loading scripts for loader 'crafttweaker'
+[23:20:11.681][INFO]: Undoing previous actions
+[23:20:11.681][INFO]: Set show JEI Label to true
+[23:20:11.713][INFO]: Compiling and executing scripts
+[23:20:11.826][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
+[23:20:11.826][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
+[23:20:11.828][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
+[23:20:11.828][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
+[23:20:11.847][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:stone_pickaxe' that outputs: '<item:minecraft:stone_pickaxe>'
+[23:20:11.847][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@5e27e4e8'
+[23:20:11.879][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:cog_block' that outputs: '<item:supplementaries:cog_block>'
+[23:20:11.879][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7fbab2c2'
+[23:20:11.881][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:inventory_connector' that outputs: '<item:toms_storage:ts.inventory_connector>'
+[23:20:11.881][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@e3dc6e9e'
+[23:20:11.884][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:storage_terminal' that outputs: '<item:toms_storage:ts.storage_terminal>'
+[23:20:11.885][INFO]: Set show JEI Label to false
+[23:20:11.885][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d5360fc8'
+[23:20:11.887][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d17980af'
+[23:20:11.889][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b82c8bcb'
+[23:20:11.891][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@60769181'
+[23:20:11.893][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@68d8f24e'
+[23:20:11.895][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@733dd81d'
+[23:20:11.897][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@92ac8705'
+[23:20:11.901][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@cfa37f59'
+[23:20:11.903][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@f146b764'
+[23:20:11.906][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7025ea42'
+[23:20:11.908][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b134bdb3'
+[23:20:11.910][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6c9fff3f'
+[23:20:11.912][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[23:20:11.914][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a23f667b'
+[23:20:11.916][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@43347f'
+[23:20:11.918][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8978a489'
+[23:20:11.920][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d82416f3'
+[23:20:11.922][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3ce4db30'
+[23:20:11.924][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@2ae722c'
+[23:20:11.926][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@780d5c92'
+[23:20:11.928][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@14cb56d4'
+[23:20:11.931][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3887485e'
+[23:20:11.933][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[23:20:11.935][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d2afd04a'
+[23:20:11.937][INFO]: Execution for loader 'crafttweaker' completed successfully
+[23:20:11.938][INFO]: This reload was made possible by Peregrinus11 and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod
+[23:27:32.012][INFO]: Started loading scripts for loader 'tags'
+[23:27:32.012][INFO]: Undoing previous actions
+[23:27:32.024][INFO]: Compiling and executing scripts
+[23:27:32.026][INFO]: Successfully initialized modules [crafttweaker, expansions]
+[23:27:32.032][INFO]: Execution for loader 'tags' completed successfully
+[23:27:35.830][INFO]: Started loading scripts for loader 'crafttweaker'
+[23:27:35.830][INFO]: Undoing previous actions
+[23:27:35.830][INFO]: Set show JEI Label to true
+[23:27:35.849][INFO]: Compiling and executing scripts
+[23:27:35.946][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
+[23:27:35.946][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
+[23:27:35.947][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
+[23:27:35.947][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
+[23:27:35.965][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:stone_pickaxe' that outputs: '<item:minecraft:stone_pickaxe>'
+[23:27:35.965][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@5e27e4e8'
+[23:27:35.985][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:cog_block' that outputs: '<item:supplementaries:cog_block>'
+[23:27:35.985][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7fbab2c2'
+[23:27:35.987][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:inventory_connector' that outputs: '<item:toms_storage:ts.inventory_connector>'
+[23:27:35.987][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@e3dc6e9e'
+[23:27:35.990][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:storage_terminal' that outputs: '<item:toms_storage:ts.storage_terminal>'
+[23:27:35.990][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8ab90842'
+[23:27:35.993][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:crafting_terminal' that outputs: '<item:toms_storage:ts.crafting_terminal>'
+[23:27:35.993][INFO]: Set show JEI Label to false
+[23:27:35.993][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d5360fc8'
+[23:27:35.995][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d17980af'
+[23:27:35.997][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b82c8bcb'
+[23:27:36.001][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@60769181'
+[23:27:36.003][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@68d8f24e'
+[23:27:36.004][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@733dd81d'
+[23:27:36.008][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@92ac8705'
+[23:27:36.009][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@cfa37f59'
+[23:27:36.011][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@f146b764'
+[23:27:36.013][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7025ea42'
+[23:27:36.015][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b134bdb3'
+[23:27:36.017][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6c9fff3f'
+[23:27:36.019][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[23:27:36.021][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a23f667b'
+[23:27:36.022][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@43347f'
+[23:27:36.024][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8978a489'
+[23:27:36.025][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d82416f3'
+[23:27:36.027][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3ce4db30'
+[23:27:36.029][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@2ae722c'
+[23:27:36.031][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@780d5c92'
+[23:27:36.033][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@14cb56d4'
+[23:27:36.034][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3887485e'
+[23:27:36.036][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[23:27:36.037][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d2afd04a'
+[23:27:36.039][INFO]: Execution for loader 'crafttweaker' completed successfully
+[23:27:36.040][INFO]: This reload was made possible by Ncc1702 and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod
+[23:33:29.075][INFO]: Inventory items
+<item:toms_storage:ts.level_emitter>
+<item:toms_storage:ts.inventory_hopper_basic>
+<item:toms_storage:ts.paint_kit>
+[23:46:35.826][INFO]: Started loading scripts for loader 'tags'
+[23:46:35.826][INFO]: Undoing previous actions
+[23:46:35.846][INFO]: Compiling and executing scripts
+[23:46:35.848][INFO]: Successfully initialized modules [crafttweaker, expansions]
+[23:46:35.855][INFO]: Execution for loader 'tags' completed successfully
+[23:46:39.809][INFO]: Started loading scripts for loader 'crafttweaker'
+[23:46:39.809][INFO]: Undoing previous actions
+[23:46:39.809][INFO]: Set show JEI Label to true
+[23:46:39.826][INFO]: Compiling and executing scripts
+[23:46:39.953][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
+[23:46:39.953][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
+[23:46:39.954][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
+[23:46:39.954][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
+[23:46:39.978][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:stone_pickaxe' that outputs: '<item:minecraft:stone_pickaxe>'
+[23:46:39.978][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@5e27e4e8'
+[23:46:39.998][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:cog_block' that outputs: '<item:supplementaries:cog_block>'
+[23:46:39.998][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7fbab2c2'
+[23:46:40.001][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:inventory_connector' that outputs: '<item:toms_storage:ts.inventory_connector>'
+[23:46:40.001][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@e3dc6e9e'
+[23:46:40.004][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:storage_terminal' that outputs: '<item:toms_storage:ts.storage_terminal>'
+[23:46:40.004][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8ab90842'
+[23:46:40.006][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:crafting_terminal' that outputs: '<item:toms_storage:ts.crafting_terminal>'
+[23:46:40.006][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8fdec780'
+[23:46:40.008][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:inventory_connector' that outputs: '<item:toms_storage:ts.inventory_cable_connector>'
+[23:46:40.008][WARN]: A recipe with the name 'inventory_connector' already exists and will be overwritten: this is most likely an error in your scripts
+[23:46:40.008][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@fd9dcb32'
+[23:46:40.010][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:inventory_connector_filtered' that outputs: '<item:toms_storage:ts.inventory_cable_connector_filtered>'
+[23:46:40.011][INFO]: Set show JEI Label to false
+[23:46:40.011][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d5360fc8'
+[23:46:40.012][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d17980af'
+[23:46:40.014][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b82c8bcb'
+[23:46:40.015][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@60769181'
+[23:46:40.018][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@68d8f24e'
+[23:46:40.021][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@733dd81d'
+[23:46:40.022][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@92ac8705'
+[23:46:40.024][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@cfa37f59'
+[23:46:40.029][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@f146b764'
+[23:46:40.038][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7025ea42'
+[23:46:40.039][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b134bdb3'
+[23:46:40.041][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6c9fff3f'
+[23:46:40.044][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[23:46:40.048][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a23f667b'
+[23:46:40.057][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@43347f'
+[23:46:40.060][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8978a489'
+[23:46:40.062][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d82416f3'
+[23:46:40.063][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3ce4db30'
+[23:46:40.074][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@2ae722c'
+[23:46:40.075][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@780d5c92'
+[23:46:40.077][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@14cb56d4'
+[23:46:40.079][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3887485e'
+[23:46:40.081][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[23:46:40.083][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d2afd04a'
+[23:46:40.084][INFO]: Execution for loader 'crafttweaker' completed successfully
+[23:46:40.086][INFO]: This reload was made possible by Barrier and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod
+[23:47:29.528][INFO]: Started loading scripts for loader 'tags'
+[23:47:29.528][INFO]: Undoing previous actions
+[23:47:29.591][INFO]: Compiling and executing scripts
+[23:47:29.596][INFO]: Successfully initialized modules [crafttweaker, expansions]
+[23:47:29.613][INFO]: Execution for loader 'tags' completed successfully
+[23:47:34.305][INFO]: Started loading scripts for loader 'crafttweaker'
+[23:47:34.305][INFO]: Undoing previous actions
+[23:47:34.305][INFO]: Set show JEI Label to true
+[23:47:34.340][INFO]: Compiling and executing scripts
+[23:47:34.588][INFO]: Successfully initialized modules [mods, crafttweaker, expansions]
+[23:47:34.588][INFO]: Loading file 'utils\add_recipe.zs' with priority 0
+[23:47:34.589][INFO]: Loading file 'utils\hide_recipes.zs' with priority 0
+[23:47:34.590][INFO]: Loading file 'utils\test_recipe.zs' with priority 0
+[23:47:34.664][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:stone_pickaxe' that outputs: '<item:minecraft:stone_pickaxe>'
+[23:47:34.665][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@5e27e4e8'
+[23:47:34.686][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:cog_block' that outputs: '<item:supplementaries:cog_block>'
+[23:47:34.686][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7fbab2c2'
+[23:47:34.688][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:inventory_connector' that outputs: '<item:toms_storage:ts.inventory_connector>'
+[23:47:34.688][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@e3dc6e9e'
+[23:47:34.691][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:storage_terminal' that outputs: '<item:toms_storage:ts.storage_terminal>'
+[23:47:34.691][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8ab90842'
+[23:47:34.694][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:crafting_terminal' that outputs: '<item:toms_storage:ts.crafting_terminal>'
+[23:47:34.694][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8fdec780'
+[23:47:34.866][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:inventory_cable_connector' that outputs: '<item:toms_storage:ts.inventory_cable_connector>'
+[23:47:34.867][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@fd9dcb32'
+[23:47:34.880][INFO]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:inventory_cable_connector_filtered' that outputs: '<item:toms_storage:ts.inventory_cable_connector_filtered>'
+[23:47:34.881][INFO]: Set show JEI Label to false
+[23:47:34.881][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d5360fc8'
+[23:47:34.882][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d17980af'
+[23:47:34.884][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b82c8bcb'
+[23:47:34.885][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@60769181'
+[23:47:34.887][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@68d8f24e'
+[23:47:34.889][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@733dd81d'
+[23:47:34.896][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@92ac8705'
+[23:47:34.898][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@cfa37f59'
+[23:47:34.899][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@f146b764'
+[23:47:34.920][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@7025ea42'
+[23:47:34.921][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@b134bdb3'
+[23:47:34.926][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6c9fff3f'
+[23:47:34.928][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[23:47:34.929][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@a23f667b'
+[23:47:34.931][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@43347f'
+[23:47:34.932][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@8978a489'
+[23:47:34.937][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d82416f3'
+[23:47:34.941][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3ce4db30'
+[23:47:34.943][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@2ae722c'
+[23:47:34.949][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@780d5c92'
+[23:47:34.950][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@14cb56d4'
+[23:47:34.952][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@3887485e'
+[23:47:34.954][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@6e491073'
+[23:47:34.955][INFO]: Removing 'crafting' recipes with output: 'com.blamejared.crafttweaker.api.item.MCItemStack@d2afd04a'
+[23:47:34.957][INFO]: Execution for loader 'crafttweaker' completed successfully
+[23:47:34.959][INFO]: This reload was made possible by Peregrinus11 and more! Become a patron at https://patreon.com/jaredlll08?s=crtmod

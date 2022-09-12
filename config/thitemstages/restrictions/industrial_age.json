@@ -151,7 +151,8 @@
       "fusion:steel_brick_slab",
       "fusion:steel_brick_stairs",
       "fusion:steel_bars",
-      "fusion:steel_door"
+      "fusion:steel_door",
+      "toms_storage:ts.wireless_terminal"
     ],
     "blockList": [
     ],

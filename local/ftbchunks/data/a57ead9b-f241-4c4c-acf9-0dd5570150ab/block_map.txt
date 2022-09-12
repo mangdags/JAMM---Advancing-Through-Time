@@ -53,6 +53,7 @@
 #3D8BFC minecraft:cobblestone_stairs
 #74DB3C minecraft:cobblestone_wall
 #8B8A11 minecraft:cobweb
+#1BDA7C supplementaries:cog_block
 #B76D44 create:cogwheel
 #6E76AF minecraft:copper_ore
 #CC07F6 minecraft:cornflower
@@ -184,6 +185,7 @@
 #311D1D minecraft:mossy_stone_brick_wall
 #483B67 minecraft:mossy_stone_bricks
 #454322 minecraft:netherrack
+#B913A3 natprog:netherrack_pebble
 #73753E minecraft:oak_fence
 #111F32 minecraft:oak_fence_gate
 #AD9EB5 minecraft:oak_leaves

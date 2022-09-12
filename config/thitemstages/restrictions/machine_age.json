@@ -34,7 +34,8 @@
       "silentgear:recrystallizer",
       "silentgear:refabricator",
       "silentgear:metal_press",
-      "minecraft:lodestone"
+      "minecraft:lodestone",
+      "toms_storage:ts.adv_wireless_terminal"
     ],
     "blockList": [
     ],

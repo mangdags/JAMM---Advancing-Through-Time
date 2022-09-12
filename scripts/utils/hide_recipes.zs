@@ -28,3 +28,6 @@ craftingTable.remove(<item:adpother:iron_vacuum_tube>);
 craftingTable.remove(<item:adpother:iron_respirator>);
 craftingTable.remove(<item:minecraft:iron_leggings>);
 craftingTable.remove(<item:theoneprobe:iron_helmet_probe>);
+
+
+//JEI.hideRecipe("minecraft:crafting", "supplementaries:cog_block");

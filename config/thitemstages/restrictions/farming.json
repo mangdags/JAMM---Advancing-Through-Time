@@ -64,7 +64,11 @@
       "minecraft:honey_block",
       "minecraft:saddle",
       "minecraft:melon",
-      "minecraft:hay_block"
+      "minecraft:hay_block",
+      "silentgear:excavator_template",
+      "silentgear:excavator_blueprint",
+      "silentgear:excavator_head",
+      "silentgear:excavator"
     ],
     "blockList": [
     ],

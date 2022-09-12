@@ -90,7 +90,8 @@
       "cfm:fences/upgraded",
       "cfm:fence_gates/picket",
       "cfm:fence_gates/upgraded",
-      "forge:dyes"
+      "forge:dyes",
+      "silentgear:fluffy_blocks"
     ],
     "exceptionList": [
       "minecraft:red_nether_brick_stairs",

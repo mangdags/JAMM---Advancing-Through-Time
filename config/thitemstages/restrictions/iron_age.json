@@ -181,7 +181,11 @@
       "minecraft:damaged_anvil",
       "minecraft:ender_chest",
       "minecraft:fushion_furnace",
-      "sophisticatedstorage:storage_tool"
+      "sophisticatedstorage:storage_tool",
+      "silentgear:mod_kit",
+      "toms_storage:ts.level_emitter",
+      "toms_storage:ts.inventory_hopper_basic",
+      "toms_storage:ts.paint_kit"
     ],
     "blockList": [
     ],

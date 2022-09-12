@@ -311,7 +311,7 @@
 			title: "Fishery"
 			icon: "minecraft:tropical_fish"
 			x: 1.5d
-			y: 7.0d
+			y: 7.5d
 			subtitle: "Become a fisherman and unlock ships!"
 			dependencies: [
 				"01DD6734D944719A"
@@ -365,7 +365,7 @@
 		{
 			title: "Sailing"
 			icon: "smallships:sail_item"
-			x: 6.5d
+			x: 5.0d
 			y: 5.5d
 			subtitle: "Explore the seven seas with ships!"
 			dependencies: [
@@ -420,8 +420,8 @@
 		{
 			title: "Neolithic Age"
 			icon: "minecraft:smooth_stone"
-			x: -1.0d
-			y: 13.0d
+			x: -2.25d
+			y: 15.75d
 			dependencies: ["1089E7E3DAFD02BA"]
 			size: 1.5d
 			id: "1BD4EBA81DCC76F0"
@@ -535,8 +535,8 @@
 		{
 			title: "Farming"
 			icon: "minecraft:wheat"
-			x: -3.5d
-			y: 14.5d
+			x: -1.5d
+			y: 10.5d
 			dependencies: ["1BD4EBA81DCC76F0"]
 			id: "21D16B3C36F89CA4"
 			tasks: [{
@@ -548,8 +548,8 @@
 		{
 			title: "Cookery"
 			icon: "farmersdelight:smoked_ham"
-			x: 0.5d
-			y: 16.0d
+			x: 2.5d
+			y: 11.0d
 			dependencies: ["21D16B3C36F89CA4"]
 			id: "3F5594169C747803"
 			tasks: [{
@@ -586,6 +586,19 @@
 				id: "0443C48601C59A13"
 				type: "item"
 				item: "supplementaries:dispenser_minecart"
+			}]
+		}
+		{
+			title: "Pottery"
+			icon: "valhelsia_structures:big_red_glazed_jar"
+			x: 14.5d
+			y: 1.5d
+			dependencies: ["7869A6F66C889EAE"]
+			id: "15CBE9B776545B74"
+			tasks: [{
+				id: "232F9B119B300B0A"
+				type: "item"
+				item: "valhelsia_structures:big_red_glazed_jar"
 			}]
 		}
 	]
