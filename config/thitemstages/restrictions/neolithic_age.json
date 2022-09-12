@@ -159,7 +159,8 @@
       "fusion:sinisite_brick_stairs",
       "fusion:thyrium_brick_stairs",
       "minecraft:stone",
-      "minecraft:cobblestone"
+      "minecraft:cobblestone",
+      "supplementaries:checker_slab"
     ],
     "containerList": [
       "net.minecraft.inventory.container.WorkbenchContainer", 

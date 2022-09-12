@@ -128,14 +128,39 @@
       "silentgear:azure_electrum_dust",
       "silentgear:tyrian_steel_dust",
       "silentgear:starmetal_dust",
-      "minecraft:respawn_anchor"
+      "minecraft:respawn_anchor",
+      "minecraft:tnt",
+      "minecraft:gunpowder",
+      "natprog:steel_saw",
+      "fusion:steel_ingot",
+      "fusion:steel_nugget",
+      "fusion:large_steel_chunk",
+      "fusion:medium_steel_chunk",
+      "fusion:steel_helmet",
+      "fusion:steel_leggings",
+      "fusion:steel_chestplate",
+      "fusion:steel_boots",
+      "fusion:steel_sword",
+      "fusion:steel_pickaxe",
+      "fusion:steel_axe",
+      "fusion:steel_shovel",
+      "fusion:steel_hoe",
+      "fusion:steel_shears",
+      "fusion:steel_block",
+      "fusion:steel_bricks",
+      "fusion:steel_brick_slab",
+      "fusion:steel_brick_stairs",
+      "fusion:steel_bars",
+      "fusion:steel_door"
     ],
     "blockList": [
     ],
     "modList": [
       "locksmith",
       "create",
-      "createaddition"
+      "createaddition",
+      "refinedstorage",
+      "refinedpipes"
     ],
     "tagList": [
       

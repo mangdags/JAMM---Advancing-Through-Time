@@ -40,7 +40,14 @@
       "minecraft:coal_block",
       "minecraft:coals",
       "minecraft:scute",
-      "minecraft:turtle_helmet"
+      "minecraft:turtle_helmet",
+      "minecraft:charcoal",
+      "projectbrazier:traces_of_coal_ore",
+      "projectbrazier:poor_coal_ore",
+      "projectbrazier:rich_coal_ore",
+      "projectbrazier:traces_of_deepslate_coal_ore",
+      "projectbrazier:poor_deepslate_coal_ore",
+      "projectbrazier:rich_deepslate_coal_ore"
     ],
     "blockList": [
     ],
@@ -63,7 +70,8 @@
       "supplementaries:hanging_signs",
       "supplementaries:sign_posts",
       "valhelsia_structures:posts",
-      "valhelsia_structures:cut_posts"
+      "valhelsia_structures:cut_posts",
+      "supplementaries:flags"
     ],
     "exceptionList": [
       "minecraft:crimson_sign",

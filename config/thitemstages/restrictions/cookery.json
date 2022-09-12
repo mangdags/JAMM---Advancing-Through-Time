@@ -1,7 +1,31 @@
 {
   "Restriction Data": {
-    "stage": "cook",
+    "stage": "cookery",
     "itemList": [
+      "minecraft:cake",
+      "minecraft:cookie",
+      "minecraft:mushroom_stew",
+      "minecraft:pumpkin_pie",
+      "minecraft:rabbit_stew",
+      "minecraft:beetroot_soup",
+      "alexsdelight:gongylidia_bruschetta",
+      "alexsdelight:maggot_salad",
+      "alexsdelight:kangaroo_stew",
+      "alexsdelight:acacia_blossom_soup",
+      "alexsdelight:lobster_pasta",
+      "alexsdelight:bison_burger",
+      "alexsdelight:bunfungus_sandwich",
+      "alexsdelight:kangaroo_pasta",
+      "alexsdelight:cooked_centipede_leg",
+      "alexsdelight:cooked_bunfungus",
+      "alexsdelight:cooked_bison",
+      "alexsdelight:bison_patty",
+      "alexsdelight:cooked_catfish_slice",
+      "alexsdelight:cooked_bunfungus_drumstick",
+      "alexsdelight:cooked_loose_moose_rib",
+      "alexsdelight:cooked_kangaroo_shank",
+      "minecraft:smoker",
+      "minecraft:bowl"
     ],
     "blockList": [
     ],

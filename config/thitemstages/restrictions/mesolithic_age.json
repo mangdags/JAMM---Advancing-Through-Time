@@ -53,18 +53,6 @@
       "silentgear:arrow_template",
       "silentgear:ring_template",
       "silentgear:bracelet_template",
-      "mcwfurnitures:oak_end_table",
-      "mcwfurnitures:birch_end_table",
-      "mcwfurnitures:spruce_end_table",
-      "mcwfurnitures:jungle_end_table",
-      "mcwfurnitures:acacia_end_table",
-      "mcwfurnitures:dark_oak_end_table",
-      "mcwfurnitures:stripped_oak_end_table",
-      "mcwfurnitures:stripped_birch_end_table",
-      "mcwfurnitures:stripped_spruce_end_table",
-      "mcwfurnitures:stripped_jungle_end_table",
-      "mcwfurnitures:stripped_acacia_end_table",
-      "mcwfurnitures:stripped_dark_oak_end_table",
       "minecraft:lapis_ore",
       "minecraft:deepslate_lapis_ore",
       "minecraft:lapis_block",
@@ -88,8 +76,9 @@
       "silentgear:fluffy_feather",
       "silentgear:fluffy_string",
       "silentgear:fluffy_fabric",
-      "silentgear:stone_rod"
-          ],
+      "silentgear:stone_rod",
+      "minecraft:glow_item_frame"
+    ],
     "blockList": [
     ],
     "modList": [

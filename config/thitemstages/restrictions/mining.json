@@ -1,18 +1,8 @@
 {
   "Restriction Data": {
-    "stage": "timber",
+    "stage": "mining",
     "itemList": [
-      "minecraft:flowering_azalea_leaves",
-      "minecraft:azalea",
-      "minecraft:flowering_azalea",
-      "cfm:oak_hedge",
-      "cfm:spruce_hedge",
-      "cfm:birch_hedge",
-      "cfm:jungle_hedge",
-      "cfm:acacia_hedge",
-      "cfm:dark_oak_hedge",
-      "myrtrees:rubberwood_sapling",
-      "minecraft:twisting_vines"
+      "silentgear:hammer_template"
     ],
     "blockList": [
     ],

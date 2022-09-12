@@ -295,7 +295,10 @@
 			x: 9.0d
 			y: 4.0d
 			subtitle: "Architectury and more exploration!"
-			dependencies: ["6CE7181F609F1D80"]
+			dependencies: [
+				"6CE7181F609F1D80"
+				"7E717801F7C30EE3"
+			]
 			size: 1.5d
 			id: "7869A6F66C889EAE"
 			tasks: [{
@@ -305,10 +308,10 @@
 			}]
 		}
 		{
-			title: "Fisherman"
+			title: "Fishery"
 			icon: "minecraft:tropical_fish"
-			x: 0.5d
-			y: 9.0d
+			x: 1.5d
+			y: 7.0d
 			subtitle: "Become a fisherman and unlock ships!"
 			dependencies: [
 				"01DD6734D944719A"
@@ -341,17 +344,11 @@
 				{
 					id: "652A1C86D13BEE1D"
 					type: "kill"
-					title: "Kill Frilled Shark"
-					icon: {
-						id: "minecraft:iron_sword"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-					}
+					title: "Kill Cachalot Whale"
+					icon: "alexsmobs:cachalot_whale_tooth"
 					disable_toast: true
-					entity: "alexsmobs:frilled_shark"
-					value: 1L
+					entity: "alexsmobs:cachalot_whale"
+					value: 5L
 				}
 			]
 			rewards: [{
@@ -366,14 +363,15 @@
 			}]
 		}
 		{
-			title: "Sailor"
+			title: "Sailing"
 			icon: "smallships:sail_item"
-			x: 4.0d
-			y: 6.0d
+			x: 6.5d
+			y: 5.5d
 			subtitle: "Explore the seven seas with ships!"
 			dependencies: [
 				"7975FBD66E441EC0"
 				"7869A6F66C889EAE"
+				"7E717801F7C30EE3"
 			]
 			id: "6B4B0AE28E57D03A"
 			tasks: [
@@ -390,7 +388,7 @@
 					type: "advancement"
 					title: "Locate a ship"
 					icon: "smallships:acacia_brigg"
-					advancement: "dungeons_arise:find_illager_corsair_or_illager_galley"
+					advancement: "dungeons_arise:find_undead_pirate_ship"
 					criterion: ""
 				}
 			]
@@ -450,8 +448,8 @@
 		{
 			title: "Bronze Age"
 			icon: "ftbic:bronze_ingot"
-			x: 7.5d
-			y: 13.0d
+			x: 6.0d
+			y: 12.0d
 			dependencies: ["7F763CD6C735CFD3"]
 			size: 1.5d
 			id: "7E915B28ED227BE1"
@@ -494,7 +492,10 @@
 			icon: "create:track"
 			x: 12.0d
 			y: 8.0d
-			dependencies: ["665105B2710CEE56"]
+			dependencies: [
+				"665105B2710CEE56"
+				"26454B70373957CD"
+			]
 			size: 1.5d
 			id: "1775FE0CC0A7D1F2"
 			tasks: [{
@@ -519,7 +520,7 @@
 			}]
 		}
 		{
-			title: "Timber"
+			title: "Logging"
 			icon: "supplementaries:timber_cross_brace"
 			x: -0.5d
 			y: 4.5d
@@ -532,7 +533,7 @@
 			}]
 		}
 		{
-			title: "Farmer"
+			title: "Farming"
 			icon: "minecraft:wheat"
 			x: -3.5d
 			y: 14.5d
@@ -545,7 +546,7 @@
 			}]
 		}
 		{
-			title: "Cook"
+			title: "Cookery"
 			icon: "farmersdelight:smoked_ham"
 			x: 0.5d
 			y: 16.0d
@@ -555,6 +556,36 @@
 				id: "31AA595231C4C128"
 				type: "item"
 				item: "farmersdelight:steak_and_potatoes"
+			}]
+		}
+		{
+			title: "Carpentry"
+			icon: "mcwroofs:roofing_hammer"
+			x: 2.5d
+			y: 2.5d
+			dependencies: ["58DB408F5BE8D13D"]
+			id: "7E717801F7C30EE3"
+			tasks: [{
+				id: "3AB227750237EB3D"
+				type: "item"
+				item: "mcwroofs:roofing_hammer"
+			}]
+		}
+		{
+			title: "Mining"
+			icon: "supplementaries:dispenser_minecart"
+			x: 10.5d
+			y: 14.5d
+			dependencies: [
+				"7F763CD6C735CFD3"
+				"7E915B28ED227BE1"
+				"6CE7181F609F1D80"
+			]
+			id: "26454B70373957CD"
+			tasks: [{
+				id: "0443C48601C59A13"
+				type: "item"
+				item: "supplementaries:dispenser_minecart"
 			}]
 		}
 	]

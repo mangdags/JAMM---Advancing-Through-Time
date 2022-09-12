@@ -1,6 +1,6 @@
 {
   "Restriction Data": {
-    "stage": "farmer",
+    "stage": "farming",
     "itemList": [
       "silentgear:flax_flowers",
       "silentgear:fluffy_seeds",
@@ -55,7 +55,16 @@
       "minecraft:fern",
       "minecraft:dead_bush",
       "alexsmobs:acacia_blossom",
-      "minecraft:wither_rose"
+      "minecraft:wither_rose",
+      "minecraft:dirt_path",
+      "minecraft:bee_nest",
+      "minecraft:beehive",
+      "minecraft:honeycomb_block",
+      "minecraft:honey_bottle",
+      "minecraft:honey_block",
+      "minecraft:saddle",
+      "minecraft:melon",
+      "minecraft:hay_block"
     ],
     "blockList": [
     ],

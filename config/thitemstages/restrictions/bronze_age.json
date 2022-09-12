@@ -57,7 +57,8 @@
       "fusion:large_bronze_chunk",
       "fusion:medium_bronze_chunk",
       "ftbic:bronze_nugget",
-      "ftbic:bronze_rod"
+      "ftbic:bronze_rod",
+      "supplementaries:key"
     ],
     "blockList": [
     ],

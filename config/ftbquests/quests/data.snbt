@@ -1,6 +1,6 @@
 {
 	version: 13
-	title: "JAMP: Advancing Through Time"
+	title: "JAMM: Advancing Through Time"
 	icon: "minecraft:waxed_weathered_copper"
 	default_reward_team: false
 	default_consume_items: false

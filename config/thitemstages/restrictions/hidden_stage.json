@@ -15,7 +15,6 @@
       "ftbic:aluminum_block",
       "ftbic:aluminum_nugget",
       "silentgear:paxel_template",
-      "silentgear:hammer_template",
       "silentgear:excavator_template",
       "silentgear:saw_template",
       "silentgear:mattock_template",
@@ -103,7 +102,8 @@
       "fusion:steel_dust",
       "fusion:sinisite_dust",
       "fusion:thyrium_dust",
-      "uraniumsword"
+      "uraniumsword",
+      "sophisticatedstorage:debug_tool"
     ],
     "blockList": [
     ],
@@ -123,8 +123,6 @@
       "net.minecraft.world.inventory.FurnaceMenu"
     ],
     "dimensionList": [
-      "minecraft:the_nether",
-      "minecraft:the_end"
     ]
   },
   "Settings": {

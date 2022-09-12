@@ -65,13 +65,14 @@
       "silentgear:ring_blueprint",
       "silentgear:bracelet_blueprint",
       "minecraft:spyglass",
-      "valhesia_structures:paper_wall"
+      "valhelsia_structures:paper_wall"
     ],
     "blockList": [
     ],
     "modList": [
     ],
     "tagList": [
+      "supplementaries:presents"
     ],
     "exceptionList": [
     ],

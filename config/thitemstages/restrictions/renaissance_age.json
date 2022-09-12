@@ -67,8 +67,6 @@
       "mcwfurnitures:stripped_crimson_drawer_counter",
       "mcwfurnitures:stripped_crimson_double_drawer_counter",
       "mcwfurnitures:stripped_crimson_cupboard_counter",
-      "mcwlights:crimson_tiki_torch",
-      "mcwlights:soul_crimson_tiki_torch",
       "mcwroofs:crimson_roof",
       "mcwroofs:crimson_attic_roof",
       "mcwroofs:crimson_top_roof",
@@ -301,8 +299,6 @@
       "mcwfurnitures:stripped_warped_drawer_counter",
       "mcwfurnitures:stripped_warped_double_drawer_counter",
       "mcwfurnitures:stripped_warped_cupboard_counter",
-      "mcwlights:warped_tiki_torch",
-      "mcwlights:soul_warped_tiki_torch",
       "mcwroofs:warped_roof",
       "mcwroofs:warped_attic_roof",
       "mcwroofs:warped_top_roof",
@@ -630,7 +626,27 @@
       "silentgear:tyrian_steel_nugget",
       "silentgear:raw_azure_silver",
       "silentgear:blazing_dust",
-      "silentgear:bort"
+      "silentgear:bort",
+      "parrying:iron_flail",
+      "silentgear:emerald_shard",
+      "supplementaries:planter_rich",
+      "supplementaries:blackboard",
+      "supplementaries:slingshot",
+      "supplementaries:silver_lantern",
+      "silentgear:raw_azure_silver_block",
+      "silentgear:bort_block",
+      "silentgear:blaze_gold_block",
+      "silentgear:azure_silver_block",
+      "silentgear:azure_electrum_block",
+      "silentgear:bort_ore",
+      "silentgear:deepslate_bort_ore",
+      "silentgear:tyrian_steel_block",
+      "minecraft:jukebox",
+      "minecraft:painting",
+      "minecraft:cartography",
+      "minecraft:soul_torch",
+      "supplementaries:checker_block",
+      "supplementaries:checker_slab"
     ],
     "blockList": [
     ],
@@ -638,11 +654,12 @@
       "alcocraft",
       "bygonenether"
     ],
-    "tagList": [
-      "forge:stained_glass_panes",
-      "forge:concrete",
-      "forge:terracotta",
-      "forge:concrete_powders",
+    ",tagList": [
+      ",forge:stained_glass_panes",
+      ",forge:concrete",
+      ",forge:terracotta",
+      ",forge:concrete_powders",
+      "ctov:glazed_terracotta",
       "valhelsia_structures:jars",
       "valhelsia_structures:big_jars",
       "silentgear:fluffy_blocks"
@@ -658,12 +675,12 @@
 
     ],
     "containerList": [
-      "net.minecraft.inventory.container.WorkbenchContainer", 
-      "thitemstages.inventoryMenu.CraftingGrid",
-      "top.theillusivec4.curios.common.inventory.container.CuriosContainer",
-      "net.minecraft.world.inventory.ChestMenu",
-      "net.p3pp3rf1y.sophisticatedstorage.common.gui.StorageContainerMenu",
-      "net.minecraft.world.inventory.FurnaceMenu"
+      ",net.minecraft.inventory.container.WorkbenchContainer", 
+      ",thitemstages.inventoryMenu.CraftingGrid",
+      ",top.theillusivec4.curios.common.inventory.container.CuriosContainer",
+      ",net.minecraft.world.inventory.ChestMenu",
+      ",net.p3pp3rf1y.sophisticatedstorage.common.gui.StorageContainerMenu",
+      ",net.minecraft.world.inventory.FurnaceMenu"
     ],
     "dimensionList": [
       "minecraft:the_end"

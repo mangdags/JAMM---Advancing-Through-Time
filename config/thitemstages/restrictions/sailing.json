@@ -1,7 +1,10 @@
 {
   "Restriction Data": {
-    "stage": "sailor",
+    "stage": "sailing",
     "itemList": [
+      "minecraft:sponge",
+      "minecraft:wet_sponge",
+      "minecraft:trident"
     ],
     "blockList": [
     ],

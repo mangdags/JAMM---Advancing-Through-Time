@@ -1,6 +1,6 @@
 {
   "Restriction Data": {
-    "stage": "fisherman",
+    "stage": "fishery",
     "itemList": [
       "minecraft:dead_tube_coral_block",
       "minecraft:dead_brain_coral_block",
@@ -44,14 +44,18 @@
       "minecraft:seagrass",
       "minecraft:sea_pickle",
       "minecraft:heart_of_the_sea",
-      "minecraft:sea_lantern"
+      "minecraft:sea_lantern",
+      "minecraft:dried_kelp",
+      "minecraft:dried_kelp_block",
+      "minecraft:conduit",
+      "minecraft:nautilus_shell"
     ],
     "blockList": [
     ],
     "modList": [
     ],
     "tagList": [
-      
+      "minecraft:boats"
     ],
     "exceptionList": [
     ],
