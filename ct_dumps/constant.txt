@@ -75,6 +75,8 @@
 <constant:minecraft:enchantment/category:crossbow>
 <constant:minecraft:enchantment/category:digger>
 <constant:minecraft:enchantment/category:fishing_rod>
+<constant:minecraft:enchantment/category:knife>
+<constant:minecraft:enchantment/category:straddleboard>
 <constant:minecraft:enchantment/category:trident>
 <constant:minecraft:enchantment/category:vanishable>
 <constant:minecraft:enchantment/category:weapon>

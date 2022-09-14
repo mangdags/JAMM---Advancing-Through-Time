@@ -86,10 +86,6 @@
     ],
     "tagList": [
       "forge:cobblestone",
-      "cfm:fences/picket",
-      "cfm:fences/upgraded",
-      "cfm:fence_gates/picket",
-      "cfm:fence_gates/upgraded",
       "forge:dyes",
       "silentgear:fluffy_blocks"
     ],

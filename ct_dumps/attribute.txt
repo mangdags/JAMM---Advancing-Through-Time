@@ -17,3 +17,6 @@
 <attribute:minecraft:generic.movement_speed>
 <attribute:minecraft:horse.jump_strength>
 <attribute:minecraft:zombie.spawn_reinforcements>
+<attribute:parrying:armor_pen>
+<attribute:parrying:inv_reduction>
+<attribute:parrying:shield_pen>

@@ -185,7 +185,12 @@
       "silentgear:mod_kit",
       "toms_storage:ts.level_emitter",
       "toms_storage:ts.inventory_hopper_basic",
-      "toms_storage:ts.paint_kit"
+      "toms_storage:ts.paint_kit",
+      "projectbrazier:empty_candle_holder",
+      "projectbrazier:empty_wall_candle_holder",
+      "projectbrazier:empty_wall_torch_holder",
+      "projectbrazier:jail_lattice"
+
     ],
     "blockList": [
     ],

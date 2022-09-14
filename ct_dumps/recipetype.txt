@@ -1,3 +1,5 @@
+<recipetype:cfm:freezer_solidify>
+<recipetype:cfm:grill_cooking>
 <recipetype:create:basin>
 <recipetype:create:compacting>
 <recipetype:create:conversion>
@@ -17,6 +19,19 @@
 <recipetype:create:splashing>
 <recipetype:createaddition:charging>
 <recipetype:createaddition:rolling>
+<recipetype:farmersdelight:cooking>
+<recipetype:farmersdelight:cutting>
+<recipetype:ftbic:antimatter_boost>
+<recipetype:ftbic:basic_generator_fuel>
+<recipetype:ftbic:canning>
+<recipetype:ftbic:compressing>
+<recipetype:ftbic:extruding>
+<recipetype:ftbic:macerating>
+<recipetype:ftbic:recipe_cache>
+<recipetype:ftbic:reprocessing>
+<recipetype:ftbic:rolling>
+<recipetype:ftbic:separating>
+<recipetype:ftbic:smelting>
 <recipetype:fusion:alloying>
 <recipetype:immersiveengineering:alloy>
 <recipetype:immersiveengineering:arc_furnace>
@@ -38,6 +53,8 @@
 <recipetype:immersiveengineering:squeezer>
 <recipetype:immersiveengineering:thermoelectric_source>
 <recipetype:immersiveengineering:windmill_biome>
+<recipetype:locksmith:locksmithing>
+<recipetype:minecraft:beer_brewing>
 <recipetype:minecraft:blasting>
 <recipetype:minecraft:campfire_cooking>
 <recipetype:minecraft:crafting>
@@ -45,3 +62,11 @@
 <recipetype:minecraft:smithing>
 <recipetype:minecraft:smoking>
 <recipetype:minecraft:stonecutting>
+<recipetype:pollen:brewing>
+<recipetype:pollen:grindstone>
+<recipetype:silentgear:compounding/fabric>
+<recipetype:silentgear:compounding/gem>
+<recipetype:silentgear:compounding/metal>
+<recipetype:silentgear:compounding>
+<recipetype:silentgear:pressing>
+<recipetype:silentgear:salvaging>

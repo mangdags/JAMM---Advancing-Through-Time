@@ -38,3 +38,5 @@
 <fluid:minecraft:lava>
 <fluid:minecraft:milk>
 <fluid:minecraft:water>
+<fluid:sophisticatedcore:xp_flowing>
+<fluid:sophisticatedcore:xp_still>

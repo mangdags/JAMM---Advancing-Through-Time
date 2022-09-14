@@ -18,3 +18,4 @@
 <profession:minecraft:shepherd>
 <profession:minecraft:toolsmith>
 <profession:minecraft:weaponsmith>
+<profession:silentgear:gear_smith>

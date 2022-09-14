@@ -1,5 +1,10 @@
+<enchantment:alexsmobs:board_return>
+<enchantment:alexsmobs:lavawax>
+<enchantment:alexsmobs:serpentfriend>
+<enchantment:alexsmobs:straddle_jump>
 <enchantment:create:capacity>
 <enchantment:create:potato_recovery>
+<enchantment:farmersdelight:backstabbing>
 <enchantment:minecraft:aqua_affinity>
 <enchantment:minecraft:bane_of_arthropods>
 <enchantment:minecraft:binding_curse>
@@ -38,3 +43,16 @@
 <enchantment:minecraft:thorns>
 <enchantment:minecraft:unbreaking>
 <enchantment:minecraft:vanishing_curse>
+<enchantment:parrying:bashing>
+<enchantment:parrying:crippling>
+<enchantment:parrying:deflection>
+<enchantment:parrying:fragile>
+<enchantment:parrying:intrusive>
+<enchantment:parrying:jousting>
+<enchantment:parrying:phasing>
+<enchantment:parrying:providence>
+<enchantment:parrying:riposte>
+<enchantment:parrying:swift_strike>
+<enchantment:parrying:treachery>
+<enchantment:parrying:venomous>
+<enchantment:supplementaries:stasis>
