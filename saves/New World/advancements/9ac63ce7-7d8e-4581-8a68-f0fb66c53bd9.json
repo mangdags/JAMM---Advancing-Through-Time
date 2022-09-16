@@ -389,6 +389,12 @@
     },
     "done": true
   },
+  "cfm:recipes/cfm/stripped_acacia_kitchen_counter": {
+    "criteria": {
+      "has_log": "2022-09-16 06:12:38 +0800"
+    },
+    "done": true
+  },
   "minecraft:recipes/misc/lapis_lazuli_from_smelting_deepslate_lapis_ore": {
     "criteria": {
       "has_deepslate_lapis_ore": "2022-09-10 15:57:59 +0800"
@@ -461,6 +467,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/blue_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
+    },
+    "done": true
+  },
   "minecraft:story/obtain_armor": {
     "criteria": {
       "iron_chestplate": "2022-09-09 19:47:29 +0800"
@@ -524,6 +536,12 @@
   "dungeons_arise:find_undead_pirate_ship": {
     "criteria": {
       "location0": "2022-09-12 20:17:16 +0800"
+    },
+    "done": true
+  },
+  "natprog:craft_basic_saw": {
+    "criteria": {
+      "get_basic_saw": "2022-09-15 07:19:31 +0800"
     },
     "done": true
   },
@@ -631,7 +649,7 @@
   },
   "locksmith:recipes/tools/lockpick": {
     "criteria": {
-      "has_netherite_ingot": "2022-09-15 02:09:55 +0800"
+      "has_netherite_ingot": "2022-09-16 21:57:38 +0800"
     },
     "done": true
   },
@@ -833,6 +851,12 @@
     },
     "done": true
   },
+  "cfm:recipes/cfm/stripped_acacia_crate": {
+    "criteria": {
+      "has_planks": "2022-09-16 06:12:38 +0800"
+    },
+    "done": true
+  },
   "mcwtrpdoors:recipes/acacia/dark_oak_bark_trapdoor": {
     "criteria": {
       "has_planks": "2022-09-08 20:15:53 +0800"
@@ -872,6 +896,12 @@
   "minecraft:recipes/building_blocks/green_stained_glass": {
     "criteria": {
       "has_glass": "2022-09-09 13:20:23 +0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/light_blue_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
     },
     "done": true
   },
@@ -1434,6 +1464,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/misc/diamond": {
+    "criteria": {
+      "has_diamond_block": "2022-09-16 06:17:46 +0800"
+    },
+    "done": true
+  },
   "immersiveengineering:recipes/immersiveengineering/crafting/wire_aluminum": {
     "criteria": {
       "has_aluminum_ingot": "2022-09-09 01:59:06 +0800"
@@ -1458,9 +1494,21 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/light_gray_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
+    },
+    "done": true
+  },
   "create:recipes/create.palettes/cut_andesite_slab": {
     "criteria": {
       "has_cut_andesite": "2022-09-09 01:12:03 +0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/red_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
     },
     "done": true
   },
@@ -1795,6 +1843,12 @@
     },
     "done": true
   },
+  "cfm:recipes/cfm/stripped_acacia_bedside_cabinet": {
+    "criteria": {
+      "has_planks": "2022-09-16 06:12:38 +0800"
+    },
+    "done": true
+  },
   "mcwwindows:recipes/planks/spruce_plank_window2": {
     "criteria": {
       "has_planks": "2022-09-08 20:15:53 +0800"
@@ -1864,6 +1918,12 @@
   "minecraft:recipes/combat/iron_helmet": {
     "criteria": {
       "has_iron_ingot": "2022-09-09 19:47:53 +0800"
+    },
+    "done": true
+  },
+  "cfm:recipes/cfm/white_sofa": {
+    "criteria": {
+      "has_wool": "2022-09-15 07:05:54 +0800"
     },
     "done": true
   },
@@ -1996,6 +2056,12 @@
   "mcwbridges:recipes/deepslate_tile_bridge": {
     "criteria": {
       "has_planks": "2022-09-08 20:15:52 +0800"
+    },
+    "done": true
+  },
+  "refinedstorage:upgrading_your_grid": {
+    "criteria": {
+      "crafting_grid_in_inventory": "2022-09-16 06:03:53 +0800"
     },
     "done": true
   },
@@ -2623,6 +2689,12 @@
     },
     "done": true
   },
+  "refinedstorage:managing_patterns": {
+    "criteria": {
+      "crafter_manager_in_inventory": "2022-09-16 06:03:29 +0800"
+    },
+    "done": true
+  },
   "cfm:recipes/cfm/oak_cabinet": {
     "criteria": {
       "has_planks": "2022-09-08 20:21:55 +0800"
@@ -2842,6 +2914,12 @@
   "minecraft:recipes/decorations/andesite_wall_from_andesite_stonecutting": {
     "criteria": {
       "has_andesite": "2022-09-12 20:26:12 +0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/pink_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
     },
     "done": true
   },
@@ -3163,6 +3241,12 @@
     },
     "done": true
   },
+  "cfm:recipes/cfm/stripped_acacia_chair": {
+    "criteria": {
+      "has_planks": "2022-09-16 06:12:38 +0800"
+    },
+    "done": true
+  },
   "minecraft:recipes/decorations/crafting_table": {
     "criteria": {
       "has_planks": "2022-09-08 20:21:55 +0800"
@@ -3208,6 +3292,12 @@
   "minecraft:recipes/decorations/chest": {
     "criteria": {
       "has_lots_of_items": "2022-09-08 20:22:02 +0800"
+    },
+    "done": true
+  },
+  "minecraft:story/shiny_gear": {
+    "criteria": {
+      "diamond_chestplate": "2022-09-16 06:07:15 +0800"
     },
     "done": true
   },
@@ -4161,6 +4251,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/yellow_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
+    },
+    "done": true
+  },
   "cfm:recipes/cfm/acacia_table": {
     "criteria": {
       "has_planks": "2022-09-15 03:11:55 +0800"
@@ -4785,6 +4881,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/gray_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
+    },
+    "done": true
+  },
   "silentgear:recipes/silentgear/upgrade_base": {
     "criteria": {
       "has_item": "2022-09-08 20:21:55 +0800"
@@ -5023,6 +5125,12 @@
   "create:recipes/create.palettes/cut_diorite_wall_from_stone_types_diorite_stonecutting": {
     "criteria": {
       "has_stone_types_diorite": "2022-09-09 01:11:50 +0800"
+    },
+    "done": true
+  },
+  "cfm:recipes/cfm/stripped_acacia_desk": {
+    "criteria": {
+      "has_planks": "2022-09-16 06:12:38 +0800"
     },
     "done": true
   },
@@ -5284,6 +5392,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/white_carpet": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/red_sandstone_slab": {
     "criteria": {
       "has_red_sandstone": "2022-09-10 01:42:52 +0800"
@@ -5455,6 +5569,12 @@
   "minecraft:recipes/building_blocks/red_nether_brick_stairs": {
     "criteria": {
       "has_red_nether_bricks": "2022-09-09 00:54:23 +0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/brown_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
     },
     "done": true
   },
@@ -6232,6 +6352,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/magenta_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/copper_block": {
     "criteria": {
       "has_copper_ingot": "2022-09-12 22:48:54 +0800"
@@ -6247,6 +6373,12 @@
   "create:recipes/create.base/crafting/materials/raw_zinc": {
     "criteria": {
       "has_item": "2022-09-09 01:01:50 +0800"
+    },
+    "done": true
+  },
+  "cfm:recipes/cfm/stripped_acacia_table": {
+    "criteria": {
+      "has_planks": "2022-09-16 06:12:38 +0800"
     },
     "done": true
   },
@@ -6926,6 +7058,12 @@
     },
     "done": true
   },
+  "valhelsia_structures:recipes/valhelsia_structures_main/acacia_post": {
+    "criteria": {
+      "has_item": "2022-09-16 06:12:38 +0800"
+    },
+    "done": true
+  },
   "smallships:recipes/lotr_larch_drakkar": {
     "criteria": {
       "in_water": "2022-09-09 00:12:15 +0800"
@@ -7334,6 +7472,12 @@
     },
     "done": true
   },
+  "refinedstorage:crafting_on_demand": {
+    "criteria": {
+      "upgrade_in_inventory": "2022-09-16 06:03:58 +0800"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/oxidized_cut_copper_slab": {
     "criteria": {
       "has_oxidized_cut_copper": "2022-09-08 23:37:47 +0800"
@@ -7403,6 +7547,12 @@
   "smallships:recipes/lotr_aspen_dhow": {
     "criteria": {
       "in_water": "2022-09-09 00:12:15 +0800"
+    },
+    "done": true
+  },
+  "cfm:recipes/cfm/acacia_upgraded_gate": {
+    "criteria": {
+      "has_log": "2022-09-16 06:12:38 +0800"
     },
     "done": true
   },
@@ -7682,6 +7832,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/purple_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
+    },
+    "done": true
+  },
   "ftbic:recipes/ftbic/shaped/ingots/copper_to_copper_gear": {
     "criteria": {
       "has_item": "2022-09-12 22:48:54 +0800"
@@ -7805,6 +7961,12 @@
   "smallships:recipes/lotr_aspen_war_galley": {
     "criteria": {
       "in_water": "2022-09-09 00:12:15 +0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cyan_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
     },
     "done": true
   },
@@ -8012,6 +8174,12 @@
     },
     "done": false
   },
+  "minecraft:recipes/decorations/white_banner": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
+    },
+    "done": true
+  },
   "create:recipes/create.palettes/small_granite_brick_wall_from_stone_types_granite_stonecutting": {
     "criteria": {
       "has_stone_types_granite": "2022-09-09 01:11:34 +0800"
@@ -8129,6 +8297,12 @@
   "minecraft:recipes/misc/charcoal": {
     "criteria": {
       "has_log": "2022-09-08 23:51:21 +0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/orange_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
     },
     "done": true
   },
@@ -8336,6 +8510,12 @@
     },
     "done": true
   },
+  "cfm:recipes/cfm/stripped_acacia_cabinet": {
+    "criteria": {
+      "has_log": "2022-09-16 06:12:38 +0800"
+    },
+    "done": true
+  },
   "cfm:recipes/cfm/white_grill": {
     "criteria": {
       "has_iron": "2022-09-09 19:47:53 +0800"
@@ -8459,6 +8639,12 @@
   "cfm:recipes/cfm/acacia_mail_box": {
     "criteria": {
       "has_chest": "2022-09-12 23:07:42 +0800"
+    },
+    "done": true
+  },
+  "cfm:recipes/cfm/stripped_acacia_park_bench": {
+    "criteria": {
+      "has_log": "2022-09-16 06:12:38 +0800"
     },
     "done": true
   },
@@ -8927,6 +9113,12 @@
   "minecraft:recipes/building_blocks/purpur_block": {
     "criteria": {
       "has_chorus_fruit_popped": "2022-09-10 01:01:07 +0800"
+    },
+    "done": true
+  },
+  "cfm:recipes/cfm/stripped_acacia_desk_cabinet": {
+    "criteria": {
+      "has_planks": "2022-09-16 06:12:38 +0800"
     },
     "done": true
   },
@@ -9849,6 +10041,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/black_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
+    },
+    "done": true
+  },
   "silentgear:recipes/silentgear/emerald_shard": {
     "criteria": {
       "has_item": "2022-09-10 14:19:54 +0800"
@@ -9978,6 +10176,12 @@
   "mcwtrpdoors:recipes/dark_oak/dark_oak_swamp_trapdoor": {
     "criteria": {
       "has_planks": "2022-09-08 20:15:49 +0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/acacia_wood": {
+    "criteria": {
+      "has_log": "2022-09-16 06:12:38 +0800"
     },
     "done": true
   },
@@ -10128,6 +10332,12 @@
   "immersiveengineering:recipes/immersiveengineering/smelting/ingot_aluminum_from_blasting": {
     "criteria": {
       "has_ore_aluminum": "2022-09-09 01:59:18 +0800"
+    },
+    "done": true
+  },
+  "cfm:recipes/cfm/acacia_blinds": {
+    "criteria": {
+      "has_log": "2022-09-16 06:12:38 +0800"
     },
     "done": true
   },
@@ -10539,6 +10749,12 @@
     },
     "done": true
   },
+  "cfm:recipes/cfm/stripped_acacia_coffee_table": {
+    "criteria": {
+      "has_planks": "2022-09-16 06:12:38 +0800"
+    },
+    "done": true
+  },
   "mcwbridges:recipes/stone_bridge_pier": {
     "criteria": {
       "has_planks": "2022-09-08 20:15:53 +0800"
@@ -10604,6 +10820,12 @@
   "minecraft:recipes/building_blocks/polished_andesite_stairs_from_andesite_stonecutting": {
     "criteria": {
       "has_andesite": "2022-09-12 20:26:12 +0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/white_bed": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
     },
     "done": true
   },
@@ -11279,6 +11501,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/lime_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
+    },
+    "done": true
+  },
   "mcwwindows:recipes/strip/stripped_jungle_log_window": {
     "criteria": {
       "has_planks": "2022-09-08 20:15:52 +0800"
@@ -11324,6 +11552,12 @@
   "mcwbridges:recipes/rope_birch_bridge": {
     "criteria": {
       "has_planks": "2022-09-08 20:15:52 +0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/green_wool": {
+    "criteria": {
+      "has_white_wool": "2022-09-15 07:05:54 +0800"
     },
     "done": true
   },
@@ -11444,6 +11678,12 @@
   "minecraft:recipes/decorations/red_sandstone_wall": {
     "criteria": {
       "has_red_sandstone": "2022-09-10 01:42:52 +0800"
+    },
+    "done": true
+  },
+  "cfm:recipes/cfm/acacia_upgraded_fence": {
+    "criteria": {
+      "has_log": "2022-09-16 06:12:38 +0800"
     },
     "done": true
   },
@@ -11726,6 +11966,12 @@
   "minecraft:recipes/building_blocks/jungle_slab": {
     "criteria": {
       "has_planks": "2022-09-12 23:09:39 +0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/acacia_planks": {
+    "criteria": {
+      "has_log": "2022-09-16 06:12:38 +0800"
     },
     "done": true
   },

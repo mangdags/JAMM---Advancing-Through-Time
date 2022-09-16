@@ -1,0 +1,75 @@
+{
+  "Restriction Data": {
+    "stage": "atomic_age",
+    "itemList": [
+      "minecraft:purpur_block",
+      "minecraft:purpur_pillar",
+      "minecraft:purpur_stairs",
+      "minecraft:end_stone",
+      "minecraft:end_stone_bricks",
+      "minecraft:end_stone_brick_stairs",
+      "minecraft:chorus_plant",
+      "minecraft:chorus_flower",
+      "minecraft:dragon_head",
+      "minecraft:end_crystal",
+      "minecraft:beacon",
+      "minecraft:chorus_fruit",
+      "minecraft:popped_chorus_fruit",
+      "minecraft:shulker_shell",
+      "alexsmobs:void_worm_beak",
+      "alexsmobs:void_worm_effigy",
+      "mcwwindows:end_brick_gothic",
+      "mcwwindows:ender_brick_arrow_slit",
+      "supplementaries:end_stone_lamp",
+      "alexsmobs:void_worm_mandible",
+      "alexsmobs:void_worm_eye",
+      "silentgear:azure_silver_ore",
+      "silentgear:crushed_shulker_shell",
+      "sophisticatedstorage:shulker_box",
+      "sophisticatedstorage:iron_shulker_box",
+      "sophisticatedstorage:gold_shulker_box",
+      "sophisticatedstorage:diamond_shulker_box",
+      "sophisticatedstorage:netherite_shulker_box",
+      "minecraft:end_rod",
+      "mcwfences:modern_end_brick_wall",
+      "mcwfences:railing_end_brick_wall",
+      "mcwfences:end_brick_railing_gate",
+      "natprog:cobbled_end_stone",
+      "minecraft:end_portal_frame",
+      "alcocraft:spruce_mug_chorus_ale",
+      "alcocraft:spruce_mug_nether_star_lager",
+      "minecraft:elytra"
+    ],
+    "blockList": [
+    ],
+    "modList": [
+      "endrem"
+    ],
+    "tagList": [
+      "forge:shulker_boxes"
+      
+    ],
+    "exceptionList": [
+    ],
+    "containerList": [
+      "net.minecraft.inventory.container.WorkbenchContainer", "thitemstages.inventoryMenu.CraftingGrid",
+      "top.theillusivec4.curios.common.inventory.container.CuriosContainer",
+      "net.minecraft.world.inventory.ChestMenu",
+      "net.minecraft.world.inventory.FurnaceMenu"
+    ],
+    "dimensionList": [
+    ]
+  },
+  "Settings": {
+    "advancedTooltips": "ALWAYS",
+    "itemTitle": "Unavailable Item",
+    "pickupDelay": 15,
+    "hideInJEI": true,
+    "canPickup": true,
+    "containerListWhitelist": false,
+    "checkPlayerInventory": true,
+    "checkPlayerEquipment": true,
+    "usableItems": false,
+    "usableBlocks": false
+  }
+}
