@@ -192,8 +192,29 @@ var listItem as IItemStack [] = [
     <item:projectbrazier:empty_candle_holder>,
     <item:projectbrazier:empty_wall_candle_holder>,
     <item:projectbrazier:empty_wall_torch_holder>,
-    <item:projectbrazier:jail_lattice>
-];
+    <item:projectbrazier:jail_lattice>,
+    <item:toolleveling:tool_leveling_table>,
+    <item:supplementaries:jar>,
+    <item:minecraft:chainmail_helmet>,
+    <item:minecraft:chainmail_chestplate>,
+    <item:minecraft:chainmail_leggings>,
+    <item:minecraft:chainmail_boots>,
+    <item:supplementaries:soap_block>,
+    <item:minecraft:lever>,
+    <item:minecraft:lectern>,
+    <item:minecraft:glass_bottle>,
+    <item:supplementaries:goblet>,
+    <item:supplementaries:lock_block>,
+    <item:supplementaries:turn_table>,
+    <item:supplementaries:sconce>,
+    <item:supplementaries:sconce_soul>,
+    <item:supplementaries:sconce_lever>,
+    <item:supplementaries:crank>,
+    <item:minecraft:bell>,
+    <item:minecraft:fermented_spider_eye>,
+    <item:minecraft:empty_map>
+
+    ];
 
 var listTag as MCTag [] = [
     <tag:items:forge:ingots/iron>,

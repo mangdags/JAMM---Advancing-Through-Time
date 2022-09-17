@@ -36,7 +36,10 @@ var listItem as IItemStack [] = [
     <item:silentgear:refabricator>,
     <item:silentgear:metal_press>,
     <item:minecraft:lodestone>,
-    <item:toms_storage:ts.adv_wireless_terminal>
+    <item:toms_storage:ts.adv_wireless_terminal>,
+    <item:supplementaries:lead_door>,
+    <item:supplementaries:silver_door>,
+    <item:supplementaries:lead_lantern>
 ];
 
 var modList as string [] = [

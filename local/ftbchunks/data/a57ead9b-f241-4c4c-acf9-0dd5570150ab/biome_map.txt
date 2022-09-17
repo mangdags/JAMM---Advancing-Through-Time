@@ -5,6 +5,7 @@
 #694 terralith:cave/deep_caves
 #1A6 terralith:cave/granite_caves
 #00C terralith:cave/infested_caves
+#63B terralith:cave/thermal_caves
 #3D6 minecraft:cold_ocean
 #705 minecraft:deep_frozen_ocean
 #34D minecraft:deep_lukewarm_ocean

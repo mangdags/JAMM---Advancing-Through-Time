@@ -153,7 +153,18 @@ var listItem as IItemStack [] = [
     <item:fusion:steel_brick_stairs>,
     <item:fusion:steel_bars>,
     <item:fusion:steel_door>,
-    <item:toms_storage:ts.wireless_terminal>
+    <item:toms_storage:ts.wireless_terminal>,
+    <item:minecraft:powered_rail>,
+    <item:minecraft:soul_sand>,
+    <item:minecraft:soul_soil>,
+    <item:silentgear:gear_smithing_table>,
+    <item:silentgear:glowing_dust>,
+    <item:silentgear:glittery_dust>,
+    <item:minecraft:shroomlight>,
+    <item:minecraft:firework_rocket>,
+    <item:minecraft:fire_charge>,
+    <item:minecraft:soul_campfire>,
+    <item:minecraft:ender_eye>
 ];
 
 var modList as string [] = [

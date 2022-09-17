@@ -1,5 +1,6 @@
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.tag.MCTag;
+import mods.jei.JEI;
 
 #priority 100
 
@@ -28,3 +29,8 @@ public function removeStagedTag(tag as MCTag) as void{
         mods.recipestages.Recipes.clearRecipeStage(elem);
     }
 }
+
+public function hideRecipe(stage as string, item as IItemStack) as void {
+    
+}
+

@@ -11,7 +11,15 @@ var listItem as IItemStack [] = [
     <item:supplementaries:flint_block>,
     <item:minecraft:sand>,
     <item:minecraft:gravel>,
-    <item:silentgear:pebble>
+    <item:silentgear:pebble>,
+    <item:minecraft:carrot>,
+    <item:minecraft:potato>,
+    <item:minecraft:wheat>,
+    <item:minecraft:beetroot>,
+    <item:minecraft:apple>,
+    <item:minecraft:wheat_seeds>,
+    <item:minecraft:stick>,
+    <item:minecraft:crafting_table>    
 ];
 
 for item in listItem {
@@ -22,8 +30,7 @@ var listTag as MCTag [] = [
     <tag:items:minecraft:wools>,
     <tag:items:minecraft:logs>,
     <tag:items:minecraft:planks>,
-    <tag:items:minecraft:beds>,
-    <tag:items:minecraft:boats>
+    <tag:items:minecraft:beds>
 ];
 
 

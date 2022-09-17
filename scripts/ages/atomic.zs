@@ -39,7 +39,11 @@ var listItem as IItemStack [] = [
     <item:minecraft:end_portal_frame>,
     <item:alcocraft:spruce_mug_chorus_ale>,
     <item:alcocraft:spruce_mug_nether_star_lager>,
-    <item:minecraft:elytra>
+    <item:minecraft:elytra>,
+    <item:silentgear:elytra_template>,
+    <item:silentgear:elytra_blueprint>,
+    <item:silentgear:elytra>,
+    <item:minecraft:dragon_breath>
 ];
 
 var listTag as MCTag [] = [

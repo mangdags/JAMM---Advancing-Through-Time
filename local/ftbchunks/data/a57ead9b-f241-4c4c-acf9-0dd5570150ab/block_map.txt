@@ -181,6 +181,7 @@
 #27332E minecraft:magenta_terracotta
 #DE9468 minecraft:magma_block
 #FB37C1 create:mechanical_crafter
+#E638FD create:mechanical_mixer
 #B42F3C minecraft:medium_amethyst_bud
 #8A7583 minecraft:moss_block
 #5A981B minecraft:moss_carpet
@@ -215,6 +216,7 @@
 #B75237 minecraft:packed_ice
 #6611DC projectbrazier:pale_colorful_cobblestone
 #AB1C58 minecraft:peony
+#6007D1 minecraft:pink_glazed_terracotta
 #36285C minecraft:pink_tulip
 #BB7F65 minecraft:podzol
 #522933 minecraft:pointed_dripstone
