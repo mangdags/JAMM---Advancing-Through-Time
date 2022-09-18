@@ -71,7 +71,13 @@ var listItem as IItemStack [] = [
     <item:supplementaries:copper_lantern>,
     <item:minecraft:lightning_rod>,
     <item:supplementaries:notice_board>,
-    <item:supplementaries:cog_block>
+    <item:supplementaries:cog_block>,
+    <item:minecraft:flower_banner_pattern>,
+    <item:minecraft:creeper_banner_pattern>,
+    <item:minecraft:skull_banner_pattern>,
+    <item:minecraft:mojang_banner_pattern>,
+    <item:minecraft:globe_banner_pattern>,
+    <item:minecraft:piglin_banner_pattern>
 ];
 
 var itemTag as MCTag [] = [
