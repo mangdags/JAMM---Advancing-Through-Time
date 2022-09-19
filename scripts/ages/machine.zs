@@ -45,7 +45,7 @@ var listItem as IItemStack [] = [
 var modList as string [] = [
     "mtmechs",
     "immersiveengineering",
-    "ftbic"
+    "immersiveposts"
 ];
 
 var exceptItem as IItemStack [] = [
@@ -73,19 +73,7 @@ var exceptItem as IItemStack [] = [
     <item:immersiveengineering:dust_iron>,
     <item:immersiveengineering:plate_iron>,
     <item:immersiveposts:fence_iron>,
-    <item:immersiveengineering:ersatz_leather>,
-    <item:ftbic:bronze_nugget>,
-    <item:ftbic:bronze_rod>,
-    <item:ftbic:bronze_gear>,
-    <item:ftbic:iron_furnace>,
-    <item:ftbic:iron_rod>,
-    <item:ftbic:aluminum_ingot>,
-    <item:ftbic:aluminum_ore>,
-    <item:ftbic:deepslate_aluminum_ore>,
-    <item:ftbic:aluminum_chunk>,
-    <item:ftbic:aluminum_rod>,
-    <item:ftbic:aluminum_block>,
-    <item:ftbic:aluminum_nugget>
+    <item:immersiveengineering:ersatz_leather>
 ];
 
 for item in listItem {

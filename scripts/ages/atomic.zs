@@ -51,7 +51,23 @@ var listTag as MCTag [] = [
 ];
 
 var modList as string [] = [
-    "endrem"
+    "endrem",
+    "ftbic"
+];
+
+var exceptItem as IItemStack [] = [
+    <item:ftbic:bronze_nugget>,
+    <item:ftbic:bronze_rod>,
+    <item:ftbic:bronze_gear>,
+    <item:ftbic:iron_furnace>,
+    <item:ftbic:iron_rod>,
+    <item:ftbic:aluminum_ingot>,
+    <item:ftbic:aluminum_ore>,
+    <item:ftbic:deepslate_aluminum_ore>,
+    <item:ftbic:aluminum_chunk>,
+    <item:ftbic:aluminum_rod>,
+    <item:ftbic:aluminum_block>,
+    <item:ftbic:aluminum_nugget>
 ];
 
 for item in listItem {

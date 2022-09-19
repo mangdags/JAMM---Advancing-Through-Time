@@ -47,13 +47,26 @@
     "blockList": [
     ],
     "modList": [
-      "endrem"
+      "endrem",
+      "ftbic"
     ],
     "tagList": [
       "forge:shulker_boxes"
       
     ],
     "exceptionList": [
+      "ftbic:bronze_nugget",
+      "ftbic:bronze_rod",
+      "ftbic:bronze_gear",
+      "ftbic:iron_furnace",
+      "ftbic:iron_rod",
+      "ftbic:aluminum_ingot",
+      "ftbic:aluminum_ore",
+      "ftbic:deepslate_aluminum_ore",
+      "ftbic:aluminum_chunk",
+      "ftbic:aluminum_rod",
+      "ftbic:aluminum_block",
+      "ftbic:aluminum_nugget"
     ],
     "containerList": [
       "net.minecraft.inventory.container.WorkbenchContainer", "thitemstages.inventoryMenu.CraftingGrid",

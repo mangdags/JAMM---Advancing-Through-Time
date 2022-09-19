@@ -2,10 +2,6 @@
   "Restriction Data": {
     "stage": "iron_age",
     "itemList": [
-      "adpother:iron_filter_frame",
-      "adpother:iron_respirator",
-      "adpother:iron_vacuum_bag",
-      "adpother:iron_vacuum_tube",
       "immersiveengineering:chute_iron",
       "immersiveengineering:component_iron",
       "immersiveengineering:drillhead_iron",
@@ -107,10 +103,6 @@
       "projectbrazier:gold_spyglass",
       "supplementaries:hourglass",
       "minecraft:clock",
-      "minecraft:book",
-      "minecraft:bookshelf",
-      "minecraft:writable_book",
-      "minecraft:enchanted_book",
       "minecraft:enchanting_table",
       "sophisticatedstorage:pickup_upgrade",
       "sophisticatedstorage:upgrade_base",
@@ -209,25 +201,57 @@
       "supplementaries:crank",
       "minecraft:bell",
       "minecraft:fermented_spider_eye",
-      "minecraft:empty_map"
+      "minecraft:map",
+      "mcwdoors:metal_door",
+      "mcwdoors:metal_warning_door",
+      "mcwdoors:metal_hospital_door",
+      "mcwdoors:metal_reinforced_door",
+      "mcwdoors:metal_windowed_door",
+      "mcwdoors:jail_door",
+      "mcwdoors:garage_white_door",
+      "mcwdoors:garage_silver_door",
+      "mcwdoors:garage_gray_door",
+      "mcwdoors:garage_black_door",
+      "mcwtrpdoors:metal_full_trapdoor",
+      "mcwtrpdoors:metal_warning_trapdoor",
+      "create:ornate_iron_window",
+      "minecraft:bookshelf"
     ],
     "blockList": [
     ],
     "modList": [
-      
+      "myrtrees"
     ],
     "tagList": [
       "forge:ingots/iron",
       "forge:rods/iron",
       "forge:glass",
-      "forge:glass_panes"
+      "forge:glass_panes",
+      "forge:books"
     ],
     "exceptionList": [
       "sophisticatedbackpacks:diamond_backpack",
       "sophisticatedbackpacks:netherite_backpack",
       "immersiveengineering:stick_iron",
       "ftbic:iron_rod",
-      "silentgear:iron_rod"
+      "silentgear:iron_rod",
+      "minecraft:black_stained_glass_pane",
+      "minecraft:red_stained_glass_pane",
+      "minecraft:green_stained_glass_pane",
+      "minecraft:brown_stained_glass_pane",
+      "minecraft:blue_stained_glass_pane",
+      "minecraft:purple_stained_glass_pane",
+      "minecraft:cyan_stained_glass_pane",
+      "minecraft:light_gray_stained_glass_pane",
+      "minecraft:gray_stained_glass_pane",
+      "minecraft:pink_stained_glass_pane",
+      "minecraft:lime_stained_glass_pane",
+      "minecraft:yellow_stained_glass_pane",
+      "create:crimson_window_pane",
+      "create:warped_window_pane",
+      "createaddition:iron_rod",
+      "myrtrees:rubberwood_leaves",
+      "myrtrees:rubberwood_sapling"
     ],
     "containerList": [
       "net.minecraft.inventory.container.WorkbenchContainer", 

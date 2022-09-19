@@ -103,3 +103,61 @@ craftingTable.addShaped("chain_boots", <item:minecraft:chainmail_boots>, [
     [ironNugget, empty, ironNugget],
     [ironNugget, empty, ironNugget]
 ]);
+
+//SADDLE
+
+//LEATHER
+
+//HORSE ARMOR
+
+//NAME TAG
+
+var birchLog = <item:minecraft:birch_log>;
+var oakLog = <item:minecraft:oak_log>;
+var acaciaLog = <item:minecraft:acacia_log>;
+var jungleLog = <item:minecraft:jungle_log>;
+var darkOakLog = <item:minecraft:dark_oak_log>;
+var spruceLog = <item:minecraft:spruce_log>;
+
+//FIREWOOD 
+craftingTable.addShaped("birch_firewood", <item:projectbrazier:birch_firewood>, [
+    [birchLog, birchLog, birchLog],
+    [birchLog, birchLog, birchLog],
+    [birchLog, birchLog, birchLog]
+]);
+<item:projectbrazier:birch_firewood>.burnTime = 3000;
+
+craftingTable.addShaped("oak_firewood", <item:projectbrazier:oak_firewood>, [
+    [oakLog, oakLog, oakLog],
+    [oakLog, oakLog, oakLog],
+    [oakLog, oakLog, oakLog]
+]);
+<item:projectbrazier:oak_firewood>.burnTime = 3000;
+
+craftingTable.addShaped("acacia_firewood", <item:projectbrazier:acacia_firewood>, [
+    [acaciaLog, acaciaLog, acaciaLog],
+    [acaciaLog, acaciaLog, acaciaLog],
+    [acaciaLog, acaciaLog, acaciaLog]
+]);
+<item:projectbrazier:acacia_firewood>.burnTime = 3000;
+
+craftingTable.addShaped("jungle_firewood", <item:projectbrazier:jungle_firewood>, [
+    [jungleLog, jungleLog, jungleLog],
+    [jungleLog, jungleLog, jungleLog],
+    [jungleLog, jungleLog, jungleLog]
+]);
+<item:projectbrazier:jungle_firewood>.burnTime = 3000;
+
+craftingTable.addShaped("dark_oak_firewood", <item:projectbrazier:dark_oak_firewood>, [
+    [darkOakLog, darkOakLog, darkOakLog],
+    [darkOakLog, darkOakLog, darkOakLog],
+    [darkOakLog, darkOakLog, darkOakLog]
+]);
+<item:projectbrazier:dark_oak_firewood>.burnTime = 3000;
+
+craftingTable.addShaped("spruce_firewood", <item:projectbrazier:spruce_firewood>, [
+    [spruceLog, spruceLog, spruceLog],
+    [spruceLog, spruceLog, spruceLog],
+    [spruceLog, spruceLog, spruceLog]
+]);
+<item:projectbrazier:spruce_firewood>.burnTime = 3000;

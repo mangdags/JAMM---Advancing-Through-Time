@@ -27,9 +27,6 @@ var listItem as IItemStack [] = [
     <item:minecraft:diamond_boots>,
     <item:minecraft:diamond_horse_armor>,
     <item:natprog:diamond_saw>,
-    <item:adpother:diamond_filter_frame>,
-    <item:adpother:diamond_respirator>,
-    <item:adpother:diamond_vacuum_bag>,
     <item:parrying:diamond_mace>,
     <item:parrying:diamond_hammer>,
     <item:parrying:diamond_dagger>,
@@ -329,7 +326,6 @@ var listItem as IItemStack [] = [
     <item:supplementaries:blackstone_tile_stairs>,
     <item:supplementaries:blackstone_lamp>,
     <item:minecraft:nether_gold_ore>,
-    <item:minecraft:netherrack>,
     <item:minecraft:slime_ball>,
     <item:minecraft:slime_block>,
     <item:minecraft:red_nether_brick_stairs>,
@@ -501,7 +497,21 @@ var listItem as IItemStack [] = [
     <item:minecraft:brick_stairs>,
     <item:minecraft:note_block>,
     <item:minecraft:lead>,
-    <item:supplementaries:planter>
+    <item:supplementaries:planter>,
+    <item:mcwbridges:brick_bridge>,
+    <item:mcwbridges:brick_bridge_pier>,
+    <item:mcwbridges:brick_bridge_stair>,
+    <item:minecraft:netherrack>,
+    <item:natprog:cobbled_netherrack>,
+    <item:supplementaries:bamboo_spikes_tipped>,
+    <item:supplementaries:bamboo_spikes_tipped>,
+    <item:supplementaries:bamboo_spikes_tipped>,
+    <item:supplementaries:bamboo_spikes_tipped>,
+    <item:supplementaries:bamboo_spikes_tipped>,
+    <item:supplementaries:bamboo_spikes_tipped>,
+    <item:supplementaries:bamboo_spikes_tipped>,
+    <item:supplementaries:bamboo_spikes_tipped>,
+    <item:supplementaries:bamboo_spikes_tipped>
 ];
 
 var modList as string [] = [
@@ -514,7 +524,7 @@ var listTag as MCTag [] = [
     <tag:items:forge:concrete>,
     <tag:items:forge:terracotta>,
     <tag:items:forge:concrete_powders>,
-    <tag:items:silentgear:fluffy_blocks>
+    <tag:items:supplementaries:bamboo_spikes_tipped>
 ];
 
 var exceptItem as IItemStack [] = [

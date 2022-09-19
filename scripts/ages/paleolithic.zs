@@ -58,7 +58,19 @@ var listItem as IItemStack [] = [
     <item:minecraft:torch>,
     <item:supplementaries:feather_block>,
     <item:minecraft:rabbit_hide>,
-    <item:minecraft:rabbit_foot>
+    <item:minecraft:rabbit_foot>,
+    <item:mcwwindows:oak_log_parapet>,
+    <item:mcwwindows:spruce_log_parapet>,
+    <item:mcwwindows:birch_log_parapet>,
+    <item:mcwwindows:jungle_log_parapet>,
+    <item:mcwwindows:acacia_log_parapet>,
+    <item:mcwwindows:dark_oak_log_parapet>,
+    <item:mcwwindows:oak_plank_parapet>,
+    <item:mcwwindows:spruce_plank_parapet>,
+    <item:mcwwindows:birch_plank_parapet>,
+    <item:mcwwindows:jungle_plank_parapet>,
+    <item:mcwwindows:acacia_plank_parapet>,
+    <item:mcwwindows:dark_oak_plank_parapet>
 ];
 
 var listTag as MCTag [] = [

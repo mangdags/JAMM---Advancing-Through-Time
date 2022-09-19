@@ -5,10 +5,6 @@ import crafttweaker.api.tag.MCTag;
 #priority 98
 
 var listItem as IItemStack [] = [
-    <item:adpother:iron_filter_frame>,
-    <item:adpother:iron_respirator>,
-    <item:adpother:iron_vacuum_bag>,
-    <item:adpother:iron_vacuum_tube>,
     <item:immersiveengineering:chute_iron>,
     <item:immersiveengineering:component_iron>,
     <item:immersiveengineering:drillhead_iron>,
@@ -110,10 +106,6 @@ var listItem as IItemStack [] = [
     <item:projectbrazier:gold_spyglass>,
     <item:supplementaries:hourglass>,
     <item:minecraft:clock>,
-    <item:minecraft:book>,
-    <item:minecraft:bookshelf>,
-    <item:minecraft:writable_book>,
-    <item:minecraft:enchanted_book>,
     <item:minecraft:enchanting_table>,
     <item:sophisticatedstorage:pickup_upgrade>,
     <item:sophisticatedstorage:upgrade_base>,
@@ -212,15 +204,33 @@ var listItem as IItemStack [] = [
     <item:supplementaries:crank>,
     <item:minecraft:bell>,
     <item:minecraft:fermented_spider_eye>,
-    <item:minecraft:empty_map>
-
+    <item:minecraft:map>,
+    <item:mcwdoors:metal_door>,
+    <item:mcwdoors:metal_warning_door>,
+    <item:mcwdoors:metal_hospital_door>,
+    <item:mcwdoors:metal_reinforced_door>,
+    <item:mcwdoors:metal_windowed_door>,
+    <item:mcwdoors:jail_door>,
+    <item:mcwdoors:garage_white_door>,
+    <item:mcwdoors:garage_silver_door>,
+    <item:mcwdoors:garage_gray_door>,
+    <item:mcwdoors:garage_black_door>,
+    <item:mcwtrpdoors:metal_full_trapdoor>,
+    <item:mcwtrpdoors:metal_warning_trapdoor>,
+    <item:create:ornate_iron_window>,
+    <item:minecraft:bookshelf>
     ];
 
 var listTag as MCTag [] = [
     <tag:items:forge:ingots/iron>,
     <tag:items:forge:rods/iron>,
     <tag:items:forge:glass>,
-    <tag:items:forge:glass_panes>
+    <tag:items:forge:glass_panes>,
+    <tag:items:forge:books>
+];
+
+var listMod as string [] = [
+    "myrtrees"
 ];
 
 var exceptItem as IItemStack [] = [
@@ -228,7 +238,24 @@ var exceptItem as IItemStack [] = [
     <item:sophisticatedbackpacks:netherite_backpack>,
     <item:immersiveengineering:stick_iron>,
     <item:ftbic:iron_rod>,
-    <item:silentgear:iron_rod>
+    <item:silentgear:iron_rod>,
+    <item:minecraft:black_stained_glass_pane>,
+    <item:minecraft:red_stained_glass_pane>,
+    <item:minecraft:green_stained_glass_pane>,
+    <item:minecraft:brown_stained_glass_pane>,
+    <item:minecraft:blue_stained_glass_pane>,
+    <item:minecraft:purple_stained_glass_pane>,
+    <item:minecraft:cyan_stained_glass_pane>,
+    <item:minecraft:light_gray_stained_glass_pane>,
+    <item:minecraft:gray_stained_glass_pane>,
+    <item:minecraft:pink_stained_glass_pane>,
+    <item:minecraft:lime_stained_glass_pane>,
+    <item:minecraft:yellow_stained_glass_pane>,
+    <item:create:crimson_window_pane>,
+    <item:create:warped_window_pane>,
+    <item:createaddition:iron_rod>,
+    <item:myrtrees:rubberwood_leaves>,
+    <item:myrtrees:rubberwood_sapling>
 ];
 
 for item in listItem {
@@ -237,6 +264,10 @@ for item in listItem {
 
 for tag in listTag {
     setStagedTag("iron_age", tag); 
+}
+
+for mod in listMod {
+    setStagedMod("iron_age", mod);
 }
 
 for item in exceptItem {

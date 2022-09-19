@@ -87,7 +87,23 @@ var listItem as IItemStack [] = [
     <item:supplementaries:bellows>,
     <item:minecraft:packed_ice>,
     <item:minecraft:moss_carpet>,
-    <item:minecraft:moss_block>
+    <item:minecraft:moss_block>,
+    <item:mcwwindows:oak_blinds>,
+    <item:mcwwindows:spruce_blinds>,
+    <item:mcwwindows:birch_blinds>,
+    <item:mcwwindows:jungle_blinds>,
+    <item:mcwwindows:acacia_blinds>,
+    <item:mcwwindows:dark_oak_blinds>,
+    <item:mcwwindows:andesite_parapet>,
+    <item:mcwwindows:diorite_parapet>,
+    <item:mcwwindows:granite_parapet>,
+    <item:alexsmobs:blobfish>,
+    <item:alexsmobs:banana>,
+    <item:alexsdelight:kangaroo_shank>,
+    <item:alexsdelight:loose_moose_rib>,
+    <item:alexsmobs:maggot>,
+    <item:alexsmobs:lobster_tail>,
+    <item:alexsdelight:bison_mince>
 ];
 
 var modList as string [] = [

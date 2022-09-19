@@ -535,8 +535,8 @@
 		{
 			title: "Farming"
 			icon: "minecraft:wheat"
-			x: -1.5d
-			y: 10.5d
+			x: -0.5d
+			y: 12.0d
 			dependencies: ["1BD4EBA81DCC76F0"]
 			id: "21D16B3C36F89CA4"
 			tasks: [{

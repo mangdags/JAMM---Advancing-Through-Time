@@ -53,7 +53,13 @@
       "alexsdelight:raw_bison",
       "alexsdelight:raw_bunfungus",
       "alexsmobs:moose_ribs",
-      "alexsmobs:raw_catfish"
+      "alexsmobs:raw_catfish",
+      "alexsmobs:kangaroo_burger",
+      "alexsmobs:shrimp_fried_rice",
+      "alexsmobs:boiled_emu_egg",
+      "alexsmobs:sopa_de_macaco",
+      "alexsmobs:kangaroo_meat",
+      "alexsmobs:gongylidia"
     ],
     "blockList": [
     ],

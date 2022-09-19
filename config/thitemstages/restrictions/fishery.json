@@ -52,7 +52,9 @@
       "minecraft:prismarine_shard",
       "minecraft:prismarine_crystals",
       "minecraft:kelp",
-      "minecraft:pufferfish"
+      "minecraft:pufferfish",
+      "minecraft:ink_sac",
+      "minecraft:glow_ink_sac"
     ],
     "blockList": [
     ],

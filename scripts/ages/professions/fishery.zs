@@ -52,7 +52,9 @@ var listItem as IItemStack [] = [
     <item:minecraft:prismarine_shard>,
     <item:minecraft:prismarine_crystals>,
     <item:minecraft:kelp>,
-    <item:minecraft:pufferfish>
+    <item:minecraft:pufferfish>,
+    <item:minecraft:ink_sac>,
+    <item:minecraft:glow_ink_sac>
 ];
 
 var listTag as MCTag [] = [

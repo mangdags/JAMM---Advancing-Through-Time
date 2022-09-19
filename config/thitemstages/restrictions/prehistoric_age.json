@@ -2,6 +2,7 @@
   "Restriction Data": {
     "stage": "prehistoric_age",
     "itemList": [
+      "natprog:flint_hatchet",
       "farmersdelight:flint_knife",
       "minecraft:flint",
       "natprog:basic_saw",
@@ -9,9 +10,11 @@
       "minecraft:sand",
       "minecraft:gravel",
       "silgentgear:pebble",
+      "minecraft:apple",
       "minecraft:carrot",
       "minecraft:potato",
       "minecraft:wheat",
+      "minecraft:bread",
       "minecraft:beetroot",
       "minecraft:wheat_seeds",
       "minecraft:stick",
@@ -34,7 +37,8 @@
       "minecraft:crimson_slab",
       "minecraft:warped_slab",
       "minecraft:crimson_stem",
-      "minecraft:warped_stem"
+      "minecraft:warped_stem",
+      "immersiveengineering:fiberboard"
 
     ],
     "containerList": [

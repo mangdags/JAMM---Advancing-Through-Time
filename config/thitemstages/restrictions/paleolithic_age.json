@@ -58,7 +58,19 @@
       "minecraft:torch",
       "supplementaries:feather_block",
       "minecraft:rabbit_hide",
-      "minecraft:rabbit_foot"
+      "minecraft:rabbit_foot",
+      "mcwwindows:oak_log_parapet",
+      "mcwwindows:spruce_log_parapet",
+      "mcwwindows:birch_log_parapet",
+      "mcwwindows:jungle_log_parapet",
+      "mcwwindows:acacia_log_parapet",
+      "mcwwindows:dark_oak_log_parapet",
+      "mcwwindows:oak_plank_parapet",
+      "mcwwindows:spruce_plank_parapet",
+      "mcwwindows:birch_plank_parapet",
+      "mcwwindows:jungle_plank_parapet",
+      "mcwwindows:acacia_plank_parapet",
+      "mcwwindows:dark_oak_plank_parapet"
     ],
     "blockList": [
     ],

@@ -12,10 +12,12 @@ var listItem as IItemStack [] = [
     <item:cfm:acacia_hedge>,
     <item:cfm:dark_oak_hedge>,
     <item:myrtrees:rubberwood_sapling>,
+    <item:myrtrees:rubberwood_leaves>,
     <item:minecraft:twisting_vines>,
     <item:silentgear:saw_blueprint>,
     <item:silentgear:saw_template>,
     <item:silentgear:saw>
+    
 ];
 
 for item in listItem {
