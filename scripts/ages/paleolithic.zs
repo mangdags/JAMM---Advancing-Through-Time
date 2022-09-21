@@ -70,7 +70,11 @@ var listItem as IItemStack [] = [
     <item:mcwwindows:birch_plank_parapet>,
     <item:mcwwindows:jungle_plank_parapet>,
     <item:mcwwindows:acacia_plank_parapet>,
-    <item:mcwwindows:dark_oak_plank_parapet>
+    <item:mcwwindows:dark_oak_plank_parapet>,
+    <item:minecraft:brown_mushroom_block>,
+    <item:minecraft:red_mushroom_block>,
+    <item:minecraft:mushroom_stem>,
+    <item:projectbrazier:hoof_fungus>
 ];
 
 var listTag as MCTag [] = [

@@ -3,14 +3,35 @@ import crafttweaker.api.event.entity.player.interact.RightClickBlockEvent;
 import mods.gamestages.events.GameStageAdded;
 import mods.gamestages.events.GameStageRemoved;
 import crafttweaker.api.world.ServerLevel;
+import crafttweaker.api.text.Style;
+import crafttweaker.api.text.ChatFormatting;
+import crafttweaker.api.text.TextComponent;
+
+CTEventManager.register<RightClickBlockEvent>((event) => {
+  var player = event.player;
+  var level = player.level;
+  var pos = event.blockPos;
+  var message = new TextComponent("You must unlock Neolithic Age to interact with this block!").setStyle(<constant:formatting:red>);
+
+  if level.getBlockState(pos).block == <block:minecraft:furnace> {
+    if !player.hasGameStage("neolithic_age") {
+
+      player.displayClientMessage(message, true);
+      event.cancel();
+    }
+  }
+});
 
 CTEventManager.register<RightClickBlockEvent>((event) => {
   var player = event.player;
   var level = player.level;
   var pos = event.blockPos;
 
-  if level.getBlockState(pos).block == <block:minecraft:furnace> {
-    if !player.hasGameStage("neolithic_age") {
+  var message = new TextComponent("You must unlock Iron Age to interact with this block!").setStyle(<constant:formatting:red>);
+
+  if level.getBlockState(pos).block == <block:minecraft:stonecutter> {
+    if !player.hasGameStage("iron_age") {
+      player.displayClientMessage(message, true);
       event.cancel();
     }
   }

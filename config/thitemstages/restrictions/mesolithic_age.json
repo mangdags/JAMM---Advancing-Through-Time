@@ -97,13 +97,14 @@
       "mcwwindows:andesite_parapet",
       "mcwwindows:diorite_parapet",
       "mcwwindows:granite_parapet",
-      "alexsmobs:blobfish",
       "alexsmobs:banana",
-      "alexsdelight:kangaroo_shank",
-      "alexsdelight:loose_moose_rib",
-      "alexsmobs:maggot",
-      "alexsmobs:lobster_tail",
-      "alexsdelight:bison_mince"
+      "projectbrazier:birch_firewood",
+      "projectbrazier:oak_firewood",
+      "projectbrazier:acacia_firewood",
+      "projectbrazier:jungle_firewood",
+      "projectbrazier:dark_oak_firewood",
+      "projectbrazier:spruce_firewood",
+      "projectbrazier:rope"
     ],
     "blockList": [
     ],

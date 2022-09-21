@@ -1,7 +1,7 @@
 
 ["General Options"]
 	#List all the stages that you want to have.
-	stages = ["prehistoric_age", "paleolithic_age", "mesolithic_age", "neolithic_age", "calcolithic_age", "bronze_age", "iron_age", "renaissance_age", "industrial_age", "machine_age", "atomic_age", "farming", "cookery", "fishery", "logging", "carpentry", "sailing", "pottery", "breeding"]
+	stages = ["prehistoric_age", "paleolithic_age", "mesolithic_age", "neolithic_age", "calcolithic_age", "bronze_age", "iron_age", "renaissance_age", "industrial_age", "machine_age", "atomic_age", "farming", "cookery", "fishery", "logging", "carpentry", "sailing", "pottery", "animalia"]
 	#Set this value to 'true' whenever you're having issues, this will allow the mod to output everything it tries to do in the log.
 	debugMode = true
 

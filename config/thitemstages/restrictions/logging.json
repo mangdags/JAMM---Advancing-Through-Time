@@ -15,7 +15,19 @@
       "minecraft:twisting_vines",
       "silentgear:saw_blueprint",
       "silentgear:saw_template",
-      "silentgear:saw"
+      "silentgear:saw",
+      "projectbrazier:hollow_birch_log",
+      "projectbrazier:hollow_oak_log",
+      "projectbrazier:hollow_acacia_log",
+      "projectbrazier:hollow_jungle_log",
+      "projectbrazier:hollow_dark_oak_log",
+      "projectbrazier:hollow_spruce_log",
+      "projectbrazier:stripped_hollow_birch_log",
+      "projectbrazier:stripped_hollow_oak_log",
+      "projectbrazier:stripped_hollow_acacia_log",
+      "projectbrazier:stripped_hollow_jungle_log",
+      "projectbrazier:stripped_hollow_dark_oak_log",
+      "projectbrazier:stripped_hollow_spruce_log"
     ],
     "blockList": [
     ],

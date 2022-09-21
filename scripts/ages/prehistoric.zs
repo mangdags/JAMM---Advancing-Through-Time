@@ -20,6 +20,7 @@ var listItem as IItemStack [] = [
     <item:minecraft:beetroot>,
     <item:minecraft:apple>,
     <item:minecraft:wheat_seeds>,
+    <item:projectbrazier:white_cabbage>,
     <item:minecraft:stick>,
     <item:minecraft:crafting_table>,
 ];

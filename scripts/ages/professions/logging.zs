@@ -16,7 +16,19 @@ var listItem as IItemStack [] = [
     <item:minecraft:twisting_vines>,
     <item:silentgear:saw_blueprint>,
     <item:silentgear:saw_template>,
-    <item:silentgear:saw>
+    <item:silentgear:saw>,
+    <item:projectbrazier:hollow_birch_log>,
+    <item:projectbrazier:hollow_oak_log>,
+    <item:projectbrazier:hollow_acacia_log>,
+    <item:projectbrazier:hollow_jungle_log>,
+    <item:projectbrazier:hollow_dark_oak_log>,
+    <item:projectbrazier:hollow_spruce_log>,
+    <item:projectbrazier:stripped_hollow_birch_log>,
+    <item:projectbrazier:stripped_hollow_oak_log>,
+    <item:projectbrazier:stripped_hollow_acacia_log>,
+    <item:projectbrazier:stripped_hollow_jungle_log>,
+    <item:projectbrazier:stripped_hollow_dark_oak_log>,
+    <item:projectbrazier:stripped_hollow_spruce_log>
     
 ];
 

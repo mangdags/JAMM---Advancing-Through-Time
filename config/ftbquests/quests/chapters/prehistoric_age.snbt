@@ -9,7 +9,7 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			title: "JAMP: ADVANCING THROUGH TIME"
+			title: "JAMM: ADVANCING THROUGH TIME"
 			x: 0.0d
 			y: 0.0d
 			shape: "octagon"

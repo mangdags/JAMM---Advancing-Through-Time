@@ -103,7 +103,14 @@ var listItem as IItemStack [] = [
     <item:alexsdelight:loose_moose_rib>,
     <item:alexsmobs:maggot>,
     <item:alexsmobs:lobster_tail>,
-    <item:alexsdelight:bison_mince>
+    <item:alexsdelight:bison_mince>,
+    <item:projectbrazier:birch_firewood>,
+    <item:projectbrazier:oak_firewood>,
+    <item:projectbrazier:acacia_firewood>,
+    <item:projectbrazier:jungle_firewood>,
+    <item:projectbrazier:dark_oak_firewood>,
+    <item:projectbrazier:spruce_firewood>,
+    <item:projectbrazier:rope>
 ];
 
 var modList as string [] = [

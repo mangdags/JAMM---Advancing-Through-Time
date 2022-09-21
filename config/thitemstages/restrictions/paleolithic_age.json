@@ -31,8 +31,6 @@
       "natprog:bone_pickaxe",
       "natprog:bone_knife",
       "natprog:bone_shard",
-      "alexsmobs:bone_serpent_tooth",
-      "alexsmobs:fish_bones",
       "projectbrazier:bone_war_horn",
       "minecraft:coal",
       "minecraft:coal_ore",
@@ -70,7 +68,11 @@
       "mcwwindows:birch_plank_parapet",
       "mcwwindows:jungle_plank_parapet",
       "mcwwindows:acacia_plank_parapet",
-      "mcwwindows:dark_oak_plank_parapet"
+      "mcwwindows:dark_oak_plank_parapet",
+      "minecraft:brown_mushroom_block",
+      "minecraft:red_mushroom_block",
+      "minecraft:mushroom_stem",
+      "projectbrazier:hoof_fungus"
     ],
     "blockList": [
     ],

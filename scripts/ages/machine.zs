@@ -39,7 +39,8 @@ var listItem as IItemStack [] = [
     <item:toms_storage:ts.adv_wireless_terminal>,
     <item:supplementaries:lead_door>,
     <item:supplementaries:silver_door>,
-    <item:supplementaries:lead_lantern>
+    <item:supplementaries:lead_lantern>,
+    <item:supplementaries:bomb_spiky>
 ];
 
 var modList as string [] = [

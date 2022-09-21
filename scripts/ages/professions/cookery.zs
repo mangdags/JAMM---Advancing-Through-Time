@@ -59,7 +59,10 @@ var listItem as IItemStack [] = [
     <item:alexsmobs:boiled_emu_egg>,
     <item:alexsmobs:sopa_de_macaco>,
     <item:alexsmobs:kangaroo_meat>,
-    <item:alexsmobs:gongylidia>
+    <item:alexsmobs:gongylidia>,
+    <item:alexsdelight:kangaroo_shank>,
+    <item:alexsdelight:loose_moose_rib>,
+    <item:alexsdelight:bison_mince>
 ];
 
 var modList as string [] = [

@@ -119,7 +119,17 @@
       "minecraft:calcite",
       "minecraft:amethyst_shard",
       "minecraft:amethyst_block",
-      "minecraft:budding_amethyst"
+      "minecraft:budding_amethyst",
+      "projectbrazier:birch_zipline_anchor",
+      "projectbrazier:oak_zipline_anchor",
+      "projectbrazier:acacia_zipline_anchor",
+      "projectbrazier:jungle_zipline_anchor",
+      "projectbrazier:dark_oak_zipline_anchor",
+      "projectbrazier:spruce_zipline_anchor",
+      "projectbrazier:rope_anchor",
+      "minecraft:honeycomb",
+      "projectbrazier:deepslate_arrow_slit",
+      "projectbrazier:stone_arrow_slit"
     ],
     "blockList": [
 

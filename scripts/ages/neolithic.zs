@@ -119,7 +119,17 @@ var listItem as IItemStack [] = [
     <item:minecraft:calcite>,
     <item:minecraft:amethyst_shard>,
     <item:minecraft:amethyst_block>,
-    <item:minecraft:budding_amethyst>
+    <item:minecraft:budding_amethyst>,
+    <item:projectbrazier:birch_zipline_anchor>,
+    <item:projectbrazier:oak_zipline_anchor>,
+    <item:projectbrazier:acacia_zipline_anchor>,
+    <item:projectbrazier:jungle_zipline_anchor>,
+    <item:projectbrazier:dark_oak_zipline_anchor>,
+    <item:projectbrazier:spruce_zipline_anchor>,
+    <item:projectbrazier:rope_anchor>,
+    <item:minecraft:honeycomb>,
+    <item:projectbrazier:deepslate_arrow_slit>,
+    <item:projectbrazier:stone_arrow_slit>
 ];
 
 var listTag as MCTag [] = [

@@ -162,7 +162,10 @@ var listItem as IItemStack [] = [
     <item:minecraft:firework_rocket>,
     <item:minecraft:fire_charge>,
     <item:minecraft:soul_campfire>,
-    <item:minecraft:ender_eye>
+    <item:minecraft:ender_eye>,
+    <item:supplementaries:brass_lantern>,
+    <item:sophisticatedstorage:controller>,
+    <item:sophisticatedstorage:storage_link>
 ];
 
 var modList as string [] = [
@@ -170,6 +173,7 @@ var modList as string [] = [
     "create",
     "createaddition",
     "refinedstorage",
+    "refinedstorageaddons",
     "refinedpipes"
 ];
 

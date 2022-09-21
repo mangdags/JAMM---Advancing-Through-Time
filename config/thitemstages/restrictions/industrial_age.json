@@ -162,7 +162,10 @@
       "minecraft:firework_rocket",
       "minecraft:firework_rocket",
       "minecraft:soul_campfire",
-      "minecraft:ender_eye"
+      "minecraft:ender_eye",
+      "supplementaries:brass_lantern",
+      "sophisticatedstorage:controller",
+      "sophisticatedstorage:storage_link"
     ],
     "blockList": [
     ],
@@ -171,6 +174,7 @@
       "create",
       "createaddition",
       "refinedstorage",
+      "refinedstorageaddons",
       "refinedpipes"
     ],
     "tagList": [

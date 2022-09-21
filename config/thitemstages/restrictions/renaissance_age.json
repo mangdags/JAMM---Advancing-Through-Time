@@ -64,8 +64,6 @@
       "cfm:crimson_chair",
       "cfm:stripped_crimson_chair",
       "cfm:crimson_coffee_table",
-      "alexsmobs:mosquito_proboscis",
-      "alexsmobs:mosquito_larva",
       "farmersdelight:crimson_cabinet",
       "mcwbridges:crimson_log_bridge_middle",
       "mcwbridges:rope_crimson_bridge",
@@ -160,8 +158,6 @@
       "minecraft:warped_trapdoor",
       "minecraft:warped_fence_gate",
       "minecraft:warped_fungus_on_a_stick",
-      "alexsmobs:warped_muscle",
-      "alexsmobs:warped_mixture",
       "farmersdelight:warped_cabinet",
       "mcwbridges:warped_log_bridge_middle",
       "mcwbridges:rope_warped_bridge",
@@ -469,21 +465,17 @@
       "mcwbridges:brick_bridge_pier",
       "mcwbridges:brick_bridge_stair",
       "natprog:cobbled_netherrack",
-      "supplementaries:bamboo_spikes_tipped",
-      "supplementaries:bamboo_spikes_tipped",
-      "supplementaries:bamboo_spikes_tipped",
-      "supplementaries:bamboo_spikes_tipped",
-      "supplementaries:bamboo_spikes_tipped",
-      "supplementaries:bamboo_spikes_tipped",
-      "supplementaries:bamboo_spikes_tipped",
-      "supplementaries:bamboo_spikes_tipped",
-      "supplementaries:bamboo_spikes_tipped"
+      "supplementaries:speaker_block",
+      "supplementaries:bomb_spiky",
+      "supplementaries:globe_sepia",
+      "fusion:fusion_furnace"
     ],
     "blockList": [
     ],
     "modList": [
       "alcocraft",
-      "bygonenether"
+      "bygonenether",
+      "simpleshops"
     ],
     "tagList": [
       "forge:stained_glass_panes",

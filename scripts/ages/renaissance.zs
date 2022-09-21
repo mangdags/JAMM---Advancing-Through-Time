@@ -503,15 +503,10 @@ var listItem as IItemStack [] = [
     <item:mcwbridges:brick_bridge_stair>,
     <item:minecraft:netherrack>,
     <item:natprog:cobbled_netherrack>,
-    <item:supplementaries:bamboo_spikes_tipped>,
-    <item:supplementaries:bamboo_spikes_tipped>,
-    <item:supplementaries:bamboo_spikes_tipped>,
-    <item:supplementaries:bamboo_spikes_tipped>,
-    <item:supplementaries:bamboo_spikes_tipped>,
-    <item:supplementaries:bamboo_spikes_tipped>,
-    <item:supplementaries:bamboo_spikes_tipped>,
-    <item:supplementaries:bamboo_spikes_tipped>,
-    <item:supplementaries:bamboo_spikes_tipped>
+    <item:supplementaries:speaker_block>,
+    <item:supplementaries:bomb_spiky>,
+    <item:supplementaries:globe_sepia>,
+    <item:fusion:fusion_furnace>
 ];
 
 var modList as string [] = [

@@ -30,6 +30,7 @@
 #0306AC minecraft:birch_stairs
 #2C38FD minecraft:birch_trapdoor
 #CD2A18 minecraft:black_terracotta
+#9517B5 projectbrazier:black_wall_candle_holder
 #B152E8 minecraft:black_wool
 #C9CBB9 minecraft:blackstone
 #B14754 supplementaries:block_generator
@@ -61,6 +62,7 @@
 #C3DAEA minecraft:chiseled_sandstone
 #AA9109 minecraft:chiseled_stone_bricks
 #7FDE54 minecraft:clay
+#63BE8F projectbrazier:clay_in_dirt
 #8B43D8 minecraft:coal_block
 #DE242D minecraft:coal_ore
 #FE4F0A minecraft:coarse_dirt
@@ -162,6 +164,7 @@
 #19A3C1 minecraft:dropper
 #CA208F adpother:dust
 #4C963A minecraft:emerald_ore
+#A353A7 projectbrazier:empty_wall_candle_holder
 #30FFCA ftbic:ev_solar_panel
 #009B14 minecraft:farmland
 #B9B269 minecraft:fire_coral_block
@@ -179,6 +182,7 @@
 #4FFC5C minecraft:gray_candle
 #188934 minecraft:gray_terracotta
 #F67E21 minecraft:hay_block
+#3387B3 projectbrazier:hoof_fungus
 #9D2636 minecraft:horn_coral_block
 #52D27E minecraft:ice
 #C98800 minecraft:infested_cracked_stone_bricks
@@ -287,6 +291,7 @@
 #DA294B minecraft:purple_wool
 #FB9751 minecraft:quartz_slab
 #868785 minecraft:rail
+#BFD3AB alexsmobs:rainbow_glass
 #213091 minecraft:raw_copper_block
 #306A8D minecraft:red_banner
 #E71C2C minecraft:red_carpet
@@ -358,6 +363,7 @@
 #AE3F24 supplementaries:urn
 #6DB687 create:veridium
 #88779D minecraft:vine
+#5E3775 projectbrazier:wall_candle_holder
 #3DB9C4 supplementaries:wall_lantern
 #78332B minecraft:warped_nylium
 #88A5C6 minecraft:wet_sponge
