@@ -1,0 +1,44 @@
+{
+	"oreConfig":[
+		{
+	      "ore": "mekanism:deepslate_lead_ore",
+	      "minY": -1,
+	      "maxY": -1,
+	      "maxVeinSize": -1,
+	      "spawnRate": -1,
+	      "biomeBlacklist": [],
+	      "biomeWhitelist": [],
+	      "replace": true
+	    },
+	    {
+	      "ore": "mekanism:lead_ore",
+	      "minY": -1,
+	      "maxY": -1,
+	      "maxVeinSize": -1,
+	      "spawnRate": -1,
+	      "biomeBlacklist": [],
+	      "biomeWhitelist": [],
+	      "replace": true
+	    },
+	    {
+	      "ore": "immersiveengineering:deepslate_ore_uranium",
+	      "minY": -1,
+	      "maxY": -1,
+	      "maxVeinSize": -1,
+	      "spawnRate": -1,
+	      "biomeBlacklist": [],
+	      "biomeWhitelist": [],
+	      "replace": true
+	    },
+	    {
+	      "ore": "simplecorelib:original_copper_ore",
+	      "minY": -1,
+	      "maxY": -1,
+	      "maxVeinSize": -1,
+	      "spawnRate": -1,
+	      "biomeBlacklist": [],
+	      "biomeWhitelist": [],
+	      "replace": true
+	    }
+	]
+}

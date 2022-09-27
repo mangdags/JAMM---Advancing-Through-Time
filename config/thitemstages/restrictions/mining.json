@@ -2,10 +2,6 @@
   "Restriction Data": {
     "stage": "mining",
     "itemList": [
-      "silentgear:hammer_template",
-      "silentgear:hammer_blueprint",
-      "silentgear:hammer_head",
-      "silentgear:hammer"
     ],
     "blockList": [
     ],
@@ -24,8 +20,6 @@
       "net.minecraft.world.inventory.FurnaceMenu"
     ],
     "dimensionList": [
-      "minecraft:the_nether",
-      "minecraft:the_end"
     ]
   },
   "Settings": {

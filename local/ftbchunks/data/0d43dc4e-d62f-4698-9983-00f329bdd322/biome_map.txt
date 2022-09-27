@@ -2,13 +2,17 @@
 #47F minecraft:birch_forest
 #79D terralith:cave/andesite_caves
 #3D6 minecraft:cold_ocean
+#4F9 minecraft:dark_forest
 #3DE minecraft:deep_ocean
 #010 minecraft:forest
 #78A terralith:gravel_beach
+#498 minecraft:lush_caves
 #4F1 minecraft:ocean
 #1DF minecraft:old_growth_birch_forest
 #73A minecraft:old_growth_pine_taiga
 #60C minecraft:old_growth_spruce_taiga
 #5FF minecraft:river
+#553 terralith:siberian_taiga
+#51A minecraft:stony_shore
 #169 minecraft:taiga
 #1D0 terralith:yellowstone

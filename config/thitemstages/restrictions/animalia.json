@@ -2,9 +2,7 @@
   "Restriction Data": {
     "stage": "animalia",
     "itemList": [
-      "silentgear:shears_template",
-      "silentgear:shears_blueprint",
-      "silentgear:shears"
+      
     ],
     "blockList": [
     ],
@@ -33,7 +31,8 @@
         "alexsmobs:void_worm_mandible",
         "alexsmobs:void_worm_eye",
         "alexsmobs:void_worm_beak",
-        "alexsmobs:void_worm_effigy"
+        "alexsmobs:void_worm_effigy",
+        "alexsmobs:animal_dictionary"
     ],
     "containerList": [
       "net.minecraft.inventory.container.WorkbenchContainer", 
@@ -43,8 +42,6 @@
       "net.minecraft.world.inventory.FurnaceMenu"
     ],
     "dimensionList": [
-      "minecraft:the_nether",
-      "minecraft:the_end"
     ]
   },
   "Settings": {

@@ -8,7 +8,7 @@
       "distribution": "TRIANGLE",
       "minY": 8,
       "maxY": 24,
-      "maxVeinSize": 3,
+      "maxVeinSize": 2,
       "spawnRate": 1.0,
       "discardChanceOnAirExposure": 1.0,
       "biomeFilters": {

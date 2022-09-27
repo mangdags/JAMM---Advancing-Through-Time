@@ -5,9 +5,6 @@ var listItem as IItemStack [] = [
     <item:minecraft:sponge>,
     <item:minecraft:wet_sponge>,
     <item:minecraft:trident>,
-    <item:silentgear:trident_template>,
-    <item:silentgear:trident_blueprint>,
-    <item:silentgear:trident>,
     <item:minecraft:prismarine_bricks>,
     <item:minecraft:dark_prismarine>,
     <item:minecraft:prismarine>
@@ -16,3 +13,19 @@ var listItem as IItemStack [] = [
 var modList as string [] = [
     "smallships"
 ];
+
+var exceptItem as IItemStack [] = [
+    <item:smallships:sail_item>
+];
+
+for item in listItem {
+    setStagedItem("sailing", item);
+}
+
+for mod in modList {
+    setStagedMod("sailing", mod);
+}
+
+ for item in exceptItem {
+    removeStagedItem(item);
+ }

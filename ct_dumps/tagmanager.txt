@@ -25,6 +25,10 @@
 <tagmanager:loot_number_provider_type>
 <tagmanager:loot_pool_entry_type>
 <tagmanager:loot_score_provider_type>
+<tagmanager:mekanism/gas>
+<tagmanager:mekanism/infuse_type>
+<tagmanager:mekanism/pigment>
+<tagmanager:mekanism/slurry>
 <tagmanager:memory_module_type>
 <tagmanager:menu>
 <tagmanager:mob_effect>

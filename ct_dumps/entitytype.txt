@@ -1,5 +1,3 @@
-<entitytype:adpother:gas>
-<entitytype:adpother:purified_air>
 <entitytype:alexsmobs:alligator_snapping_turtle>
 <entitytype:alexsmobs:anaconda>
 <entitytype:alexsmobs:anaconda_part>
@@ -117,7 +115,6 @@
 <entitytype:create:stationary_contraption>
 <entitytype:create:super_glue>
 <entitytype:farmersdelight:rotten_tomato>
-<entitytype:ftbic:nuke_arrow>
 <entitytype:immersiveengineering:cart_metalbarrel>
 <entitytype:immersiveengineering:cart_reinforcedcrate>
 <entitytype:immersiveengineering:cart_woodenbarrel>
@@ -133,6 +130,8 @@
 <entitytype:immersiveengineering:sawblade>
 <entitytype:immersiveengineering:skyline_hook>
 <entitytype:lootr:lootr_minecart>
+<entitytype:mekanism:flame>
+<entitytype:mekanism:robit>
 <entitytype:minecraft:area_effect_cloud>
 <entitytype:minecraft:armor_stand>
 <entitytype:minecraft:arrow>
@@ -254,9 +253,6 @@
 <entitytype:pollen:boat>
 <entitytype:projectbrazier:sittable>
 <entitytype:projectbrazier:zipline>
-<entitytype:silentgear:arrow>
-<entitytype:silentgear:fishing_hook>
-<entitytype:silentgear:slingshot_projectile>
 <entitytype:smallships:brigg>
 <entitytype:smallships:cannon_ball>
 <entitytype:smallships:cog>

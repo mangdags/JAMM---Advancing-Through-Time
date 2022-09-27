@@ -57,8 +57,6 @@ var listItem as IItemStack [] = [
     <item:fusion:bronze_nugget>,
     <item:fusion:large_bronze_chunk>,
     <item:fusion:medium_bronze_chunk>,
-    <item:ftbic:bronze_nugget>,
-    <item:ftbic:bronze_rod>,
     <item:supplementaries:key>,
     <item:toms_storage:ts.storage_terminal>,
     <item:toms_storage:ts.open_crate>,
@@ -70,7 +68,17 @@ var listItem as IItemStack [] = [
     <item:toms_storage:ts.inventory_proxy>,
     <item:toms_storage:ts.crafting_terminal>,
     <item:toms_storage:ts.inventory_cable_connector_framed>,
-    <item:toms_storage:ts.inventory_connector>
+    <item:toms_storage:ts.inventory_connector>,
+    <item:mekanism:ingot_bronze>,
+    <item:mekanism:nugget_bronze>,
+    <item:mekanism:block_bronze>,
+    <item:mekanism:ingot_tin>,
+    <item:mekanism:raw_tin>,
+    <item:mekanism:nugget_tin>,
+    <item:mekanism:block_tin>,
+    <item:mekanism:block_raw_tin>,
+    <item:mekanism:tin_ore>,
+    <item:mekanism:deepslate_tin_ore>
 ];
 
 var exceptItem as IItemStack [] = [

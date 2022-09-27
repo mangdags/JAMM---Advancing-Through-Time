@@ -54,7 +54,8 @@ var listItem as IItemStack [] = [
     <item:minecraft:kelp>,
     <item:minecraft:pufferfish>,
     <item:minecraft:ink_sac>,
-    <item:minecraft:glow_ink_sac>
+    <item:minecraft:glow_ink_sac>,
+    <item:smallships:sail_item>
 ];
 
 var listTag as MCTag [] = [

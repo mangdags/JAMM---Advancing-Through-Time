@@ -1,3 +1,54 @@
 *.mca
 *.gz
-/logs
+logs/
+local/
+local/ftbchunks/data/
+saves/
+saves/New World
+saves/New World/advancements/9ac63ce7-7d8e-4581-8a68-f0fb66c53bd9.json
+saves/New World/data/dynamic_player_progression_and_player_difficulty.dat
+saves/New World/data/idcounts.dat
+saves/New World/data/ImmersiveEngineering-SaveData.dat
+saves/New World/data/lootr/Lootr-ScoreData.dat
+saves/New World/data/pregen_structure_cache.dat
+saves/New World/data/raids.dat
+saves/New World/DIM-1/data/raids.dat
+saves/New World/DIM1/data/raids_end.dat
+saves/New World/entities/r.-1.-1.mca
+saves/New World/entities/r.-1.-2.mca
+saves/New World/entities/r.-1.0.mca
+saves/New World/entities/r.0.-1.mca
+saves/New World/entities/r.0.-2.mca
+saves/New World/entities/r.0.-3.mca
+saves/New World/entities/r.0.0.mca
+saves/New World/entities/r.1.-2.mca
+saves/New World/entities/r.1.-3.mca
+saves/New World/entities/r.2.-3.mca
+saves/New World/ftbquests/9ac63ce7-7d8e-4581-8a68-f0fb66c53bd9.snbt
+saves/New World/level.dat
+saves/New World/level.dat_old
+saves/New World/playerdata/9ac63ce7-7d8e-4581-8a68-f0fb66c53bd9.dat
+saves/New World/playerdata/9ac63ce7-7d8e-4581-8a68-f0fb66c53bd9.dat_old
+saves/New World/playerdata/gamestages/9ac63ce7-7d8e-4581-8a68-f0fb66c53bd9.dat
+saves/New World/poi/r.-1.-2.mca
+saves/New World/poi/r.0.-1.mca
+saves/New World/poi/r.0.-2.mca
+saves/New World/poi/r.0.-3.mca
+saves/New World/poi/r.0.0.mca
+saves/New World/poi/r.2.-3.mca
+saves/New World/region/r.-1.-1.mca
+saves/New World/region/r.-1.-2.mca
+saves/New World/region/r.-1.-3.mca
+saves/New World/region/r.-1.0.mca
+saves/New World/region/r.0.-1.mca
+saves/New World/region/r.0.-2.mca
+saves/New World/region/r.0.-3.mca
+saves/New World/region/r.0.-4.mca
+saves/New World/region/r.0.0.mca
+saves/New World/region/r.1.-1.mca
+saves/New World/region/r.1.-2.mca
+saves/New World/region/r.1.-3.mca
+saves/New World/region/r.2.-2.mca
+saves/New World/region/r.2.-3.mca
+saves/New World/stats/9ac63ce7-7d8e-4581-8a68-f0fb66c53bd9.json
+Backups/Alpha Tests/JAMM-ADVTIME-ALPHA-0.0.1.zip

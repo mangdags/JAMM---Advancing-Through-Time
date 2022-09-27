@@ -15,7 +15,6 @@
 <itemgroup:extra>
 <itemgroup:farmersdelight>
 <itemgroup:food>
-<itemgroup:ftbic>
 <itemgroup:ftbquests.ftbquests>
 <itemgroup:fusion>
 <itemgroup:hotbar>
@@ -28,6 +27,7 @@
 <itemgroup:mcwdoors>
 <itemgroup:mcwfences>
 <itemgroup:mcwtrpdoors>
+<itemgroup:mekanism>
 <itemgroup:misc>
 <itemgroup:mtmechs>
 <itemgroup:myrtrees.myrtrees_tab>
@@ -41,7 +41,6 @@
 <itemgroup:roofs2>
 <itemgroup:roofs>
 <itemgroup:search>
-<itemgroup:silentgear>
 <itemgroup:simplecorelib>
 <itemgroup:sophisticatedbackpacks>
 <itemgroup:sophisticatedstorage>

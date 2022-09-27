@@ -30,7 +30,6 @@ var listItem as IItemStack [] = [
     <item:immersiveengineering:slab_alu_scaffolding_wooden_top>,
     <item:immersiveengineering:stairs_alu_scaffolding_wooden_top>,
     <item:immersiveengineering:stick_aluminum>,
-    <item:silentgear:sturdy_repair_kit>,
     <item:minecraft:netherite_block>,
     <item:minecraft:netherite_scrap>,
     <item:minecraft:netherite_sword>,
@@ -108,25 +107,11 @@ var listItem as IItemStack [] = [
     <item:mcwfences:nether_brick_railing_gate>,
     <item:mcwwindows:nether_brick_gothic>,
     <item:mcwwindows:nether_brick_arrow_slit>,
-    <item:silentgear:netherwood_fence_gate>,
-    <item:silentgear:netherwood_leaves>,
-    <item:silentgear:netherwood_sapling>,
-    <item:silentgear:netherwood_stick>,
-    <item:silentgear:nether_banana>,
-    <item:silentgear:golden_nether_banana>,
-    <item:silentgear:netherwood_charcoal>,
     <item:sophisticatedbackpacks:netherite_backpack>,
     <item:sophisticatedstorage:netherite_barrel>,
     <item:sophisticatedstorage:netherite_chest>,
     <item:sophisticatedstorage:diamond_to_netherite_tier_upgrade>,
-    <item:silentgear:netherwood_charcoal_block>,
-    <item:silentgear:nether_star_fragment>,
     <item:minecraft:nether_star>,
-    <item:silentgear:blaze_gold_dust>,
-    <item:silentgear:azure_silver_dust>,
-    <item:silentgear:azure_electrum_dust>,
-    <item:silentgear:tyrian_steel_dust>,
-    <item:silentgear:starmetal_dust>,
     <item:minecraft:respawn_anchor>,
     <item:minecraft:tnt>,
     <item:minecraft:gunpowder>,
@@ -155,9 +140,6 @@ var listItem as IItemStack [] = [
     <item:minecraft:powered_rail>,
     <item:minecraft:soul_sand>,
     <item:minecraft:soul_soil>,
-    <item:silentgear:gear_smithing_table>,
-    <item:silentgear:glowing_dust>,
-    <item:silentgear:glittery_dust>,
     <item:minecraft:shroomlight>,
     <item:minecraft:firework_rocket>,
     <item:minecraft:fire_charge>,
@@ -165,11 +147,11 @@ var listItem as IItemStack [] = [
     <item:minecraft:ender_eye>,
     <item:supplementaries:brass_lantern>,
     <item:sophisticatedstorage:controller>,
-    <item:sophisticatedstorage:storage_link>
+    <item:sophisticatedstorage:storage_link>,
+    <item:sophisticatedbackpacks:stack_upgrade_tier_4>
 ];
 
 var modList as string [] = [
-    "locksmith",
     "create",
     "createaddition",
     "refinedstorage",
@@ -178,7 +160,6 @@ var modList as string [] = [
 ];
 
 var exceptItem as IItemStack [] = [
-    <item:locksmith:lockpick>,
     <item:bygonenether:gilded_netherite_helmet>,
     <item:bygonenether:gilded_netherite_chestplate>,
     <item:bygonenether:gilded_netherite_leggings>,

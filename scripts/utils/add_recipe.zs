@@ -276,6 +276,45 @@ craftingTable.addShapeless("black_candle_holder", <item:projectbrazier:black_can
 craftingTable.addShapeless("wall_torch_holder", <item:projectbrazier:wall_torch_holder>, [<item:minecraft:torch>, ironIngot]);
 craftingTable.addShapeless("wall_soul_torch_holder", <item:projectbrazier:wall_soul_torch_holder>, [<item:minecraft:soul_torch>, ironIngot]);
 
+var coalBlock = <item:minecraft:coal_block>;
+stoneCutter.addRecipe("traces_coal_ore", <item:projectbrazier:traces_of_coal_ore>, coalBlock);
+stoneCutter.addRecipe("poor_coal_ore", <item:projectbrazier:poor_coal_ore>, coalBlock);
+stoneCutter.addRecipe("rich_coal_ore", <item:projectbrazier:rich_coal_ore>, coalBlock);
+stoneCutter.addRecipe("traces_coal_ore_deepslate", <item:projectbrazier:traces_of_deepslate_coal_ore>, coalBlock);
+stoneCutter.addRecipe("poor_coal_ore_deepslate", <item:projectbrazier:poor_deepslate_coal_ore>, coalBlock);
+stoneCutter.addRecipe("rich_coal_ore_deepslate", <item:projectbrazier:rich_deepslate_coal_ore>, coalBlock);
+
+var woodenAxe = <item:minecraft:wooden_axe>.anyDamage();
+var stoneAxe = <item:minecraft:stone_axe>.anyDamage();
+
+craftingTable.addShapeless("stripped_spruce_to_planks", <item:minecraft:spruce_planks>, [<item:minecraft:stripped_spruce_log>, woodenAxe.transformDamage(3) | stoneAxe.transformDamage(3)]);
+craftingTable.addShapeless("stripped_oak_to_planks", <item:minecraft:oak_planks>, [<item:minecraft:stripped_oak_log>, woodenAxe.transformDamage(3) | stoneAxe.transformDamage(3)]);
+craftingTable.addShapeless("stripped_birch_to_planks", <item:minecraft:birch_planks>, [<item:minecraft:stripped_birch_log>, woodenAxe.transformDamage(3) | stoneAxe.transformDamage(3)]);
+craftingTable.addShapeless("stripped_jungle_to_planks", <item:minecraft:jungle_planks>, [<item:minecraft:stripped_jungle_log>, woodenAxe.transformDamage(3) | stoneAxe.transformDamage(3)]);
+craftingTable.addShapeless("stripped_acacia_to_planks", <item:minecraft:acacia_planks>, [<item:minecraft:stripped_acacia_log>, woodenAxe.transformDamage(3) | stoneAxe.transformDamage(3)]);
+craftingTable.addShapeless("stripped_dark_oak_to_planks", <item:minecraft:dark_oak_planks>, [<item:minecraft:stripped_dark_oak_log>, woodenAxe.transformDamage(3) | stoneAxe.transformDamage(3)]);
+craftingTable.addShapeless("stripped_oak_wood_to_planks", <item:minecraft:oak_planks>, [<item:minecraft:stripped_oak_wood>, woodenAxe.transformDamage(3) | stoneAxe.transformDamage(3)]);
+craftingTable.addShapeless("stripped_spruce_wood_to_planks", <item:minecraft:spruce_planks>, [<item:minecraft:stripped_spruce_wood>, woodenAxe.transformDamage(3) | stoneAxe.transformDamage(3)]);
+craftingTable.addShapeless("stripped_birch_wood_to_planks", <item:minecraft:birch_planks>, [<item:minecraft:stripped_birch_wood>, woodenAxe.transformDamage(3) | stoneAxe.transformDamage(3)]);
+craftingTable.addShapeless("stripped_jungle_wood_to_planks", <item:minecraft:jungle_planks>, [<item:minecraft:stripped_jungle_wood>, woodenAxe.transformDamage(3) | stoneAxe.transformDamage(3)]);
+craftingTable.addShapeless("stripped_acacia_wood_to_planks", <item:minecraft:acacia_planks>, [<item:minecraft:stripped_acacia_wood>, woodenAxe.transformDamage(3) | stoneAxe.transformDamage(3)]);
+craftingTable.addShapeless("stripped_dark_oak_wood_to_planks", <item:minecraft:dark_oak_planks>, [<item:minecraft:stripped_dark_oak_wood>, woodenAxe.transformDamage(3) | stoneAxe.transformDamage(3)]);
+
+
+var tinIngot = <item:mekanism:ingot_tin>;
+craftingTable.addShapeless("bronze_ingot", <item:mekanism:ingot_bronze>, 
+    [copperIngot, copperIngot, copperIngot, tinIngot]
+);
+
+craftingTable.addShapeless("fusion_bronze_ingot", <item:fusion:bronze_ingot>, 
+    [copperIngot, copperIngot, copperIngot, tinIngot]
+);
+
+
+
+
+//TODO: Bronze recipe
+
 /*
 craftingTable.addShapeless("poormanshifting", <item:minecraft:sand>,
     [<item:minecraft:water_bucket>, <item:minecraft:golden_shovel>.anyDamage().transformDamage(3), <item:minecraft:cobblestone>]

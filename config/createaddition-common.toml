@@ -21,7 +21,7 @@
 	motor_max_input = 256
 	#Electric Motor internal capacity in FE.
 	#Range: > 0
-	motor_capacity = 2048
+	motor_capacity = 4096
 
 #Alternator
 [alternator]
@@ -30,7 +30,7 @@
 	generator_max_output = 256
 	#Alternator internal capacity in FE.
 	#Range: > 0
-	generator_capacity = 2048
+	generator_capacity = 4096
 	#Alternator efficiency relative to base conversion rate.
 	#Range: 0.01 ~ 1.0
 	generator_efficiency = 0.75
@@ -51,7 +51,7 @@
 	heater_max_input = 256
 	#Induction Heater internal capacity in FE.
 	#Range: > 0
-	heater_capacity = 2048
+	heater_capacity = 4096
 	#Induction Heater normal consumption rate in FE/t.
 	#Range: > 0
 	heater_normal_consumption = 96
@@ -71,10 +71,10 @@
 	connector_max_output = 1024
 	#Connector internal input buffer in FE.
 	#Range: > 0
-	connector_input_capacity = 2048
+	connector_input_capacity = 4096
 	#Max wire length in blocks.
 	#Range: 0 ~ 256
-	wire_length = 12
+	wire_length = 24
 
 #Accumulator
 [accumulator]

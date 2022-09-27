@@ -12,7 +12,6 @@ var listItem as IItemStack [] = [
     <item:supplementaries:flint_block>,
     <item:minecraft:sand>,
     <item:minecraft:gravel>,
-    <item:silentgear:pebble>,
     <item:minecraft:carrot>,
     <item:minecraft:potato>,
     <item:minecraft:wheat>,

@@ -5,9 +5,6 @@
       "minecraft:sponge",
       "minecraft:wet_sponge",
       "minecraft:trident",
-      "silentgear:trident_template",
-      "silentgear:trident_blueprint",
-      "silentgear:trident",
       "minecraft:prismarine_bricks",
       "minecraft:dark_prismarine",
       "minecraft:prismarine"
@@ -21,6 +18,7 @@
       
     ],
     "exceptionList": [
+      "smallships:sail_item"
     ],
     "containerList": [
       "net.minecraft.inventory.container.WorkbenchContainer", 
@@ -30,8 +28,6 @@
       "net.minecraft.world.inventory.FurnaceMenu"
     ],
     "dimensionList": [
-      "minecraft:the_nether",
-      "minecraft:the_end"
     ]
   },
   "Settings": {

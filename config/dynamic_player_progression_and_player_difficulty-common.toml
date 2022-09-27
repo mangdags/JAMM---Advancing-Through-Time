@@ -260,3 +260,53 @@
 	#Range: 0 ~ 1000
 	wandItemDurabilityIncrease = 50
 
+[Claws]
+	#List of claw items for the  claw weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
+	clawItems = []
+	#Increases the dealt damage with the claw by the amount of % (0 = disabled).
+	#Range: 0 ~ 1000
+	clawItemDamageIncrease = 50
+	#Increases the durability of the claw by the amount of % (0 = disabled).
+	#Range: 0 ~ 1000
+	clawItemDurabilityIncrease = 25
+
+[Claymores]
+	#List of claymore items for the  claymore weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
+	claymoreItems = []
+	#Increases the dealt damage with the claymore by the amount of % (0 = disabled).
+	#Range: 0 ~ 1000
+	claymoreItemDamageIncrease = 50
+	#Increases the durability of the claymore by the amount of % (0 = disabled).
+	#Range: 0 ~ 1000
+	claymoreItemDurabilityIncrease = 0
+
+[Fists]
+	#List of fist items for the  fist weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
+	fistItems = []
+	#Increases the dealt damage with the fist by the amount of % (0 = disabled).
+	#Range: 0 ~ 1000
+	fistItemDamageIncrease = 100
+	#Increases the durability of the fist by the amount of % (0 = disabled).
+	#Range: 0 ~ 1000
+	fistItemDurabilityIncrease = 0
+
+[Maces]
+	#List of mace items for the  mace weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
+	maceItems = []
+	#Increases the dealt damage with the mace by the amount of % (0 = disabled).
+	#Range: 0 ~ 1000
+	maceItemDamageIncrease = 50
+	#Increases the durability of the mace by the amount of % (0 = disabled).
+	#Range: 0 ~ 1000
+	maceItemDurabilityIncrease = 0
+
+[Spears]
+	#List of spear items for the  spear weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
+	spearItems = []
+	#Increases the dealt damage with the spear by the amount of % (0 = disabled).
+	#Range: 0 ~ 1000
+	spearItemDamageIncrease = 50
+	#Increases the durability of the spear by the amount of % (0 = disabled).
+	#Range: 0 ~ 1000
+	spearItemDurabilityIncrease = 0
+

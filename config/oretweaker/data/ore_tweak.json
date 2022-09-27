@@ -1,0 +1,233 @@
+{
+  "oreConfig": [
+    {
+      "ore": "immersiveengineering:deepslate_ore_lead",
+      "fillers": [
+        "STONE_ORE_REPLACEABLES"
+      ],
+      "distribution": "TRIANGLE",
+      "minY": 80,
+      "maxY": 384,
+      "maxVeinSize": 9,
+      "spawnRate": 10.0,
+      "discardChanceOnAirExposure": 0.0,
+      "biomeFilters": {
+        "biomeBlacklist": [],
+        "biomeWhitelist": [
+          "OVERWORLD"
+        ]
+      },
+      "replace": true
+    },
+    {
+      "ore": "immersiveengineering:deepslate_ore_lead",
+      "fillers": [
+        "STONE_ORE_REPLACEABLES"
+      ],
+      "distribution": "TRIANGLE",
+      "minY": -24,
+      "maxY": 56,
+      "maxVeinSize": 9,
+      "spawnRate": 10.0,
+      "discardChanceOnAirExposure": 0.0,
+      "biomeFilters": {
+        "biomeBlacklist": [],
+        "biomeWhitelist": [
+          "OVERWORLD"
+        ]
+      },
+      "replace": true
+    },
+    {
+      "ore": "immersiveengineering:deepslate_ore_lead",
+      "fillers": [
+        "STONE_ORE_REPLACEABLES"
+      ],
+      "distribution": "UNIFORM",
+      "minY": -64,
+      "maxY": 72,
+      "maxVeinSize": 4,
+      "spawnRate": 10.0,
+      "discardChanceOnAirExposure": 0.0,
+      "biomeFilters": {
+        "biomeBlacklist": [],
+        "biomeWhitelist": [
+          "OVERWORLD"
+        ]
+      },
+      "replace": true
+    },
+    {
+      "ore": "immersiveengineering:ore_lead",
+      "fillers": [
+        "STONE_ORE_REPLACEABLES"
+      ],
+      "distribution": "TRIANGLE",
+      "minY": 80,
+      "maxY": 384,
+      "maxVeinSize": 9,
+      "spawnRate": 10.0,
+      "discardChanceOnAirExposure": 0.0,
+      "biomeFilters": {
+        "biomeBlacklist": [],
+        "biomeWhitelist": [
+          "OVERWORLD"
+        ]
+      },
+      "replace": true
+    },
+    {
+      "ore": "immersiveengineering:ore_lead",
+      "fillers": [
+        "STONE_ORE_REPLACEABLES"
+      ],
+      "distribution": "TRIANGLE",
+      "minY": -24,
+      "maxY": 56,
+      "maxVeinSize": 9,
+      "spawnRate": 3.0,
+      "discardChanceOnAirExposure": 0.0,
+      "biomeFilters": {
+        "biomeBlacklist": [],
+        "biomeWhitelist": [
+          "OVERWORLD"
+        ]
+      },
+      "replace": true
+    },
+    {
+      "ore": "immersiveengineering:ore_lead",
+      "fillers": [
+        "STONE_ORE_REPLACEABLES"
+      ],
+      "distribution": "UNIFORM",
+      "minY": -64,
+      "maxY": 72,
+      "maxVeinSize": 4,
+      "spawnRate": 3.0,
+      "discardChanceOnAirExposure": 0.0,
+      "biomeFilters": {
+        "biomeBlacklist": [],
+        "biomeWhitelist": [
+          "OVERWORLD"
+        ]
+      },
+      "replace": true
+    },
+    {
+      "ore": "mekanism:deepslate_uranium_ore",
+      "fillers": [
+        "STONE_ORE_REPLACEABLES"
+      ],
+      "distribution": "TRIANGLE",
+      "minY": 80,
+      "maxY": 384,
+      "maxVeinSize": 9,
+      "spawnRate": 10.0,
+      "discardChanceOnAirExposure": 0.0,
+      "biomeFilters": {
+        "biomeBlacklist": [],
+        "biomeWhitelist": [
+          "OVERWORLD"
+        ]
+      },
+      "replace": true
+    },
+    {
+      "ore": "mekanism:deepslate_uranium_ore",
+      "fillers": [
+        "STONE_ORE_REPLACEABLES"
+      ],
+      "distribution": "TRIANGLE",
+      "minY": -24,
+      "maxY": 56,
+      "maxVeinSize": 9,
+      "spawnRate": 3.0,
+      "discardChanceOnAirExposure": 0.0,
+      "biomeFilters": {
+        "biomeBlacklist": [],
+        "biomeWhitelist": [
+          "OVERWORLD"
+        ]
+      },
+      "replace": true
+    },
+    {
+      "ore": "mekanism:deepslate_uranium_ore",
+      "fillers": [
+        "STONE_ORE_REPLACEABLES"
+      ],
+      "distribution": "UNIFORM",
+      "minY": -64,
+      "maxY": 72,
+      "maxVeinSize": 4,
+      "spawnRate": 3.0,
+      "discardChanceOnAirExposure": 0.0,
+      "biomeFilters": {
+        "biomeBlacklist": [],
+        "biomeWhitelist": [
+          "OVERWORLD"
+        ]
+      },
+      "replace": true
+    },
+    {
+      "ore": "mekanism:uranium_ore",
+      "fillers": [
+        "STONE_ORE_REPLACEABLES"
+      ],
+      "distribution": "TRIANGLE",
+      "minY": 80,
+      "maxY": 384,
+      "maxVeinSize": 9,
+      "spawnRate": 4.0,
+      "discardChanceOnAirExposure": 0.0,
+      "biomeFilters": {
+        "biomeBlacklist": [],
+        "biomeWhitelist": [
+          "OVERWORLD"
+        ]
+      },
+      "replace": true
+    },
+    {
+      "ore": "mekanism:uranium_ore",
+      "fillers": [
+        "STONE_ORE_REPLACEABLES"
+      ],
+      "distribution": "TRIANGLE",
+      "minY": -24,
+      "maxY": 56,
+      "maxVeinSize": 9,
+      "spawnRate": 4.0,
+      "discardChanceOnAirExposure": 0.0,
+      "biomeFilters": {
+        "biomeBlacklist": [],
+        "biomeWhitelist": [
+          "OVERWORLD"
+        ]
+      },
+      "replace": true
+    },
+    {
+      "ore": "mekanism:uranium_ore",
+      "fillers": [
+        "STONE_ORE_REPLACEABLES"
+      ],
+      "distribution": "UNIFORM",
+      "minY": -64,
+      "maxY": 72,
+      "maxVeinSize": 4,
+      "spawnRate": 4.0,
+      "discardChanceOnAirExposure": 0.0,
+      "biomeFilters": {
+        "biomeBlacklist": [],
+        "biomeWhitelist": [
+          "OVERWORLD"
+        ]
+      },
+      "replace": true
+    }
+  ]
+}
+

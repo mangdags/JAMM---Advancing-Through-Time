@@ -1,0 +1,18 @@
+{
+	id: "5D8AAC3C6D20B5FC"
+	order_index: 0
+	title: "cookery_rewards"
+	icon: "minecraft:chest"
+	loot_size: 5
+	rewards: [
+		{ item: "farmersdelight:potato_crate" }
+		{ item: "farmersdelight:beetroot_crate" }
+		{ item: "farmersdelight:cabbage_crate" }
+		{ item: "farmersdelight:tomato_crate" }
+		{ item: "farmersdelight:onion_crate" }
+		{ item: "farmersdelight:rice_bale" }
+		{ item: "farmersdelight:rice_bag" }
+		{ item: "farmersdelight:straw_bale" }
+		{ item: "farmersdelight:carrot_crate" }
+	]
+}

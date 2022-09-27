@@ -24,8 +24,6 @@ var listItem as IItemStack [] = [
     <item:supplementaries:end_stone_lamp>,
     <item:alexsmobs:void_worm_mandible>,
     <item:alexsmobs:void_worm_eye>,
-    <item:silentgear:azure_silver_ore>,
-    <item:silentgear:crushed_shulker_shell>,
     <item:sophisticatedstorage:shulker_box>,
     <item:sophisticatedstorage:iron_shulker_box>,
     <item:sophisticatedstorage:gold_shulker_box>,
@@ -40,10 +38,8 @@ var listItem as IItemStack [] = [
     <item:alcocraft:spruce_mug_chorus_ale>,
     <item:alcocraft:spruce_mug_nether_star_lager>,
     <item:minecraft:elytra>,
-    <item:silentgear:elytra_template>,
-    <item:silentgear:elytra_blueprint>,
-    <item:silentgear:elytra>,
-    <item:minecraft:dragon_breath>
+    <item:minecraft:dragon_breath>,
+    <item:sophisticatedbackpacks:everlasting_upgrade>
 ];
 
 var listTag as MCTag [] = [
@@ -52,22 +48,36 @@ var listTag as MCTag [] = [
 
 var modList as string [] = [
     "endrem",
-    "ftbic"
+    "mekanism",
+    "mekanismgenerators"
 ];
 
 var exceptItem as IItemStack [] = [
-    <item:ftbic:bronze_nugget>,
-    <item:ftbic:bronze_rod>,
-    <item:ftbic:bronze_gear>,
-    <item:ftbic:iron_furnace>,
-    <item:ftbic:iron_rod>,
-    <item:ftbic:aluminum_ingot>,
-    <item:ftbic:aluminum_ore>,
-    <item:ftbic:deepslate_aluminum_ore>,
-    <item:ftbic:aluminum_chunk>,
-    <item:ftbic:aluminum_rod>,
-    <item:ftbic:aluminum_block>,
-    <item:ftbic:aluminum_nugget>
+    <item:mekanism:tin_ore>,
+    <item:mekanism:deepslate_tin_ore>,
+    <item:mekanism:lead_ore>,
+    <item:mekanism:deepslate_lead_ore>,
+    <item:mekanism:ingot_bronze>,
+    <item:mekanism:ingot_tin>,
+    <item:mekanism:ingot_lead>,
+    <item:mekanism:ingot_uranium>,
+    <item:mekanism:nugget_tin>,
+    <item:mekanism:block_tin>,
+    <item:mekanism:block_raw_tin>,
+    <item:mekanism:dust_tin>,
+    <item:mekanism:raw_tin>,
+    <item:mekanism:nugget_lead>,
+    <item:mekanism:block_lead>,
+    <item:mekanism:block_raw_lead>,
+    <item:mekanism:raw_lead>,
+    <item:mekanism:block_bronze>,
+    <item:mekanism:nugget_bronze>,
+    <item:mekanism:nugget_uranium>,
+    <item:mekanism:block_uranium>,
+    <item:mekanism:block_raw_uranium>,
+    <item:mekanism:uranium_ore>,
+    <item:mekanism:deepslate_uranium_ore>,
+    <item:mekanism:raw_uranium>
 ];
 
 for item in listItem {

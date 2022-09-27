@@ -70,6 +70,7 @@
 				{
 					id: "055A5A9992431023"
 					type: "item"
+					title: "Craft a Wooden pickaxe"
 					item: {
 						id: "minecraft:wooden_pickaxe"
 						Count: 1b
@@ -77,11 +78,13 @@
 							Damage: 0
 						}
 					}
+					consume_items: false
 					only_from_crafting: true
 				}
 				{
 					id: "6A84CC04F844D868"
 					type: "item"
+					title: "Craft a Wooden Sword"
 					item: {
 						id: "minecraft:wooden_sword"
 						Count: 1b
@@ -89,11 +92,13 @@
 							Damage: 0
 						}
 					}
+					consume_items: false
 					only_from_crafting: true
 				}
 				{
 					id: "28C1531BD8AC64DA"
 					type: "item"
+					title: "Craft a Wooden Shovel"
 					item: {
 						id: "minecraft:wooden_shovel"
 						Count: 1b
@@ -101,11 +106,13 @@
 							Damage: 0
 						}
 					}
+					consume_items: false
 					only_from_crafting: true
 				}
 				{
 					id: "0800FFF46FD50C00"
 					type: "item"
+					title: "Craft a Wooden Hoe"
 					item: {
 						id: "minecraft:wooden_hoe"
 						Count: 1b
@@ -113,11 +120,13 @@
 							Damage: 0
 						}
 					}
+					consume_items: false
 					only_from_crafting: true
 				}
 				{
 					id: "33AEB4956320D159"
 					type: "item"
+					title: "Craft a Wooden Axe"
 					item: {
 						id: "minecraft:wooden_axe"
 						Count: 1b
@@ -125,6 +134,7 @@
 							Damage: 0
 						}
 					}
+					consume_items: false
 					only_from_crafting: true
 				}
 			]
@@ -171,6 +181,7 @@
 				{
 					id: "029915C80292E8B6"
 					type: "item"
+					title: "Craft a Flint Knife"
 					item: {
 						id: "farmersdelight:flint_knife"
 						Count: 1b
@@ -178,11 +189,13 @@
 							Damage: 0
 						}
 					}
+					consume_items: false
 					only_from_crafting: true
 				}
 				{
 					id: "1FC2BF8907543470"
 					type: "item"
+					title: "Craft a Flint Hatchet"
 					item: {
 						id: "natprog:flint_hatchet"
 						Count: 1b
@@ -190,11 +203,13 @@
 							Damage: 0
 						}
 					}
+					consume_items: false
 					only_from_crafting: true
 				}
 				{
 					id: "1BBBD07AB3B74221"
 					type: "item"
+					title: "Craft a Flint Saw"
 					item: {
 						id: "natprog:basic_saw"
 						Count: 1b
@@ -202,12 +217,13 @@
 							Damage: 0
 						}
 					}
+					consume_items: false
 					only_from_crafting: true
 				}
 				{
 					id: "14AC94432771462C"
 					type: "item"
-					title: "Any #minecraft:wool"
+					title: "Obtain 10 wools (will be consumed upon submission)"
 					item: {
 						id: "itemfilters:tag"
 						Count: 1b
@@ -215,11 +231,14 @@
 							value: "minecraft:wool"
 						}
 					}
+					count: 10L
+					consume_items: true
+					only_from_crafting: false
 				}
 				{
 					id: "2835F2A41AC84CCE"
 					type: "item"
-					title: "Any #minecraft:logs"
+					title: "Obtain 64 logs/wood (will be consumed upon sumbission)"
 					item: {
 						id: "itemfilters:tag"
 						Count: 1b
@@ -227,17 +246,22 @@
 							value: "minecraft:logs"
 						}
 					}
+					count: 64L
+					consume_items: true
+					only_from_crafting: false
 				}
 				{
 					id: "69B2C4A12714E634"
 					type: "item"
+					title: "Craft a Crafting Table"
 					item: "minecraft:crafting_table"
+					consume_items: false
 					only_from_crafting: true
 				}
 				{
 					id: "257BA2323395D2F2"
 					type: "item"
-					title: "Any #minecraft:planks"
+					title: "Obtain 64 planks (will be consumed upon submission)"
 					item: {
 						id: "itemfilters:tag"
 						Count: 1b
@@ -245,12 +269,13 @@
 							value: "minecraft:planks"
 						}
 					}
+					consume_items: true
 					only_from_crafting: true
 				}
 				{
 					id: "1BD41EB74525B389"
 					type: "item"
-					title: "Any #minecraft:beds"
+					title: "Craft a Bed"
 					item: {
 						id: "itemfilters:tag"
 						Count: 1b
@@ -258,6 +283,7 @@
 							value: "minecraft:beds"
 						}
 					}
+					consume_items: false
 					only_from_crafting: true
 				}
 			]
@@ -306,6 +332,27 @@
 				type: "custom"
 				title: "Renaissance Age"
 			}]
+			rewards: [
+				{
+					id: "758DAE7EBF8AB7F2"
+					type: "advancement"
+					title: "Industrial Advancement"
+					team_reward: false
+					auto: "enabled"
+					advancement: "advancementsages:industrial_age"
+					criterion: ""
+				}
+				{
+					id: "7F80BB4EBD5E6836"
+					type: "command"
+					title: "Industrial Age"
+					icon: "create:mechanical_arm"
+					team_reward: false
+					auto: "enabled"
+					command: "/gamestage add @p industrial_age true"
+					player_command: false
+				}
+			]
 		}
 		{
 			title: "Fishery"
@@ -354,19 +401,19 @@
 			rewards: [{
 				id: "2975EB87A84906CC"
 				type: "command"
-				title: "More fish!"
+				title: "Fishery"
 				icon: "alexsmobs:fish_bones"
 				team_reward: false
-				auto: "disabled"
-				command: "/thitemstage add @p fisherman true"
+				auto: "enabled"
+				command: "/gamestage add  @p fishery true"
 				player_command: false
 			}]
 		}
 		{
 			title: "Sailing"
 			icon: "smallships:sail_item"
-			x: 5.0d
-			y: 5.5d
+			x: 6.0d
+			y: 6.0d
 			subtitle: "Explore the seven seas with ships!"
 			dependencies: [
 				"7975FBD66E441EC0"
@@ -392,16 +439,23 @@
 					criterion: ""
 				}
 			]
-			rewards: [{
-				id: "308C27C78BBECD43"
-				type: "command"
-				title: "SHIPS!"
-				icon: "smallships:oak_cog"
-				team_reward: false
-				auto: "disabled"
-				command: "/thitemstage add @p small_ships true"
-				player_command: false
-			}]
+			rewards: [
+				{
+					id: "308C27C78BBECD43"
+					type: "command"
+					title: "Ships"
+					icon: "smallships:oak_cog"
+					team_reward: false
+					auto: "enabled"
+					command: "/gamestage add @p sailing true"
+					player_command: false
+				}
+				{
+					id: "21D0A4A917FC8A04"
+					type: "item"
+					item: "smallships:oak_cog"
+				}
+			]
 		}
 		{
 			title: "Mesolithic Age"
@@ -414,8 +468,32 @@
 			tasks: [{
 				id: "3B8B748E271B33D9"
 				type: "item"
+				title: "Obtain 5 stacks of Cobblestone "
 				item: "minecraft:cobblestone"
+				count: 320L
+				only_from_crafting: false
 			}]
+			rewards: [
+				{
+					id: "0E7A07CEF1A5E7DA"
+					type: "advancement"
+					title: "Neolithic Advancement"
+					icon: "minecraft:smooth_stone"
+					auto: "enabled"
+					advancement: "advancementsages:neolithic_age"
+					criterion: ""
+				}
+				{
+					id: "7E501449CCF23613"
+					type: "command"
+					title: "Neolithic Age"
+					icon: "minecraft:smooth_stone"
+					team_reward: false
+					auto: "enabled"
+					command: "/gamestage add @p neolithic_age true"
+					player_command: false
+				}
+			]
 		}
 		{
 			title: "Neolithic Age"
@@ -430,6 +508,25 @@
 				type: "item"
 				item: "minecraft:smooth_stone"
 			}]
+			rewards: [
+				{
+					id: "458508523E38BA7C"
+					type: "advancement"
+					title: "Calcolithic Advancement"
+					advancement: "minecraft:story/root"
+					criterion: ""
+				}
+				{
+					id: "72979935AE826FEB"
+					type: "command"
+					title: "Calcolithic Age"
+					icon: "minecraft:copper_ingot"
+					team_reward: false
+					auto: "enabled"
+					command: "/gamestage add @p calcolithic_age true"
+					player_command: false
+				}
+			]
 		}
 		{
 			title: "Calcolithic Age"
@@ -444,10 +541,31 @@
 				type: "item"
 				item: "minecraft:copper_ingot"
 			}]
+			rewards: [
+				{
+					id: "6AD5DAB8EE078153"
+					type: "advancement"
+					title: "Bronze Age"
+					team_reward: false
+					auto: "enabled"
+					advancement: "advancementsages:bronze_age"
+					criterion: ""
+				}
+				{
+					id: "1D2F1704558A9553"
+					type: "command"
+					title: "Bronze Age Advancement"
+					icon: "mekanism:ingot_bronze"
+					team_reward: false
+					auto: "enabled"
+					command: "/gamestage add @p bronze_age true"
+					player_command: false
+				}
+			]
 		}
 		{
 			title: "Bronze Age"
-			icon: "ftbic:bronze_ingot"
+			icon: "mekanism:ingot_bronze"
 			x: 6.0d
 			y: 12.0d
 			dependencies: ["7F763CD6C735CFD3"]
@@ -456,8 +574,30 @@
 			tasks: [{
 				id: "326EE6FDFD3432A9"
 				type: "item"
+				icon: "mekanism:ingot_bronze"
 				item: "ftbic:bronze_ingot"
 			}]
+			rewards: [
+				{
+					id: "43CF890842B38AD9"
+					type: "advancement"
+					title: "Iron Age"
+					team_reward: false
+					auto: "enabled"
+					advancement: "advancementsages:iron_age"
+					criterion: ""
+				}
+				{
+					id: "3AADFB2FC9024B75"
+					type: "command"
+					title: "Iron Age Advancement"
+					icon: "minecraft:iron_ingot"
+					team_reward: false
+					auto: "enabled"
+					command: "/gamestage add @p iron_age true"
+					player_command: false
+				}
+			]
 		}
 		{
 			title: "Iron Age"
@@ -472,6 +612,27 @@
 				type: "item"
 				item: "minecraft:iron_ingot"
 			}]
+			rewards: [
+				{
+					id: "6D3021C1D7B78D44"
+					type: "advancement"
+					title: "Renaissance Advancement"
+					team_reward: false
+					auto: "enabled"
+					advancement: "advancementsages:renaissance_age"
+					criterion: ""
+				}
+				{
+					id: "6DC766AE93CDC4D5"
+					type: "command"
+					title: "Renaissance Age"
+					icon: "minecraft:bricks"
+					team_reward: false
+					auto: "enabled"
+					command: "/gamestage add @p renaissance_age true"
+					player_command: false
+				}
+			]
 		}
 		{
 			title: "Industrial Age"
@@ -486,6 +647,27 @@
 				type: "item"
 				item: "create:mechanical_arm"
 			}]
+			rewards: [
+				{
+					id: "0D156B7DBCAA01A3"
+					type: "advancement"
+					title: "Machine Advancement"
+					team_reward: false
+					auto: "enabled"
+					advancement: "advancementsages:machine_age"
+					criterion: ""
+				}
+				{
+					id: "3604933A3DF8AA01"
+					type: "command"
+					title: "Machine Age"
+					icon: "mtmechs:ma_whole_item"
+					team_reward: false
+					auto: "enabled"
+					command: "/gamestage add @p machine_age true"
+					player_command: false
+				}
+			]
 		}
 		{
 			title: "Machine Age"
@@ -503,10 +685,31 @@
 				type: "item"
 				item: "create:track"
 			}]
+			rewards: [
+				{
+					id: "5BD9E24EB3F1AA3C"
+					type: "advancement"
+					title: "Atomic Advancement"
+					team_reward: false
+					auto: "enabled"
+					advancement: "advancementsages:atomic_age"
+					criterion: ""
+				}
+				{
+					id: "4823355ECB1B277C"
+					type: "command"
+					title: "Atomic Age"
+					icon: "mekanism:alloy_reinforced"
+					team_reward: false
+					auto: "enabled"
+					command: "/gamestage add @p atomic_age true"
+					player_command: false
+				}
+			]
 		}
 		{
 			title: "Atomic Age"
-			icon: "ftbic:antimatter"
+			icon: "mekanism:alloy_reinforced"
 			x: 14.5d
 			y: 10.0d
 			subtitle: "JUST DON'T BUILD AN ATOM BOMB!"
@@ -527,9 +730,19 @@
 			dependencies: ["01DD6734D944719A"]
 			id: "58DB408F5BE8D13D"
 			tasks: [{
-				id: "3E0F0E09EF2E9DA8"
+				id: "79884BB75EE0A31D"
 				type: "item"
-				item: "supplementaries:timber_cross_brace"
+				item: "minecraft:oak_wood"
+			}]
+			rewards: [{
+				id: "7B214C94DE93A70A"
+				type: "command"
+				title: "Logging"
+				icon: "projectbrazier:hollow_birch_log"
+				team_reward: false
+				auto: "enabled"
+				command: "/gamestage add @p logging true"
+				player_command: false
 			}]
 		}
 		{
@@ -542,8 +755,42 @@
 			tasks: [{
 				id: "2D3C91AB7357BF03"
 				type: "item"
+				title: "Wheat"
 				item: "minecraft:wheat"
+				count: 64L
+				consume_items: false
+				only_from_crafting: false
 			}]
+			rewards: [
+				{
+					id: "5BE9C082055DD20E"
+					type: "command"
+					title: "Farming"
+					icon: "minecraft:wheat"
+					team_reward: false
+					auto: "enabled"
+					command: "/gamestage add @p farming true"
+					player_command: false
+				}
+				{
+					id: "78E8845E4DF56889"
+					type: "item"
+					title: "Bone Meal"
+					team_reward: false
+					auto: "enabled"
+					item: "minecraft:bone_meal"
+					count: 64
+				}
+				{
+					id: "207A5BD044E853F5"
+					type: "item"
+					title: "Bread"
+					team_reward: false
+					auto: "enabled"
+					item: "minecraft:bread"
+					count: 10
+				}
+			]
 		}
 		{
 			title: "Cookery"
@@ -551,12 +798,43 @@
 			x: 2.5d
 			y: 11.0d
 			dependencies: ["21D16B3C36F89CA4"]
+			dependency_requirement: "one_started"
 			id: "3F5594169C747803"
-			tasks: [{
-				id: "31AA595231C4C128"
-				type: "item"
-				item: "farmersdelight:steak_and_potatoes"
-			}]
+			tasks: [
+				{
+					id: "3AFDC73EC7B5B58C"
+					type: "item"
+					title: "Craft a Furnace"
+					item: "minecraft:furnace"
+					consume_items: false
+					only_from_crafting: true
+				}
+				{
+					id: "538663A11AC06321"
+					type: "item"
+					title: "Gather 64 Coals (will be consumed upon submission)"
+					item: "minecraft:coal"
+					count: 64L
+					consume_items: true
+					only_from_crafting: false
+				}
+			]
+			rewards: [
+				{
+					id: "3D0863F694A9688F"
+					type: "command"
+					title: "Cookery"
+					icon: "farmersdelight:roast_chicken_block"
+					team_reward: false
+					command: "/gamestage add @p cookey true"
+					player_command: false
+				}
+				{
+					id: "69F3912488FDF67A"
+					type: "loot"
+					table_id: 6740389167842244092L
+				}
+			]
 		}
 		{
 			title: "Carpentry"
@@ -569,6 +847,22 @@
 				id: "3AB227750237EB3D"
 				type: "item"
 				item: "mcwroofs:roofing_hammer"
+			}]
+			rewards: [{
+				id: "77A24EE34888CB45"
+				type: "command"
+				title: "Carpentry"
+				icon: {
+					id: "parrying:wooden_hammer"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+				team_reward: false
+				auto: "enabled"
+				command: "/gamestage add @p carpentry true"
+				player_command: false
 			}]
 		}
 		{
@@ -587,6 +881,16 @@
 				type: "item"
 				item: "supplementaries:dispenser_minecart"
 			}]
+			rewards: [{
+				id: "45F33854E49ECAC7"
+				type: "command"
+				title: "Mining"
+				icon: "minecraft:minecart"
+				team_reward: false
+				auto: "enabled"
+				command: "/gamestage add @p mining true"
+				player_command: false
+			}]
 		}
 		{
 			title: "Pottery"
@@ -599,6 +903,16 @@
 				id: "232F9B119B300B0A"
 				type: "item"
 				item: "valhelsia_structures:big_red_glazed_jar"
+			}]
+			rewards: [{
+				id: "1758A72D26727DEA"
+				type: "command"
+				title: "Pottery"
+				icon: "valhelsia_structures:big_lime_glazed_jar"
+				team_reward: false
+				auto: "enabled"
+				command: "/gamestage add @p pottery true"
+				player_command: false
 			}]
 		}
 	]

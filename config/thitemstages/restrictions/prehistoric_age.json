@@ -2,14 +2,10 @@
   "Restriction Data": {
     "stage": "prehistoric_age",
     "itemList": [
-      "natprog:flint_hatchet",
       "farmersdelight:flint_knife",
       "minecraft:flint",
-      "natprog:basic_saw",
-      "supplementaries:flint_block",
       "minecraft:sand",
       "minecraft:gravel",
-      "silgentgear:pebble",
       "minecraft:apple",
       "minecraft:carrot",
       "minecraft:potato",
@@ -17,9 +13,12 @@
       "minecraft:bread",
       "minecraft:beetroot",
       "minecraft:wheat_seeds",
-      "projectbrazier:white_cabbage",
       "minecraft:stick",
-      "minecraft:crafting_table"
+      "minecraft:crafting_table",
+      "natprog:basic_saw",
+      "natprog:flint_hatchet",
+      "projectbrazier:white_cabbage",
+      "supplementaries:flint_block"
     ],
     "blockList": [
     ],
@@ -33,13 +32,13 @@
       "minecraft:beds"
     ],
     "exceptionList": [
+      "immersiveengineering:fiberboard",
       "minecraft:crimson_planks",
       "minecraft:warped_planks",
       "minecraft:crimson_slab",
       "minecraft:warped_slab",
       "minecraft:crimson_stem",
-      "minecraft:warped_stem",
-      "immersiveengineering:fiberboard"
+      "minecraft:warped_stem"
 
     ],
     "containerList": [
@@ -51,8 +50,6 @@
       "net.minecraft.world.inventory.FurnaceMenu"
     ],
     "dimensionList": [
-      "minecraft:the_nether",
-      "minecraft:the_end"
     ]
   },
   "Settings": {

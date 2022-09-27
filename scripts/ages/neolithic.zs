@@ -3,7 +3,6 @@ import crafttweaker.api.tag.MCTag;
 
 var listItem as IItemStack [] = [
     <item:minecraft:grindstone>,
-    <item:minecraft:furnace>,
     <item:cfm:stone_cabinet>,
     <item:parrying:scabbard>,
     <item:parrying:quiver>,
@@ -47,7 +46,6 @@ var listItem as IItemStack [] = [
     <item:mcwroofs:deepslate_steep_roof>,
     <item:mcwroofs:deepslate_upper_lower_roof>,
     <item:mcwroofs:deepslate_upper_steep_roof>,
-    <item:silentgear:very_crude_repair_kit>,
     <item:minecraft:dripstone_block>,
     <item:minecraft:sandstone>,
     <item:minecraft:smooth_red_sandstone>,
@@ -129,7 +127,8 @@ var listItem as IItemStack [] = [
     <item:projectbrazier:rope_anchor>,
     <item:minecraft:honeycomb>,
     <item:projectbrazier:deepslate_arrow_slit>,
-    <item:projectbrazier:stone_arrow_slit>
+    <item:projectbrazier:stone_arrow_slit>,
+    <item:supplementaries:crystal_display>
 ];
 
 var listTag as MCTag [] = [

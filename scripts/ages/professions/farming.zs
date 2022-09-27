@@ -2,9 +2,6 @@ import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.tag.MCTag;
 
 var listItem as IItemStack [] = [
-    <item:silentgear:flax_flowers>,
-    <item:silentgear:fluffy_seeds>,
-    <item:silentgear:flax_seeds>,
     <item:minecraft:pumpkin_seeds>,
     <item:projectbrazier:cauliflower_seeds>,
     <item:supplementaries:flax_seeds>,
@@ -65,10 +62,6 @@ var listItem as IItemStack [] = [
     <item:minecraft:saddle>,
     <item:minecraft:melon>,
     <item:minecraft:hay_block>,
-    <item:silentgear:excavator_template>,
-    <item:silentgear:excavator_blueprint>,
-    <item:silentgear:excavator_head>,
-    <item:silentgear:excavator>,
     <item:minecraft:cocoa_beans>,
     <item:supplementaries:fodder>,
     <item:minecraft:pumpkin>,
@@ -76,7 +69,8 @@ var listItem as IItemStack [] = [
     <item:minecraft:jack_o_lantern>,
     <item:minecraft:melon_slice>,
     <item:minecraft:sugar_cane>,
-    <item:minecraft:sugar>
+    <item:minecraft:sugar>,
+    <item:supplementaries:sugar_cube>
 ];
 
 for item in listItem {

@@ -7,7 +7,7 @@
 		flatness_delta = 4
 		#How many chunks need to be at least between two structures? (in chunks) [default: 5]
 		#Range: 0 ~ 64
-		min_structure_distance = 5
+		min_structure_distance = 7
 
 	[structures.castle]
 		#Spawn Chance [default: 0.5]. 
@@ -19,25 +19,25 @@
 		spacing = 37
 		#Minimum Separation (in chunks) [default: 7]
 		#Range: 0 ~ 200
-		separation = 7
+		separation = 10
 
 	[structures.castle_ruin]
 		#Spawn Chance [default: 0.6]. 
 		# 1.0 = generate the structure always, 0.0 = never generate the structure
 		#Range: 0.0 ~ 1.0
-		spawn_chance = 0.6
+		spawn_chance = 0.5
 		#Spacing (in chunks) [default: 33]
 		#Range: 0 ~ 200
 		spacing = 33
 		#Minimum Separation (in chunks) [default: 7]
 		#Range: 0 ~ 200
-		separation = 7
+		separation = 10
 
 	[structures.desert_house]
 		#Spawn Chance [default: 0.7]. 
 		# 1.0 = generate the structure always, 0.0 = never generate the structure
 		#Range: 0.0 ~ 1.0
-		spawn_chance = 0.7
+		spawn_chance = 0.5
 		#Spacing (in chunks) [default: 28]
 		#Range: 0 ~ 200
 		spacing = 28
@@ -49,13 +49,13 @@
 		#Spawn Chance [default: 0.7]. 
 		# 1.0 = generate the structure always, 0.0 = never generate the structure
 		#Range: 0.0 ~ 1.0
-		spawn_chance = 0.7
+		spawn_chance = 0.5
 		#Spacing (in chunks) [default: 28]
 		#Range: 0 ~ 200
 		spacing = 28
 		#Minimum Separation (in chunks) [default: 7]
 		#Range: 0 ~ 200
-		separation = 7
+		separation = 10
 
 	[structures.player_house]
 		#Spawn Chance [default: 0.7]. 
@@ -73,13 +73,13 @@
 		#Spawn Chance [default: 0.7]. 
 		# 1.0 = generate the structure always, 0.0 = never generate the structure
 		#Range: 0.0 ~ 1.0
-		spawn_chance = 0.7
+		spawn_chance = 0.5
 		#Spacing (in chunks) [default: 28]
 		#Range: 0 ~ 200
 		spacing = 28
 		#Minimum Separation (in chunks) [default: 7]
 		#Range: 0 ~ 200
-		separation = 7
+		separation = 10
 
 	[structures.tower_ruin]
 		#Spawn Chance [default: 0.8]. 
@@ -109,7 +109,7 @@
 		#Spawn Chance [default: 0.7]. 
 		# 1.0 = generate the structure always, 0.0 = never generate the structure
 		#Range: 0.0 ~ 1.0
-		spawn_chance = 0.7
+		spawn_chance = 0.8
 		#Spacing (in chunks) [default: 28]
 		#Range: 0 ~ 200
 		spacing = 28

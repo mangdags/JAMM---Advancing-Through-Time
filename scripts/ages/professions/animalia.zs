@@ -2,9 +2,6 @@ import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.tag.MCTag;
 
 var listItem as IItemStack [] = [
-    <item:silentgear:shears_template>,
-    <item:silentgear:shears_blueprint>,
-    <item:silentgear:shears>,
     <item:alexsmobs:falconry_glove>
 ];
 
@@ -31,7 +28,8 @@ var exceptItem as IItemStack [] = [
     <item:alexsmobs:void_worm_mandible>,
     <item:alexsmobs:void_worm_eye>,
     <item:alexsmobs:void_worm_beak>,
-    <item:alexsmobs:void_worm_effigy>
+    <item:alexsmobs:void_worm_effigy>,
+    <item:alexsmobs:animal_dictionary>
 ];
 
 for item in listItem {

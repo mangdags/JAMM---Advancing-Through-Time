@@ -73,7 +73,8 @@ var exceptItem as IItemStack [] = [
     <item:farmersdelight:golden_knife>,
     <item:farmersdelight:skillet>,
     <item:farmersdelight:stove>,
-    <item:farmersdelight:cooking_pot>  
+    <item:farmersdelight:cooking_pot>,
+    <item:farmersdelight:flint_knife>
 ];
 
 for item in listItem {

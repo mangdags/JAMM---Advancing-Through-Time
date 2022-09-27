@@ -8,9 +8,9 @@
     "modList": [
     ],
     "tagList": [
+      "ctov:glazed_terracotta",
       "valhelsia_structures:jars",
-      "valhelsia_structures:big_jars",
-      "ctov:glazed_terracotta"
+      "valhelsia_structures:big_jars"
     ],
     "exceptionList": [
     ],
@@ -22,8 +22,6 @@
       "net.minecraft.world.inventory.FurnaceMenu"
     ],
     "dimensionList": [
-      "minecraft:the_nether",
-      "minecraft:the_end"
     ]
   },
   "Settings": {

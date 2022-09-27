@@ -1,4 +1,3 @@
-<mobeffect:adpother:respirator>
 <mobeffect:alcocraft:attract>
 <mobeffect:alcocraft:flight>
 <mobeffect:alcocraft:freeze>
