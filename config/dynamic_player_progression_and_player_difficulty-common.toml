@@ -33,10 +33,10 @@
 ["Dealt Damage (from the player)"]
 	#Increases the dealt damage by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	dealtDamageIncrease = 50
+	dealtDamageIncrease = 5
 	#Reduces the dealt damage by the amount of % (0 = disabled).
 	#Range: 0 ~ 100
-	dealtDamageReduction = 50
+	dealtDamageReduction = 5
 	#Level cap when dealt damage should be reduced or increased.
 	#e.g. 10 = means as long the player is <= lvl 10, their dealt damage will be increasedas soon the player is > lvl 10, their dealt damage will be decreased
 	#Range: 1 ~ 999
@@ -45,10 +45,10 @@
 ["Hurt Damage (to the player)"]
 	#Increases the hurt damage by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	hurtDamageIncrease = 100
+	hurtDamageIncrease = 5
 	#Reduces the hurt damage by the amount of % (0 = disabled).
 	#Range: 0 ~ 100
-	hurtDamageReduction = 50
+	hurtDamageReduction = 5
 	#Level cap when hurt damage should be reduced or increased.
 	#e.g. 10 = means as long the player is <= lvl 10, their hurt damage will be decreasedas soon the player is > lvl 10, their hurt damage will be increased
 	#Range: 1 ~ 999
@@ -65,17 +65,17 @@
 	axeItems = []
 	#Increases the dealt damage with the axe by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	axeItemDamageIncrease = 75
+	axeItemDamageIncrease = 5
 	#Increases the durability of the axe by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	axeItemDurabilityIncrease = 150
+	axeItemDurabilityIncrease = 5
 
 [Bows]
 	#List of bow items for the  bow weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
 	bowItems = []
 	#Increases the dealt damage with the bow by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	bowItemDamageIncrease = 50
+	bowItemDamageIncrease = 5
 	#Increases the durability of the bow by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
 	bowItemDurabilityIncrease = 0
@@ -85,7 +85,7 @@
 	crossbowItems = []
 	#Increases the dealt damage with the crossbow by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	crossbowItemDamageIncrease = 50
+	crossbowItemDamageIncrease = 5
 	#Increases the durability of the crossbow by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
 	crossbowItemDurabilityIncrease = 0
@@ -95,17 +95,17 @@
 	daggerItems = []
 	#Increases the dealt damage with the dagger by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	daggerItemDamageIncrease = 50
+	daggerItemDamageIncrease = 5
 	#Increases the durability of the dagger by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	daggerItemDurabilityIncrease = 25
+	daggerItemDurabilityIncrease = 5
 
 ["Great Sword"]
 	#List of great sword items for the  great sword weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
 	greatSwordItems = []
 	#Increases the dealt damage with the great sword by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	greatSwordItemDamageIncrease = 50
+	greatSwordItemDamageIncrease = 5
 	#Increases the durability of the great sword by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
 	greatSwordItemDurabilityIncrease = 0
@@ -115,7 +115,7 @@
 	gunItems = []
 	#Increases the dealt damage with the gun by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	gunItemDamageIncrease = 50
+	gunItemDamageIncrease = 5
 	#Increases the durability of the gun by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
 	gunItemDurabilityIncrease = 0
@@ -125,47 +125,47 @@
 	hammerItems = []
 	#Increases the dealt damage with the hammer by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	hammerItemDamageIncrease = 50
+	hammerItemDamageIncrease = 5
 	#Increases the durability of the hammer by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	hammerItemDurabilityIncrease = 25
+	hammerItemDurabilityIncrease = 5
 
 ["Hand to Hand"]
 	#List of hand to hand items for the  hand to hand weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
 	handToHandItems = []
 	#Increases the dealt damage with the hand to hand by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	handToHandItemDamageIncrease = 50
+	handToHandItemDamageIncrease = 5
 	#Increases the durability of the hand to hand by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	handToHandItemDurabilityIncrease = 25
+	handToHandItemDurabilityIncrease = 5
 
 [Hoe]
 	#List of hoe items for the  hoe weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
 	hoeItems = []
 	#Increases the dealt damage with the hoe by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	hoeItemDamageIncrease = 200
+	hoeItemDamageIncrease = 5
 	#Increases the durability of the hoe by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	hoeItemDurabilityIncrease = 25
+	hoeItemDurabilityIncrease = 5
 
 [Katana]
 	#List of katana items for the  katana weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
 	katanaItems = []
 	#Increases the dealt damage with the katana by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	katanaItemDamageIncrease = 75
+	katanaItemDamageIncrease = 5
 	#Increases the durability of the katana by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	katanaItemDurabilityIncrease = 25
+	katanaItemDurabilityIncrease = 5
 
 [Keyblades]
 	#List of keyblade items for the  keyblade weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
 	keybladeItems = []
 	#Increases the dealt damage with the keyblade by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	keybladeItemDamageIncrease = 50
+	keybladeItemDamageIncrease = 5
 	#Increases the durability of the keyblade by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
 	keybladeItemDurabilityIncrease = 0
@@ -175,17 +175,17 @@
 	pickaxeItems = []
 	#Increases the dealt damage with the pickaxe by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	pickaxeItemDamageIncrease = 75
+	pickaxeItemDamageIncrease = 5
 	#Increases the durability of the pickaxe by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	pickaxeItemDurabilityIncrease = 50
+	pickaxeItemDurabilityIncrease = 5
 
 [Polearms]
 	#List of polearm items for the  polearm weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
 	polearmItems = []
 	#Increases the dealt damage with the polearm by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	polearmItemDamageIncrease = 50
+	polearmItemDamageIncrease = 5
 	#Increases the durability of the polearm by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
 	polearmItemDurabilityIncrease = 0
@@ -195,17 +195,17 @@
 	scytheItems = []
 	#Increases the dealt damage with the scythe by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	scytheItemDamageIncrease = 100
+	scytheItemDamageIncrease = 5
 	#Increases the durability of the scythe by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	scytheItemDurabilityIncrease = 50
+	scytheItemDurabilityIncrease = 5
 
 [Shields]
 	#List of shield items for the  shield weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
 	shieldItems = []
 	#Increases the dealt damage with the shield by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	shieldItemDamageIncrease = 50
+	shieldItemDamageIncrease = 5
 	#Increases the durability of the shield by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
 	shieldItemDurabilityIncrease = 0
@@ -215,27 +215,27 @@
 	shovelItems = []
 	#Increases the dealt damage with the shovel by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	shovelItemDamageIncrease = 75
+	shovelItemDamageIncrease = 5
 	#Increases the durability of the shovel by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	shovelItemDurabilityIncrease = 50
+	shovelItemDurabilityIncrease = 5
 
 [Staff]
 	#List of staff items for the  staff weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
 	staffItems = []
 	#Increases the dealt damage with the staff by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	staffItemDamageIncrease = 50
+	staffItemDamageIncrease = 5
 	#Increases the durability of the staff by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	staffItemDurabilityIncrease = 50
+	staffItemDurabilityIncrease = 5
 
 [Swords]
 	#List of sword items for the  sword weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
 	swordItems = []
 	#Increases the dealt damage with the sword by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	swordItemDamageIncrease = 50
+	swordItemDamageIncrease = 5
 	#Increases the durability of the sword by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
 	swordItemDurabilityIncrease = 0
@@ -245,37 +245,37 @@
 	tachiItems = []
 	#Increases the dealt damage with the tachi by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	tachiItemDamageIncrease = 100
+	tachiItemDamageIncrease = 5
 	#Increases the durability of the tachi by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	tachiItemDurabilityIncrease = 25
+	tachiItemDurabilityIncrease = 5
 
 [Wand]
 	#List of wand items for the  wand weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
 	wandItems = []
 	#Increases the dealt damage with the wand by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	wandItemDamageIncrease = 50
+	wandItemDamageIncrease = 5
 	#Increases the durability of the wand by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	wandItemDurabilityIncrease = 50
+	wandItemDurabilityIncrease = 5
 
 [Claws]
 	#List of claw items for the  claw weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
 	clawItems = []
 	#Increases the dealt damage with the claw by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	clawItemDamageIncrease = 50
+	clawItemDamageIncrease = 5
 	#Increases the durability of the claw by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	clawItemDurabilityIncrease = 25
+	clawItemDurabilityIncrease = 5
 
 [Claymores]
 	#List of claymore items for the  claymore weapon class mapping e.g. ["minecraft:iron_sword", "minecraft:diamond_sword", ...]
 	claymoreItems = []
 	#Increases the dealt damage with the claymore by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	claymoreItemDamageIncrease = 50
+	claymoreItemDamageIncrease = 5
 	#Increases the durability of the claymore by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
 	claymoreItemDurabilityIncrease = 0
@@ -285,7 +285,7 @@
 	fistItems = []
 	#Increases the dealt damage with the fist by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	fistItemDamageIncrease = 100
+	fistItemDamageIncrease = 5
 	#Increases the durability of the fist by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
 	fistItemDurabilityIncrease = 0
@@ -295,7 +295,7 @@
 	maceItems = []
 	#Increases the dealt damage with the mace by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	maceItemDamageIncrease = 50
+	maceItemDamageIncrease = 5
 	#Increases the durability of the mace by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
 	maceItemDurabilityIncrease = 0
@@ -305,7 +305,7 @@
 	spearItems = []
 	#Increases the dealt damage with the spear by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
-	spearItemDamageIncrease = 50
+	spearItemDamageIncrease = 5
 	#Increases the durability of the spear by the amount of % (0 = disabled).
 	#Range: 0 ~ 1000
 	spearItemDurabilityIncrease = 0

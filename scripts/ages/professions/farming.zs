@@ -70,9 +70,18 @@ var listItem as IItemStack [] = [
     <item:minecraft:melon_slice>,
     <item:minecraft:sugar_cane>,
     <item:minecraft:sugar>,
-    <item:supplementaries:sugar_cube>
+    <item:supplementaries:sugar_cube>,
+    <item:mowziesmobs:thatch_block>
+];
+
+var modList as string [] = [
+    "flowerseeds"
 ];
 
 for item in listItem {
     setStagedItem("farming", item);
+}
+
+for mod in modList {
+    setStagedMod("farming", mod);
 }

@@ -324,6 +324,7 @@ var listItem as IItemStack [] = [
     <item:mcwtrpdoors:birch_barn_trapdoor>,
     <item:mcwtrpdoors:jungle_barn_trapdoor>,
     <item:mcwtrpdoors:acacia_barn_trapdoor>,
+    <item:mowziesmobs:naga_fang_dagger>,
     <item:projectbrazier:traces_of_coal_ore>,
     <item:projectbrazier:poor_coal_ore>,
     <item:projectbrazier:rich_coal_ore>,

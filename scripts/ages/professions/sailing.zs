@@ -11,7 +11,8 @@ var listItem as IItemStack [] = [
 ];
 
 var modList as string [] = [
-    "smallships"
+    "smallships",
+    "aquaculture"
 ];
 
 var exceptItem as IItemStack [] = [

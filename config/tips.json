@@ -1,0 +1,33 @@
+{
+  "defaultCycleTime": 5000,
+  "ignoredNamespaces": [],
+  "ignoredTips": [
+    "tipsmod:string_wool",
+    "tipsmod:enderman_blocks",
+    "tipsmod:water_grass",
+    "tipsmod:mooshroom_lightning",
+    "tipsmod:job_site_dimension",
+    "tipsmod:note_block_instrument",
+    "tipsmod:scrap_nuggets",
+    "tipsmod:turtle_shell",
+    "tipsmod:bed_respawn",
+    "tipsmod:wooden_tool_fuel",
+    "tipsmod:biome_bonemeal",
+    "tipsmod:coarse_to_dirt",
+    "tipsmod:east",
+    "tipsmod:bucket_friends",
+    "tipsmod:boat_jump",
+    "tipsmod:azalea_caves",
+    "tipsmod:gravity_torch",
+    "tipsmod:animal_growing",
+    "tipsmod:undead_helmet",
+    "tipsmod:creeper_drops_disc",
+    "tipsmod:creeper_cat",
+    "tipsmod:portal_trick",
+    "tipsmod:lure_animals",
+    "tipsmod:bucket_rename",
+    "tipsmod:wandering_invis",
+    "tipsmod:barrel",
+    "tipsmod:bed_explode"
+  ]
+}

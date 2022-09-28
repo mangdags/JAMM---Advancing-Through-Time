@@ -111,6 +111,9 @@ key_key.hotbar.9:key.keyboard.9
 key_key.clienttweaks.hideOffhandItem:key.keyboard.unknown
 key_key.clienttweaks.disableStepAssist:key.keyboard.unknown
 key_key.clienttweaks.disableLogStripping:key.keyboard.unknown
+key_key.trashslot.toggle:key.keyboard.t
+key_key.trashslot.delete:key.keyboard.delete
+key_key.trashslot.deleteAll:key.keyboard.delete:SHIFT
 key_key.ftbchunks.map:key.keyboard.m
 key_key.ftbchunks.minimap.zoomIn:key.keyboard.equal
 key_key.ftbchunks.minimap.zoomOut:key.keyboard.minus
@@ -144,16 +147,24 @@ key_key.jei.previousCategory:key.keyboard.page.up:SHIFT
 key_key.jei.nextCategory:key.keyboard.page.down:SHIFT
 key_key.jei.closeRecipeGui:key.keyboard.escape
 key_key.jei.copy.recipe.id:key.keyboard.unknown
+key_key.entityculling.toggle:key.keyboard.unknown
 key_placebo.toggleTrails:key.keyboard.keypad.9
 key_placebo.toggleWings:key.keyboard.keypad.8
-key_key.curios.open.desc:key.keyboard.g
+key_fpsreducer.key.openGui:key.keyboard.end
+key_fpsreducer.key.forceIdle:key.keyboard.pause
 key_key.refinedstorage.focusSearchBar:key.keyboard.tab
 key_key.refinedstorage.clearGridCraftingMatrix:key.keyboard.x:CONTROL
 key_key.refinedstorage.openWirelessGrid:key.keyboard.unknown
 key_key.refinedstorage.openWirelessFluidGrid:key.keyboard.unknown
 key_key.refinedstorage.openWirelessCraftingMonitor:key.keyboard.unknown
 key_key.refinedstorage.openPortableGrid:key.keyboard.unknown
+key_key.corpse.death_history:key.keyboard.u
+key_key.curios.open.desc:key.keyboard.g
+key_iris.keybind.reload:key.keyboard.r
+key_iris.keybind.toggleShaders:key.keyboard.k
+key_iris.keybind.shaderPackSelection:key.keyboard.o
 key_Options Gui:key.keyboard.i
+key_key.ftbquests.quests:key.keyboard.j
 key_key.ship_forward:key.keyboard.w
 key_key.ship_back:key.keyboard.s
 key_key.ship_left:key.keyboard.a
@@ -163,7 +174,6 @@ key_key.ship_inventory:key.keyboard.i
 key_key.lower_ship_sail:key.keyboard.j:ALT
 key_key.higher_ship_sail:key.keyboard.k
 key_key.cannon_shoot:key.keyboard.space
-key_key.ftbquests.quests:key.keyboard.j
 key_key.mekanism.mode:key.keyboard.n
 key_key.mekanism.head_mode:key.keyboard.v
 key_key.mekanism.chest_mode:key.keyboard.g
@@ -179,6 +189,8 @@ key_key.toggleVisible:key.keyboard.unknown
 key_key.immersiveengineering.magnetEquip:key.keyboard.s
 key_key.immersiveengineering.railgunZoom:key.mouse.middle
 key_key.immersiveengineering.chemthrowerSwitch:key.keyboard.unknown
+key_create.keyinfo.toolmenu:key.keyboard.left.alt
+key_create.keyinfo.toolbelt:key.keyboard.left.alt
 key_key.mtmechs.primary:key.keyboard.v
 key_key.worldstripper.strip_world:key.keyboard.delete
 key_key.worldstripper.dress_world:key.keyboard.insert
@@ -188,8 +200,6 @@ key_key.worldstripper.increase_range:key.keyboard.page.up:SHIFT
 key_key.worldstripper.decrease_range:key.keyboard.page.down:SHIFT
 key_key.worldstripper.big_increase_range:key.keyboard.page.up:ALT
 key_key.worldstripper.big_decrease_range:key.keyboard.page.down:ALT
-key_create.keyinfo.toolmenu:key.keyboard.left.alt
-key_create.keyinfo.toolbelt:key.keyboard.left.alt
 key_key.refinedstorageaddons.openWirelessCraftingGrid:key.keyboard.g:CONTROL
 key_keybind.projectbrazier.zoom.increase:key.keyboard.up
 key_keybind.projectbrazier.zoom.decrease:key.keyboard.down
@@ -200,11 +210,11 @@ key_keybind.sophisticatedbackpacks.open_backpack:key.keyboard.b
 key_keybind.sophisticatedbackpacks.inventory_interaction:key.keyboard.c
 key_keybind.sophisticatedbackpacks.tool_swap:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.sort:key.mouse.middle
-key_keybind.sophisticatedbackpacks.toggle_upgrade_5:key.keyboard.unknown
-key_keybind.sophisticatedbackpacks.toggle_upgrade_4:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_3:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_2:key.keyboard.x:ALT
 key_keybind.sophisticatedbackpacks.toggle_upgrade_1:key.keyboard.z:ALT
+key_keybind.sophisticatedbackpacks.toggle_upgrade_5:key.keyboard.unknown
+key_keybind.sophisticatedbackpacks.toggle_upgrade_4:key.keyboard.unknown
 key_keybind.sophisticatedstorage.sort:key.mouse.middle
 key_key.zoom:key.keyboard.c
 soundCategory_master:0.12676056

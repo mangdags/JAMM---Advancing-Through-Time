@@ -1,15 +1,15 @@
 {
   "_commentSyntax": "to check if your config-file has the correct syntax, test your configuration on this website: https://jsonlint.com/",
   "_comment": "explanation to the config structure can be found here: https://github.com/tristankechlo/Tool-Leveling/wiki/",
-  "globalUpgradeCostMultiplier": 1.0,
-  "minUpgradeCost": 1000,
+  "globalUpgradeCostMultiplier": 1.5,
+  "minUpgradeCost": 2000,
   "allowIncompatibleEnchantments": true,
   "allowWrongEnchantments": true,
   "defaultItemWorth": 10,
   "allowLevelingOfUselessEnchantments": true,
   "allowLevelingOfBreakingEnchanments": true,
   "freeUpgradesForCreativePlayers": true,
-  "globalEnchantmentCap": 0,
+  "globalEnchantmentCap": 15,
   "enchantmentWhitelist": [],
   "enchantmentBlacklist": [
     "minecraft:mending",
@@ -23,9 +23,9 @@
     "minecraft:silk_touch"
   ],
   "enchantmentCaps": {
-    "minecraft:fire_protection": 100
+    "minecraft:fire_protection": 10
   },
   "enchantmentUpgradeCostModifier": {
-    "minecraft:looting": 1.5
+    "minecraft:looting": 2.0
   }
 }

@@ -190,7 +190,8 @@ var listItem as IItemStack [] = [
     <item:mcwtrpdoors:warped_cottage_trapdoor>,
     <item:mcwtrpdoors:warped_four_panel_trapdoor>,
     <item:mcwtrpdoors:warped_tropical_trapdoor>,
-    <item:mcwtrpdoors:warped_swamp_trapdoor>
+    <item:mcwtrpdoors:warped_swamp_trapdoor>,
+    <item:sereneseasons:calendar>
 ];
 
 var itemTag as MCTag [] = [

@@ -54,8 +54,8 @@
 					Damage: 0
 				}
 			}
-			x: -4.5d
-			y: 7.0d
+			x: 0.0d
+			y: 6.0d
 			subtitle: "The age of wooden tools and items"
 			description: [
 				""
@@ -137,6 +137,16 @@
 					consume_items: false
 					only_from_crafting: true
 				}
+				{
+					id: "1DD2CC998409F294"
+					type: "questsadditions:structure"
+					title: "Build a simple house"
+					icon: "minecraft:spruce_planks"
+					name: "simple_house"
+					hasCustomPicture: true
+					layer: true
+					rightclick: true
+				}
 			]
 			rewards: [
 				{
@@ -170,8 +180,9 @@
 					Damage: 0
 				}
 			}
-			x: -3.0d
+			x: 0.0d
 			y: 3.0d
+			shape: "hexagon"
 			subtitle: "Prehistoric age is when basic tools and items are needed to survive"
 			description: ["Craft the required items to unlock Paleolithic Age"]
 			dependencies: ["5FB926D8E69C1F15"]
@@ -269,6 +280,7 @@
 							value: "minecraft:planks"
 						}
 					}
+					count: 64L
 					consume_items: true
 					only_from_crafting: true
 				}
@@ -318,8 +330,8 @@
 		{
 			title: "Renaissance Age"
 			icon: "minecraft:bricks"
-			x: 9.0d
-			y: 4.0d
+			x: 19.5d
+			y: 12.0d
 			subtitle: "Architectury and more exploration!"
 			dependencies: [
 				"6CE7181F609F1D80"
@@ -357,8 +369,9 @@
 		{
 			title: "Fishery"
 			icon: "minecraft:tropical_fish"
-			x: 1.5d
-			y: 7.5d
+			x: 6.0d
+			y: 6.0d
+			shape: "circle"
 			subtitle: "Become a fisherman and unlock ships!"
 			dependencies: [
 				"01DD6734D944719A"
@@ -391,11 +404,10 @@
 				{
 					id: "652A1C86D13BEE1D"
 					type: "kill"
-					title: "Kill Cachalot Whale"
+					title: "Kill 3 Cachalot Whale"
 					icon: "alexsmobs:cachalot_whale_tooth"
-					disable_toast: true
 					entity: "alexsmobs:cachalot_whale"
-					value: 5L
+					value: 3L
 				}
 			]
 			rewards: [{
@@ -412,8 +424,9 @@
 		{
 			title: "Sailing"
 			icon: "smallships:sail_item"
-			x: 6.0d
+			x: 11.0d
 			y: 6.0d
+			shape: "circle"
 			subtitle: "Explore the seven seas with ships!"
 			dependencies: [
 				"7975FBD66E441EC0"
@@ -460,8 +473,8 @@
 		{
 			title: "Mesolithic Age"
 			icon: "minecraft:cobblestone"
-			x: -5.5d
-			y: 10.5d
+			x: 0.0d
+			y: 9.0d
 			dependencies: ["01DD6734D944719A"]
 			size: 1.5d
 			id: "1089E7E3DAFD02BA"
@@ -498,8 +511,8 @@
 		{
 			title: "Neolithic Age"
 			icon: "minecraft:smooth_stone"
-			x: -2.25d
-			y: 15.75d
+			x: 0.0d
+			y: 12.0d
 			dependencies: ["1089E7E3DAFD02BA"]
 			size: 1.5d
 			id: "1BD4EBA81DCC76F0"
@@ -531,8 +544,8 @@
 		{
 			title: "Calcolithic Age"
 			icon: "minecraft:copper_ingot"
-			x: 3.5d
-			y: 14.0d
+			x: 4.5d
+			y: 12.0d
 			dependencies: ["1BD4EBA81DCC76F0"]
 			size: 1.5d
 			id: "7F763CD6C735CFD3"
@@ -566,17 +579,79 @@
 		{
 			title: "Bronze Age"
 			icon: "mekanism:ingot_bronze"
-			x: 6.0d
+			x: 9.75d
 			y: 12.0d
 			dependencies: ["7F763CD6C735CFD3"]
 			size: 1.5d
 			id: "7E915B28ED227BE1"
-			tasks: [{
-				id: "326EE6FDFD3432A9"
-				type: "item"
-				icon: "mekanism:ingot_bronze"
-				item: "ftbic:bronze_ingot"
-			}]
+			tasks: [
+				{
+					id: "326EE6FDFD3432A9"
+					type: "item"
+					title: "Smelt 64pcs of Bronze Ingot"
+					icon: "mekanism:ingot_bronze"
+					item: "mekanism:ingot_bronze"
+					count: 64L
+					consume_items: false
+					only_from_crafting: true
+				}
+				{
+					id: "07373AA9D3E3D9C6"
+					type: "item"
+					title: "Craft a Bronze Helmet"
+					item: {
+						id: "fusion:bronze_helmet"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					consume_items: false
+					only_from_crafting: true
+				}
+				{
+					id: "5454C911A82866AD"
+					type: "item"
+					title: "Craft a Bronze Chestplate"
+					item: {
+						id: "fusion:bronze_chestplate"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					consume_items: false
+					only_from_crafting: true
+				}
+				{
+					id: "4F6AD73FFDB62431"
+					type: "item"
+					title: "Craft a Bronze Leggings"
+					item: {
+						id: "fusion:bronze_leggings"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					consume_items: false
+					only_from_crafting: true
+				}
+				{
+					id: "1E08BDBFE3A32D4D"
+					type: "item"
+					title: "Craft a Bronze Boots"
+					item: {
+						id: "fusion:bronze_boots"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					consume_items: false
+					only_from_crafting: true
+				}
+			]
 			rewards: [
 				{
 					id: "43CF890842B38AD9"
@@ -602,8 +677,8 @@
 		{
 			title: "Iron Age"
 			icon: "minecraft:iron_ingot"
-			x: 7.0d
-			y: 9.0d
+			x: 15.0d
+			y: 12.0d
 			dependencies: ["7E915B28ED227BE1"]
 			size: 1.5d
 			id: "6CE7181F609F1D80"
@@ -637,8 +712,8 @@
 		{
 			title: "Industrial Age"
 			icon: "create:mechanical_arm"
-			x: 15.0d
-			y: 5.5d
+			x: 24.0d
+			y: 12.0d
 			dependencies: ["7869A6F66C889EAE"]
 			size: 1.5d
 			id: "665105B2710CEE56"
@@ -672,8 +747,8 @@
 		{
 			title: "Machine Age"
 			icon: "create:track"
-			x: 12.0d
-			y: 8.0d
+			x: 28.5d
+			y: 12.0d
 			dependencies: [
 				"665105B2710CEE56"
 				"26454B70373957CD"
@@ -710,8 +785,8 @@
 		{
 			title: "Atomic Age"
 			icon: "mekanism:alloy_reinforced"
-			x: 14.5d
-			y: 10.0d
+			x: 33.0d
+			y: 12.0d
 			subtitle: "JUST DON'T BUILD AN ATOM BOMB!"
 			dependencies: ["1775FE0CC0A7D1F2"]
 			size: 1.5d
@@ -725,8 +800,9 @@
 		{
 			title: "Logging"
 			icon: "supplementaries:timber_cross_brace"
-			x: -0.5d
-			y: 4.5d
+			x: 17.0d
+			y: 4.0d
+			shape: "circle"
 			dependencies: ["01DD6734D944719A"]
 			id: "58DB408F5BE8D13D"
 			tasks: [{
@@ -748,8 +824,9 @@
 		{
 			title: "Farming"
 			icon: "minecraft:wheat"
-			x: -0.5d
-			y: 12.0d
+			x: 3.5d
+			y: 9.0d
+			shape: "circle"
 			dependencies: ["1BD4EBA81DCC76F0"]
 			id: "21D16B3C36F89CA4"
 			tasks: [{
@@ -795,8 +872,9 @@
 		{
 			title: "Cookery"
 			icon: "farmersdelight:smoked_ham"
-			x: 2.5d
-			y: 11.0d
+			x: 6.5d
+			y: 9.0d
+			shape: "circle"
 			dependencies: ["21D16B3C36F89CA4"]
 			dependency_requirement: "one_started"
 			id: "3F5594169C747803"
@@ -839,8 +917,9 @@
 		{
 			title: "Carpentry"
 			icon: "mcwroofs:roofing_hammer"
-			x: 2.5d
-			y: 2.5d
+			x: 17.0d
+			y: 6.0d
+			shape: "circle"
 			dependencies: ["58DB408F5BE8D13D"]
 			id: "7E717801F7C30EE3"
 			tasks: [{
@@ -868,8 +947,9 @@
 		{
 			title: "Mining"
 			icon: "supplementaries:dispenser_minecart"
-			x: 10.5d
-			y: 14.5d
+			x: 19.0d
+			y: 15.0d
+			shape: "circle"
 			dependencies: [
 				"7F763CD6C735CFD3"
 				"7E915B28ED227BE1"
@@ -895,8 +975,10 @@
 		{
 			title: "Pottery"
 			icon: "valhelsia_structures:big_red_glazed_jar"
-			x: 14.5d
-			y: 1.5d
+			x: 22.5d
+			y: 6.0d
+			shape: "circle"
+			hide_dependency_lines: false
 			dependencies: ["7869A6F66C889EAE"]
 			id: "15CBE9B776545B74"
 			tasks: [{

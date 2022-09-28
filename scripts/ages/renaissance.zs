@@ -160,6 +160,7 @@ var listItem as IItemStack [] = [
     <item:projectbrazier:red_polstered_crimson_bench>,
     <item:projectbrazier:black_polstered_crimson_bench>,
     <item:projectbrazier:crimson_platform>,
+    <item:sereneseasons:season_sensor>,
     <item:supplementaries:crimson_lantern>,
     <item:valhelsia_structures:crimson_post>,
     <item:valhelsia_structures:cut_crimson_post>,

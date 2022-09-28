@@ -47,6 +47,7 @@
       "minecraft:cactus",
       "minecraft:sunflower",
       "minecraft:flower_pot",
+      "mowziesmobs:thatch_block",
       "projectbrazier:cauliflower_seeds",
       "projectbrazier:white_cabbage_seeds",
       "projectbrazier:cauliflower",
@@ -75,6 +76,7 @@
     "blockList": [
     ],
     "modList": [
+      "flowerseeds"
     ],
     "tagList": [
       

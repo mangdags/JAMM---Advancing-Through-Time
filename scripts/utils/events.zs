@@ -53,6 +53,23 @@ CTEventManager.register<RightClickBlockEvent>((event) => {
   }
 });
 
+CTEventManager.register<RightClickBlockEvent>((event) => {
+  var player = event.player;
+  var level = player.level;
+  var pos = event.blockPos;
+
+  var message = new TextComponent("You must unlock Paleolithic Age to interact with this block!").setStyle(<constant:formatting:red>);
+
+  if level.getBlockState(pos).block == <block:minecraft:chest>  || level.getBlockState(pos).block == <block:minecraft:barrel> {
+    if !player.hasGameStage("paleolithic_age") {
+      player.displayClientMessage(message, true);
+      event.cancel();
+    }
+  }
+});
+
+
+
 /*
 CTEventManager.register<EntityTravelToDimensionEvent>((event) => {
   var player = event.player;
@@ -87,6 +104,7 @@ CTEventManager.register<GameStageRemoved>((event) => {
         var srvr = lvl.server.executeCommand("thitemstages remove " +event.player.name.getString() + " " +event.stage, true);
     }
 });
+
 /*
 CTEventManager.register<GameStageCleared>((event) => {
     var subj = event.entity;

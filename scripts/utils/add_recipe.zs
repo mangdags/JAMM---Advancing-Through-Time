@@ -167,54 +167,20 @@ craftingTable.addShaped("spruce_firewood", <item:projectbrazier:spruce_firewood>
 <item:projectbrazier:spruce_firewood>.burnTime = 3000;
 
 //HOLLOW LOG
-craftingTable.addShapeless("birch_hollow_log", <item:projectbrazier:hollow_birch_log>, 
-    [birchLog]
-);
-
-craftingTable.addShapeless("oak_hollow_log", <item:projectbrazier:hollow_oak_log>, 
-    [oakLog]
-);
-
-craftingTable.addShapeless("acacia_hollow_log", <item:projectbrazier:hollow_acacia_log>, 
-    [acaciaLog]
-);
-
-craftingTable.addShapeless("jungle_hollow_log", <item:projectbrazier:hollow_jungle_log>, 
-    [jungleLog]
-);
-
-craftingTable.addShapeless("dark_oak_hollow_log", <item:projectbrazier:hollow_dark_oak_log>, 
-    [darkOakLog]
-);
-
-craftingTable.addShapeless("spruce_hollow_log", <item:projectbrazier:hollow_spruce_log>, 
-    [birchLog]
-);
+craftingTable.addShapeless("birch_hollow_log", <item:projectbrazier:hollow_birch_log>, [birchLog]);
+craftingTable.addShapeless("oak_hollow_log", <item:projectbrazier:hollow_oak_log>, [oakLog]);
+craftingTable.addShapeless("acacia_hollow_log", <item:projectbrazier:hollow_acacia_log>, [acaciaLog]);
+craftingTable.addShapeless("jungle_hollow_log", <item:projectbrazier:hollow_jungle_log>, [jungleLog]);
+craftingTable.addShapeless("dark_oak_hollow_log", <item:projectbrazier:hollow_dark_oak_log>, [darkOakLog]);
+craftingTable.addShapeless("spruce_hollow_log", <item:projectbrazier:hollow_spruce_log>, [birchLog]);
 
 //STRIPPED HOLLOW LOG
-craftingTable.addShapeless("birch_hollow_stripped_log", <item:projectbrazier:stripped_hollow_birch_log>, 
-    [birchLog]
-);
-
-craftingTable.addShapeless("oak_hollow_stripped_log", <item:projectbrazier:stripped_hollow_oak_log>, 
-    [oakLog]
-);
-
-craftingTable.addShapeless("acacia_hollow_stripped_log", <item:projectbrazier:stripped_hollow_acacia_log>, 
-    [acaciaLog]
-);
-
-craftingTable.addShapeless("jungle_hollow_stripped_log", <item:projectbrazier:stripped_hollow_jungle_log>, 
-    [jungleLog]
-);
-
-craftingTable.addShapeless("dark_oak_hollow_stripped_log", <item:projectbrazier:stripped_hollow_dark_oak_log>, 
-    [darkOakLog]
-);
-
-craftingTable.addShapeless("spruce_hollow_stripped_log", <item:projectbrazier:stripped_hollow_spruce_log>, 
-    [birchLog]
-);
+craftingTable.addShapeless("birch_hollow_stripped_log", <item:projectbrazier:stripped_hollow_birch_log>, [birchLog]);
+craftingTable.addShapeless("oak_hollow_stripped_log", <item:projectbrazier:stripped_hollow_oak_log>, [oakLog]);
+craftingTable.addShapeless("acacia_hollow_stripped_log", <item:projectbrazier:stripped_hollow_acacia_log>, [acaciaLog]);
+craftingTable.addShapeless("jungle_hollow_stripped_log", <item:projectbrazier:stripped_hollow_jungle_log>, [jungleLog]);
+craftingTable.addShapeless("dark_oak_hollow_stripped_log", <item:projectbrazier:stripped_hollow_dark_oak_log>,[darkOakLog]);
+craftingTable.addShapeless("spruce_hollow_stripped_log", <item:projectbrazier:stripped_hollow_spruce_log>, [birchLog]);
 
 //HOOF FUNGUS
 craftingTable.addShapeless("hoof_fungus", <item:projectbrazier:hoof_fungus>, [<item:minecraft:brown_mushroom_block>]);
@@ -256,6 +222,7 @@ craftingTable.addShapedMirrored("candle_holder", MirrorAxis.ALL, <item:projectbr
     [empty, ironIngot, ironNugget],
     [empty, ironIngot, ironNugget]
 ]);
+
 craftingTable.addShapeless("white_candle_holder", <item:projectbrazier:white_candle_holder>, [candleHolder, <item:minecraft:white_dye>]);
 craftingTable.addShapeless("orange_candle_holder", <item:projectbrazier:orange_candle_holder>, [candleHolder, <item:minecraft:orange_dye>]);
 craftingTable.addShapeless("magenta_candle_holder", <item:projectbrazier:magenta_candle_holder>, [candleHolder, <item:minecraft:magenta_dye>]);
