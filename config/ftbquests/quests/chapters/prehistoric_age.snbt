@@ -929,11 +929,6 @@
 			shape: "circle"
 			dependencies: ["01DD6734D944719A"]
 			id: "58DB408F5BE8D13D"
-			tasks: [{
-				id: "79884BB75EE0A31D"
-				type: "item"
-				item: "minecraft:oak_wood"
-			}]
 			rewards: [{
 				id: "7B214C94DE93A70A"
 				type: "command"

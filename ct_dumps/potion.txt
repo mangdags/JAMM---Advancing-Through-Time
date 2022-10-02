@@ -56,3 +56,5 @@
 <potion:minecraft:water>
 <potion:minecraft:water_breathing>
 <potion:minecraft:weakness>
+<potion:mowziesmobs:long_poison_resist>
+<potion:mowziesmobs:poison_resist>

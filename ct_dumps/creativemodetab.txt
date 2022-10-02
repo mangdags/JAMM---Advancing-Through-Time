@@ -3,6 +3,8 @@
 <itemgroup:advancednetherite.tab>
 <itemgroup:alcotab>
 <itemgroup:alexsmobs>
+<itemgroup:aquaculture>
+<itemgroup:artifacts>
 <itemgroup:brewing>
 <itemgroup:bridges>
 <itemgroup:building_blocks>
@@ -14,6 +16,7 @@
 <itemgroup:endremTab>
 <itemgroup:extra>
 <itemgroup:farmersdelight>
+<itemgroup:flowerseeds>
 <itemgroup:food>
 <itemgroup:ftbquests.ftbquests>
 <itemgroup:fusion>
@@ -29,6 +32,7 @@
 <itemgroup:mcwtrpdoors>
 <itemgroup:mekanism>
 <itemgroup:misc>
+<itemgroup:mowziesmobs.creativeTab>
 <itemgroup:mtmechs>
 <itemgroup:myrtrees.myrtrees_tab>
 <itemgroup:natprog.name>
@@ -44,6 +48,7 @@
 <itemgroup:simplecorelib>
 <itemgroup:sophisticatedbackpacks>
 <itemgroup:sophisticatedstorage>
+<itemgroup:tabSereneSeasons>
 <itemgroup:toms_storage.tab>
 <itemgroup:tools>
 <itemgroup:transportation>

@@ -64,5 +64,10 @@
 <mobeffect:minecraft:water_breathing>
 <mobeffect:minecraft:weakness>
 <mobeffect:minecraft:wither>
+<mobeffect:mowziesmobs:frozen>
+<mobeffect:mowziesmobs:geomancy>
+<mobeffect:mowziesmobs:poison_resist>
+<mobeffect:mowziesmobs:sunblock>
+<mobeffect:mowziesmobs:suns_blessing>
 <mobeffect:parrying:stunned>
 <mobeffect:supplementaries:overencumbered>
