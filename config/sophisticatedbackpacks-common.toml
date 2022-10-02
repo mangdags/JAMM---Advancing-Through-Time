@@ -25,7 +25,7 @@
 	[common.ironBackpack]
 		#Number of inventory slots in the backpack
 		#Range: 1 ~ 144
-		inventorySlotCount = 54
+		inventorySlotCount = 37
 		#Number of upgrade slots in the backpack
 		#Range: 0 ~ 10
 		upgradeSlotCount = 2
@@ -34,7 +34,7 @@
 	[common.goldBackpack]
 		#Number of inventory slots in the backpack
 		#Range: 1 ~ 144
-		inventorySlotCount = 81
+		inventorySlotCount = 47
 		#Number of upgrade slots in the backpack
 		#Range: 0 ~ 10
 		upgradeSlotCount = 3
@@ -43,7 +43,7 @@
 	[common.diamondBackpack]
 		#Number of inventory slots in the backpack
 		#Range: 1 ~ 144
-		inventorySlotCount = 108
+		inventorySlotCount = 57
 		#Number of upgrade slots in the backpack
 		#Range: 0 ~ 10
 		upgradeSlotCount = 5
@@ -52,7 +52,7 @@
 	[common.netheriteBackpack]
 		#Number of inventory slots in the backpack
 		#Range: 1 ~ 144
-		inventorySlotCount = 120
+		inventorySlotCount = 67
 		#Number of upgrade slots in the backpack
 		#Range: 0 ~ 10
 		upgradeSlotCount = 7

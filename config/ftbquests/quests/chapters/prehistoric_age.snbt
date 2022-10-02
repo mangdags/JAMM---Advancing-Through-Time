@@ -141,7 +141,7 @@
 					id: "1DD2CC998409F294"
 					type: "questsadditions:structure"
 					title: "Build a simple house"
-					icon: "minecraft:spruce_planks"
+					icon: "minecraft:scaffolding"
 					name: "simple_house"
 					hasCustomPicture: true
 					layer: true
@@ -333,10 +333,7 @@
 			x: 19.5d
 			y: 12.0d
 			subtitle: "Architectury and more exploration!"
-			dependencies: [
-				"6CE7181F609F1D80"
-				"7E717801F7C30EE3"
-			]
+			dependencies: ["6CE7181F609F1D80"]
 			size: 1.5d
 			id: "7869A6F66C889EAE"
 			tasks: [{
@@ -478,14 +475,75 @@
 			dependencies: ["01DD6734D944719A"]
 			size: 1.5d
 			id: "1089E7E3DAFD02BA"
-			tasks: [{
-				id: "3B8B748E271B33D9"
-				type: "item"
-				title: "Obtain 5 stacks of Cobblestone "
-				item: "minecraft:cobblestone"
-				count: 320L
-				only_from_crafting: false
-			}]
+			tasks: [
+				{
+					id: "3B8B748E271B33D9"
+					type: "item"
+					title: "Obtain 5 stacks of Cobblestone "
+					item: "minecraft:cobblestone"
+					count: 320L
+					only_from_crafting: false
+				}
+				{
+					id: "1F09D0FE98F5D7D7"
+					type: "item"
+					title: "Craft a Furnace"
+					icon: "minecraft:furnace"
+					item: "minecraft:furnace"
+					consume_items: false
+					only_from_crafting: true
+				}
+				{
+					id: "29F04054C9469CB6"
+					type: "item"
+					title: "Craft a Stone Pickaxe"
+					item: {
+						id: "minecraft:stone_pickaxe"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					consume_items: false
+					only_from_crafting: true
+				}
+				{
+					id: "27AB8C1A15399493"
+					type: "item"
+					title: "Craft a Stone Axe"
+					item: {
+						id: "minecraft:stone_axe"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					consume_items: false
+					only_from_crafting: true
+				}
+				{
+					id: "75577B9B1DED7CDE"
+					type: "item"
+					title: "Craft a Stone Sword"
+					item: {
+						id: "minecraft:stone_sword"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					consume_items: false
+					only_from_crafting: true
+				}
+				{
+					id: "0F7AF02B9D793F31"
+					type: "item"
+					title: "Craft a Backpack"
+					item: "sophisticatedbackpacks:backpack"
+					consume_items: false
+					only_from_crafting: true
+				}
+			]
 			rewards: [
 				{
 					id: "0E7A07CEF1A5E7DA"
@@ -514,19 +572,85 @@
 			x: 0.0d
 			y: 12.0d
 			dependencies: ["1089E7E3DAFD02BA"]
+			dependency_requirement: "one_started"
 			size: 1.5d
 			id: "1BD4EBA81DCC76F0"
-			tasks: [{
-				id: "23086033DB2508BC"
-				type: "item"
-				item: "minecraft:smooth_stone"
-			}]
+			tasks: [
+				{
+					id: "08A266C0A5B4324F"
+					type: "questsadditions:structure"
+					title: "Create a base of a tower"
+					icon: "minecraft:scaffolding"
+					name: "tower_base_quest"
+					hasCustomPicture: true
+					layer: false
+					rightclick: false
+				}
+				{
+					id: "23C38E59F89EE258"
+					type: "item"
+					title: "Craft a Leather Helmet"
+					item: {
+						id: "minecraft:leather_helmet"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					consume_items: false
+					only_from_crafting: true
+				}
+				{
+					id: "3D5EC98D7191726F"
+					type: "item"
+					title: "Craft a Leather Tunic"
+					item: {
+						id: "minecraft:leather_chestplate"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					consume_items: false
+					only_from_crafting: true
+				}
+				{
+					id: "13F4323DB7284614"
+					type: "item"
+					title: "Craft a Leather Pants"
+					item: {
+						id: "minecraft:leather_leggings"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					consume_items: false
+					only_from_crafting: true
+				}
+				{
+					id: "658315FA6F17EB94"
+					type: "item"
+					title: "Craft a Leather Boots"
+					item: {
+						id: "minecraft:leather_boots"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					consume_items: false
+					only_from_crafting: true
+				}
+			]
 			rewards: [
 				{
 					id: "458508523E38BA7C"
 					type: "advancement"
 					title: "Calcolithic Advancement"
-					advancement: "minecraft:story/root"
+					team_reward: false
+					auto: "enabled"
+					advancement: "advancementsages:calcolithic_age"
 					criterion: ""
 				}
 				{
@@ -800,7 +924,7 @@
 		{
 			title: "Logging"
 			icon: "supplementaries:timber_cross_brace"
-			x: 17.0d
+			x: 19.5d
 			y: 4.0d
 			shape: "circle"
 			dependencies: ["01DD6734D944719A"]
@@ -824,8 +948,8 @@
 		{
 			title: "Farming"
 			icon: "minecraft:wheat"
-			x: 3.5d
-			y: 9.0d
+			x: 4.5d
+			y: 10.0d
 			shape: "circle"
 			dependencies: ["1BD4EBA81DCC76F0"]
 			id: "21D16B3C36F89CA4"
@@ -872,8 +996,8 @@
 		{
 			title: "Cookery"
 			icon: "farmersdelight:smoked_ham"
-			x: 6.5d
-			y: 9.0d
+			x: 9.5d
+			y: 10.0d
 			shape: "circle"
 			dependencies: ["21D16B3C36F89CA4"]
 			dependency_requirement: "one_started"
@@ -917,7 +1041,7 @@
 		{
 			title: "Carpentry"
 			icon: "mcwroofs:roofing_hammer"
-			x: 17.0d
+			x: 19.5d
 			y: 6.0d
 			shape: "circle"
 			dependencies: ["58DB408F5BE8D13D"]
@@ -975,7 +1099,7 @@
 		{
 			title: "Pottery"
 			icon: "valhelsia_structures:big_red_glazed_jar"
-			x: 22.5d
+			x: 24.0d
 			y: 6.0d
 			shape: "circle"
 			hide_dependency_lines: false
@@ -994,6 +1118,37 @@
 				team_reward: false
 				auto: "enabled"
 				command: "/gamestage add @p pottery true"
+				player_command: false
+			}]
+		}
+		{
+			title: "Animalia"
+			icon: "alexsmobs:animal_dictionary"
+			x: 4.5d
+			y: 7.0d
+			shape: "circle"
+			subtitle: "Tame (or kill?) the wild"
+			hide_dependency_lines: false
+			dependencies: ["1089E7E3DAFD02BA"]
+			dependency_requirement: "one_started"
+			id: "3E478CB87ED20A2F"
+			tasks: [{
+				id: "0A8D918F290CA23B"
+				type: "item"
+				title: "Obtain 32pcs of Leather"
+				icon: "minecraft:leather"
+				item: "minecraft:leather"
+				count: 32L
+				consume_items: false
+				only_from_crafting: false
+			}]
+			rewards: [{
+				id: "6FF04A4432C47CE3"
+				type: "command"
+				title: "Animalia"
+				team_reward: false
+				auto: "enabled"
+				command: "/gamestage add @p animalia true"
 				player_command: false
 			}]
 		}
