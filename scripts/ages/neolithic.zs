@@ -1,135 +1,301 @@
+import mods.jei.JEI;
 import crafttweaker.api.item.IItemStack;
+import crafttweaker.api.bracket.BracketHandlers;
 import crafttweaker.api.tag.MCTag;
+import crafttweaker.api.text.Style;
+import crafttweaker.api.text.ChatFormatting;
+import crafttweaker.api.text.TextComponent;
+import crafttweaker.api.events.CTEventManager;
+import crafttweaker.api.event.block.BlockBreakEvent;
+import crafttweaker.api.event.block.BlockEvent;
+import crafttweaker.api.event.entity.player.interact.LeftClickBlockEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickBlockEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickItemEvent;
+import crafttweaker.api.event.entity.player.interact.PlayerInteractEvent;
+import crafttweaker.api.item.type.block.BlockItem;
+import crafttweaker.api.tag.manager.ITagManager;
+import crafttweaker.api.event.entity.player.ItemTooltipEvent;
+import crafttweaker.api.entity.type.player.Player;
 
-var listItem as IItemStack [] = [
-    <item:minecraft:grindstone>,
-    <item:cfm:stone_cabinet>,
-    <item:parrying:scabbard>,
-    <item:parrying:quiver>,
-    <item:minecraft:andesite_stairs>,
-    <item:minecraft:cobblestone_stairs>,
-    <item:minecraft:stone_brick_stairs>,
-    <item:minecraft:sandstone_stairs>,
-    <item:minecraft:prismarine_stairs>,
-    <item:minecraft:prismarine_brick_stairs>,
-    <item:minecraft:dark_prismarine_stairs>,
-    <item:minecraft:red_sandstone_stairs>,
-    <item:minecraft:polished_granite_stairs>,
-    <item:minecraft:smooth_red_sandstone_stairs>,
-    <item:minecraft:mossy_stone_brick_stairs>,
-    <item:minecraft:polished_diorite_stairs>,
-    <item:minecraft:mossy_cobblestone_stairs>,
-    <item:minecraft:stone_stairs>,
-    <item:minecraft:smooth_sandstone_stairs>,
-    <item:minecraft:granite_stairs>,
-    <item:minecraft:polished_andesite_stairs>,
-    <item:minecraft:diorite_stairs>,
-    <item:minecraft:cobbled_deepslate_stairs>,
-    <item:minecraft:polished_deepslate_stairs>,
-    <item:minecraft:deepslate_brick_stairs>,
-    <item:minecraft:deepslate_tile_stairs>,
-    <item:minecraft:deepslate_bricks>,
-    <item:minecraft:cracked_deepslate_bricks>,
-    <item:minecraft:deepslate_bricks>,
-    <item:minecraft:chiseled_deepslate>,
-    <item:mcwbridges:deepslate_brick_bridge>,
-    <item:mcwbridges:deepslate_tile_bridge>,
-    <item:mcwbridges:deepslate_brick_bridge_pier>,
-    <item:mcwbridges:deepslate_tile_bridge_pier>,
-    <item:mcwbridges:deepslate_brick_bridge_stair>,
-    <item:mcwbridges:deepslate_tile_bridge_stair>,
-    <item:mcwfences:modern_deepslate_wall>,
-    <item:mcwfences:modern_deepslate_brick_wall>,
-    <item:mcwroofs:deepslate_roof>,
-    <item:mcwroofs:deepslate_top_roof>,
-    <item:mcwroofs:deepslate_lower_roof>,
-    <item:mcwroofs:deepslate_steep_roof>,
-    <item:mcwroofs:deepslate_upper_lower_roof>,
-    <item:mcwroofs:deepslate_upper_steep_roof>,
-    <item:minecraft:dripstone_block>,
-    <item:minecraft:sandstone>,
-    <item:minecraft:smooth_red_sandstone>,
-    <item:minecraft:smooth_stone>,
-    <item:minecraft:smooth_sandstone>,
-    <item:minecraft:red_sandstone>,
-    <item:minecraft:infested_stone_bricks>,
-    <item:minecraft:infested_mossy_stone_bricks>,
-    <item:minecraft:infested_cracked_stone_bricks>,
-    <item:minecraft:pointed_dripstone>,
-    <item:minecraft:stone_button>,
-    <item:minecraft:stone_pressure_plate>,
-    <item:mcwbridges:sandstone_bridge>,
-    <item:mcwbridges:stone_brick_bridge>,
-    <item:mcwbridges:orange_sandstone_bridge>,
-    <item:mcwbridges:mossy_stone_brick_bridge>,
-    <item:mcwbridges:sandstone_bridge_pier>,
-    <item:mcwbridges:stone_bridge_pier>,
-    <item:mcwbridges:red_sandstone_bridge_pier>,
-    <item:mcwbridges:mossy_stone_bridge_pier>,
-    <item:mcwbridges:stone_brick_bridge_stair>,
-    <item:mcwbridges:sandstone_bridge_stair>,
-    <item:mcwbridges:red_sandstone_bridge_stair>,
-    <item:mcwbridges:mossy_stone_bridge_stair>,
-    <item:mcwfences:modern_stone_brick_wall>,
-    <item:mcwfences:modern_sandstone_wall>,
-    <item:mcwfences:modern_red_sandstone_wall>,
-    <item:mcwroofs:stone_roof>,
-    <item:mcwroofs:stone_top_roof>,
-    <item:mcwroofs:stone_lower_roof>,
-    <item:mcwroofs:stone_steep_roof>,
-    <item:mcwroofs:stone_upper_lower_roof>,
-    <item:mcwroofs:stone_upper_steep_roof>,
-    <item:mcwroofs:cobblestone_roof>,
-    <item:mcwroofs:cobblestone_top_roof>,
-    <item:mcwroofs:cobblestone_lower_roof>,
-    <item:mcwroofs:cobblestone_steep_roof>,
-    <item:mcwroofs:cobblestone_upper_lower_roof>,
-    <item:mcwroofs:cobblestone_upper_steep_roof>,
-    <item:mcwroofs:sandstone_roof>,
-    <item:mcwroofs:sandstone_top_roof>,
-    <item:mcwroofs:sandstone_lower_roof>,
-    <item:mcwroofs:sandstone_steep_roof>,
-    <item:mcwroofs:sandstone_upper_lower_roof>,
-    <item:mcwroofs:sandstone_upper_steep_roof>,
-    <item:mcwroofs:red_sandstone_roof>,
-    <item:mcwroofs:red_sandstone_top_roof>,
-    <item:mcwroofs:red_sandstone_lower_roof>,
-    <item:mcwroofs:red_sandstone_steep_roof>,
-    <item:mcwroofs:red_sandstone_upper_lower_roof>,
-    <item:mcwroofs:red_sandstone_upper_steep_roof>,
-    <item:mcwwindows:stone_brick_arrow_slit>,
-    <item:mcwwindows:cobblestone_arrow_slit>,
-    <item:cfm:stone_table>,
-    <item:cfm:stone_chair>,
-    <item:cfm:stone_coffee_table>,
-    <item:cfm:stone_bedside_cabinet>,
-    <item:cfm:stone_desk>,
-    <item:cfm:stone_desk_cabinet>,
-    <item:supplementaries:stone_tile>,
-    <item:supplementaries:stone_tile_stairs>,
-    <item:minecraft:deepslate_tiles>,
-    <item:minecraft:cracked_deepslate_tiles>,
-    <item:supplementaries:item_shelf>,
-    <item:minecraft:clay>,
-    <item:minecraft:clay_ball>,
-    <item:supplementaries:statue>,
-    <item:supplementaries:pedestal>,
-    <item:minecraft:calcite>,
-    <item:minecraft:amethyst_shard>,
-    <item:minecraft:amethyst_block>,
-    <item:minecraft:budding_amethyst>,
-    <item:projectbrazier:birch_zipline_anchor>,
-    <item:projectbrazier:oak_zipline_anchor>,
-    <item:projectbrazier:acacia_zipline_anchor>,
-    <item:projectbrazier:jungle_zipline_anchor>,
-    <item:projectbrazier:dark_oak_zipline_anchor>,
-    <item:projectbrazier:spruce_zipline_anchor>,
-    <item:projectbrazier:rope_anchor>,
-    <item:minecraft:honeycomb>,
-    <item:projectbrazier:deepslate_arrow_slit>,
-    <item:projectbrazier:stone_arrow_slit>,
-    <item:supplementaries:crystal_display>
+var message = new TextComponent("You haven't unlocked Neolithic Age yet").setStyle(<constant:formatting:red>);
+var stage = "neolithic_age";
+
+var items as string [] = [
+    "cfm:stone_table",
+    "cfm:stone_chair",
+    "cfm:stone_coffee_table",
+    "cfm:stone_bedside_cabinet",
+    "cfm:stone_desk",
+    "cfm:stone_desk_cabinet",
+    "cfm:stone_cabinet",
+    "minecraft:grindstone",
+    "minecraft:andesite_stairs",
+    "minecraft:cobblestone_stairs",
+    "minecraft:stone_brick_stairs",
+    "minecraft:sandstone_stairs",
+    "minecraft:prismarine_stairs",
+    "minecraft:prismarine_brick_stairs",
+    "minecraft:dark_prismarine_stairs",
+    "minecraft:red_sandstone_stairs",
+    "minecraft:polished_granite_stairs",
+    "minecraft:smooth_red_sandstone_stairs",
+    "minecraft:mossy_stone_brick_stairs",
+    "minecraft:polished_diorite_stairs",
+    "minecraft:mossy_cobblestone_stairs",
+    "minecraft:stone_stairs",
+    "minecraft:smooth_sandstone_stairs",
+    "minecraft:granite_stairs",
+    "minecraft:polished_andesite_stairs",
+    "minecraft:diorite_stairs",
+    "minecraft:cobbled_deepslate_stairs",
+    "minecraft:polished_deepslate_stairs",
+    "minecraft:deepslate_brick_stairs",
+    "minecraft:deepslate_tile_stairs",
+    "minecraft:deepslate_bricks",
+    "minecraft:cracked_deepslate_bricks",
+    "minecraft:deepslate_bricks",
+    "minecraft:chiseled_deepslate",
+    "minecraft:dripstone_block",
+    "minecraft:sandstone",
+    "minecraft:smooth_red_sandstone",
+    "minecraft:smooth_stone",
+    "minecraft:smooth_sandstone",
+    "minecraft:red_sandstone",
+    "minecraft:infested_stone_bricks",
+    "minecraft:infested_mossy_stone_bricks",
+    "minecraft:infested_cracked_stone_bricks",
+    "minecraft:pointed_dripstone",
+    "minecraft:stone_button",
+    "minecraft:stone_pressure_plate",
+    "minecraft:deepslate_tiles",
+    "minecraft:cracked_deepslate_tiles",
+    "minecraft:clay",
+    "minecraft:clay_ball",
+    "minecraft:calcite",
+    "minecraft:amethyst_shard",
+    "minecraft:amethyst_block",
+    "minecraft:budding_amethyst",
+    "minecraft:honeycomb",
+    "mcwbridges:deepslate_brick_bridge",
+    "mcwbridges:deepslate_tile_bridge",
+    "mcwbridges:deepslate_brick_bridge_pier",
+    "mcwbridges:deepslate_tile_bridge_pier",
+    "mcwbridges:deepslate_brick_bridge_stair",
+    "mcwbridges:deepslate_tile_bridge_stair",
+    "mcwbridges:sandstone_bridge",
+    "mcwbridges:stone_brick_bridge",
+    "mcwbridges:orange_sandstone_bridge",
+    "mcwbridges:mossy_stone_brick_bridge",
+    "mcwbridges:sandstone_bridge_pier",
+    "mcwbridges:stone_bridge_pier",
+    "mcwbridges:red_sandstone_bridge_pier",
+    "mcwbridges:mossy_stone_bridge_pier",
+    "mcwbridges:stone_brick_bridge_stair",
+    "mcwbridges:sandstone_bridge_stair",
+    "mcwbridges:red_sandstone_bridge_stair",
+    "mcwbridges:mossy_stone_bridge_stair",
+    "mcwfences:modern_deepslate_wall",
+    "mcwfences:modern_deepslate_brick_wall",
+    "mcwfences:modern_stone_brick_wall",
+    "mcwfences:modern_sandstone_wall",
+    "mcwfences:modern_red_sandstone_wall",
+    "mcwroofs:deepslate_roof",
+    "mcwroofs:deepslate_top_roof",
+    "mcwroofs:deepslate_lower_roof",
+    "mcwroofs:deepslate_steep_roof",
+    "mcwroofs:deepslate_upper_lower_roof",
+    "mcwroofs:deepslate_upper_steep_roof",
+    "mcwroofs:stone_roof",
+    "mcwroofs:stone_top_roof",
+    "mcwroofs:stone_lower_roof",
+    "mcwroofs:stone_steep_roof",
+    "mcwroofs:stone_upper_lower_roof",
+    "mcwroofs:stone_upper_steep_roof",
+    "mcwroofs:cobblestone_roof",
+    "mcwroofs:cobblestone_top_roof",
+    "mcwroofs:cobblestone_lower_roof",
+    "mcwroofs:cobblestone_steep_roof",
+    "mcwroofs:cobblestone_upper_lower_roof",
+    "mcwroofs:cobblestone_upper_steep_roof",
+    "mcwroofs:sandstone_roof",
+    "mcwroofs:sandstone_top_roof",
+    "mcwroofs:sandstone_lower_roof",
+    "mcwroofs:sandstone_steep_roof",
+    "mcwroofs:sandstone_upper_lower_roof",
+    "mcwroofs:sandstone_upper_steep_roof",
+    "mcwroofs:red_sandstone_roof",
+    "mcwroofs:red_sandstone_top_roof",
+    "mcwroofs:red_sandstone_lower_roof",
+    "mcwroofs:red_sandstone_steep_roof",
+    "mcwroofs:red_sandstone_upper_lower_roof",
+    "mcwroofs:red_sandstone_upper_steep_roof",
+    "mcwwindows:stone_brick_arrow_slit",
+    "mcwwindows:cobblestone_arrow_slit",
+    "parrying:scabbard",
+    "parrying:quiver",
+    "projectbrazier:birch_zipline_anchor",
+    "projectbrazier:oak_zipline_anchor",
+    "projectbrazier:acacia_zipline_anchor",
+    "projectbrazier:jungle_zipline_anchor",
+    "projectbrazier:dark_oak_zipline_anchor",
+    "projectbrazier:spruce_zipline_anchor",
+    "projectbrazier:rope_anchor",
+    "projectbrazier:deepslate_arrow_slit",
+    "projectbrazier:stone_arrow_slit",
+    "supplementaries:stone_tile",
+    "supplementaries:stone_tile_stairs",
+    "supplementaries:item_shelf",
+    "supplementaries:statue",
+    "supplementaries:pedestal",
+    "supplementaries:crystal_display",
+    "minecraft:granite",
+    "minecraft:polished_granite",
+    "minecraft:diorite",
+    "minecraft:polished_diorite",
+    "minecraft:andesite",
+    "minecraft:polished_andesite",
+    "minecraft:deepslate",
+    "minecraft:polished_deepslate",
+    "minecraft:tuff",
+    "minecraft:infested_stone",
+    "minecraft:infested_deepslate",
+    "minecraft:mossy_stone_bricks",
+    "minecraft:cracked_stone_bricks",
+    "minecraft:chiseled_stone_bricks",
+    "minecraft:stone_slab",
+    "minecraft:smooth_stone_slab",
+    "minecraft:sandstone_slab",
+    "minecraft:cut_sandstone_slab",
+    "minecraft:cobblestone_slab",
+    "minecraft:stone_brick_slab",
+    "minecraft:red_sandstone_slab",
+    "minecraft:cut_red_sandstone_slab",
+    "minecraft:polished_granite_slab",
+    "minecraft:smooth_red_sandstone_slab",
+    "minecraft:mossy_stone_brick_slab",
+    "minecraft:polished_diorite_slab",
+    "minecraft:mossy_cobblestone_slab",
+    "minecraft:smooth_sandstone_slab",
+    "minecraft:granite_slab",
+    "minecraft:andesite_slab",
+    "minecraft:polished_andesite_slab",
+    "minecraft:diorite_slab",
+    "minecraft:cobbled_deepslate_slab",
+    "minecraft:polished_deepslate_slab",
+    "minecraft:deepslate_brick_slab",
+    "minecraft:deepslate_tile_slab",
+    "minecraft:cobblestone_wall",
+    "minecraft:mossy_cobblestone_wall",
+    "minecraft:red_sandstone_wall",
+    "minecraft:mossy_stone_brick_wall",
+    "minecraft:granite_wall",
+    "minecraft:stone_brick_wall",
+    "minecraft:andesite_wall",
+    "minecraft:sandstone_wall",
+    "minecraft:diorite_wall",
+    "minecraft:cobbled_deepslate_wall",
+    "minecraft:polished_deepslate_wall",
+    "minecraft:deepslate_brick_wall",
+    "minecraft:deepslate_tile_wall",
+    "minecraft:candle",
+    "minecraft:white_candle",
+    "minecraft:orange_candle",
+    "minecraft:magenta_candle",
+    "minecraft:light_blue_candle",
+    "minecraft:yellow_candle",
+    "minecraft:lime_candle",
+    "minecraft:pink_candle",
+    "minecraft:gray_candle",
+    "minecraft:light_gray_candle",
+    "minecraft:cyan_candle",
+    "minecraft:purple_candle",
+    "minecraft:blue_candle",
+    "minecraft:brown_candle",
+    "minecraft:green_candle",
+    "minecraft:red_candle",
+    "minecraft:black_candle"
 ];
+
+for item in items {
+    setStageItem(stage, item);
+}
+
+//LeftClick/Interact
+CTEventManager.register<PlayerInteractEvent>((event) =>{
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    //check item on hand and the block interacting with
+    for item in items {
+        if event.getItemStack().registryName.toString() == item && level.getBlockState(pos).block.registryName.toString() != "minecraft:air"{
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+
+        if level.getBlockState(pos).block.registryName.toString() == item {
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+});
+
+//RightClick
+CTEventManager.register<RightClickBlockEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    for item in items {
+        if level.getBlockState(pos).block.registryName.toString() == item{
+            println(item);
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+
+});
+
+CTEventManager.register<RightClickItemEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    for item in items {
+        if event.getItemStack().registryName.toString() == item{
+            println(item);
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+});
+
+var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => 
+    style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
+var toolTip2 = new TextComponent("Unlock Neolithic Age").setStyle(<constant:formatting:dark_red>);
+
+CTEventManager.register<ItemTooltipEvent>((event) => {
+    var maybePlayer = event.player;
+    if maybePlayer != null {
+        val player = maybePlayer as Player;
+        for item in items {
+            if !player.hasGameStage(stage) {
+                if BracketHandlers.getItem(item).ingredient.matches(event.itemStack) {
+                    event.tooltip.add(toolTip1);
+                    event.tooltip.add(toolTip2);
+                }
+            }
+        }
+    }
+});
 
 var listTag as MCTag [] = [
     <tag:items:forge:stone>,
@@ -179,15 +345,3 @@ var exceptItem as IItemStack [] = [
     <item:minecraft:cobblestone>,
     <item:supplementaries:checker_slab>
 ];
-
-for item in listItem {
-    setStagedItem("neolithic_age", item);
-}
-
-for tag in listTag {
-    setStagedTag("neolithic_age", tag);
-}
-
-for item in exceptItem {
-    removeStagedItem(item);
-}

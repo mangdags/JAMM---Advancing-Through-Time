@@ -5,18 +5,20 @@ import crafttweaker.api.tag.MCTag;
 import crafttweaker.api.text.Style;
 import crafttweaker.api.text.ChatFormatting;
 import crafttweaker.api.text.TextComponent;
-
-
 import crafttweaker.api.events.CTEventManager;
 import crafttweaker.api.event.block.BlockBreakEvent;
 import crafttweaker.api.event.block.BlockEvent;
 import crafttweaker.api.event.entity.player.interact.LeftClickBlockEvent;
 import crafttweaker.api.event.entity.player.interact.RightClickBlockEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickItemEvent;
 import crafttweaker.api.event.entity.player.interact.PlayerInteractEvent;
 import crafttweaker.api.item.type.block.BlockItem;
 import crafttweaker.api.tag.manager.ITagManager;
+import crafttweaker.api.event.entity.player.ItemTooltipEvent;
+import crafttweaker.api.entity.type.player.Player;
 
-#priority 99
+
+#priority 101
 
 var items as string [] = [
     "natprog:flint_hatchet",
@@ -105,20 +107,6 @@ for item in items {
     setStageItem("prehistoric_age", item);
 }
 
-var exceptItem as IItemStack [] = [
-    <item:minecraft:crimson_planks>,
-    <item:minecraft:warped_planks>,
-    <item:minecraft:crimson_slab>,
-    <item:minecraft:warped_slab>,
-    <item:minecraft:crimson_stem>,
-    <item:minecraft:warped_stem>,
-    <item:immersiveengineering:fiberboard>
-];
-
-for item in exceptItem {
-    removeStagedItem(item);
-}
-
 var message = new TextComponent("You haven't unlocked Prehistoric Age yet").setStyle(<constant:formatting:red>);
 var stage = "prehistoric_age";
 
@@ -164,44 +152,48 @@ CTEventManager.register<RightClickBlockEvent>((event) => {
 
 });
 
+CTEventManager.register<RightClickItemEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
 
-/*
-var listStr as string [] = [
-    "tag:items:minecraft:wools"
+    for item in items {
+        if event.getItemStack().registryName.toString() == item{
+            println(item);
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+});
+
+var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => 
+    style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
+var toolTip2 = new TextComponent("Unlock Prehistoric Age").setStyle(<constant:formatting:dark_red>);
+
+CTEventManager.register<ItemTooltipEvent>((event) => {
+    var maybePlayer = event.player;
+    if maybePlayer != null {
+        val player = maybePlayer as Player;
+        for item in items {
+            if !player.hasGameStage(stage) {
+                if BracketHandlers.getItem(item).ingredient.matches(event.itemStack) {
+                    event.tooltip.add(toolTip1);
+                    event.tooltip.add(toolTip2);
+                }
+            }
+        }
+    }
+});
+
+var exceptItem as IItemStack [] = [
+    <item:minecraft:crimson_planks>,
+    <item:minecraft:warped_planks>,
+    <item:minecraft:crimson_slab>,
+    <item:minecraft:warped_slab>,
+    <item:minecraft:crimson_stem>,
+    <item:minecraft:warped_stem>,
+    <item:immersiveengineering:fiberboard>
 ];
 
-
-for tag in listTag {
-    setStagedTag("prehistoric_age", tag); 
-}
-var listTag as MCTag [] = [
-    <tag:items:minecraft:wools>,
-    <tag:items:minecraft:logs>,
-    <tag:items:minecraft:planks>,
-    <tag:items:minecraft:beds>
-];
-
-var listItem as IItemStack [] = [
-    <item:natprog:flint_hatchet>,
-    <item:farmersdelight:flint_knife>,
-    <item:minecraft:flint>,
-    <item:natprog:basic_saw>,
-    <item:supplementaries:flint_block>,
-    <item:minecraft:sand>,
-    <item:minecraft:gravel>,
-    <item:minecraft:carrot>,
-    <item:minecraft:potato>,
-    <item:minecraft:wheat>,
-    <item:minecraft:bread>,
-    <item:minecraft:beetroot>,
-    <item:minecraft:apple>,
-    <item:minecraft:wheat_seeds>,
-    <item:projectbrazier:white_cabbage>,
-    <item:minecraft:stick>,
-    <item:minecraft:crafting_table>
-];
-
-for item in listItem {
-    //setStagedItem("prehistoric_age", item);
-}
-*/

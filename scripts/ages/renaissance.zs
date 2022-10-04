@@ -1,565 +1,623 @@
+import mods.jei.JEI;
 import crafttweaker.api.item.IItemStack;
+import crafttweaker.api.bracket.BracketHandlers;
 import crafttweaker.api.tag.MCTag;
+import crafttweaker.api.text.Style;
+import crafttweaker.api.text.ChatFormatting;
+import crafttweaker.api.text.TextComponent;
+import crafttweaker.api.events.CTEventManager;
+import crafttweaker.api.event.block.BlockBreakEvent;
+import crafttweaker.api.event.block.BlockEvent;
+import crafttweaker.api.event.entity.player.interact.LeftClickBlockEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickBlockEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickItemEvent;
+import crafttweaker.api.event.entity.player.interact.PlayerInteractEvent;
+import crafttweaker.api.item.type.block.BlockItem;
+import crafttweaker.api.tag.manager.ITagManager;
+import crafttweaker.api.event.entity.player.ItemTooltipEvent;
+import crafttweaker.api.entity.type.player.Player;
+import crafttweaker.api.ingredient.IIngredient;
+import crafttweaker.api.item.ItemDefinition;
+import stdlib.List;
 
-var listItem as IItemStack [] = [
-    <item:minecraft:bricks>,
-    <item:minecraft:brick>,
-    <item:minecraft:diamond_ore>,
-    <item:minecraft:diamond>,
-    <item:minecraft:diamond_block>,
-    <item:minecraft:emerald>,
-    <item:minecraft:emerald_ore>,
-    <item:minecraft:deepslate_emerald_ore>,
-    <item:minecraft:emerald_block>,
-    <item:sophisticatedbackpacks:diamond_backpack>,
-    <item:sophisticatedstorage:diamond_barrel>,
-    <item:sophisticatedstorage:diamond_chest>,
-    <item:minecraft:deepslate_diamond_ore>,
-    <item:farmersdelight:diamond_knife>,
-    <item:minecraft:diamond_sword>,
-    <item:minecraft:diamond_shovel>,
-    <item:minecraft:diamond_pickaxe>,
-    <item:minecraft:diamond_axe>,
-    <item:minecraft:diamond_hoe>,
-    <item:minecraft:diamond_helmet>,
-    <item:minecraft:diamond_chestplate>,
-    <item:minecraft:diamond_leggings>,
-    <item:minecraft:diamond_boots>,
-    <item:minecraft:diamond_horse_armor>,
-    <item:natprog:diamond_saw>,
-    <item:parrying:diamond_mace>,
-    <item:parrying:diamond_hammer>,
-    <item:parrying:diamond_dagger>,
-    <item:parrying:diamond_flail>,
-    <item:parrying:diamond_spear>,
-    <item:parrying:scoped_crossbow>,
-    <item:jousting:lance_diamond>,
-    <item:jousting:lance_emerald>,
-    <item:minecraft:crimson_planks>,
-    <item:minecraft:warped_planks>,
-    <item:minecraft:crimson_slab>,
-    <item:minecraft:warped_slab>,
-    <item:minecraft:crimson_stem>,
-    <item:minecraft:warped_stem>,
-    <item:minecraft:crimson_nylium>,
-    <item:minecraft:crimson_fungus>,
-    <item:minecraft:crimson_roots>,
-    <item:minecraft:crimson_sign>,
-    <item:minecraft:crimson_door>,
-    <item:minecraft:crimson_trapdoor>,
-    <item:minecraft:crimson_fence_gate>,
-    <item:mcwroofs:crimson_roof>,
-    <item:mcwroofs:crimson_attic_roof>,
-    <item:mcwroofs:crimson_top_roof>,
-    <item:mcwroofs:crimson_lower_roof>,
-    <item:mcwroofs:crimson_steep_roof>,
-    <item:mcwroofs:crimson_upper_lower_roof>,
-    <item:mcwroofs:crimson_upper_steep_roof>,
-    <item:mcwroofs:crimson_planks_roof>,
-    <item:mcwroofs:crimson_planks_attic_roof>,
-    <item:mcwroofs:crimson_planks_top_roof>,
-    <item:mcwroofs:crimson_planks_lower_roof>,
-    <item:mcwroofs:crimson_planks_steep_roof>,
-    <item:mcwroofs:crimson_planks_upper_lower_roof>,
-    <item:mcwroofs:crimson_planks_upper_steep_roof>,
-    <item:mcwwindows:crimson_stem_window>,
-    <item:mcwwindows:crimson_stem_window2>,
-    <item:mcwwindows:stripped_crimson_stem_window>,
-    <item:mcwwindows:stripped_crimson_stem_window2>,
-    <item:mcwwindows:crimson_planks_window>,
-    <item:mcwwindows:crimson_planks_window>,
-    <item:mcwwindows:crimson_stem_parapet>,
-    <item:mcwwindows:crimson_plank_parapet>,
-    <item:mcwwindows:crimson_blinds>,
-    <item:cfm:crimson_table>,
-    <item:cfm:stripped_crimson_table>,
-    <item:cfm:crimson_chair>,
-    <item:cfm:stripped_crimson_chair>,
-    <item:cfm:crimson_coffee_table>,
-    <item:alexsmobs:mosquito_proboscis>,
-    <item:alexsmobs:mosquito_larva>,
-    <item:farmersdelight:crimson_cabinet>,
-    <item:mcwbridges:crimson_log_bridge_middle>,
-    <item:mcwbridges:rope_crimson_bridge>,
-    <item:mcwbridges:crimson_rail_bridge>,
-    <item:mcwbridges:crimson_bridge_pier>,
-    <item:mcwbridges:crimson_log_bridge_stair>,
-    <item:mcwbridges:crimson_rope_bridge_stair>,
-    <item:mcwfences:crimson_picket_fence>,
-    <item:mcwfences:crimson_stockade_fence>,
-    <item:mcwfences:crimson_horse_fence>,
-    <item:mcwfences:crimson_wired_fence>,
-    <item:mcwfences:crimson_highley_gate>,
-    <item:mcwfences:crimson_pyramid_gate>,
-    <item:cfm:stripped_crimson_coffee_table>,
-    <item:cfm:crimson_cabinet>,
-    <item:cfm:stripped_crimson_cabinet>,
-    <item:cfm:crimson_bedside_cabinet>,
-    <item:cfm:stripped_crimson_bedside_cabinet>,
-    <item:cfm:crimson_desk>,
-    <item:cfm:stripped_crimson_desk>,
-    <item:cfm:crimson_desk_cabinet>,
-    <item:cfm:stripped_crimson_desk_cabinet>,
-    <item:cfm:crimson_blinds>,
-    <item:cfm:stripped_crimson_blinds>,
-    <item:cfm:crimson_upgraded_fence>,
-    <item:cfm:stripped_crimson_upgraded_fence>,
-    <item:cfm:crimson_upgraded_gate>,
-    <item:cfm:stripped_crimson_upgraded_gate>,
-    <item:cfm:crimson_crate>,
-    <item:cfm:stripped_crimson_crate>,
-    <item:cfm:crimson_park_bench>,
-    <item:cfm:stripped_crimson_park_bench>,
-    <item:cfm:crimson_mail_box>,
-    <item:cfm:stripped_crimson_mail_box>,
-    <item:cfm:crimson_kitchen_counter>,
-    <item:cfm:stripped_crimson_kitchen_counter>,
-    <item:cfm:crimson_kitchen_drawer>,
-    <item:cfm:stripped_crimson_kitchen_drawer>,
-    <item:cfm:crimson_kitchen_sink_light>,
-    <item:cfm:stripped_crimson_kitchen_sink_light>,
-    <item:cfm:crimson_kitchen_sink_dark>,
-    <item:cfm:stripped_crimson_kitchen_sink_dark>,
-    <item:projectbrazier:crimson_open_barrel>,
-    <item:projectbrazier:crimson_closed_barrel>,
-    <item:projectbrazier:crimson_flower_barrel>,
-    <item:projectbrazier:crimson_flower_bucket>,
-    <item:projectbrazier:crimson_plank_chair>,
-    <item:projectbrazier:crimson_solid_chair>,
-    <item:projectbrazier:crimson_stool>,
-    <item:projectbrazier:crimson_armrest_chair>,
-    <item:projectbrazier:crimson_firewood>,
-    <item:projectbrazier:crimson_bench>,
-    <item:projectbrazier:crimson_log_chair>,
-    <item:projectbrazier:crimson_log_bench>,
-    <item:projectbrazier:stripped_crimson_log_chair>,
-    <item:projectbrazier:stripped_crimson_log_bench>,
-    <item:projectbrazier:hollow_crimson_log>,
-    <item:projectbrazier:stripped_hollow_crimson_log>,
-    <item:projectbrazier:solid_crimson_table>,
-    <item:projectbrazier:crimson_zipline_anchor>,
-    <item:projectbrazier:crimson_cross_lattice>,
-    <item:projectbrazier:crimson_dense_vertical_lattice>,
-    <item:projectbrazier:crimson_diamond_lattice>,
-    <item:projectbrazier:crimson_grid_lattice>,
-    <item:projectbrazier:crimson_vertical_lattice>,
-    <item:projectbrazier:white_polstered_crimson_bench>,
-    <item:projectbrazier:orange_polstered_crimson_bench>,
-    <item:projectbrazier:magenta_polstered_crimson_bench>,
-    <item:projectbrazier:light_blue_polstered_crimson_bench>,
-    <item:projectbrazier:yellow_polstered_crimson_bench>,
-    <item:projectbrazier:lime_polstered_crimson_bench>,
-    <item:projectbrazier:pink_polstered_crimson_bench>,
-    <item:projectbrazier:gray_polstered_crimson_bench>,
-    <item:projectbrazier:light_gray_polstered_crimson_bench>,
-    <item:projectbrazier:cyan_polstered_crimson_bench>,
-    <item:projectbrazier:purple_polstered_crimson_bench>,
-    <item:projectbrazier:blue_polstered_crimson_bench>,
-    <item:projectbrazier:brown_polstered_crimson_bench>,
-    <item:projectbrazier:green_polstered_crimson_bench>,
-    <item:projectbrazier:red_polstered_crimson_bench>,
-    <item:projectbrazier:black_polstered_crimson_bench>,
-    <item:projectbrazier:crimson_platform>,
-    <item:sereneseasons:season_sensor>,
-    <item:supplementaries:crimson_lantern>,
-    <item:valhelsia_structures:crimson_post>,
-    <item:valhelsia_structures:cut_crimson_post>,
-    <item:minecraft:warped_nylium>,
-    <item:minecraft:warped_wart_block>,
-    <item:minecraft:warped_fungus>,
-    <item:minecraft:warped_roots>,
-    <item:minecraft:warped_sign>,
-    <item:minecraft:warped_door>,
-    <item:minecraft:warped_trapdoor>,
-    <item:minecraft:warped_fence_gate>,
-    <item:minecraft:warped_fungus_on_a_stick>,
-    <item:alexsmobs:warped_muscle>,
-    <item:alexsmobs:warped_mixture>,
-    <item:farmersdelight:warped_cabinet>,
-    <item:mcwbridges:warped_log_bridge_middle>,
-    <item:mcwbridges:rope_warped_bridge>,
-    <item:mcwbridges:warped_rail_bridge>,
-    <item:mcwbridges:warped_bridge_pier>,
-    <item:mcwbridges:warped_log_bridge_stair>,
-    <item:mcwbridges:warped_rope_bridge_stair>,
-    <item:mcwfences:warped_picket_fence>,
-    <item:mcwfences:warped_stockade_fence>,
-    <item:mcwfences:warped_horse_fence>,
-    <item:mcwfences:warped_wired_fence>,
-    <item:mcwfences:warped_highley_gate>,
-    <item:mcwfences:warped_pyramid_gate>,
-    <item:mcwroofs:warped_roof>,
-    <item:mcwroofs:warped_attic_roof>,
-    <item:mcwroofs:warped_top_roof>,
-    <item:mcwroofs:warped_lower_roof>,
-    <item:mcwroofs:warped_steep_roof>,
-    <item:mcwroofs:warped_upper_lower_roof>,
-    <item:mcwroofs:warped_upper_steep_roof>,
-    <item:mcwroofs:warped_planks_roof>,
-    <item:mcwroofs:warped_planks_attic_roof>,
-    <item:mcwroofs:warped_planks_top_roof>,
-    <item:mcwroofs:warped_planks_lower_roof>,
-    <item:mcwroofs:warped_planks_steep_roof>,
-    <item:mcwroofs:warped_planks_upper_lower_roof>,
-    <item:mcwroofs:warped_planks_upper_steep_roof>,
-    <item:mcwwindows:warped_stem_window>,
-    <item:mcwwindows:warped_stem_window2>,
-    <item:mcwwindows:stripped_warped_stem_window>,
-    <item:mcwwindows:stripped_warped_stem_window2>,
-    <item:mcwwindows:warped_planks_window>,
-    <item:mcwwindows:warped_planks_window2>,
-    <item:mcwwindows:warped_stem_parapet>,
-    <item:mcwwindows:warped_plank_parapet>,
-    <item:mcwwindows:warped_blinds>,
-    <item:cfm:warped_table>,
-    <item:cfm:stripped_warped_table>,
-    <item:cfm:warped_chair>,
-    <item:cfm:stripped_warped_chair>,
-    <item:cfm:warped_coffee_table>,
-    <item:cfm:stripped_warped_coffee_table>,
-    <item:cfm:warped_cabinet>,
-    <item:cfm:stripped_warped_cabinet>,
-    <item:cfm:warped_bedside_cabinet>,
-    <item:cfm:stripped_warped_bedside_cabinet>,
-    <item:cfm:warped_desk>,
-    <item:cfm:stripped_warped_desk>,
-    <item:cfm:warped_desk_cabinet>,
-    <item:cfm:stripped_warped_desk_cabinet>,
-    <item:cfm:warped_blinds>,
-    <item:cfm:stripped_warped_blinds>,
-    <item:cfm:warped_upgraded_fence>,
-    <item:cfm:stripped_warped_upgraded_fence>,
-    <item:cfm:warped_upgraded_gate>,
-    <item:cfm:stripped_warped_upgraded_gate>,
-    <item:cfm:warped_crate>,
-    <item:cfm:stripped_warped_crate>,
-    <item:cfm:warped_park_bench>,
-    <item:cfm:stripped_warped_park_bench>,
-    <item:cfm:warped_mail_box>,
-    <item:cfm:stripped_warped_mail_box>,
-    <item:cfm:warped_kitchen_counter>,
-    <item:cfm:stripped_warped_kitchen_counter>,
-    <item:cfm:warped_kitchen_drawer>,
-    <item:cfm:stripped_warped_kitchen_drawer>,
-    <item:cfm:warped_kitchen_sink_light>,
-    <item:cfm:stripped_warped_kitchen_sink_light>,
-    <item:cfm:warped_kitchen_sink_dark>,
-    <item:cfm:stripped_warped_kitchen_sink_dark>,
-    <item:projectbrazier:warped_open_barrel>,
-    <item:projectbrazier:warped_closed_barrel>,
-    <item:projectbrazier:warped_flower_barrel>,
-    <item:projectbrazier:warped_flower_bucket>,
-    <item:projectbrazier:warped_plank_chair>,
-    <item:projectbrazier:warped_solid_chair>,
-    <item:projectbrazier:warped_stool>,
-    <item:projectbrazier:warped_armrest_chair>,
-    <item:projectbrazier:warped_firewood>,
-    <item:projectbrazier:warped_bench>,
-    <item:projectbrazier:warped_log_chair>,
-    <item:projectbrazier:warped_log_bench>,
-    <item:projectbrazier:stripped_warped_log_chair>,
-    <item:projectbrazier:stripped_warped_log_bench>,
-    <item:projectbrazier:hollow_warped_log>,
-    <item:projectbrazier:stripped_hollow_warped_log>,
-    <item:projectbrazier:solid_warped_table>,
-    <item:projectbrazier:warped_zipline_anchor>,
-    <item:projectbrazier:warped_cross_lattice>,
-    <item:projectbrazier:warped_dense_vertical_lattice>,
-    <item:projectbrazier:warped_diamond_lattice>,
-    <item:projectbrazier:warped_grid_lattice>,
-    <item:projectbrazier:warped_vertical_lattice>,
-    <item:projectbrazier:white_polstered_warped_bench>,
-    <item:projectbrazier:orange_polstered_warped_bench>,
-    <item:projectbrazier:magenta_polstered_warped_bench>,
-    <item:projectbrazier:light_blue_polstered_warped_bench>,
-    <item:projectbrazier:yellow_polstered_warped_bench>,
-    <item:projectbrazier:lime_polstered_warped_bench>,
-    <item:projectbrazier:pink_polstered_warped_bench>,
-    <item:projectbrazier:gray_polstered_warped_bench>,
-    <item:projectbrazier:light_gray_polstered_warped_bench>,
-    <item:projectbrazier:cyan_polstered_warped_bench>,
-    <item:projectbrazier:purple_polstered_warped_bench>,
-    <item:projectbrazier:blue_polstered_warped_bench>,
-    <item:projectbrazier:brown_polstered_warped_bench>,
-    <item:projectbrazier:green_polstered_warped_bench>,
-    <item:projectbrazier:red_polstered_warped_bench>,
-    <item:projectbrazier:black_polstered_warped_bench>,
-    <item:projectbrazier:warped_platform>,
-    <item:valhelsia_structures:warped_post>,
-    <item:valhelsia_structures:cut_warped_post>,
-    <item:valhelsia_structures:soul_brazier>,
-    <item:minecraft:basalt>,
-    <item:minecraft:polished_basalt>,
-    <item:minecraft:smooth_basalt>,
-    <item:minecraft:basalt>,
-    <item:minecraft:polished_basalt>,
-    <item:minecraft:blackstone>,
-    <item:minecraft:blackstone_slab>,
-    <item:minecraft:blackstone_stairs>,
-    <item:minecraft:polished_blackstone>,
-    <item:minecraft:polished_blackstone_slab>,
-    <item:minecraft:polished_blackstone_stairs>,
-    <item:minecraft:chiseled_polished_blackstone>,
-    <item:minecraft:polished_blackstone_bricks>,
-    <item:minecraft:polished_blackstone_brick_slab>,
-    <item:minecraft:polished_blackstone_brick_stairs>,
-    <item:minecraft:cracked_polished_blackstone_bricks>,
-    <item:minecraft:blackstone_wall>,
-    <item:minecraft:polished_blackstone_wall>,
-    <item:minecraft:polished_blackstone_brick_wall>,
-    <item:minecraft:polished_blackstone_button>,
-    <item:minecraft:polished_blackstone_pressure_plate>,
-    <item:mcwbridges:blackstone_bridge>,
-    <item:mcwbridges:blackstone_bridge_pier>,
-    <item:mcwbridges:blackstone_bridge_stair>,
-    <item:mcwfences:modern_blackstone_wall>,
-    <item:mcwfences:railing_blackstone_wall>,
-    <item:mcwfences:blackstone_railing_gate>,
-    <item:mcwfences:blackstone_brick_railing_gate>,
-    <item:mcwroofs:blackstone_roof>,
-    <item:mcwroofs:blackstone_top_roof>,
-    <item:mcwroofs:blackstone_lower_roof>,
-    <item:mcwroofs:blackstone_steep_roof>,
-    <item:mcwroofs:blackstone_upper_lower_roof>,
-    <item:mcwroofs:blackstone_upper_steep_roof>,
-    <item:supplementaries:blackstone_tile>,
-    <item:supplementaries:blackstone_tile_stairs>,
-    <item:supplementaries:blackstone_lamp>,
-    <item:minecraft:nether_gold_ore>,
-    <item:minecraft:slime_ball>,
-    <item:minecraft:slime_block>,
-    <item:minecraft:red_nether_brick_stairs>,
-    <item:minecraft:red_nether_brick_slab>,
-    <item:minecraft:red_nether_bricks>,
-    <item:minecraft:red_nether_brick_wall>,
-    <item:minecraft:nether_wart>,
-    <item:create:cut_granite>,
-    <item:create:cut_granite_stairs>,
-    <item:create:polished_cut_granite>,
-    <item:create:polished_cut_granite_stairs>,
-    <item:create:cut_granite_bricks>,
-    <item:create:cut_granite_brick_stairs>,
-    <item:create:small_granite_bricks>,
-    <item:create:small_granite_brick_stairs>,
-    <item:create:layered_granite>,
-    <item:create:granite_pillar>,
-    <item:create:cut_diorite>,
-    <item:create:cut_diorite_stairs>,
-    <item:create:polished_cut_diorite>,
-    <item:create:polished_cut_diorite_stairs>,
-    <item:create:cut_diorite_bricks>,
-    <item:create:cut_diorite_brick_stairs>,
-    <item:create:small_diorite_bricks>,
-    <item:create:small_diorite_brick_stairs>,
-    <item:create:layered_diorite>,
-    <item:create:diorite_pillar>,
-    <item:create:cut_andesite>,
-    <item:create:cut_andesite_stairs>,
-    <item:create:polished_cut_andesite>,
-    <item:create:polished_cut_andesite_stairs>,
-    <item:create:cut_andesite_bricks>,
-    <item:create:cut_andesite_brick_stairs>,
-    <item:create:small_andesite_bricks>,
-    <item:create:small_andesite_brick_stairs>,
-    <item:create:layered_andesite>,
-    <item:create:andesite_pillar>,
-    <item:create:cut_calcite>,
-    <item:create:cut_calcite_stairs>,
-    <item:create:crimson_window_pane>,
-    <item:create:crimson_window>,
-    <item:create:warped_window>,
-    <item:create:warped_window_pane>,
-    <item:minecraft:smooth_quartz>,
-    <item:minecraft:chiseled_quartz_block>,
-    <item:minecraft:quartz_block>,
-    <item:minecraft:quartz_bricks>,
-    <item:minecraft:quartz_pillar>,
-    <item:minecraft:quartz_stairs>,
-    <item:minecraft:smooth_quartz_stairs>,
-    <item:minecraft:quartz>,
-    <item:mcwfences:modern_quartz_wall>,
-    <item:mcwfences:railing_quartz_wall>,
-    <item:mcwfences:quartz_railing_gate>,
-    <item:refinedstorage:quartz_enriched_iron>,
-    <item:refinedstorage:quartz_enriched_iron_block>,
-    <item:minecraft:magma_block>,
-    <item:farmersdelight:skillet>,
-    <item:farmersdelight:stove>,
-    <item:farmersdelight:cooking_pot>,
-    <item:mcwtrpdoors:metal_trapdoor>,
-    <item:mcwwindows:white_mosaic_glass>,
-    <item:mcwwindows:orange_mosaic_glass>,
-    <item:mcwwindows:magenta_mosaic_glass>,
-    <item:mcwwindows:light_blue_mosaic_glass>,
-    <item:mcwwindows:yellow_mosaic_glass>,
-    <item:mcwwindows:lime_mosaic_glass>,
-    <item:mcwwindows:pink_mosaic_glass>,
-    <item:mcwwindows:gray_mosaic_glass>,
-    <item:mcwwindows:light_gray_mosaic_glass>,
-    <item:mcwwindows:cyan_mosaic_glass>,
-    <item:mcwwindows:purple_mosaic_glass>,
-    <item:mcwwindows:blue_mosaic_glass>,
-    <item:mcwwindows:brown_mosaic_glass>,
-    <item:mcwwindows:green_mosaic_glass>,
-    <item:mcwwindows:red_mosaic_glass>,
-    <item:mcwwindows:black_mosaic_glass>,
-    <item:mcwwindows:white_mosaic_glass_pane>,
-    <item:mcwwindows:orange_mosaic_glass_pane>,
-    <item:mcwwindows:magenta_mosaic_glass_pane>,
-    <item:mcwwindows:light_blue_mosaic_glass_pane>,
-    <item:mcwwindows:yellow_mosaic_glass_pane>,
-    <item:mcwwindows:lime_mosaic_glass_pane>,
-    <item:mcwwindows:pink_mosaic_glass_pane>,
-    <item:mcwwindows:gray_mosaic_glass_pane>,
-    <item:mcwwindows:light_gray_mosaic_glass_pane>,
-    <item:mcwwindows:cyan_mosaic_glass_pane>,
-    <item:mcwwindows:purple_mosaic_glass_pane>,
-    <item:mcwwindows:blue_mosaic_glass_pane>,
-    <item:mcwwindows:brown_mosaic_glass_pane>,
-    <item:mcwwindows:green_mosaic_glass_pane>,
-    <item:mcwwindows:red_mosaic_glass_pane>,
-    <item:mcwwindows:black_mosaic_glass_pane>,
-    <item:minecraft:cut_red_sandstone>,
-    <item:minecraft:chiseled_sandstone>,
-    <item:minecraft:cut_sandstone>,
-    <item:minecraft:terracotta>,
-    <item:minecraft:chiseled_red_sandstone>,
-    <item:minecraft:brewing_stand>,
-    <item:minecraft:potion>,
-    <item:minecraft:splash_potion>,
-    <item:minecraft:lingering_potion>,
-    <item:sophisticatedstorage:advanced_pickup_upgrade>,
-    <item:sophisticatedstorage:advanced_magnet_upgrade>,
-    <item:sophisticatedstorage:advanced_feeding_upgrade>,
-    <item:sophisticatedstorage:advanced_compacting_upgrade>,
-    <item:sophisticatedstorage:advanced_void_upgrade>,
-    <item:sophisticatedstorage:auto_smelting_upgrade>,
-    <item:sophisticatedstorage:auto_smoking_upgrade>,
-    <item:sophisticatedstorage:stack_upgrade_tier_4>,
-    <item:sophisticatedstorage:gold_to_diamond_tier_upgrade>,
-    <item:parrying:iron_flail>,
-    <item:supplementaries:planter_rich>,
-    <item:supplementaries:blackboard>,
-    <item:supplementaries:slingshot>,
-    <item:supplementaries:silver_lantern>,
-    <item:minecraft:jukebox>,
-    <item:minecraft:painting>,
-    <item:minecraft:cartography_table>,
-    <item:minecraft:soul_torch>,
-    <item:supplementaries:checker_block>,
-    <item:supplementaries:checker_slab>,
-    <item:projectbrazier:soul_iron_brazier>,
-    <item:projectbrazier:soul_iron_fire_bowl>,
-    <item:projectbrazier:andesite_bricks>,
-    <item:projectbrazier:diorite_bricks>,
-    <item:projectbrazier:granite_bricks>,
-    <item:projectbrazier:andesite_pillar>,
-    <item:projectbrazier:diorite_pillar>,
-    <item:projectbrazier:granite_pillar>,
-    <item:projectbrazier:snow_bricks>,
-    <item:projectbrazier:stone_machicolations>,
-    <item:projectbrazier:stone_crenellations>,
-    <item:projectbrazier:deepslate_machicolations>,
-    <item:projectbrazier:deepslate_crenellations>,
-    <item:projectbrazier:riverstone>,
-    <item:projectbrazier:large_riverstone>,
-    <item:projectbrazier:dark_large_riverstone>,
-    <item:projectbrazier:colorful_cobblestone>,
-    <item:projectbrazier:pale_colorful_cobblestone>,
-    <item:minecraft:brick_stairs>,
-    <item:minecraft:note_block>,
-    <item:minecraft:lead>,
-    <item:supplementaries:planter>,
-    <item:mcwbridges:brick_bridge>,
-    <item:mcwbridges:brick_bridge_pier>,
-    <item:mcwbridges:brick_bridge_stair>,
-    <item:minecraft:netherrack>,
-    <item:natprog:cobbled_netherrack>,
-    <item:supplementaries:speaker_block>,
-    <item:supplementaries:bomb_spiky>,
-    <item:supplementaries:globe_sepia>,
-    <item:fusion:fusion_furnace>,
-    <item:minecraft:stripped_crimson_stem>,
-    <item:minecraft:stripped_warped_stem>,
-    <item:minecraft:stripped_crimson_hyphae>,
-    <item:minecraft:stripped_warped_hyphae>,
-    <item:minecraft:crimson_hyphae>,
-    <item:minecraft:warped_hyphae>,
-    <item:minecraft:crimson_fence>,
-    <item:minecraft:warped_fence>,
-    <item:minecraft:warped_stairs>,
-    <item:minecraft:crimson_stairs>,
-    <item:mcwdoors:crimson_barn_door>,
-    <item:mcwdoors:warped_barn_door>,
-    <item:mcwdoors:crimson_western_door>,
-    <item:mcwdoors:warped_western_door>,
-    <item:mcwtrpdoors:crimson_barn_trapdoor>,
-    <item:mcwtrpdoors:warped_barn_trapdoor>,
-    <item:mcwtrpdoors:crimson_ranch_trapdoor>,
-    <item:mcwtrpdoors:warped_ranch_trapdoor>,
-    <item:supplementaries:hanging_sign_crimson>,
-    <item:supplementaries:hanging_sign_warped>,
-    <item:supplementaries:sign_post_crimson>,
-    <item:supplementaries:sign_post_warped>,
-    <item:minecraft:crimson_button>,
-    <item:minecraft:warped_button>,
-    <item:minecraft:crimson_pressure_plate>,
-    <item:minecraft:warped_pressure_plate>,
-    <item:sophisticatedbackpacks:advanced_pickup_upgrade>,
-    <item:sophisticatedbackpacks:advanced_magnet_upgrade>,
-    <item:sophisticatedbackpacks:advanced_feeding_upgrade>,
-    <item:sophisticatedbackpacks:advanced_compacting_upgrade>,
-    <item:sophisticatedbackpacks:advanced_void_upgrade>,
-    <item:sophisticatedbackpacks:advanced_restock_upgrade>,
-    <item:sophisticatedbackpacks:advanced_deposit_upgrade>,
-    <item:sophisticatedbackpacks:inception_upgrade>,
-    <item:sophisticatedbackpacks:auto_smelting_upgrade>,
-    <item:sophisticatedbackpacks:auto_smoking_upgrade>,
-    <item:sophisticatedbackpacks:auto_blasting_upgrade>,
-    <item:sophisticatedbackpacks:stack_upgrade_tier_3>,
-    <item:sophisticatedbackpacks:jukebox_upgrade>,
-    <item:sophisticatedbackpacks:advanced_tool_swapper_upgrade>,
-    <item:sophisticatedbackpacks:advanced_pump_upgrade>,
-    <item:sophisticatedbackpacks:xp_pump_upgrade>,
-    <item:minecraft:nether_star>
-];
+var message = new TextComponent("You haven't unlocked Renaissance Age yet").setStyle(<constant:formatting:red>);
+var stage = "renaissance_age";
 
-var modList as string [] = [
-    "alcocraft",
-    "bygonenether"
-];
+var items = new stdlib.List<string>();
+items.add("cfm:warped_table");
+items.add("cfm:stripped_warped_table");
+items.add("cfm:warped_chair");
+items.add("cfm:stripped_warped_chair");
+items.add("cfm:warped_coffee_table");
+items.add("cfm:stripped_warped_coffee_table");
+items.add("cfm:warped_cabinet");
+items.add("cfm:stripped_warped_cabinet");
+items.add("cfm:warped_bedside_cabinet");
+items.add("cfm:stripped_warped_bedside_cabinet");
+items.add("cfm:warped_desk");
+items.add("cfm:stripped_warped_desk");
+items.add("cfm:warped_desk_cabinet");
+items.add("cfm:stripped_warped_desk_cabinet");
+items.add("cfm:warped_blinds");
+items.add("cfm:stripped_warped_blinds");
+items.add("cfm:warped_upgraded_fence");
+items.add("cfm:stripped_warped_upgraded_fence");
+items.add("cfm:warped_upgraded_gate");
+items.add("cfm:stripped_warped_upgraded_gate");
+items.add("cfm:warped_crate");
+items.add("cfm:stripped_warped_crate");
+items.add("cfm:warped_park_bench");
+items.add("cfm:stripped_warped_park_bench");
+items.add("cfm:warped_mail_box");
+items.add("cfm:stripped_warped_mail_box");
+items.add("cfm:warped_kitchen_counter");
+items.add("cfm:stripped_warped_kitchen_counter");
+items.add("cfm:warped_kitchen_drawer");
+items.add("cfm:stripped_warped_kitchen_drawer");
+items.add("cfm:warped_kitchen_sink_light");
+items.add("cfm:stripped_warped_kitchen_sink_light");
+items.add("cfm:warped_kitchen_sink_dark");
+items.add("cfm:stripped_warped_kitchen_sink_dark");
+items.add("cfm:crimson_table");
+items.add("cfm:stripped_crimson_table");
+items.add("cfm:crimson_chair");
+items.add("cfm:stripped_crimson_chair");
+items.add("cfm:crimson_coffee_table");
+items.add("cfm:stripped_crimson_coffee_table");
+items.add("cfm:crimson_cabinet");
+items.add("cfm:stripped_crimson_cabinet");
+items.add("cfm:crimson_bedside_cabinet");
+items.add("cfm:stripped_crimson_bedside_cabinet");
+items.add("cfm:crimson_desk");
+items.add("cfm:stripped_crimson_desk");
+items.add("cfm:crimson_desk_cabinet");
+items.add("cfm:stripped_crimson_desk_cabinet");
+items.add("cfm:crimson_blinds");
+items.add("cfm:stripped_crimson_blinds");
+items.add("cfm:crimson_upgraded_fence");
+items.add("cfm:stripped_crimson_upgraded_fence");
+items.add("cfm:crimson_upgraded_gate");
+items.add("cfm:stripped_crimson_upgraded_gate");
+items.add("cfm:crimson_crate");
+items.add("cfm:stripped_crimson_crate");
+items.add("cfm:crimson_park_bench");
+items.add("cfm:stripped_crimson_park_bench");
+items.add("cfm:crimson_mail_box");
+items.add("cfm:stripped_crimson_mail_box");
+items.add("cfm:crimson_kitchen_counter");
+items.add("cfm:stripped_crimson_kitchen_counter");
+items.add("cfm:crimson_kitchen_drawer");
+items.add("cfm:stripped_crimson_kitchen_drawer");
+items.add("cfm:crimson_kitchen_sink_light");
+items.add("cfm:stripped_crimson_kitchen_sink_light");
+items.add("cfm:crimson_kitchen_sink_dark");
+items.add("cfm:stripped_crimson_kitchen_sink_dark");
+items.add("create:cut_granite");
+items.add("create:cut_granite_stairs");
+items.add("create:polished_cut_granite");
+items.add("create:polished_cut_granite_stairs");
+items.add("create:cut_granite_bricks");
+items.add("create:cut_granite_brick_stairs");
+items.add("create:small_granite_bricks");
+items.add("create:small_granite_brick_stairs");
+items.add("create:layered_granite");
+items.add("create:granite_pillar");
+items.add("create:cut_diorite");
+items.add("create:cut_diorite_stairs");
+items.add("create:polished_cut_diorite");
+items.add("create:polished_cut_diorite_stairs");
+items.add("create:cut_diorite_bricks");
+items.add("create:cut_diorite_brick_stairs");
+items.add("create:small_diorite_bricks");
+items.add("create:small_diorite_brick_stairs");
+items.add("create:layered_diorite");
+items.add("create:diorite_pillar");
+items.add("create:cut_andesite");
+items.add("create:cut_andesite_stairs");
+items.add("create:polished_cut_andesite");
+items.add("create:polished_cut_andesite_stairs");
+items.add("create:cut_andesite_bricks");
+items.add("create:cut_andesite_brick_stairs");
+items.add("create:small_andesite_bricks");
+items.add("create:small_andesite_brick_stairs");
+items.add("create:layered_andesite");
+items.add("create:andesite_pillar");
+items.add("create:cut_calcite");
+items.add("create:cut_calcite_stairs");
+items.add("create:crimson_window_pane");
+items.add("create:crimson_window");
+items.add("create:warped_window");
+items.add("create:warped_window_pane");
+items.add("farmersdelight:warped_cabinet");
+items.add("farmersdelight:diamond_knife");
+items.add("farmersdelight:crimson_cabinet");
+items.add("farmersdelight:skillet");
+items.add("farmersdelight:stove");
+items.add("farmersdelight:cooking_pot");
+items.add("fusion:fusion_furnace");
+items.add("jousting:lance_diamond");
+items.add("jousting:lance_emerald");
+items.add("mcwbridges:brick_bridge");
+items.add("mcwbridges:brick_bridge_pier");
+items.add("mcwbridges:brick_bridge_stair");
+items.add("mcwbridges:blackstone_bridge");
+items.add("mcwbridges:blackstone_bridge_pier");
+items.add("mcwbridges:blackstone_bridge_stair");
+items.add("mcwbridges:warped_log_bridge_middle");
+items.add("mcwbridges:rope_warped_bridge");
+items.add("mcwbridges:warped_rail_bridge");
+items.add("mcwbridges:warped_bridge_pier");
+items.add("mcwbridges:warped_log_bridge_stair");
+items.add("mcwbridges:warped_rope_bridge_stair");
+items.add("mcwbridges:crimson_log_bridge_middle");
+items.add("mcwbridges:rope_crimson_bridge");
+items.add("mcwbridges:crimson_rail_bridge");
+items.add("mcwbridges:crimson_bridge_pier");
+items.add("mcwbridges:crimson_log_bridge_stair");
+items.add("mcwbridges:crimson_rope_bridge_stair");
+items.add("mcwdoors:crimson_barn_door");
+items.add("mcwdoors:warped_barn_door");
+items.add("mcwdoors:crimson_western_door");
+items.add("mcwdoors:warped_western_door");
+items.add("mcwfences:crimson_picket_fence");
+items.add("mcwfences:crimson_stockade_fence");
+items.add("mcwfences:crimson_horse_fence");
+items.add("mcwfences:crimson_wired_fence");
+items.add("mcwfences:crimson_highley_gate");
+items.add("mcwfences:crimson_pyramid_gate");
+items.add("mcwfences:warped_picket_fence");
+items.add("mcwfences:warped_stockade_fence");
+items.add("mcwfences:warped_horse_fence");
+items.add("mcwfences:warped_wired_fence");
+items.add("mcwfences:warped_highley_gate");
+items.add("mcwfences:warped_pyramid_gate");
+items.add("mcwfences:modern_blackstone_wall");
+items.add("mcwfences:railing_blackstone_wall");
+items.add("mcwfences:blackstone_railing_gate");
+items.add("mcwfences:blackstone_brick_railing_gate");
+items.add("mcwfences:modern_quartz_wall");
+items.add("mcwfences:railing_quartz_wall");
+items.add("mcwfences:quartz_railing_gate");
+items.add("mcwtrpdoors:crimson_barn_trapdoor");
+items.add("mcwtrpdoors:warped_barn_trapdoor");
+items.add("mcwtrpdoors:crimson_ranch_trapdoor");
+items.add("mcwtrpdoors:warped_ranch_trapdoor");
+items.add("mcwtrpdoors:metal_trapdoor");
+items.add("mcwwindows:white_mosaic_glass");
+items.add("mcwwindows:orange_mosaic_glass");
+items.add("mcwwindows:magenta_mosaic_glass");
+items.add("mcwwindows:light_blue_mosaic_glass");
+items.add("mcwwindows:yellow_mosaic_glass");
+items.add("mcwwindows:lime_mosaic_glass");
+items.add("mcwwindows:pink_mosaic_glass");
+items.add("mcwwindows:gray_mosaic_glass");
+items.add("mcwwindows:light_gray_mosaic_glass");
+items.add("mcwwindows:cyan_mosaic_glass");
+items.add("mcwwindows:purple_mosaic_glass");
+items.add("mcwwindows:blue_mosaic_glass");
+items.add("mcwwindows:brown_mosaic_glass");
+items.add("mcwwindows:green_mosaic_glass");
+items.add("mcwwindows:red_mosaic_glass");
+items.add("mcwwindows:black_mosaic_glass");
+items.add("mcwwindows:white_mosaic_glass_pane");
+items.add("mcwwindows:orange_mosaic_glass_pane");
+items.add("mcwwindows:magenta_mosaic_glass_pane");
+items.add("mcwwindows:light_blue_mosaic_glass_pane");
+items.add("mcwwindows:yellow_mosaic_glass_pane");
+items.add("mcwwindows:lime_mosaic_glass_pane");
+items.add("mcwwindows:pink_mosaic_glass_pane");
+items.add("mcwwindows:gray_mosaic_glass_pane");
+items.add("mcwwindows:light_gray_mosaic_glass_pane");
+items.add("mcwwindows:cyan_mosaic_glass_pane");
+items.add("mcwwindows:purple_mosaic_glass_pane");
+items.add("mcwwindows:blue_mosaic_glass_pane");
+items.add("mcwwindows:brown_mosaic_glass_pane");
+items.add("mcwwindows:green_mosaic_glass_pane");
+items.add("mcwwindows:red_mosaic_glass_pane");
+items.add("mcwwindows:black_mosaic_glass_pane");
+items.add("mcwwindows:warped_stem_window");
+items.add("mcwwindows:warped_stem_window2");
+items.add("mcwwindows:stripped_warped_stem_window");
+items.add("mcwwindows:stripped_warped_stem_window2");
+items.add("mcwwindows:warped_planks_window");
+items.add("mcwwindows:warped_planks_window2");
+items.add("mcwwindows:warped_stem_parapet");
+items.add("mcwwindows:warped_plank_parapet");
+items.add("mcwwindows:warped_blinds");
+items.add("mcwwindows:crimson_stem_window");
+items.add("mcwwindows:crimson_stem_window2");
+items.add("mcwwindows:stripped_crimson_stem_window");
+items.add("mcwwindows:stripped_crimson_stem_window2");
+items.add("mcwwindows:crimson_planks_window");
+items.add("mcwwindows:crimson_planks_window");
+items.add("mcwwindows:crimson_stem_parapet");
+items.add("mcwwindows:crimson_plank_parapet");
+items.add("mcwwindows:crimson_blinds");
+items.add("minecraft:bricks");
+items.add("minecraft:brick");
+items.add("minecraft:brick_stairs");
+items.add("minecraft:diamond_ore");
+items.add("minecraft:diamond");
+items.add("minecraft:diamond_block");
+items.add("minecraft:emerald");
+items.add("minecraft:emerald_ore");
+items.add("minecraft:deepslate_emerald_ore");
+items.add("minecraft:emerald_block");
+items.add("minecraft:deepslate_diamond_ore");
+items.add("minecraft:diamond_sword");
+items.add("minecraft:diamond_shovel");
+items.add("minecraft:diamond_pickaxe");
+items.add("minecraft:diamond_axe");
+items.add("minecraft:diamond_hoe");
+items.add("minecraft:diamond_helmet");
+items.add("minecraft:diamond_chestplate");
+items.add("minecraft:diamond_leggings");
+items.add("minecraft:diamond_boots");
+items.add("minecraft:diamond_horse_armor");
+items.add("minecraft:crimson_planks");
+items.add("minecraft:warped_planks");
+items.add("minecraft:crimson_slab");
+items.add("minecraft:warped_slab");
+items.add("minecraft:crimson_stem");
+items.add("minecraft:warped_stem");
+items.add("minecraft:crimson_nylium");
+items.add("minecraft:crimson_fungus");
+items.add("minecraft:crimson_roots");
+items.add("minecraft:crimson_sign");
+items.add("minecraft:crimson_door");
+items.add("minecraft:crimson_trapdoor");
+items.add("minecraft:crimson_fence_gate");
+items.add("minecraft:warped_nylium");
+items.add("minecraft:warped_wart_block");
+items.add("minecraft:warped_fungus");
+items.add("minecraft:warped_roots");
+items.add("minecraft:warped_sign");
+items.add("minecraft:warped_door");
+items.add("minecraft:warped_trapdoor");
+items.add("minecraft:warped_fence_gate");
+items.add("minecraft:warped_fungus_on_a_stick");
+items.add("minecraft:stripped_crimson_stem");
+items.add("minecraft:stripped_warped_stem");
+items.add("minecraft:stripped_crimson_hyphae");
+items.add("minecraft:stripped_warped_hyphae");
+items.add("minecraft:crimson_hyphae");
+items.add("minecraft:warped_hyphae");
+items.add("minecraft:crimson_fence");
+items.add("minecraft:warped_fence");
+items.add("minecraft:warped_stairs");
+items.add("minecraft:crimson_stairs");
+items.add("minecraft:crimson_button");
+items.add("minecraft:warped_button");
+items.add("minecraft:crimson_pressure_plate");
+items.add("minecraft:warped_pressure_plate");
+items.add("minecraft:nether_star");
+items.add("minecraft:note_block");
+items.add("minecraft:lead");
+items.add("minecraft:jukebox");
+items.add("minecraft:painting");
+items.add("minecraft:cartography_table");
+items.add("minecraft:soul_torch");
+items.add("minecraft:cut_red_sandstone");
+items.add("minecraft:chiseled_sandstone");
+items.add("minecraft:cut_sandstone");
+items.add("minecraft:terracotta");
+items.add("minecraft:chiseled_red_sandstone");
+items.add("minecraft:brewing_stand");
+items.add("minecraft:potion");
+items.add("minecraft:splash_potion");
+items.add("minecraft:lingering_potion");
+items.add("minecraft:smooth_quartz");
+items.add("minecraft:chiseled_quartz_block");
+items.add("minecraft:quartz_block");
+items.add("minecraft:quartz_bricks");
+items.add("minecraft:quartz_pillar");
+items.add("minecraft:quartz_stairs");
+items.add("minecraft:smooth_quartz_stairs");
+items.add("minecraft:quartz");
+items.add("minecraft:magma_block");
+items.add("minecraft:nether_gold_ore");
+items.add("minecraft:netherrack");
+items.add("minecraft:slime_ball");
+items.add("minecraft:slime_block");
+items.add("minecraft:red_nether_brick_stairs");
+items.add("minecraft:red_nether_brick_slab");
+items.add("minecraft:red_nether_bricks");
+items.add("minecraft:red_nether_brick_wall");
+items.add("minecraft:nether_wart");
+items.add("minecraft:basalt");
+items.add("minecraft:polished_basalt");
+items.add("minecraft:smooth_basalt");
+items.add("minecraft:basalt");
+items.add("minecraft:polished_basalt");
+items.add("minecraft:blackstone");
+items.add("minecraft:blackstone_slab");
+items.add("minecraft:blackstone_stairs");
+items.add("minecraft:polished_blackstone");
+items.add("minecraft:polished_blackstone_slab");
+items.add("minecraft:polished_blackstone_stairs");
+items.add("minecraft:chiseled_polished_blackstone");
+items.add("minecraft:polished_blackstone_bricks");
+items.add("minecraft:polished_blackstone_brick_slab");
+items.add("minecraft:polished_blackstone_brick_stairs");
+items.add("minecraft:cracked_polished_blackstone_bricks");
+items.add("minecraft:blackstone_wall");
+items.add("minecraft:polished_blackstone_wall");
+items.add("minecraft:polished_blackstone_brick_wall");
+items.add("minecraft:polished_blackstone_button");
+items.add("minecraft:polished_blackstone_pressure_plate");
+items.add("natprog:diamond_saw");
+items.add("natprog:cobbled_netherrack");
+items.add("parrying:diamond_mace");
+items.add("parrying:diamond_hammer");
+items.add("parrying:diamond_dagger");
+items.add("parrying:diamond_flail");
+items.add("parrying:diamond_spear");
+items.add("parrying:scoped_crossbow");
+items.add("parrying:iron_flail");
+items.add("projectbrazier:crimson_open_barrel");
+items.add("projectbrazier:crimson_closed_barrel");
+items.add("projectbrazier:crimson_flower_barrel");
+items.add("projectbrazier:crimson_flower_bucket");
+items.add("projectbrazier:crimson_plank_chair");
+items.add("projectbrazier:crimson_solid_chair");
+items.add("projectbrazier:crimson_stool");
+items.add("projectbrazier:crimson_armrest_chair");
+items.add("projectbrazier:crimson_firewood");
+items.add("projectbrazier:crimson_bench");
+items.add("projectbrazier:crimson_log_chair");
+items.add("projectbrazier:crimson_log_bench");
+items.add("projectbrazier:stripped_crimson_log_chair");
+items.add("projectbrazier:stripped_crimson_log_bench");
+items.add("projectbrazier:hollow_crimson_log");
+items.add("projectbrazier:stripped_hollow_crimson_log");
+items.add("projectbrazier:solid_crimson_table");
+items.add("projectbrazier:crimson_zipline_anchor");
+items.add("projectbrazier:crimson_cross_lattice");
+items.add("projectbrazier:crimson_dense_vertical_lattice");
+items.add("projectbrazier:crimson_diamond_lattice");
+items.add("projectbrazier:crimson_grid_lattice");
+items.add("projectbrazier:crimson_vertical_lattice");
+items.add("projectbrazier:white_polstered_crimson_bench");
+items.add("projectbrazier:orange_polstered_crimson_bench");
+items.add("projectbrazier:magenta_polstered_crimson_bench");
+items.add("projectbrazier:light_blue_polstered_crimson_bench");
+items.add("projectbrazier:yellow_polstered_crimson_bench");
+items.add("projectbrazier:lime_polstered_crimson_bench");
+items.add("projectbrazier:pink_polstered_crimson_bench");
+items.add("projectbrazier:gray_polstered_crimson_bench");
+items.add("projectbrazier:light_gray_polstered_crimson_bench");
+items.add("projectbrazier:cyan_polstered_crimson_bench");
+items.add("projectbrazier:purple_polstered_crimson_bench");
+items.add("projectbrazier:blue_polstered_crimson_bench");
+items.add("projectbrazier:brown_polstered_crimson_bench");
+items.add("projectbrazier:green_polstered_crimson_bench");
+items.add("projectbrazier:red_polstered_crimson_bench");
+items.add("projectbrazier:black_polstered_crimson_bench");
+items.add("projectbrazier:crimson_platform");
+items.add("projectbrazier:warped_open_barrel");
+items.add("projectbrazier:warped_closed_barrel");
+items.add("projectbrazier:warped_flower_barrel");
+items.add("projectbrazier:warped_flower_bucket");
+items.add("projectbrazier:warped_plank_chair");
+items.add("projectbrazier:warped_solid_chair");
+items.add("projectbrazier:warped_stool");
+items.add("projectbrazier:warped_armrest_chair");
+items.add("projectbrazier:warped_firewood");
+items.add("projectbrazier:warped_bench");
+items.add("projectbrazier:warped_log_chair");
+items.add("projectbrazier:warped_log_bench");
+items.add("projectbrazier:stripped_warped_log_chair");
+items.add("projectbrazier:stripped_warped_log_bench");
+items.add("projectbrazier:hollow_warped_log");
+items.add("projectbrazier:stripped_hollow_warped_log");
+items.add("projectbrazier:solid_warped_table");
+items.add("projectbrazier:warped_zipline_anchor");
+items.add("projectbrazier:warped_cross_lattice");
+items.add("projectbrazier:warped_dense_vertical_lattice");
+items.add("projectbrazier:warped_diamond_lattice");
+items.add("projectbrazier:warped_grid_lattice");
+items.add("projectbrazier:warped_vertical_lattice");
+items.add("projectbrazier:white_polstered_warped_bench");
+items.add("projectbrazier:orange_polstered_warped_bench");
+items.add("projectbrazier:magenta_polstered_warped_bench");
+items.add("projectbrazier:light_blue_polstered_warped_bench");
+items.add("projectbrazier:yellow_polstered_warped_bench");
+items.add("projectbrazier:lime_polstered_warped_bench");
+items.add("projectbrazier:pink_polstered_warped_bench");
+items.add("projectbrazier:gray_polstered_warped_bench");
+items.add("projectbrazier:light_gray_polstered_warped_bench");
+items.add("projectbrazier:cyan_polstered_warped_bench");
+items.add("projectbrazier:purple_polstered_warped_bench");
+items.add("projectbrazier:blue_polstered_warped_bench");
+items.add("projectbrazier:brown_polstered_warped_bench");
+items.add("projectbrazier:green_polstered_warped_bench");
+items.add("projectbrazier:red_polstered_warped_bench");
+items.add("projectbrazier:black_polstered_warped_bench");
+items.add("projectbrazier:warped_platform");
+items.add("projectbrazier:soul_iron_brazier");
+items.add("projectbrazier:soul_iron_fire_bowl");
+items.add("projectbrazier:andesite_bricks");
+items.add("projectbrazier:diorite_bricks");
+items.add("projectbrazier:granite_bricks");
+items.add("projectbrazier:andesite_pillar");
+items.add("projectbrazier:diorite_pillar");
+items.add("projectbrazier:granite_pillar");
+items.add("projectbrazier:snow_bricks");
+items.add("projectbrazier:stone_machicolations");
+items.add("projectbrazier:stone_crenellations");
+items.add("projectbrazier:deepslate_machicolations");
+items.add("projectbrazier:deepslate_crenellations");
+items.add("projectbrazier:riverstone");
+items.add("projectbrazier:large_riverstone");
+items.add("projectbrazier:dark_large_riverstone");
+items.add("projectbrazier:colorful_cobblestone");
+items.add("projectbrazier:pale_colorful_cobblestone");
+items.add("sereneseasons:season_sensor");
+items.add("sophisticatedbackpacks:diamond_backpack");
+items.add("sophisticatedbackpacks:advanced_pickup_upgrade");
+items.add("sophisticatedbackpacks:advanced_magnet_upgrade");
+items.add("sophisticatedbackpacks:advanced_feeding_upgrade");
+items.add("sophisticatedbackpacks:advanced_compacting_upgrade");
+items.add("sophisticatedbackpacks:advanced_void_upgrade");
+items.add("sophisticatedbackpacks:advanced_restock_upgrade");
+items.add("sophisticatedbackpacks:advanced_deposit_upgrade");
+items.add("sophisticatedbackpacks:inception_upgrade");
+items.add("sophisticatedbackpacks:auto_smelting_upgrade");
+items.add("sophisticatedbackpacks:auto_smoking_upgrade");
+items.add("sophisticatedbackpacks:auto_blasting_upgrade");
+items.add("sophisticatedbackpacks:stack_upgrade_tier_3");
+items.add("sophisticatedbackpacks:jukebox_upgrade");
+items.add("sophisticatedbackpacks:advanced_tool_swapper_upgrade");
+items.add("sophisticatedbackpacks:advanced_pump_upgrade");
+items.add("sophisticatedbackpacks:xp_pump_upgrade");
+items.add("sophisticatedstorage:auto_blasting_upgrade");
+items.add("sophisticatedstorage:diamond_barrel");
+items.add("sophisticatedstorage:diamond_chest");
+items.add("sophisticatedstorage:advanced_pickup_upgrade");
+items.add("sophisticatedstorage:advanced_magnet_upgrade");
+items.add("sophisticatedstorage:advanced_feeding_upgrade");
+items.add("sophisticatedstorage:advanced_compacting_upgrade");
+items.add("sophisticatedstorage:advanced_void_upgrade");
+items.add("sophisticatedstorage:auto_smelting_upgrade");
+items.add("sophisticatedstorage:auto_smoking_upgrade");
+items.add("sophisticatedstorage:stack_upgrade_tier_4");
+items.add("sophisticatedstorage:gold_to_diamond_tier_upgrade");
+items.add("supplementaries:crimson_lantern");
+items.add("supplementaries:blackstone_tile");
+items.add("supplementaries:blackstone_tile_stairs");
+items.add("supplementaries:blackstone_lamp");
+items.add("supplementaries:planter_rich");
+items.add("supplementaries:blackboard");
+items.add("supplementaries:slingshot");
+items.add("supplementaries:silver_lantern");
+items.add("supplementaries:checker_block");
+items.add("supplementaries:checker_slab");
+items.add("supplementaries:speaker_block");
+items.add("supplementaries:bomb_spiky");
+items.add("supplementaries:globe_sepia");
+items.add("supplementaries:hanging_sign_crimson");
+items.add("supplementaries:hanging_sign_warped");
+items.add("supplementaries:sign_post_crimson");
+items.add("supplementaries:sign_post_warped");
+items.add("supplementaries:planter");
+items.add("valhelsia_structures:crimson_post");
+items.add("valhelsia_structures:cut_crimson_post");
+items.add("valhelsia_structures:warped_post");
+items.add("valhelsia_structures:cut_warped_post");
+items.add("valhelsia_structures:soul_brazier");
+items.add("alcocraft:hop");
+items.add("alcocraft:hop_seeds");
+items.add("alcocraft:dry_seeds");
+items.add("alcocraft:spruce_mug_empty");
+items.add("alcocraft:spruce_mug_sun_pale_ale");
+items.add("alcocraft:spruce_mug_digger_bitter");
+items.add("alcocraft:spruce_mug_drowned_ale");
+items.add("alcocraft:spruce_mug_night_rauch");
+items.add("alcocraft:spruce_mug_ice_beer");
+items.add("alcocraft:spruce_mug_kvass");
+items.add("alcocraft:spruce_mug_leprechaun_cider");
+items.add("alcocraft:spruce_keg");
 
-var listTag as MCTag [] = [
-    <tag:items:forge:stained_glass_panes>,
-    <tag:items:forge:concrete>,
-    <tag:items:forge:terracotta>,
-    <tag:items:forge:concrete_powders>,
-    <tag:items:supplementaries:bamboo_spikes_tipped>
-];
+for item in game.items {
+    if(item.registryName.namespace == "bygonenether") {
+        items.add(item.registryName.toString());
+    }
+}
+
+tagToList(items, <tag:items:forge:concrete_powders>);
+tagToList(items, <tag:items:forge:concrete>);
+tagToList(items, <tag:items:forge:terracotta>);
+tagToList(items, <tag:items:supplementaries:bamboo_spikes_tipped>);
+
+
+//set stage to items
+for item in items {
+    setStageItem(stage, item);
+}
+
+//LeftClick/Interact
+CTEventManager.register<PlayerInteractEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    //check item on hand and the block interacting with
+    for item in items {
+        if event.getItemStack().registryName.toString() == item && level.getBlockState(pos).block.registryName.toString() != "minecraft:air"{
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+
+        if level.getBlockState(pos).block.registryName.toString() == item {
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+});
+
+//RightClick
+CTEventManager.register<RightClickBlockEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    for item in items {
+        if level.getBlockState(pos).block.registryName.toString() == item{
+            println(item);
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+
+});
+
+CTEventManager.register<RightClickItemEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    for item in items {
+        if event.getItemStack().registryName.toString() == item{
+            println(item);
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+});
+
+var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => 
+    style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
+var toolTip2 = new TextComponent("Unlock Renaissance Age").setStyle(<constant:formatting:dark_red>);
+
+CTEventManager.register<ItemTooltipEvent>((event) => {
+    var maybePlayer = event.player;
+    if maybePlayer != null {
+        val player = maybePlayer as Player;
+        for item in items {
+            if !player.hasGameStage(stage) {
+                if BracketHandlers.getItem(item).ingredient.matches(event.itemStack) {
+                    event.tooltip.add(toolTip1);
+                    event.tooltip.add(toolTip2);
+                }
+            }
+        }
+    }
+});
+
+
 
 var exceptItem as IItemStack [] = [
-    <item:sophisticatedbackpacks:netherite_backpack>,
     <item:alcocraft:spruce_mug_chorus_ale>,
     <item:alcocraft:spruce_mug_nether_star_lager>,
     <item:alcocraft:spruce_mug_nether_porter>,
     <item:alcocraft:spruce_mug_wither_stout>,
-    <item:alcocraft:spruce_mug_magnet_pilsner>,
-    <item:minecraft:arrow>,
-    <item:supplementaries:rope_arrow>
+    <item:alcocraft:spruce_mug_magnet_pilsner>
 ];
-
-for item in listItem {
-    setStagedItem("renaissance_age", item);
-}
-
-for tag in listTag {
-    setStagedTag("renaissance_age", tag);
-}
-
-for mod in modList {
-    setStagedMod("renaissance_age", mod);
-}
-
-for item in exceptItem {
-    removeStagedItem(item);
-}

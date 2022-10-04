@@ -1,81 +1,338 @@
+import mods.jei.JEI;
 import crafttweaker.api.item.IItemStack;
+import crafttweaker.api.bracket.BracketHandlers;
 import crafttweaker.api.tag.MCTag;
+import crafttweaker.api.text.Style;
+import crafttweaker.api.text.ChatFormatting;
+import crafttweaker.api.text.TextComponent;
+import crafttweaker.api.events.CTEventManager;
+import crafttweaker.api.event.block.BlockBreakEvent;
+import crafttweaker.api.event.block.BlockEvent;
+import crafttweaker.api.event.entity.player.interact.LeftClickBlockEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickBlockEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickItemEvent;
+import crafttweaker.api.event.entity.player.interact.PlayerInteractEvent;
+import crafttweaker.api.item.type.block.BlockItem;
+import crafttweaker.api.tag.manager.ITagManager;
+import crafttweaker.api.event.entity.player.ItemTooltipEvent;
+import crafttweaker.api.entity.type.player.Player;
 
-var listItem as IItemStack [] = [
-    <item:minecraft:wooden_sword>,
-    <item:minecraft:wooden_shovel>,
-    <item:minecraft:wooden_pickaxe>,
-    <item:minecraft:wooden_axe>,
-    <item:minecraft:wooden_hoe>,
-    <item:minecraft:fishing_rod>,
-    <item:minecraft:string>,
-    <item:minecraft:campfire>,
-    <item:minecraft:chest>,
-    <item:minecraft:ladder>,
-    <item:minecraft:armor_stand>,
-    <item:minecraft:loom>,
-    <item:minecraft:composter>,
-    <item:minecraft:barrel>,
-    <item:minecraft:fletching_table>,
-    <item:minecraft:bone_block>,
-    <item:minecraft:bone_meal>,
-    <item:minecraft:bone>,
-    <item:parrying:wooden_mace>,
-    <item:parrying:wooden_hammer>,
-    <item:parrying:wooden_dagger>,
-    <item:parrying:wood_flail>,
-    <item:parrying:wood_spear>,
-    <item:jousting:lance_wood>,
-    <item:valhelsia_structures:bone_pile>,
-    <item:valhelsia_structures:bone_pile_block>,
-    <item:natprog:bone_pickaxe>,
-    <item:natprog:bone_knife>,
-    <item:natprog:bone_shard>,
-    <item:alexsmobs:bone_serpent_tooth>,
-    <item:alexsmobs:fish_bones>,
-    <item:projectbrazier:bone_war_horn>,
-    <item:minecraft:coal>,
-    <item:minecraft:coal_ore>,
-    <item:minecraft:deepslate_coal_ore>,
-    <item:minecraft:coal_block>,
-    <item:minecraft:coal>,
-    <item:minecraft:scute>,
-    <item:minecraft:turtle_helmet>,
-    <item:minecraft:charcoal>,
-    <item:projectbrazier:traces_of_coal_ore>,
-    <item:projectbrazier:poor_coal_ore>,
-    <item:projectbrazier:rich_coal_ore>,
-    <item:projectbrazier:traces_of_deepslate_coal_ore>,
-    <item:projectbrazier:poor_deepslate_coal_ore>,
-    <item:projectbrazier:rich_deepslate_coal_ore>,
-    <item:supplementaries:flax>,
-    <item:supplementaries:flax_block>,
-    <item:supplementaries:rope>,
-    <item:supplementaries:sack>,
-    <item:supplementaries:doormat>,
-    <item:minecraft:farmland>,
-    <item:minecraft:carrot_on_a_stick>,
-    <item:minecraft:torch>,
-    <item:supplementaries:feather_block>,
-    <item:minecraft:rabbit_hide>,
-    <item:minecraft:rabbit_foot>,
-    <item:mcwwindows:oak_log_parapet>,
-    <item:mcwwindows:spruce_log_parapet>,
-    <item:mcwwindows:birch_log_parapet>,
-    <item:mcwwindows:jungle_log_parapet>,
-    <item:mcwwindows:acacia_log_parapet>,
-    <item:mcwwindows:dark_oak_log_parapet>,
-    <item:mcwwindows:oak_plank_parapet>,
-    <item:mcwwindows:spruce_plank_parapet>,
-    <item:mcwwindows:birch_plank_parapet>,
-    <item:mcwwindows:jungle_plank_parapet>,
-    <item:mcwwindows:acacia_plank_parapet>,
-    <item:mcwwindows:dark_oak_plank_parapet>,
-    <item:minecraft:brown_mushroom_block>,
-    <item:minecraft:red_mushroom_block>,
-    <item:minecraft:mushroom_stem>,
-    <item:projectbrazier:hoof_fungus>
+var message = new TextComponent("You haven't unlocked Paleolithic Age yet").setStyle(<constant:formatting:red>);
+var stage = "paleolithic_age";
+
+var items as string [] = [
+    "minecraft:wooden_sword",
+    "minecraft:wooden_shovel",
+    "minecraft:wooden_pickaxe",
+    "minecraft:wooden_axe",
+    "minecraft:wooden_hoe",
+    "minecraft:fishing_rod",
+    "minecraft:string",
+    "minecraft:campfire",
+    "minecraft:chest",
+    "minecraft:ladder",
+    "minecraft:armor_stand",
+    "minecraft:loom",
+    "minecraft:composter",
+    "minecraft:barrel",
+    "minecraft:fletching_table",
+    "minecraft:bone_block",
+    "minecraft:bone_meal",
+    "minecraft:bone",
+    "parrying:wooden_mace",
+    "parrying:wooden_hammer",
+    "parrying:wooden_dagger",
+    "parrying:wood_flail",
+    "parrying:wood_spear",
+    "jousting:lance_wood",
+    "valhelsia_structures:bone_pile",
+    "valhelsia_structures:bone_pile_block",
+    "natprog:bone_pickaxe",
+    "natprog:bone_knife",
+    "natprog:bone_shard",
+    "alexsmobs:bone_serpent_tooth",
+    "alexsmobs:fish_bones",
+    "projectbrazier:bone_war_horn",
+    "minecraft:coal",
+    "minecraft:coal_ore",
+    "minecraft:deepslate_coal_ore",
+    "minecraft:coal_block",
+    "minecraft:coal",
+    "minecraft:scute",
+    "minecraft:turtle_helmet",
+    "minecraft:charcoal",
+    "projectbrazier:traces_of_coal_ore",
+    "projectbrazier:poor_coal_ore",
+    "projectbrazier:rich_coal_ore",
+    "projectbrazier:traces_of_deepslate_coal_ore",
+    "projectbrazier:poor_deepslate_coal_ore",
+    "projectbrazier:rich_deepslate_coal_ore",
+    "supplementaries:flax",
+    "supplementaries:flax_block",
+    "supplementaries:rope",
+    "supplementaries:sack",
+    "supplementaries:doormat",
+    "minecraft:farmland",
+    "minecraft:carrot_on_a_stick",
+    "minecraft:torch",
+    "supplementaries:feather_block",
+    "minecraft:rabbit_hide",
+    "minecraft:rabbit_foot",
+    "mcwwindows:oak_log_parapet",
+    "mcwwindows:spruce_log_parapet",
+    "mcwwindows:birch_log_parapet",
+    "mcwwindows:jungle_log_parapet",
+    "mcwwindows:acacia_log_parapet",
+    "mcwwindows:dark_oak_log_parapet",
+    "mcwwindows:oak_plank_parapet",
+    "mcwwindows:spruce_plank_parapet",
+    "mcwwindows:birch_plank_parapet",
+    "mcwwindows:jungle_plank_parapet",
+    "mcwwindows:acacia_plank_parapet",
+    "mcwwindows:dark_oak_plank_parapet",
+    "minecraft:brown_mushroom_block",
+    "minecraft:red_mushroom_block",
+    "minecraft:mushroom_stem",
+    "projectbrazier:hoof_fungus",
+    "minecraft:oak_stairs",
+    "minecraft:spruce_stairs",
+    "minecraft:birch_stairs",
+    "minecraft:jungle_stairs",
+    "minecraft:acacia_stairs",
+    "minecraft:dark_oak_stairs",
+    "minecraft:oak_slab",
+    "minecraft:spruce_slab",
+    "minecraft:birch_slab",
+    "minecraft:jungle_slab",
+    "minecraft:acacia_slab",
+    "minecraft:dark_oak_slab",
+    "minecraft:oak_fence",
+    "minecraft:spruce_fence",
+    "minecraft:birch_fence",
+    "minecraft:jungle_fence",
+    "minecraft:acacia_fence",
+    "minecraft:dark_oak_fence",
+    "minecraft:oak_sign",
+    "minecraft:spruce_sign",
+    "minecraft:birch_sign",
+    "minecraft:jungle_sign",
+    "minecraft:acacia_sign",
+    "minecraft:dark_oak_sign",
+    "farmersdelight:white_canvas_sign",
+    "farmersdelight:orange_canvas_sign",
+    "farmersdelight:magenta_canvas_sign",
+    "farmersdelight:light_blue_canvas_sign",
+    "farmersdelight:yellow_canvas_sign",
+    "farmersdelight:lime_canvas_sign",
+    "farmersdelight:pink_canvas_sign",
+    "farmersdelight:gray_canvas_sign",
+    "farmersdelight:light_gray_canvas_sign",
+    "farmersdelight:cyan_canvas_sign",
+    "farmersdelight:purple_canvas_sign",
+    "farmersdelight:blue_canvas_sign",
+    "farmersdelight:brown_canvas_sign",
+    "farmersdelight:green_canvas_sign",
+    "farmersdelight:red_canvas_sign",
+    "farmersdelight:black_canvas_sign",
+    "minecraft:item_frame",
+    "minecraft:glow_item_frame",
+    "minecraft:white_banner",
+    "minecraft:orange_banner",
+    "minecraft:magenta_banner",
+    "minecraft:light_blue_banner",
+    "minecraft:yellow_banner",
+    "minecraft:lime_banner",
+    "minecraft:pink_banner",
+    "minecraft:gray_banner",
+    "minecraft:light_gray_banner",
+    "minecraft:cyan_banner",
+    "minecraft:purple_banner",
+    "minecraft:blue_banner",
+    "minecraft:brown_banner",
+    "minecraft:green_banner",
+    "minecraft:red_banner",
+    "minecraft:black_banner",
+    "minecraft:oak_button",
+    "minecraft:spruce_button",
+    "minecraft:birch_button",
+    "minecraft:jungle_button",
+    "minecraft:acacia_button",
+    "minecraft:dark_oak_button",
+    "minecraft:oak_pressure_plate",
+    "minecraft:spruce_pressure_plate",
+    "minecraft:birch_pressure_plate",
+    "minecraft:jungle_pressure_plate",
+    "minecraft:acacia_pressure_plate",
+    "minecraft:dark_oak_pressure_plate",
+    "minecraft:oak_door",
+    "minecraft:spruce_door",
+    "minecraft:birch_door",
+    "minecraft:jungle_door",
+    "minecraft:acacia_door",
+    "minecraft:dark_oak_door",
+    "mcwdoors:oak_barn_door",
+    "mcwdoors:spruce_barn_door",
+    "mcwdoors:birch_barn_door",
+    "mcwdoors:jungle_barn_door",
+    "mcwdoors:acacia_barn_door",
+    "mcwdoors:dark_oak_barn_door",
+    "mcwdoors:oak_western_door",
+    "mcwdoors:spruce_western_door",
+    "mcwdoors:birch_western_door",
+    "mcwdoors:jungle_western_door",
+    "mcwdoors:acacia_western_door",
+    "mcwdoors:dark_oak_western_door",
+    "minecraft:oak_trapdoor",
+    "minecraft:spruce_trapdoor",
+    "minecraft:birch_trapdoor",
+    "minecraft:jungle_trapdoor",
+    "minecraft:acacia_trapdoor",
+    "minecraft:dark_oak_trapdoor",
+    "mcwtrpdoors:oak_ranch_trapdoor",
+    "mcwtrpdoors:spruce_ranch_trapdoor",
+    "mcwtrpdoors:birch_ranch_trapdoor",
+    "mcwtrpdoors:jungle_ranch_trapdoor",
+    "mcwtrpdoors:acacia_ranch_trapdoor",
+    "mcwtrpdoors:dark_oak_ranch_trapdoor",
+    "minecraft:white_carpet",
+    "minecraft:orange_carpet",
+    "minecraft:magenta_carpet",
+    "minecraft:light_blue_carpet",
+    "minecraft:yellow_carpet",
+    "minecraft:lime_carpet",
+    "minecraft:pink_carpet",
+    "minecraft:gray_carpet",
+    "minecraft:light_gray_carpet",
+    "minecraft:cyan_carpet",
+    "minecraft:purple_carpet",
+    "minecraft:blue_carpet",
+    "minecraft:brown_carpet",
+    "minecraft:green_carpet",
+    "minecraft:red_carpet",
+    "minecraft:black_carpet",
+    "minecraft:oak_fence_gate",
+    "minecraft:spruce_fence_gate",
+    "minecraft:birch_fence_gate",
+    "minecraft:jungle_fence_gate",
+    "minecraft:acacia_fence_gate",
+    "minecraft:dark_oak_fence_gate",
+    "supplementaries:sign_post_oak",
+    "supplementaries:sign_post_spruce",
+    "supplementaries:sign_post_birch",
+    "supplementaries:sign_post_jungle",
+    "supplementaries:sign_post_acacia",
+    "supplementaries:sign_post_dark_oak",
+    "supplementaries:valhelsia_structures/sign_post_lapidified_jungle",
+    "valhelsia_structures:oak_post",
+    "valhelsia_structures:spruce_post",
+    "valhelsia_structures:birch_post",
+    "valhelsia_structures:jungle_post",
+    "valhelsia_structures:acacia_post",
+    "valhelsia_structures:dark_oak_post",
+    "valhelsia_structures:cut_oak_post",
+    "valhelsia_structures:cut_spruce_post",
+    "valhelsia_structures:cut_birch_post",
+    "valhelsia_structures:cut_jungle_post",
+    "valhelsia_structures:cut_acacia_post",
+    "valhelsia_structures:cut_dark_oak_post",
+    "supplementaries:flag_white",
+    "supplementaries:flag_orange",
+    "supplementaries:flag_magenta",
+    "supplementaries:flag_light_blue",
+    "supplementaries:flag_yellow",
+    "supplementaries:flag_lime",
+    "supplementaries:flag_pink",
+    "supplementaries:flag_gray",
+    "supplementaries:flag_light_gray",
+    "supplementaries:flag_cyan",
+    "supplementaries:flag_purple",
+    "supplementaries:flag_blue",
+    "supplementaries:flag_brown",
+    "supplementaries:flag_green",
+    "supplementaries:flag_red",
+    "supplementaries:flag_black"
 ];
+
+for item in items {
+    setStageItem(stage, item);
+}
+
+//LeftClick/Interact
+CTEventManager.register<PlayerInteractEvent>((event) =>{
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    //check item on hand and the block interacting with
+    for item in items {
+        if event.getItemStack().registryName.toString() == item && level.getBlockState(pos).block.registryName.toString() != "minecraft:air"{
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+
+        if level.getBlockState(pos).block.registryName.toString() == item {
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+});
+
+//RightClick
+CTEventManager.register<RightClickBlockEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    for item in items {
+        if level.getBlockState(pos).block.registryName.toString() == item{
+            println(item);
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+
+});
+
+CTEventManager.register<RightClickItemEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    for item in items {
+        if event.getItemStack().registryName.toString() == item{
+            println(item);
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+});
+
+var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => 
+    style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
+var toolTip2 = new TextComponent("Unlock Paleolithic Age").setStyle(<constant:formatting:dark_red>);
+
+CTEventManager.register<ItemTooltipEvent>((event) => {
+    var maybePlayer = event.player;
+    if maybePlayer != null {
+        val player = maybePlayer as Player;
+        for item in items {
+            if !player.hasGameStage(stage) {
+                if BracketHandlers.getItem(item).ingredient.matches(event.itemStack) {
+                    event.tooltip.add(toolTip1);
+                    event.tooltip.add(toolTip2);
+                }
+            }
+        }
+    }
+});
 
 var listTag as MCTag [] = [
     <tag:items:minecraft:wooden_stairs>,
@@ -90,8 +347,8 @@ var listTag as MCTag [] = [
     <tag:items:minecraft:wooden_trapdoors>,
     <tag:items:minecraft:carpets>,
     <tag:items:forge:fence_gates/wooden>,
-    <tag:items:sophisticatedstorage:base_tier_wooden_storage>,
-    <tag:items:supplementaries:hanging_signs>,
+    //<tag:items:sophisticatedstorage:base_tier_wooden_storage>,
+    //<tag:items:supplementaries:hanging_signs>,
     <tag:items:supplementaries:sign_posts>,
     <tag:items:valhelsia_structures:posts>,
     <tag:items:valhelsia_structures:cut_posts>,
@@ -359,23 +616,3 @@ var exceptItem as IItemStack [] = [
     <item:projectbrazier:poor_deepslate_coal_ore>,
     <item:projectbrazier:rich_deepslate_coal_ore>
 ];
-
-var exceptTag as MCTag  [] = [
-    <tag:items:minecraft:stairs>
-];
-
-for item in listItem {
-    setStagedItem("paleolithic_age", item);
-}
-
-for tag in listTag {
-    setStagedTag("paleolithic_age", tag);
-}
-
-for item in exceptItem {
-    removeStagedItem(item);
-}
-
-for tag in exceptTag {
-    removeStagedTag(tag);
-}

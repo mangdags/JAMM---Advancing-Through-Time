@@ -1,85 +1,198 @@
+import mods.jei.JEI;
 import crafttweaker.api.item.IItemStack;
+import crafttweaker.api.bracket.BracketHandlers;
 import crafttweaker.api.tag.MCTag;
+import crafttweaker.api.text.Style;
+import crafttweaker.api.text.ChatFormatting;
+import crafttweaker.api.text.TextComponent;
+import crafttweaker.api.events.CTEventManager;
+import crafttweaker.api.event.block.BlockBreakEvent;
+import crafttweaker.api.event.block.BlockEvent;
+import crafttweaker.api.event.entity.player.interact.LeftClickBlockEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickBlockEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickItemEvent;
+import crafttweaker.api.event.entity.player.interact.PlayerInteractEvent;
+import crafttweaker.api.item.type.block.BlockItem;
+import crafttweaker.api.tag.manager.ITagManager;
+import crafttweaker.api.event.entity.player.ItemTooltipEvent;
+import crafttweaker.api.entity.type.player.Player;
 
-var listItem as IItemStack [] = [
-    <item:minecraft:stone>,
-    <item:minecraft:cobblestone>,
-    <item:minecraft:leather_helmet>,
-    <item:minecraft:leather_chestplate>,
-    <item:minecraft:leather_boots>,
-    <item:minecraft:leather_leggings>,
-    <item:minecraft:leather>,
-    <item:minecraft:leather_horse_armor>,
-    <item:immersiveengineering:ersatz_leather>,
-    <item:minecraft:item_frame>,
-    <item:minecraft:stone_sword>,
-    <item:minecraft:stone_shovel>,
-    <item:minecraft:stone_pickaxe>,
-    <item:minecraft:stone_axe>,
-    <item:minecraft:stone_hoe>,
-    <item:parrying:stone_mace>,
-    <item:parrying:stone_hammer>,
-    <item:parrying:stone_dagger>,
-    <item:parrying:stone_flail>,
-    <item:parrying:stone_spear>,
-    <item:minecraft:lapis_ore>,
-    <item:minecraft:deepslate_lapis_ore>,
-    <item:minecraft:lapis_block>,
-    <item:minecraft:lapis_lazuli>,
-    <item:minecraft:bamboo>,
-    <item:mcwbridges:bamboo_bridge>,
-    <item:mcwbridges:dry_bamboo_bridge>,
-    <item:mcwbridges:bamboo_bridge_pier>,
-    <item:mcwbridges:dry_bamboo_bridge_pier>,
-    <item:mcwbridges:bamboo_bridge_stair>,
-    <item:mcwbridges:dry_bamboo_bridge_stair>,
-    <item:mcwfences:bamboo_fence>,
-    <item:supplementaries:bamboo_spikes>,
-    <item:supplementaries:flute>,
-    <item:minecraft:scaffolding>,
-    <item:minecraft:bow>,
-    <item:minecraft:glow_item_frame>,
-    <item:minecraft:arrow>,
-    <item:supplementaries:bellows>,
-    <item:minecraft:packed_ice>,
-    <item:minecraft:moss_carpet>,
-    <item:minecraft:moss_block>,
-    <item:mcwwindows:oak_blinds>,
-    <item:mcwwindows:spruce_blinds>,
-    <item:mcwwindows:birch_blinds>,
-    <item:mcwwindows:jungle_blinds>,
-    <item:mcwwindows:acacia_blinds>,
-    <item:mcwwindows:dark_oak_blinds>,
-    <item:mcwwindows:andesite_parapet>,
-    <item:mcwwindows:diorite_parapet>,
-    <item:mcwwindows:granite_parapet>,
-    <item:alexsmobs:blobfish>,
-    <item:alexsmobs:banana>,
-    <item:alexsdelight:kangaroo_shank>,
-    <item:alexsdelight:loose_moose_rib>,
-    <item:alexsmobs:maggot>,
-    <item:alexsmobs:lobster_tail>,
-    <item:alexsdelight:bison_mince>,
-    <item:projectbrazier:birch_firewood>,
-    <item:projectbrazier:oak_firewood>,
-    <item:projectbrazier:acacia_firewood>,
-    <item:projectbrazier:jungle_firewood>,
-    <item:projectbrazier:dark_oak_firewood>,
-    <item:projectbrazier:spruce_firewood>,
-    <item:projectbrazier:rope>,
-    <item:mcwtrpdoors:bamboo_trapdoor>,
-    <item:supplementaries:lapis_bricks>,
-    <item:supplementaries:lapis_bricks_stairs>
+var message = new TextComponent("You haven't unlocked Mesolithic Age yet").setStyle(<constant:formatting:red>);
+var stage = "mesolithic_age";
+
+var items as string [] = [
+    "alexsmobs:banana",
+    "immersiveengineering:ersatz_leather",
+    "mcwbridges:bamboo_bridge",
+    "mcwbridges:dry_bamboo_bridge",
+    "mcwbridges:bamboo_bridge_pier",
+    "mcwbridges:dry_bamboo_bridge_pier",
+    "mcwbridges:bamboo_bridge_stair",
+    "mcwbridges:dry_bamboo_bridge_stair",
+    "mcwfences:bamboo_fence",
+    "mcwtrpdoors:bamboo_trapdoor",
+    "mcwwindows:oak_blinds",
+    "mcwwindows:spruce_blinds",
+    "mcwwindows:birch_blinds",
+    "mcwwindows:jungle_blinds",
+    "mcwwindows:acacia_blinds",
+    "mcwwindows:dark_oak_blinds",
+    "mcwwindows:andesite_parapet",
+    "mcwwindows:diorite_parapet",
+    "mcwwindows:granite_parapet",
+    "minecraft:furnace",
+    "minecraft:stone",
+    "minecraft:cobblestone",
+    "minecraft:leather_helmet",
+    "minecraft:leather_chestplate",
+    "minecraft:leather_boots",
+    "minecraft:leather_leggings",
+    "minecraft:leather",
+    "minecraft:leather_horse_armor",
+    "minecraft:item_frame",
+    "minecraft:stone_sword",
+    "minecraft:stone_shovel",
+    "minecraft:stone_pickaxe",
+    "minecraft:stone_axe",
+    "minecraft:stone_hoe",
+    "minecraft:lapis_ore",
+    "minecraft:deepslate_lapis_ore",
+    "minecraft:lapis_block",
+    "minecraft:lapis_lazuli",
+    "minecraft:bamboo",
+    "minecraft:scaffolding",
+    "minecraft:bow",
+    "minecraft:glow_item_frame",
+    "minecraft:arrow",
+    "minecraft:packed_ice",
+    "minecraft:moss_carpet",
+    "minecraft:moss_block",
+    "parrying:stone_mace",
+    "parrying:stone_hammer",
+    "parrying:stone_dagger",
+    "parrying:stone_flail",
+    "parrying:stone_spear",
+    "projectbrazier:birch_firewood",
+    "projectbrazier:oak_firewood",
+    "projectbrazier:acacia_firewood",
+    "projectbrazier:jungle_firewood",
+    "projectbrazier:dark_oak_firewood",
+    "projectbrazier:spruce_firewood",
+    "projectbrazier:rope",
+    "supplementaries:bamboo_spikes",
+    "supplementaries:flute",
+    "supplementaries:bellows",
+    "supplementaries:lapis_bricks",
+    "supplementaries:lapis_bricks_stairs",
+    "sophisticatedbackpacks:backpack",
+    "minecraft:cobbled_deepslate",
+    "minecraft:mossy_cobblestone",
+    "minecraft:infested_cobblestone",
+    "natprog:cobbled_andesite",
+    "natprog:cobbled_diorite",
+    "natprog:cobbled_granite",
+    "natprog:cobbled_sandstone",
+    "natprog:cobbled_red_sandstone",
+    "natprog:cobbled_tuff",
+    "natprog:cobbled_dripstone_block",
+    "minecraft:white_dye",
+    "minecraft:orange_dye",
+    "minecraft:magenta_dye",
+    "minecraft:light_blue_dye",
+    "minecraft:yellow_dye",
+    "minecraft:lime_dye",
+    "minecraft:pink_dye",
+    "minecraft:gray_dye",
+    "minecraft:light_gray_dye",
+    "minecraft:cyan_dye",
+    "minecraft:purple_dye",
+    "minecraft:blue_dye",
+    "minecraft:brown_dye",
+    "minecraft:green_dye",
+    "minecraft:red_dye",
+    "minecraft:black_dye"
 ];
 
-var modList as string [] = [
-    "sophisticatedbackpacks"
-];
+for item in items {
+    setStageItem(stage, item);
+}
 
-var listTag as MCTag [] = [
-    <tag:items:forge:cobblestone>,
-    <tag:items:forge:dyes>,
-];
+//LeftClick/Interact
+CTEventManager.register<PlayerInteractEvent>((event) =>{
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    //check item on hand and the block interacting with
+    for item in items {
+        if event.getItemStack().registryName.toString() == item && level.getBlockState(pos).block.registryName.toString() != "minecraft:air"{
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+
+        if level.getBlockState(pos).block.registryName.toString() == item {
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+});
+
+//RightClick
+CTEventManager.register<RightClickBlockEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    for item in items {
+        if level.getBlockState(pos).block.registryName.toString() == item{
+            println(item);
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+
+});
+
+CTEventManager.register<RightClickItemEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    for item in items {
+        if event.getItemStack().registryName.toString() == item{
+            println(item);
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+});
+
+var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => 
+    style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
+var toolTip2 = new TextComponent("Unlock Mesolithic Age").setStyle(<constant:formatting:dark_red>);
+
+CTEventManager.register<ItemTooltipEvent>((event) => {
+    var maybePlayer = event.player;
+    if maybePlayer != null {
+        val player = maybePlayer as Player;
+        for item in items {
+            if !player.hasGameStage(stage) {
+                if BracketHandlers.getItem(item).ingredient.matches(event.itemStack) {
+                    event.tooltip.add(toolTip1);
+                    event.tooltip.add(toolTip2);
+                }
+            }
+        }
+    }
+});
 
 var exceptItem as IItemStack [] = [
     <item:minecraft:furnace>,
@@ -176,19 +289,3 @@ var exceptItem as IItemStack [] = [
     <item:sophisticatedstorage:iron_to_gold_tier_upgrade>,
     <item:sophisticatedstorage:upgrade_base>
 ];
-
-for item in listItem {
-    setStagedItem("mesolithic_age", item);
-}
-
-for mod in modList {
-    setStagedMod("mesolithic_age", mod);
-}
-
-for tag in listTag {
-    setStagedTag("mesolithic_age", tag);
-}
-
-for item in exceptItem {
-    removeStagedItem(item);
-}

@@ -1,229 +1,820 @@
 import mods.jei.JEI;
 import crafttweaker.api.item.IItemStack;
+import crafttweaker.api.bracket.BracketHandlers;
 import crafttweaker.api.tag.MCTag;
+import crafttweaker.api.text.Style;
+import crafttweaker.api.text.ChatFormatting;
+import crafttweaker.api.text.TextComponent;
+import crafttweaker.api.events.CTEventManager;
+import crafttweaker.api.event.block.BlockBreakEvent;
+import crafttweaker.api.event.block.BlockEvent;
+import crafttweaker.api.event.entity.player.interact.LeftClickBlockEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickBlockEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickItemEvent;
+import crafttweaker.api.event.entity.player.interact.PlayerInteractEvent;
+import crafttweaker.api.item.type.block.BlockItem;
+import crafttweaker.api.tag.manager.ITagManager;
+import crafttweaker.api.event.entity.player.ItemTooltipEvent;
+import crafttweaker.api.entity.type.player.Player;
+import crafttweaker.api.ingredient.IIngredient;
+import crafttweaker.api.item.ItemDefinition;
+import stdlib.List;
 
-var listItem as IItemStack [] = [
-    <item:minecraft:glowstone>,
-    <item:minecraft:glowstone_dust>,
-    <item:minecraft:nether_quartz_ore>,
-    <item:minecraft:ancient_debris>,
-    <item:minecraft:repeater>,
-    <item:minecraft:comparator>,
-    <item:minecraft:blaze_powder>,
-    <item:minecraft:blaze_rod>,
-    <item:minecraft:magma_cream>,
-    <item:minecraft:ghast_tear>,
-    <item:immersiveengineering:hammer>,
-    <item:immersiveengineering:alu_post>,
-    <item:immersiveengineering:ingot_aluminum>,
-    <item:immersiveengineering:raw_aluminum>,
-    <item:immersiveengineering:raw_block_aluminum>,
-    <item:immersiveengineering:deepslate_ore_aluminum>,
-    <item:immersiveengineering:ore_aluminum>,
-    <item:immersiveengineering:alu_scaffolding_standard>,
-    <item:immersiveengineering:slab_alu_scaffolding_standard>,
-    <item:immersiveengineering:stairs_alu_scaffolding_standard>,
-    <item:immersiveengineering:alu_scaffolding_grate_top>,
-    <item:immersiveengineering:slab_alu_scaffolding_grate_top>,
-    <item:immersiveengineering:stairs_alu_scaffolding_grate_top>,
-    <item:immersiveengineering:alu_scaffolding_wooden_top>,
-    <item:immersiveengineering:slab_alu_scaffolding_wooden_top>,
-    <item:immersiveengineering:stairs_alu_scaffolding_wooden_top>,
-    <item:immersiveengineering:stick_aluminum>,
-    <item:minecraft:netherite_block>,
-    <item:minecraft:netherite_scrap>,
-    <item:minecraft:netherite_sword>,
-    <item:minecraft:netherite_shovel>,
-    <item:minecraft:netherite_pickaxe>,
-    <item:minecraft:netherite_axe>,
-    <item:minecraft:netherite_hoe>,
-    <item:minecraft:netherite_helmet>,
-    <item:minecraft:netherite_chestplate>,
-    <item:minecraft:netherite_leggings>,
-    <item:minecraft:netherite_boots>,
-    <item:natprog:netherite_saw>,
-    <item:farmersdelight:netherite_knife>,
-    <item:supplementaries:netherite_trapdoor>,
-    <item:supplementaries:netherite_door>,
-    <item:advancednetherite:netherite_iron_ingot>,
-    <item:advancednetherite:netherite_gold_ingot>,
-    <item:advancednetherite:netherite_emerald_ingot>,
-    <item:advancednetherite:netherite_diamond_ingot>,
-    <item:advancednetherite:netherite_iron_helmet>,
-    <item:advancednetherite:netherite_iron_chestplate>,
-    <item:advancednetherite:netherite_iron_leggings>,
-    <item:advancednetherite:netherite_iron_boots>,
-    <item:advancednetherite:netherite_gold_helmet>,
-    <item:advancednetherite:netherite_gold_chestplate>,
-    <item:advancednetherite:netherite_gold_leggings>,
-    <item:advancednetherite:netherite_gold_boots>,
-    <item:advancednetherite:netherite_emerald_helmet>,
-    <item:advancednetherite:netherite_emerald_chestplate>,
-    <item:advancednetherite:netherite_emerald_leggings>,
-    <item:advancednetherite:netherite_emerald_boots>,
-    <item:advancednetherite:netherite_diamond_helmet>,
-    <item:advancednetherite:netherite_diamond_chestplate>,
-    <item:advancednetherite:netherite_diamond_leggings>,
-    <item:advancednetherite:netherite_diamond_boots>,
-    <item:advancednetherite:netherite_iron_axe>,
-    <item:advancednetherite:netherite_gold_axe>,
-    <item:advancednetherite:netherite_emerald_axe>,
-    <item:advancednetherite:netherite_diamond_axe>,
-    <item:advancednetherite:netherite_iron_hoe>,
-    <item:advancednetherite:netherite_gold_hoe>,
-    <item:advancednetherite:netherite_emerald_hoe>,
-    <item:advancednetherite:netherite_diamond_hoe>,
-    <item:advancednetherite:netherite_iron_pickaxe>,
-    <item:advancednetherite:netherite_gold_pickaxe>,
-    <item:advancednetherite:netherite_emerald_pickaxe>,
-    <item:advancednetherite:netherite_diamond_pickaxe>,
-    <item:advancednetherite:netherite_iron_shovel>,
-    <item:advancednetherite:netherite_gold_shovel>,
-    <item:advancednetherite:netherite_emerald_shovel>,
-    <item:advancednetherite:netherite_diamond_shovel>,
-    <item:advancednetherite:netherite_iron_sword>,
-    <item:advancednetherite:netherite_gold_sword>,
-    <item:advancednetherite:netherite_emerald_sword>,
-    <item:advancednetherite:netherite_diamond_sword>,
-    <item:advancednetherite:netherite_iron_block>,
-    <item:advancednetherite:netherite_gold_block>,
-    <item:advancednetherite:netherite_emerald_block>,
-    <item:advancednetherite:netherite_diamond_block>,
-    <item:alcocraft:spruce_mug_nether_porter>,
-    <item:alcocraft:spruce_mug_wither_stout>,
-    <item:minecraft:nether_bricks>,
-    <item:minecraft:cracked_nether_bricks>,
-    <item:minecraft:chiseled_nether_bricks>,
-    <item:minecraft:nether_brick_stairs>,
-    <item:minecraft:nether_wart_block>,
-    <item:minecraft:nether_sprouts>,
-    <item:minecraft:nether_brick_fence>,
-    <item:minecraft:nether_brick_wall>,
-    <item:minecraft:nether_brick>,
-    <item:farmersdelight:nether_salad>,
-    <item:mcwdoors:print_nether>,
-    <item:mcwfences:modern_nether_brick_wall>,
-    <item:mcwfences:railing_nether_brick_wall>,
-    <item:mcwfences:nether_brick_railing_gate>,
-    <item:mcwwindows:nether_brick_gothic>,
-    <item:mcwwindows:nether_brick_arrow_slit>,
-    <item:sophisticatedbackpacks:netherite_backpack>,
-    <item:sophisticatedstorage:netherite_barrel>,
-    <item:sophisticatedstorage:netherite_chest>,
-    <item:sophisticatedstorage:diamond_to_netherite_tier_upgrade>,
-    <item:minecraft:nether_star>,
-    <item:minecraft:respawn_anchor>,
-    <item:minecraft:tnt>,
-    <item:minecraft:gunpowder>,
-    <item:natprog:steel_saw>,
-    <item:fusion:steel_ingot>,
-    <item:fusion:steel_nugget>,
-    <item:fusion:large_steel_chunk>,
-    <item:fusion:medium_steel_chunk>,
-    <item:fusion:steel_helmet>,
-    <item:fusion:steel_leggings>,
-    <item:fusion:steel_chestplate>,
-    <item:fusion:steel_boots>,
-    <item:fusion:steel_sword>,
-    <item:fusion:steel_pickaxe>,
-    <item:fusion:steel_axe>,
-    <item:fusion:steel_shovel>,
-    <item:fusion:steel_hoe>,
-    <item:fusion:steel_shears>,
-    <item:fusion:steel_block>,
-    <item:fusion:steel_bricks>,
-    <item:fusion:steel_brick_slab>,
-    <item:fusion:steel_brick_stairs>,
-    <item:fusion:steel_bars>,
-    <item:fusion:steel_door>,
-    <item:toms_storage:ts.wireless_terminal>,
-    <item:minecraft:powered_rail>,
-    <item:minecraft:soul_sand>,
-    <item:minecraft:soul_soil>,
-    <item:minecraft:shroomlight>,
-    <item:minecraft:firework_rocket>,
-    <item:minecraft:fire_charge>,
-    <item:minecraft:soul_campfire>,
-    <item:minecraft:ender_eye>,
-    <item:supplementaries:brass_lantern>,
-    <item:sophisticatedstorage:controller>,
-    <item:sophisticatedstorage:storage_link>,
-    <item:sophisticatedbackpacks:stack_upgrade_tier_4>
-];
+var message = new TextComponent("You haven't unlocked Industrial Age yet").setStyle(<constant:formatting:red>);
+var stage = "industrial_age";
+var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
+var toolTip2 = new TextComponent("Unlock Industrial Age").setStyle(<constant:formatting:dark_red>);
 
-var modList as string [] = [
-    "create",
-    "createaddition",
-    "refinedstorage",
-    "refinedstorageaddons",
-    "refinedpipes"
-];
+var items = new stdlib.List<string>;
 
-var exceptItem as IItemStack [] = [
-    <item:bygonenether:gilded_netherite_helmet>,
-    <item:bygonenether:gilded_netherite_chestplate>,
-    <item:bygonenether:gilded_netherite_leggings>,
-    <item:bygonenether:gilded_netherite_boots>,
-    <item:create:cut_granite>,
-    <item:create:cut_granite_stairs>,
-    <item:create:polished_cut_granite>,
-    <item:create:polished_cut_granite_stairs>,
-    <item:create:cut_granite_bricks>,
-    <item:create:cut_granite_brick_stairs>,
-    <item:create:small_granite_bricks>,
-    <item:create:small_granite_brick_stairs>,
-    <item:create:layered_granite>,
-    <item:create:granite_pillar>,
-    <item:create:cut_diorite>,
-    <item:create:cut_diorite_stairs>,
-    <item:create:polished_cut_diorite>,
-    <item:create:polished_cut_diorite_stairs>,
-    <item:create:cut_diorite_bricks>,
-    <item:create:cut_diorite_brick_stairs>,
-    <item:create:small_diorite_bricks>,
-    <item:create:small_diorite_brick_stairs>,
-    <item:create:layered_diorite>,
-    <item:create:diorite_pillar>,
-    <item:create:cut_andesite>,
-    <item:create:cut_andesite_stairs>,
-    <item:create:polished_cut_andesite>,
-    <item:create:polished_cut_andesite_stairs>,
-    <item:create:cut_andesite_bricks>,
-    <item:create:cut_andesite_brick_stairs>,
-    <item:create:small_andesite_bricks>,
-    <item:create:small_andesite_brick_stairs>,
-    <item:create:layered_andesite>,
-    <item:create:andesite_pillar>,
-    <item:create:cut_calcite>,
-    <item:create:cut_calcite_stairs>,
-    <item:create:crimson_window_pane>,
-    <item:create:crimson_window>,
-    <item:create:warped_window>,
-    <item:create:warped_window_pane>,
-    <item:create:copper_nugget>,
-    <item:create:ornate_iron_window>,
-    <item:create:ornate_iron_window_pane>,
-    <item:create:tiled_glass_pane>,
-    <item:create:framed_glass_pane>,
-    <item:create:horizontal_framed_glass_pane>,
-    <item:create:vertical_framed_glass_pane>,
-    <item:create:oak_window_pane>,
-    <item:create:spruce_window_pane>,
-    <item:create:birch_window_pane>,
-    <item:create:jungle_window_pane>,
-    <item:create:acacia_window_pane>,
-    <item:create:dark_oak_window_pane>,
-    <item:create:ornate_iron_window_pane>
-];
+items.add("advancednetherite:netherite_iron_ingot");
+items.add("advancednetherite:netherite_gold_ingot");
+items.add("advancednetherite:netherite_emerald_ingot");
+items.add("advancednetherite:netherite_diamond_ingot");
+items.add("advancednetherite:netherite_iron_helmet");
+items.add("advancednetherite:netherite_iron_chestplate");
+items.add("advancednetherite:netherite_iron_leggings");
+items.add("advancednetherite:netherite_iron_boots");
+items.add("advancednetherite:netherite_gold_helmet");
+items.add("advancednetherite:netherite_gold_chestplate");
+items.add("advancednetherite:netherite_gold_leggings");
+items.add("advancednetherite:netherite_gold_boots");
+items.add("advancednetherite:netherite_emerald_helmet");
+items.add("advancednetherite:netherite_emerald_chestplate");
+items.add("advancednetherite:netherite_emerald_leggings");
+items.add("advancednetherite:netherite_emerald_boots");
+items.add("advancednetherite:netherite_diamond_helmet");
+items.add("advancednetherite:netherite_diamond_chestplate");
+items.add("advancednetherite:netherite_diamond_leggings");
+items.add("advancednetherite:netherite_diamond_boots");
+items.add("advancednetherite:netherite_iron_axe");
+items.add("advancednetherite:netherite_gold_axe");
+items.add("advancednetherite:netherite_emerald_axe");
+items.add("advancednetherite:netherite_diamond_axe");
+items.add("advancednetherite:netherite_iron_hoe");
+items.add("advancednetherite:netherite_gold_hoe");
+items.add("advancednetherite:netherite_emerald_hoe");
+items.add("advancednetherite:netherite_diamond_hoe");
+items.add("advancednetherite:netherite_iron_pickaxe");
+items.add("advancednetherite:netherite_gold_pickaxe");
+items.add("advancednetherite:netherite_emerald_pickaxe");
+items.add("advancednetherite:netherite_diamond_pickaxe");
+items.add("advancednetherite:netherite_iron_shovel");
+items.add("advancednetherite:netherite_gold_shovel");
+items.add("advancednetherite:netherite_emerald_shovel");
+items.add("advancednetherite:netherite_diamond_shovel");
+items.add("advancednetherite:netherite_iron_sword");
+items.add("advancednetherite:netherite_gold_sword");
+items.add("advancednetherite:netherite_emerald_sword");
+items.add("advancednetherite:netherite_diamond_sword");
+items.add("advancednetherite:netherite_iron_block");
+items.add("advancednetherite:netherite_gold_block");
+items.add("advancednetherite:netherite_emerald_block");
+items.add("advancednetherite:netherite_diamond_block");
+items.add("alcocraft:spruce_mug_nether_porter");
+items.add("alcocraft:spruce_mug_wither_stout");
+items.add("farmersdelight:netherite_knife");
+items.add("farmersdelight:nether_salad");
+items.add("fusion:steel_ingot");
+items.add("fusion:steel_nugget");
+items.add("fusion:large_steel_chunk");
+items.add("fusion:medium_steel_chunk");
+items.add("fusion:steel_helmet");
+items.add("fusion:steel_leggings");
+items.add("fusion:steel_chestplate");
+items.add("fusion:steel_boots");
+items.add("fusion:steel_sword");
+items.add("fusion:steel_pickaxe");
+items.add("fusion:steel_axe");
+items.add("fusion:steel_shovel");
+items.add("fusion:steel_hoe");
+items.add("fusion:steel_shears");
+items.add("fusion:steel_block");
+items.add("fusion:steel_bricks");
+items.add("fusion:steel_brick_slab");
+items.add("fusion:steel_brick_stairs");
+items.add("fusion:steel_bars");
+items.add("fusion:steel_door");
+items.add("immersiveengineering:hammer");
+items.add("immersiveengineering:alu_post");
+items.add("immersiveengineering:ingot_aluminum");
+items.add("immersiveengineering:raw_aluminum");
+items.add("immersiveengineering:raw_block_aluminum");
+items.add("immersiveengineering:deepslate_ore_aluminum");
+items.add("immersiveengineering:ore_aluminum");
+items.add("immersiveengineering:alu_scaffolding_standard");
+items.add("immersiveengineering:slab_alu_scaffolding_standard");
+items.add("immersiveengineering:stairs_alu_scaffolding_standard");
+items.add("immersiveengineering:alu_scaffolding_grate_top");
+items.add("immersiveengineering:slab_alu_scaffolding_grate_top");
+items.add("immersiveengineering:stairs_alu_scaffolding_grate_top");
+items.add("immersiveengineering:alu_scaffolding_wooden_top");
+items.add("immersiveengineering:slab_alu_scaffolding_wooden_top");
+items.add("immersiveengineering:stairs_alu_scaffolding_wooden_top");
+items.add("immersiveengineering:stick_aluminum");
+items.add("minecraft:glowstone");
+items.add("minecraft:glowstone_dust");
+items.add("minecraft:nether_quartz_ore");
+items.add("minecraft:ancient_debris");
+items.add("minecraft:repeater");
+items.add("minecraft:comparator");
+items.add("minecraft:blaze_powder");
+items.add("minecraft:blaze_rod");
+items.add("minecraft:magma_cream");
+items.add("minecraft:ghast_tear");
+items.add("minecraft:nether_bricks");
+items.add("minecraft:cracked_nether_bricks");
+items.add("minecraft:chiseled_nether_bricks");
+items.add("minecraft:nether_brick_stairs");
+items.add("minecraft:nether_wart_block");
+items.add("minecraft:nether_sprouts");
+items.add("minecraft:nether_brick_fence");
+items.add("minecraft:nether_brick_wall");
+items.add("minecraft:nether_brick");
+items.add("minecraft:netherite_block");
+items.add("minecraft:netherite_scrap");
+items.add("minecraft:netherite_sword");
+items.add("minecraft:netherite_shovel");
+items.add("minecraft:netherite_pickaxe");
+items.add("minecraft:netherite_axe");
+items.add("minecraft:netherite_hoe");
+items.add("minecraft:netherite_helmet");
+items.add("minecraft:netherite_chestplate");
+items.add("minecraft:netherite_leggings");
+items.add("minecraft:netherite_boots");
+items.add("minecraft:tnt");
+items.add("minecraft:gunpowder");
+items.add("minecraft:respawn_anchor");
+items.add("minecraft:gilded_blackstone");
+items.add("minecraft:powered_rail");
+items.add("minecraft:soul_sand");
+items.add("minecraft:soul_soil");
+items.add("minecraft:shroomlight");
+items.add("minecraft:firework_rocket");
+items.add("minecraft:firework_rocket");
+items.add("minecraft:soul_campfire");
+items.add("minecraft:ender_eye");
+items.add("mcwdoors:print_nether");
+items.add("mcwfences:modern_nether_brick_wall");
+items.add("mcwfences:railing_nether_brick_wall");
+items.add("mcwfences:nether_brick_railing_gate");
+items.add("mcwwindows:nether_brick_gothic");
+items.add("mcwwindows:nether_brick_arrow_slit");
+items.add("natprog:netherite_saw");
+items.add("natprog:steel_saw");
+items.add("sophisticatedbackpacks:netherite_backpack");
+items.add("sophisticatedstorage:netherite_barrel");
+items.add("sophisticatedstorage:netherite_chest");
+items.add("sophisticatedstorage:diamond_to_netherite_tier_upgrade");
+items.add("sophisticatedstorage:controller");
+items.add("sophisticatedstorage:storage_link");
+items.add("sophisticatedbackpacks:stack_upgrade_tier_4");
+items.add("supplementaries:brass_lantern");
+items.add("supplementaries:netherite_trapdoor");
+items.add("supplementaries:netherite_door");
+items.add("toms_storage:ts.wireless_terminal");
+items.add("create:schematicannon");
+items.add("create:schematic_table");
+items.add("create:shaft");
+items.add("create:cogwheel");
+items.add("create:large_cogwheel");
+items.add("create:andesite_encased_shaft");
+items.add("create:brass_encased_shaft");
+items.add("create:andesite_encased_cogwheel");
+items.add("create:brass_encased_cogwheel");
+items.add("create:andesite_encased_large_cogwheel");
+items.add("create:brass_encased_large_cogwheel");
+items.add("create:gearbox");
+items.add("create:clutch");
+items.add("create:gearshift");
+items.add("create:encased_chain_drive");
+items.add("create:adjustable_chain_gearshift");
+items.add("create:creative_motor");
+items.add("create:water_wheel");
+items.add("create:encased_fan");
+items.add("create:nozzle");
+items.add("create:turntable");
+items.add("create:hand_crank");
+items.add("create:cuckoo_clock");
+items.add("create:mysterious_cuckoo_clock");
+items.add("create:millstone");
+items.add("create:crushing_wheel");
+items.add("create:mechanical_press");
+items.add("create:mechanical_mixer");
+items.add("create:basin");
+items.add("create:blaze_burner");
+items.add("create:depot");
+items.add("create:weighted_ejector");
+items.add("create:chute");
+items.add("create:smart_chute");
+items.add("create:speedometer");
+items.add("create:stressometer");
+items.add("create:wooden_bracket");
+items.add("create:metal_bracket");
+items.add("create:metal_girder");
+items.add("create:andesite_ladder");
+items.add("create:brass_ladder");
+items.add("create:copper_ladder");
+items.add("create:fluid_pipe");
+items.add("create:mechanical_pump");
+items.add("create:smart_fluid_pipe");
+items.add("create:fluid_valve");
+items.add("create:copper_valve_handle");
+items.add("create:white_valve_handle");
+items.add("create:orange_valve_handle");
+items.add("create:magenta_valve_handle");
+items.add("create:light_blue_valve_handle");
+items.add("create:yellow_valve_handle");
+items.add("create:lime_valve_handle");
+items.add("create:pink_valve_handle");
+items.add("create:gray_valve_handle");
+items.add("create:light_gray_valve_handle");
+items.add("create:cyan_valve_handle");
+items.add("create:purple_valve_handle");
+items.add("create:blue_valve_handle");
+items.add("create:brown_valve_handle");
+items.add("create:green_valve_handle");
+items.add("create:red_valve_handle");
+items.add("create:black_valve_handle");
+items.add("create:fluid_tank");
+items.add("create:creative_fluid_tank");
+items.add("create:hose_pulley");
+items.add("create:item_drain");
+items.add("create:spout");
+items.add("create:portable_fluid_interface");
+items.add("create:steam_engine");
+items.add("create:steam_whistle");
+items.add("create:mechanical_piston");
+items.add("create:sticky_mechanical_piston");
+items.add("create:piston_extension_pole");
+items.add("create:gantry_carriage");
+items.add("create:gantry_shaft");
+items.add("create:windmill_bearing");
+items.add("create:mechanical_bearing");
+items.add("create:clockwork_bearing");
+items.add("create:rope_pulley");
+items.add("create:cart_assembler");
+items.add("create:controller_rail");
+items.add("create:linear_chassis");
+items.add("create:secondary_linear_chassis");
+items.add("create:radial_chassis");
+items.add("create:sticker");
+items.add("create:mechanical_drill");
+items.add("create:mechanical_saw");
+items.add("create:deployer");
+items.add("create:portable_storage_interface");
+items.add("create:redstone_contact");
+items.add("create:mechanical_harvester");
+items.add("create:mechanical_plough");
+items.add("create:white_seat");
+items.add("create:orange_seat");
+items.add("create:magenta_seat");
+items.add("create:light_blue_seat");
+items.add("create:yellow_seat");
+items.add("create:lime_seat");
+items.add("create:pink_seat");
+items.add("create:gray_seat");
+items.add("create:light_gray_seat");
+items.add("create:cyan_seat");
+items.add("create:purple_seat");
+items.add("create:blue_seat");
+items.add("create:brown_seat");
+items.add("create:green_seat");
+items.add("create:red_seat");
+items.add("create:black_seat");
+items.add("create:sail_frame");
+items.add("create:white_sail");
+items.add("create:andesite_casing");
+items.add("create:brass_casing");
+items.add("create:copper_casing");
+items.add("create:shadow_steel_casing");
+items.add("create:refined_radiance_casing");
+items.add("create:mechanical_crafter");
+items.add("create:sequenced_gearshift");
+items.add("create:flywheel");
+items.add("create:rotation_speed_controller");
+items.add("create:mechanical_arm");
+items.add("create:track");
+items.add("create:railway_casing");
+items.add("create:track_station");
+items.add("create:track_signal");
+items.add("create:track_observer");
+items.add("create:controls");
+items.add("create:train_door");
+items.add("create:train_trapdoor");
+items.add("create:framed_glass_door");
+items.add("create:framed_glass_trapdoor");
+items.add("create:item_vault");
+items.add("create:andesite_funnel");
+items.add("create:brass_funnel");
+items.add("create:andesite_tunnel");
+items.add("create:brass_tunnel");
+items.add("create:content_observer");
+items.add("create:stockpile_switch");
+items.add("create:creative_crate");
+items.add("create:display_link");
+items.add("create:display_board");
+items.add("create:nixie_tube");
+items.add("create:rose_quartz_lamp");
+items.add("create:redstone_link");
+items.add("create:analog_lever");
+items.add("create:placard");
+items.add("create:pulse_repeater");
+items.add("create:pulse_extender");
+items.add("create:powered_latch");
+items.add("create:powered_toggle_latch");
+items.add("create:copper_backtank");
+items.add("create:peculiar_bell");
+items.add("create:haunted_bell");
+items.add("create:white_toolbox");
+items.add("create:orange_toolbox");
+items.add("create:magenta_toolbox");
+items.add("create:light_blue_toolbox");
+items.add("create:yellow_toolbox");
+items.add("create:lime_toolbox");
+items.add("create:pink_toolbox");
+items.add("create:gray_toolbox");
+items.add("create:light_gray_toolbox");
+items.add("create:cyan_toolbox");
+items.add("create:purple_toolbox");
+items.add("create:blue_toolbox");
+items.add("create:brown_toolbox");
+items.add("create:green_toolbox");
+items.add("create:red_toolbox");
+items.add("create:black_toolbox");
+items.add("create:zinc_ore");
+items.add("create:deepslate_zinc_ore");
+items.add("create:raw_zinc_block");
+items.add("create:zinc_block");
+items.add("create:brass_block");
+items.add("create:rose_quartz_block");
+items.add("create:rose_quartz_tiles");
+items.add("create:small_rose_quartz_tiles");
+items.add("create:copper_shingles");
+items.add("create:exposed_copper_shingles");
+items.add("create:weathered_copper_shingles");
+items.add("create:oxidized_copper_shingles");
+items.add("create:copper_shingle_slab");
+items.add("create:exposed_copper_shingle_slab");
+items.add("create:weathered_copper_shingle_slab");
+items.add("create:oxidized_copper_shingle_slab");
+items.add("create:copper_shingle_stairs");
+items.add("create:exposed_copper_shingle_stairs");
+items.add("create:weathered_copper_shingle_stairs");
+items.add("create:oxidized_copper_shingle_stairs");
+items.add("create:waxed_copper_shingles");
+items.add("create:waxed_exposed_copper_shingles");
+items.add("create:waxed_weathered_copper_shingles");
+items.add("create:waxed_oxidized_copper_shingles");
+items.add("create:waxed_copper_shingle_slab");
+items.add("create:waxed_exposed_copper_shingle_slab");
+items.add("create:waxed_weathered_copper_shingle_slab");
+items.add("create:waxed_oxidized_copper_shingle_slab");
+items.add("create:waxed_copper_shingle_stairs");
+items.add("create:waxed_exposed_copper_shingle_stairs");
+items.add("create:waxed_weathered_copper_shingle_stairs");
+items.add("create:waxed_oxidized_copper_shingle_stairs");
+items.add("create:copper_tiles");
+items.add("create:exposed_copper_tiles");
+items.add("create:weathered_copper_tiles");
+items.add("create:oxidized_copper_tiles");
+items.add("create:copper_tile_slab");
+items.add("create:exposed_copper_tile_slab");
+items.add("create:weathered_copper_tile_slab");
+items.add("create:oxidized_copper_tile_slab");
+items.add("create:copper_tile_stairs");
+items.add("create:exposed_copper_tile_stairs");
+items.add("create:weathered_copper_tile_stairs");
+items.add("create:oxidized_copper_tile_stairs");
+items.add("create:waxed_copper_tiles");
+items.add("create:waxed_exposed_copper_tiles");
+items.add("create:waxed_weathered_copper_tiles");
+items.add("create:waxed_oxidized_copper_tiles");
+items.add("create:waxed_copper_tile_slab");
+items.add("create:waxed_exposed_copper_tile_slab");
+items.add("create:waxed_weathered_copper_tile_slab");
+items.add("create:waxed_oxidized_copper_tile_slab");
+items.add("create:waxed_copper_tile_stairs");
+items.add("create:waxed_exposed_copper_tile_stairs");
+items.add("create:waxed_weathered_copper_tile_stairs");
+items.add("create:waxed_oxidized_copper_tile_stairs");
+items.add("create:wheat_flour");
+items.add("create:dough");
+items.add("create:cinder_flour");
+items.add("create:rose_quartz");
+items.add("create:polished_rose_quartz");
+items.add("create:powdered_obsidian");
+items.add("create:sturdy_sheet");
+items.add("create:propeller");
+items.add("create:whisk");
+items.add("create:brass_hand");
+items.add("create:crafter_slot_cover");
+items.add("create:electron_tube");
+items.add("create:incomplete_precision_mechanism");
+items.add("create:unprocessed_obsidian_sheet");
+items.add("create:incomplete_track");
+items.add("create:precision_mechanism");
+items.add("create:blaze_cake_base");
+items.add("create:blaze_cake");
+items.add("create:creative_blaze_cake");
+items.add("create:bar_of_chocolate");
+items.add("create:sweet_roll");
+items.add("create:chocolate_glazed_berries");
+items.add("create:honeyed_apple");
+items.add("create:builders_tea");
+items.add("create:raw_zinc");
+items.add("create:andesite_alloy");
+items.add("create:zinc_ingot");
+items.add("create:brass_ingot");
+items.add("create:chromatic_compound");
+items.add("create:shadow_steel");
+items.add("create:refined_radiance");
+items.add("create:zinc_nugget");
+items.add("create:brass_nugget");
+items.add("create:experience_nugget");
+items.add("create:copper_sheet");
+items.add("create:brass_sheet");
+items.add("create:iron_sheet");
+items.add("create:golden_sheet");
+items.add("create:crushed_iron_ore");
+items.add("create:crushed_gold_ore");
+items.add("create:crushed_copper_ore");
+items.add("create:crushed_zinc_ore");
+items.add("create:crushed_osmium_ore");
+items.add("create:crushed_platinum_ore");
+items.add("create:crushed_silver_ore");
+items.add("create:crushed_tin_ore");
+items.add("create:crushed_lead_ore");
+items.add("create:crushed_quicksilver_ore");
+items.add("create:crushed_aluminum_ore");
+items.add("create:crushed_uranium_ore");
+items.add("create:crushed_nickel_ore");
+items.add("create:belt_connector");
+items.add("create:vertical_gearbox");
+items.add("create:empty_blaze_burner");
+items.add("create:goggles");
+items.add("create:super_glue");
+items.add("create:minecart_coupling");
+items.add("create:crafting_blueprint");
+items.add("create:copper_backtank_placeable");
+items.add("create:diving_helmet");
+items.add("create:diving_boots");
+items.add("create:sand_paper");
+items.add("create:red_sand_paper");
+items.add("create:wrench");
+items.add("create:minecart_contraption");
+items.add("create:furnace_minecart_contraption");
+items.add("create:chest_minecart_contraption");
+items.add("create:linked_controller");
+items.add("create:potato_cannon");
+items.add("create:extendo_grip");
+items.add("create:wand_of_symmetry");
+items.add("create:handheld_worldshaper");
+items.add("create:tree_fertilizer");
+items.add("create:filter");
+items.add("create:attribute_filter");
+items.add("create:schedule");
+items.add("create:empty_schematic");
+items.add("create:schematic_and_quill");
+items.add("create:schematic");
+items.add("create:honey_bucket");
+items.add("create:chocolate_bucket");
+items.add("create:tiled_glass");
+items.add("create:framed_glass");
+items.add("create:horizontal_framed_glass");
+items.add("create:vertical_framed_glass");
+items.add("create:oak_window");
+items.add("create:spruce_window");
+items.add("create:birch_window");
+items.add("create:jungle_window");
+items.add("create:acacia_window");
+items.add("create:dark_oak_window");
+items.add("create:cut_granite_slab");
+items.add("create:cut_granite_wall");
+items.add("create:polished_cut_granite_slab");
+items.add("create:polished_cut_granite_wall");
+items.add("create:cut_granite_bricks");
+items.add("create:cut_granite_brick_stairs");
+items.add("create:cut_granite_brick_slab");
+items.add("create:cut_granite_brick_wall");
+items.add("create:small_granite_brick_slab");
+items.add("create:small_granite_brick_wall");
+items.add("create:cut_diorite_slab");
+items.add("create:cut_diorite_wall");
+items.add("create:polished_cut_diorite_slab");
+items.add("create:polished_cut_diorite_wall");
+items.add("create:cut_diorite_brick_slab");
+items.add("create:cut_diorite_brick_wall");
+items.add("create:small_diorite_brick_slab");
+items.add("create:small_diorite_brick_wall");
+items.add("create:cut_andesite_slab");
+items.add("create:cut_andesite_wall");
+items.add("create:polished_cut_andesite_slab");
+items.add("create:polished_cut_andesite_wall");
+items.add("create:cut_andesite_brick_slab");
+items.add("create:cut_andesite_brick_wall");
+items.add("create:small_andesite_brick_slab");
+items.add("create:small_andesite_brick_wall");
+items.add("create:cut_calcite_slab");
+items.add("create:cut_calcite_wall");
+items.add("create:polished_cut_calcite");
+items.add("create:polished_cut_calcite_stairs");
+items.add("create:polished_cut_calcite_slab");
+items.add("create:polished_cut_calcite_wall");
+items.add("create:cut_calcite_bricks");
+items.add("create:cut_calcite_brick_stairs");
+items.add("create:cut_calcite_brick_slab");
+items.add("create:cut_calcite_brick_wall");
+items.add("create:small_calcite_bricks");
+items.add("create:small_calcite_brick_stairs");
+items.add("create:small_calcite_brick_slab");
+items.add("create:small_calcite_brick_wall");
+items.add("create:layered_calcite");
+items.add("create:calcite_pillar");
+items.add("create:cut_dripstone");
+items.add("create:cut_dripstone_stairs");
+items.add("create:cut_dripstone_slab");
+items.add("create:cut_dripstone_wall");
+items.add("create:polished_cut_dripstone");
+items.add("create:polished_cut_dripstone_stairs");
+items.add("create:polished_cut_dripstone_slab");
+items.add("create:polished_cut_dripstone_wall");
+items.add("create:cut_dripstone_bricks");
+items.add("create:cut_dripstone_brick_stairs");
+items.add("create:cut_dripstone_brick_slab");
+items.add("create:cut_dripstone_brick_wall");
+items.add("create:small_dripstone_bricks");
+items.add("create:small_dripstone_brick_stairs");
+items.add("create:small_dripstone_brick_slab");
+items.add("create:small_dripstone_brick_wall");
+items.add("create:layered_dripstone");
+items.add("create:dripstone_pillar");
+items.add("create:cut_deepslate");
+items.add("create:cut_deepslate_stairs");
+items.add("create:cut_deepslate_slab");
+items.add("create:cut_deepslate_wall");
+items.add("create:polished_cut_deepslate");
+items.add("create:polished_cut_deepslate_stairs");
+items.add("create:polished_cut_deepslate_slab");
+items.add("create:polished_cut_deepslate_wall");
+items.add("create:cut_deepslate_bricks");
+items.add("create:cut_deepslate_brick_stairs");
+items.add("create:cut_deepslate_brick_slab");
+items.add("create:cut_deepslate_brick_wall");
+items.add("create:small_deepslate_bricks");
+items.add("create:small_deepslate_brick_stairs");
+items.add("create:small_deepslate_brick_slab");
+items.add("create:small_deepslate_brick_wall");
+items.add("create:layered_deepslate");
+items.add("create:deepslate_pillar");
+items.add("create:cut_tuff");
+items.add("create:cut_tuff_stairs");
+items.add("create:cut_tuff_slab");
+items.add("create:cut_tuff_wall");
+items.add("create:polished_cut_tuff");
+items.add("create:polished_cut_tuff_stairs");
+items.add("create:polished_cut_tuff_slab");
+items.add("create:polished_cut_tuff_wall");
+items.add("create:cut_tuff_bricks");
+items.add("create:cut_tuff_brick_stairs");
+items.add("create:cut_tuff_brick_slab");
+items.add("create:cut_tuff_brick_wall");
+items.add("create:small_tuff_bricks");
+items.add("create:small_tuff_brick_stairs");
+items.add("create:small_tuff_brick_slab");
+items.add("create:small_tuff_brick_wall");
+items.add("create:layered_tuff");
+items.add("create:tuff_pillar");
+items.add("create:asurine");
+items.add("create:cut_asurine");
+items.add("create:cut_asurine_stairs");
+items.add("create:cut_asurine_slab");
+items.add("create:cut_asurine_wall");
+items.add("create:polished_cut_asurine");
+items.add("create:polished_cut_asurine_stairs");
+items.add("create:polished_cut_asurine_slab");
+items.add("create:polished_cut_asurine_wall");
+items.add("create:cut_asurine_bricks");
+items.add("create:cut_asurine_brick_stairs");
+items.add("create:cut_asurine_brick_slab");
+items.add("create:cut_asurine_brick_wall");
+items.add("create:small_asurine_bricks");
+items.add("create:small_asurine_brick_stairs");
+items.add("create:small_asurine_brick_slab");
+items.add("create:small_asurine_brick_wall");
+items.add("create:layered_asurine");
+items.add("create:asurine_pillar");
+items.add("create:crimsite");
+items.add("create:cut_crimsite");
+items.add("create:cut_crimsite_stairs");
+items.add("create:cut_crimsite_slab");
+items.add("create:cut_crimsite_wall");
+items.add("create:polished_cut_crimsite");
+items.add("create:polished_cut_crimsite_stairs");
+items.add("create:polished_cut_crimsite_slab");
+items.add("create:polished_cut_crimsite_wall");
+items.add("create:cut_crimsite_bricks");
+items.add("create:cut_crimsite_brick_stairs");
+items.add("create:cut_crimsite_brick_slab");
+items.add("create:cut_crimsite_brick_wall");
+items.add("create:small_crimsite_bricks");
+items.add("create:small_crimsite_brick_stairs");
+items.add("create:small_crimsite_brick_slab");
+items.add("create:small_crimsite_brick_wall");
+items.add("create:layered_crimsite");
+items.add("create:crimsite_pillar");
+items.add("create:limestone");
+items.add("create:cut_limestone");
+items.add("create:cut_limestone_stairs");
+items.add("create:cut_limestone_slab");
+items.add("create:cut_limestone_wall");
+items.add("create:polished_cut_limestone");
+items.add("create:polished_cut_limestone_stairs");
+items.add("create:polished_cut_limestone_slab");
+items.add("create:polished_cut_limestone_wall");
+items.add("create:cut_limestone_bricks");
+items.add("create:cut_limestone_brick_stairs");
+items.add("create:cut_limestone_brick_slab");
+items.add("create:cut_limestone_brick_wall");
+items.add("create:small_limestone_bricks");
+items.add("create:small_limestone_brick_stairs");
+items.add("create:small_limestone_brick_slab");
+items.add("create:small_limestone_brick_wall");
+items.add("create:layered_limestone");
+items.add("create:limestone_pillar");
+items.add("create:ochrum");
+items.add("create:cut_ochrum");
+items.add("create:cut_ochrum_stairs");
+items.add("create:cut_ochrum_slab");
+items.add("create:cut_ochrum_wall");
+items.add("create:polished_cut_ochrum");
+items.add("create:polished_cut_ochrum_stairs");
+items.add("create:polished_cut_ochrum_slab");
+items.add("create:polished_cut_ochrum_wall");
+items.add("create:cut_ochrum_bricks");
+items.add("create:cut_ochrum_brick_stairs");
+items.add("create:cut_ochrum_brick_slab");
+items.add("create:cut_ochrum_brick_wall");
+items.add("create:small_ochrum_bricks");
+items.add("create:small_ochrum_brick_stairs");
+items.add("create:small_ochrum_brick_slab");
+items.add("create:small_ochrum_brick_wall");
+items.add("create:layered_ochrum");
+items.add("create:ochrum_pillar");
+items.add("create:scoria");
+items.add("create:cut_scoria");
+items.add("create:cut_scoria_stairs");
+items.add("create:cut_scoria_slab");
+items.add("create:cut_scoria_wall");
+items.add("create:polished_cut_scoria");
+items.add("create:polished_cut_scoria_stairs");
+items.add("create:polished_cut_scoria_slab");
+items.add("create:polished_cut_scoria_wall");
+items.add("create:cut_scoria_bricks");
+items.add("create:cut_scoria_brick_stairs");
+items.add("create:cut_scoria_brick_slab");
+items.add("create:cut_scoria_brick_wall");
+items.add("create:small_scoria_bricks");
+items.add("create:small_scoria_brick_stairs");
+items.add("create:small_scoria_brick_slab");
+items.add("create:small_scoria_brick_wall");
+items.add("create:layered_scoria");
+items.add("create:scoria_pillar");
+items.add("create:scorchia");
+items.add("create:cut_scorchia");
+items.add("create:cut_scorchia_stairs");
+items.add("create:cut_scorchia_slab");
+items.add("create:cut_scorchia_wall");
+items.add("create:polished_cut_scorchia");
+items.add("create:polished_cut_scorchia_stairs");
+items.add("create:polished_cut_scorchia_slab");
+items.add("create:polished_cut_scorchia_wall");
+items.add("create:cut_scorchia_bricks");
+items.add("create:cut_scorchia_brick_stairs");
+items.add("create:cut_scorchia_brick_slab");
+items.add("create:cut_scorchia_brick_wall");
+items.add("create:small_scorchia_bricks");
+items.add("create:small_scorchia_brick_stairs");
+items.add("create:small_scorchia_brick_slab");
+items.add("create:small_scorchia_brick_wall");
+items.add("create:layered_scorchia");
+items.add("create:scorchia_pillar");
+items.add("create:veridium");
+items.add("create:cut_veridium");
+items.add("create:cut_veridium_stairs");
+items.add("create:cut_veridium_slab");
+items.add("create:cut_veridium_wall");
+items.add("create:polished_cut_veridium");
+items.add("create:polished_cut_veridium_stairs");
+items.add("create:polished_cut_veridium_slab");
+items.add("create:polished_cut_veridium_wall");
+items.add("create:cut_veridium_bricks");
+items.add("create:cut_veridium_brick_stairs");
+items.add("create:cut_veridium_brick_slab");
+items.add("create:cut_veridium_brick_wall");
+items.add("create:small_veridium_bricks");
+items.add("create:small_veridium_brick_stairs");
+items.add("create:small_veridium_brick_slab");
+items.add("create:small_veridium_brick_wall");
+items.add("create:layered_veridium");
+items.add("create:veridium_pillar");
 
-for item in listItem {
-    setStagedItem("industrial_age", item);
+for item in game.items {
+    if(item.registryName.namespace == "createaddition") { 
+        items.add(item.registryName.toString()); 
+    }
+
+    if(item.registryName.namespace == "refinedstorage") { 
+        items.add(item.registryName.toString()); 
+    }
+
+    if(item.registryName.namespace == "refinedstorageaddons") { 
+        items.add(item.registryName.toString());
+    }
+
+    if(item.registryName.namespace == "refinedpipes") { 
+        items.add(item.registryName.toString()); 
+    }
+
+    if(item.registryName.namespace == "create") { 
+        println(item.registryName.toString()); 
+    }
 }
 
-for mod in modList {
-    setStagedMod("industrial_age", mod);
+//set stage to items
+for item in items {
+    setStageItem(stage, item);
 }
 
-for item in exceptItem {
-    removeStagedItem(item);
-}
+//LeftClick/Interact
+CTEventManager.register<PlayerInteractEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    //check item on hand and the block interacting with
+    for item in items {
+        if event.getItemStack().registryName.toString() == item && level.getBlockState(pos).block.registryName.toString() != "minecraft:air"{
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+
+        if level.getBlockState(pos).block.registryName.toString() == item {
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+});
+
+//RightClick
+CTEventManager.register<RightClickBlockEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    for item in items {
+        if level.getBlockState(pos).block.registryName.toString() == item{
+            println(item);
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+
+});
+
+CTEventManager.register<RightClickItemEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    for item in items {
+        if event.getItemStack().registryName.toString() == item{
+            println(item);
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+});
+
+CTEventManager.register<ItemTooltipEvent>((event) => {
+    var maybePlayer = event.player;
+    if maybePlayer != null {
+        val player = maybePlayer as Player;
+        for item in items {
+            if !player.hasGameStage(stage) {
+                if BracketHandlers.getItem(item).ingredient.matches(event.itemStack) {
+                    event.tooltip.add(toolTip1);
+                    event.tooltip.add(toolTip2);
+                }
+            }
+        }
+    }
+});

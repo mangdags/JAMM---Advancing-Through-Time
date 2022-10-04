@@ -1,7 +1,7 @@
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.tag.MCTag;
 import mods.jei.JEI;
-
+import stdlib.List;
 import crafttweaker.api.bracket.BracketHandlers;
 import crafttweaker.api.events.CTEventManager;
 import crafttweaker.api.event.block.BlockBreakEvent;
@@ -11,6 +11,9 @@ import crafttweaker.api.event.entity.player.interact.RightClickBlockEvent;
 import crafttweaker.api.event.entity.player.interact.PlayerInteractEvent;
 import crafttweaker.api.item.type.block.BlockItem;
 import crafttweaker.api.tag.manager.ITagManager;
+import crafttweaker.api.ingredient.IIngredient;
+import crafttweaker.api.text.TextComponent;
+import crafttweaker.api.text.MutableComponent;
 
 #priority 100
 
@@ -41,5 +44,26 @@ public function removeStagedItem(item as IItemStack) as void{
 public function removeStagedTag(tag as MCTag) as void{
     for elem in tag.idElements{
         mods.recipestages.Recipes.clearRecipeStage(elem);
+    }
+}
+
+public class StagedInfo {
+    public val ingredient as IIngredient : get;
+    public val text as MutableComponent : get;
+
+    public this (ingredient as IIngredient, text as string) {
+        this.ingredient = ingredient;
+        this.text = text as TextComponent;
+    }
+
+    public this(ingredient as IIngredient, text as MutableComponent) {
+        this.ingredient = ingredient;
+        this.text = text;
+    }
+}
+
+public function tagToList (list as List<string>, tag as MCTag) as void {
+    for item in tag.idElements {
+        list.add(BracketHandlers.getItem(item).registryName.toString());
     }
 }
