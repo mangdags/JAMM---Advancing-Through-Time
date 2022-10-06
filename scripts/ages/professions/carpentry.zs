@@ -1,531 +1,1368 @@
+import mods.jei.JEI;
 import crafttweaker.api.item.IItemStack;
+import crafttweaker.api.bracket.BracketHandlers;
 import crafttweaker.api.tag.MCTag;
+import crafttweaker.api.text.Style;
+import crafttweaker.api.text.ChatFormatting;
+import crafttweaker.api.text.TextComponent;
+import crafttweaker.api.events.CTEventManager;
+import crafttweaker.api.event.block.BlockBreakEvent;
+import crafttweaker.api.event.block.BlockEvent;
+import crafttweaker.api.event.entity.player.interact.LeftClickBlockEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickBlockEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickItemEvent;
+import crafttweaker.api.event.entity.player.interact.PlayerInteractEvent;
+import crafttweaker.api.item.type.block.BlockItem;
+import crafttweaker.api.tag.manager.ITagManager;
+import crafttweaker.api.event.entity.player.ItemTooltipEvent;
+import crafttweaker.api.entity.type.player.Player;
+import crafttweaker.api.ingredient.IIngredient;
+import crafttweaker.api.item.ItemDefinition;
+import stdlib.List;
 
-var listItem as IItemStack [] = [
-    <item:mcwbridges:oak_log_bridge_middle>,
-    <item:mcwbridges:birch_log_bridge_middle>,
-    <item:mcwbridges:acacia_log_bridge_middle>,
-    <item:mcwbridges:spruce_log_bridge_middle>,
-    <item:mcwbridges:jungle_log_bridge_middle>,
-    <item:mcwbridges:dark_oak_log_bridge_middle>,
-    <item:mcwbridges:rope_oak_bridge>,
-    <item:mcwbridges:rope_birch_bridge>,
-    <item:mcwbridges:rope_spruce_bridge>,
-    <item:mcwbridges:rope_jungle_bridge>,
-    <item:mcwbridges:rope_acacia_bridge>,
-    <item:mcwbridges:rope_dark_oak_bridge>,
-    <item:mcwbridges:oak_rail_bridge>,
-    <item:mcwbridges:spruce_rail_bridge>,
-    <item:mcwbridges:birch_rail_bridge>,
-    <item:mcwbridges:jungle_rail_bridge>,
-    <item:mcwbridges:acacia_rail_bridge>,
-    <item:mcwbridges:dark_oak_rail_bridge>,
-    <item:mcwbridges:oak_bridge_pier>,
-    <item:mcwbridges:spruce_bridge_pier>,
-    <item:mcwbridges:birch_bridge_pier>,
-    <item:mcwbridges:jungle_bridge_pier>,
-    <item:mcwbridges:acacia_bridge_pier>,
-    <item:mcwbridges:dark_oak_bridge_pier>,
-    <item:mcwbridges:oak_log_bridge_stair>,
-    <item:mcwbridges:spruce_log_bridge_stair>,
-    <item:mcwbridges:birch_log_bridge_stair>,
-    <item:mcwbridges:jungle_log_bridge_stair>,
-    <item:mcwbridges:acacia_log_bridge_stair>,
-    <item:mcwbridges:dark_oak_log_bridge_stair>,
-    <item:mcwbridges:oak_rope_bridge_stair>,
-    <item:mcwbridges:spruce_rope_bridge_stair>,
-    <item:mcwbridges:birch_rope_bridge_stair>,
-    <item:mcwbridges:jungle_rope_bridge_stair>,
-    <item:mcwbridges:acacia_rope_bridge_stair>,
-    <item:mcwbridges:dark_oak_rope_bridge_stair>,
-    <item:mcwfences:oak_picket_fence>,
-    <item:mcwfences:spruce_picket_fence>,
-    <item:mcwfences:birch_picket_fence>,
-    <item:mcwfences:jungle_picket_fence>,
-    <item:mcwfences:acacia_picket_fence>,
-    <item:mcwfences:dark_oak_picket_fence>,
-    <item:mcwfences:oak_stockade_fence>,
-    <item:mcwfences:spruce_stockade_fence>,
-    <item:mcwfences:birch_stockade_fence>,
-    <item:mcwfences:jungle_stockade_fence>,
-    <item:mcwfences:acacia_stockade_fence>,
-    <item:mcwfences:dark_oak_stockade_fence>,
-    <item:mcwfences:oak_horse_fence>,
-    <item:mcwfences:spruce_horse_fence>,
-    <item:mcwfences:birch_horse_fence>,
-    <item:mcwfences:jungle_horse_fence>,
-    <item:mcwfences:acacia_horse_fence>,
-    <item:mcwfences:dark_oak_horse_fence>,
-    <item:mcwfences:oak_wired_fence>,
-    <item:mcwfences:spruce_wired_fence>,
-    <item:mcwfences:birch_wired_fence>,
-    <item:mcwfences:jungle_wired_fence>,
-    <item:mcwfences:acacia_wired_fence>,
-    <item:mcwfences:dark_oak_wired_fence>,
-    <item:mcwfences:oak_highley_gate>,
-    <item:mcwfences:spruce_highley_gate>,
-    <item:mcwfences:birch_highley_gate>,
-    <item:mcwfences:jungle_highley_gate>,
-    <item:mcwfences:acacia_highley_gate>,
-    <item:mcwfences:dark_oak_highley_gate>,
-    <item:mcwfences:oak_pyramid_gate>,
-    <item:mcwfences:spruce_pyramid_gate>,
-    <item:mcwfences:birch_pyramid_gate>,
-    <item:mcwfences:jungle_pyramid_gate>,
-    <item:mcwfences:acacia_pyramid_gate>,
-    <item:mcwfences:dark_oak_pyramid_gate>,
-    <item:mcwfences:modern_andesite_wall>,
-    <item:mcwfences:modern_diorite_wall>,
-    <item:mcwfences:modern_granite_wall>,
-    <item:mcwfences:railing_stone_brick_wall>,
-    <item:mcwfences:railing_andesite_wall>,
-    <item:mcwfences:railing_diorite_wall>,
-    <item:mcwfences:railing_granite_wall>,
-    <item:mcwfences:railing_sandstone_wall>,
-    <item:mcwfences:railing_red_sandstone_wall>,
-    <item:mcwfences:railing_deepslate_wall>,
-    <item:mcwfences:railing_deepslate_brick_wall>,
-    <item:mcwfences:stone_brick_railing_gate>,
-    <item:mcwfences:andesite_railing_gate>,
-    <item:mcwfences:diorite_railing_gate>,
-    <item:mcwfences:granite_railing_gate>,
-    <item:mcwfences:sandstone_railing_gate>,
-    <item:mcwfences:red_sandstone_railing_gate>,
-    <item:mcwfences:deepslate_railing_gate>,
-    <item:mcwfences:deepslate_brick_railing_gate>,
-    <item:supplementaries:daub>,
-    <item:supplementaries:daub_frame>,
-    <item:supplementaries:daub_brace>,
-    <item:supplementaries:daub_cross_brace>,
-    <item:supplementaries:timber_frame>,
-    <item:supplementaries:timber_brace>,
-    <item:supplementaries:timber_cross_brace>,
-    <item:supplementaries:ash_bricks>,
-    <item:supplementaries:ash_bricks_slab>,
-    <item:supplementaries:ash_bricks_stairs>,
-    <item:supplementaries:stone_lamp>,
-    <item:supplementaries:deepslate_lamp>,
-    <item:projectbrazier:orange_open_barrel>,
-    <item:projectbrazier:apple_open_barrel>,
-    <item:projectbrazier:birch_open_barrel>,
-    <item:projectbrazier:oak_open_barrel>,
-    <item:projectbrazier:acacia_open_barrel>,
-    <item:projectbrazier:jungle_open_barrel>,
-    <item:projectbrazier:dark_oak_open_barrel>,
-    <item:projectbrazier:spruce_open_barrel>,
-    <item:projectbrazier:orange_closed_barrel>,
-    <item:projectbrazier:apple_closed_barrel>,
-    <item:projectbrazier:birch_closed_barrel>,
-    <item:projectbrazier:oak_closed_barrel>,
-    <item:projectbrazier:acacia_closed_barrel>,
-    <item:projectbrazier:jungle_closed_barrel>,
-    <item:projectbrazier:dark_oak_closed_barrel>,
-    <item:projectbrazier:spruce_closed_barrel>,
-    <item:projectbrazier:orange_plank_chair>,
-    <item:projectbrazier:apple_plank_chair>,
-    <item:projectbrazier:birch_plank_chair>,
-    <item:projectbrazier:oak_plank_chair>,
-    <item:projectbrazier:acacia_plank_chair>,
-    <item:projectbrazier:jungle_plank_chair>,
-    <item:projectbrazier:dark_oak_plank_chair>,
-    <item:projectbrazier:spruce_plank_chair>,
-    <item:projectbrazier:orange_solid_chair>,
-    <item:projectbrazier:apple_solid_chair>,
-    <item:projectbrazier:birch_solid_chair>,
-    <item:projectbrazier:oak_solid_chair>,
-    <item:projectbrazier:acacia_solid_chair>,
-    <item:projectbrazier:jungle_solid_chair>,
-    <item:projectbrazier:dark_oak_solid_chair>,
-    <item:projectbrazier:spruce_solid_chair>,
-    <item:projectbrazier:orange_stool>,
-    <item:projectbrazier:apple_stool>,
-    <item:projectbrazier:birch_stool>,
-    <item:projectbrazier:oak_stool>,
-    <item:projectbrazier:acacia_stool>,
-    <item:projectbrazier:jungle_stool>,
-    <item:projectbrazier:dark_oak_stool>,
-    <item:projectbrazier:spruce_stool>,
-    <item:projectbrazier:orange_armrest_chair>,
-    <item:projectbrazier:apple_armrest_chair>,
-    <item:projectbrazier:birch_armrest_chair>,
-    <item:projectbrazier:oak_armrest_chair>,
-    <item:projectbrazier:acacia_armrest_chair>,
-    <item:projectbrazier:jungle_armrest_chair>,
-    <item:projectbrazier:dark_oak_armrest_chair>,
-    <item:projectbrazier:spruce_armrest_chair>,
-    <item:projectbrazier:orange_bench>,
-    <item:projectbrazier:apple_bench>,
-    <item:projectbrazier:birch_bench>,
-    <item:projectbrazier:oak_bench>,
-    <item:projectbrazier:acacia_bench>,
-    <item:projectbrazier:jungle_bench>,
-    <item:projectbrazier:dark_oak_bench>,
-    <item:projectbrazier:spruce_bench>,
-    <item:projectbrazier:orange_log_chair>,
-    <item:projectbrazier:apple_log_chair>,
-    <item:projectbrazier:birch_log_chair>,
-    <item:projectbrazier:oak_log_chair>,
-    <item:projectbrazier:acacia_log_chair>,
-    <item:projectbrazier:jungle_log_chair>,
-    <item:projectbrazier:dark_oak_log_chair>,
-    <item:projectbrazier:spruce_log_chair>,
-    <item:projectbrazier:orange_log_bench>,
-    <item:projectbrazier:apple_log_bench>,
-    <item:projectbrazier:birch_log_bench>,
-    <item:projectbrazier:oak_log_bench>,
-    <item:projectbrazier:acacia_log_bench>,
-    <item:projectbrazier:jungle_log_bench>,
-    <item:projectbrazier:dark_oak_log_bench>,
-    <item:projectbrazier:spruce_log_bench>,
-    <item:projectbrazier:stripped_orange_log_chair>,
-    <item:projectbrazier:stripped_apple_log_chair>,
-    <item:projectbrazier:stripped_birch_log_chair>,
-    <item:projectbrazier:stripped_oak_log_chair>,
-    <item:projectbrazier:stripped_acacia_log_chair>,
-    <item:projectbrazier:stripped_jungle_log_chair>,
-    <item:projectbrazier:stripped_dark_oak_log_chair>,
-    <item:projectbrazier:stripped_spruce_log_chair>,
-    <item:projectbrazier:stripped_orange_log_bench>,
-    <item:projectbrazier:stripped_apple_log_bench>,
-    <item:projectbrazier:stripped_birch_log_bench>,
-    <item:projectbrazier:stripped_oak_log_bench>,
-    <item:projectbrazier:stripped_acacia_log_bench>,
-    <item:projectbrazier:stripped_jungle_log_bench>,
-    <item:projectbrazier:stripped_dark_oak_log_bench>,
-    <item:projectbrazier:stripped_spruce_log_bench>,
-    <item:projectbrazier:solid_orange_table>,
-    <item:projectbrazier:solid_apple_table>,
-    <item:projectbrazier:solid_birch_table>,
-    <item:projectbrazier:solid_oak_table>,
-    <item:projectbrazier:solid_acacia_table>,
-    <item:projectbrazier:solid_jungle_table>,
-    <item:projectbrazier:solid_dark_oak_table>,
-    <item:projectbrazier:solid_spruce_table>,
-    <item:projectbrazier:orange_cross_lattice>,
-    <item:projectbrazier:apple_cross_lattice>,
-    <item:projectbrazier:birch_cross_lattice>,
-    <item:projectbrazier:oak_cross_lattice>,
-    <item:projectbrazier:acacia_cross_lattice>,
-    <item:projectbrazier:jungle_cross_lattice>,
-    <item:projectbrazier:dark_oak_cross_lattice>,
-    <item:projectbrazier:spruce_cross_lattice>,
-    <item:projectbrazier:orange_dense_vertical_lattice>,
-    <item:projectbrazier:apple_dense_vertical_lattice>,
-    <item:projectbrazier:birch_dense_vertical_lattice>,
-    <item:projectbrazier:oak_dense_vertical_lattice>,
-    <item:projectbrazier:acacia_dense_vertical_lattice>,
-    <item:projectbrazier:jungle_dense_vertical_lattice>,
-    <item:projectbrazier:dark_oak_dense_vertical_lattice>,
-    <item:projectbrazier:spruce_dense_vertical_lattice>,
-    <item:projectbrazier:orange_diamond_lattice>,
-    <item:projectbrazier:apple_diamond_lattice>,
-    <item:projectbrazier:birch_diamond_lattice>,
-    <item:projectbrazier:oak_diamond_lattice>,
-    <item:projectbrazier:acacia_diamond_lattice>,
-    <item:projectbrazier:jungle_diamond_lattice>,
-    <item:projectbrazier:dark_oak_diamond_lattice>,
-    <item:projectbrazier:spruce_diamond_lattice>,
-    <item:projectbrazier:orange_grid_lattice>,
-    <item:projectbrazier:apple_grid_lattice>,
-    <item:projectbrazier:birch_grid_lattice>,
-    <item:projectbrazier:oak_grid_lattice>,
-    <item:projectbrazier:acacia_grid_lattice>,
-    <item:projectbrazier:jungle_grid_lattice>,
-    <item:projectbrazier:dark_oak_grid_lattice>,
-    <item:projectbrazier:spruce_grid_lattice>,
-    <item:projectbrazier:orange_vertical_lattice>,
-    <item:projectbrazier:apple_vertical_lattice>,
-    <item:projectbrazier:birch_vertical_lattice>,
-    <item:projectbrazier:oak_vertical_lattice>,
-    <item:projectbrazier:acacia_vertical_lattice>,
-    <item:projectbrazier:jungle_vertical_lattice>,
-    <item:projectbrazier:dark_oak_vertical_lattice>,
-    <item:projectbrazier:spruce_vertical_lattice>,
-    <item:projectbrazier:white_polstered_orange_bench>,
-    <item:projectbrazier:white_polstered_apple_bench>,
-    <item:projectbrazier:white_polstered_birch_bench>,
-    <item:projectbrazier:white_polstered_oak_bench>,
-    <item:projectbrazier:white_polstered_acacia_bench>,
-    <item:projectbrazier:white_polstered_jungle_bench>,
-    <item:projectbrazier:white_polstered_dark_oak_bench>,
-    <item:projectbrazier:white_polstered_spruce_bench>,
-    <item:projectbrazier:white_polstered_oak_bench>,
-    <item:projectbrazier:white_polstered_acacia_bench>,
-    <item:projectbrazier:white_polstered_jungle_bench>,
-    <item:projectbrazier:white_polstered_dark_oak_bench>,
-    <item:projectbrazier:white_polstered_spruce_bench>,
-    <item:projectbrazier:orange_polstered_orange_bench>,
-    <item:projectbrazier:orange_polstered_apple_bench>,
-    <item:projectbrazier:orange_polstered_birch_bench>,
-    <item:projectbrazier:orange_polstered_oak_bench>,
-    <item:projectbrazier:orange_polstered_acacia_bench>,
-    <item:projectbrazier:orange_polstered_jungle_bench>,
-    <item:projectbrazier:orange_polstered_dark_oak_bench>,
-    <item:projectbrazier:orange_polstered_spruce_bench>,
-    <item:projectbrazier:magenta_polstered_orange_bench>,
-    <item:projectbrazier:magenta_polstered_apple_bench>,
-    <item:projectbrazier:magenta_polstered_birch_bench>,
-    <item:projectbrazier:magenta_polstered_oak_bench>,
-    <item:projectbrazier:magenta_polstered_acacia_bench>,
-    <item:projectbrazier:magenta_polstered_jungle_bench>,
-    <item:projectbrazier:magenta_polstered_dark_oak_bench>,
-    <item:projectbrazier:magenta_polstered_spruce_bench>,
-    <item:projectbrazier:light_blue_polstered_orange_bench>,
-    <item:projectbrazier:light_blue_polstered_apple_bench>,
-    <item:projectbrazier:light_blue_polstered_birch_bench>,
-    <item:projectbrazier:light_blue_polstered_oak_bench>,
-    <item:projectbrazier:light_blue_polstered_acacia_bench>,
-    <item:projectbrazier:light_blue_polstered_jungle_bench>,
-    <item:projectbrazier:light_blue_polstered_dark_oak_bench>,
-    <item:projectbrazier:light_blue_polstered_spruce_bench>,
-    <item:projectbrazier:yellow_polstered_orange_bench>,
-    <item:projectbrazier:yellow_polstered_apple_bench>,
-    <item:projectbrazier:yellow_polstered_birch_bench>,
-    <item:projectbrazier:yellow_polstered_oak_bench>,
-    <item:projectbrazier:yellow_polstered_acacia_bench>,
-    <item:projectbrazier:yellow_polstered_jungle_bench>,
-    <item:projectbrazier:yellow_polstered_dark_oak_bench>,
-    <item:projectbrazier:yellow_polstered_spruce_bench>,
-    <item:projectbrazier:lime_polstered_orange_bench>,
-    <item:projectbrazier:lime_polstered_apple_bench>,
-    <item:projectbrazier:lime_polstered_birch_bench>,
-    <item:projectbrazier:lime_polstered_oak_bench>,
-    <item:projectbrazier:lime_polstered_acacia_bench>,
-    <item:projectbrazier:lime_polstered_jungle_bench>,
-    <item:projectbrazier:lime_polstered_dark_oak_bench>,
-    <item:projectbrazier:lime_polstered_spruce_bench>,
-    <item:projectbrazier:pink_polstered_orange_bench>,
-    <item:projectbrazier:pink_polstered_apple_bench>,
-    <item:projectbrazier:pink_polstered_birch_bench>,
-    <item:projectbrazier:pink_polstered_oak_bench>,
-    <item:projectbrazier:pink_polstered_acacia_bench>,
-    <item:projectbrazier:pink_polstered_warped_bench>,
-    <item:projectbrazier:pink_polstered_jungle_bench>,
-    <item:projectbrazier:pink_polstered_dark_oak_bench>,
-    <item:projectbrazier:pink_polstered_spruce_bench>,
-    <item:projectbrazier:gray_polstered_orange_bench>,
-    <item:projectbrazier:gray_polstered_apple_bench>,
-    <item:projectbrazier:gray_polstered_birch_bench>,
-    <item:projectbrazier:gray_polstered_oak_bench>,
-    <item:projectbrazier:gray_polstered_acacia_bench>,
-    <item:projectbrazier:gray_polstered_jungle_bench>,
-    <item:projectbrazier:gray_polstered_dark_oak_bench>,
-    <item:projectbrazier:gray_polstered_spruce_bench>,
-    <item:projectbrazier:light_gray_polstered_orange_bench>,
-    <item:projectbrazier:light_gray_polstered_apple_bench>,
-    <item:projectbrazier:light_gray_polstered_birch_bench>,
-    <item:projectbrazier:light_gray_polstered_oak_bench>,
-    <item:projectbrazier:light_gray_polstered_acacia_bench>,
-    <item:projectbrazier:light_gray_polstered_jungle_bench>,
-    <item:projectbrazier:light_gray_polstered_dark_oak_bench>,
-    <item:projectbrazier:light_gray_polstered_spruce_bench>,
-    <item:projectbrazier:cyan_polstered_orange_bench>,
-    <item:projectbrazier:cyan_polstered_apple_bench>,
-    <item:projectbrazier:cyan_polstered_birch_bench>,
-    <item:projectbrazier:cyan_polstered_oak_bench>,
-    <item:projectbrazier:cyan_polstered_acacia_bench>,
-    <item:projectbrazier:cyan_polstered_jungle_bench>,
-    <item:projectbrazier:cyan_polstered_dark_oak_bench>,
-    <item:projectbrazier:cyan_polstered_spruce_bench>,
-    <item:projectbrazier:purple_polstered_orange_bench>,
-    <item:projectbrazier:purple_polstered_apple_bench>,
-    <item:projectbrazier:purple_polstered_birch_bench>,
-    <item:projectbrazier:purple_polstered_oak_bench>,
-    <item:projectbrazier:purple_polstered_acacia_bench>,
-    <item:projectbrazier:purple_polstered_jungle_bench>,
-    <item:projectbrazier:purple_polstered_dark_oak_bench>,
-    <item:projectbrazier:purple_polstered_spruce_bench>,
-    <item:projectbrazier:blue_polstered_orange_bench>,
-    <item:projectbrazier:blue_polstered_apple_bench>,
-    <item:projectbrazier:blue_polstered_birch_bench>,
-    <item:projectbrazier:blue_polstered_oak_bench>,
-    <item:projectbrazier:blue_polstered_acacia_bench>,
-    <item:projectbrazier:blue_polstered_jungle_bench>,
-    <item:projectbrazier:blue_polstered_dark_oak_bench>,
-    <item:projectbrazier:blue_polstered_spruce_bench>,
-    <item:projectbrazier:brown_polstered_orange_bench>,
-    <item:projectbrazier:brown_polstered_apple_bench>,
-    <item:projectbrazier:brown_polstered_birch_bench>,
-    <item:projectbrazier:brown_polstered_oak_bench>,
-    <item:projectbrazier:brown_polstered_acacia_bench>,
-    <item:projectbrazier:brown_polstered_jungle_bench>,
-    <item:projectbrazier:brown_polstered_dark_oak_bench>,
-    <item:projectbrazier:brown_polstered_spruce_bench>,
-    <item:projectbrazier:green_polstered_orange_bench>,
-    <item:projectbrazier:green_polstered_apple_bench>,
-    <item:projectbrazier:green_polstered_birch_bench>,
-    <item:projectbrazier:green_polstered_oak_bench>,
-    <item:projectbrazier:green_polstered_acacia_bench>,
-    <item:projectbrazier:green_polstered_jungle_bench>,
-    <item:projectbrazier:green_polstered_dark_oak_bench>,
-    <item:projectbrazier:green_polstered_spruce_bench>,
-    <item:projectbrazier:red_polstered_orange_bench>,
-    <item:projectbrazier:red_polstered_apple_bench>,
-    <item:projectbrazier:red_polstered_birch_bench>,
-    <item:projectbrazier:red_polstered_oak_bench>,
-    <item:projectbrazier:red_polstered_acacia_bench>,
-    <item:projectbrazier:red_polstered_jungle_bench>,
-    <item:projectbrazier:red_polstered_dark_oak_bench>,
-    <item:projectbrazier:red_polstered_spruce_bench>,
-    <item:projectbrazier:black_polstered_orange_bench>,
-    <item:projectbrazier:black_polstered_apple_bench>,
-    <item:projectbrazier:black_polstered_birch_bench>,
-    <item:projectbrazier:black_polstered_oak_bench>,
-    <item:projectbrazier:black_polstered_acacia_bench>,
-    <item:projectbrazier:black_polstered_jungle_bench>,
-    <item:projectbrazier:black_polstered_dark_oak_bench>,
-    <item:projectbrazier:black_polstered_spruce_bench>,
-    <item:projectbrazier:orange_platform>,
-    <item:projectbrazier:apple_platform>,
-    <item:projectbrazier:birch_platform>,
-    <item:projectbrazier:oak_platform>,
-    <item:projectbrazier:acacia_platform>,
-    <item:projectbrazier:jungle_platform>,
-    <item:projectbrazier:dark_oak_platform>,
-    <item:projectbrazier:spruce_platform>,
-    <item:mcwwindows:window_base>,
-    <item:mcwwindows:window_centre_bar_base>,
-    <item:mcwwindows:oak_window>,
-    <item:mcwwindows:spruce_window>,
-    <item:mcwwindows:birch_window>,
-    <item:mcwwindows:jungle_window>,
-    <item:mcwwindows:acacia_window>,
-    <item:mcwwindows:dark_oak_window>,
-    <item:mcwwindows:oak_plank_window>,
-    <item:mcwwindows:spruce_plank_window>,
-    <item:mcwwindows:birch_plank_window>,
-    <item:mcwwindows:jungle_plank_window>,
-    <item:mcwwindows:acacia_plank_window>,
-    <item:mcwwindows:dark_oak_plank_window>,
-    <item:mcwwindows:oak_window2>,
-    <item:mcwwindows:oak_plank_window2>,
-    <item:mcwwindows:spruce_window2>,
-    <item:mcwwindows:spruce_plank_window2>,
-    <item:mcwwindows:birch_window2>,
-    <item:mcwwindows:birch_plank_window2>,
-    <item:mcwwindows:jungle_window2>,
-    <item:mcwwindows:jungle_plank_window2>,
-    <item:mcwwindows:acacia_window2>,
-    <item:mcwwindows:acacia_plank_window2>,
-    <item:mcwwindows:dark_oak_window2>,
-    <item:mcwwindows:dark_oak_plank_window2>,
-    <item:mcwwindows:stripped_oak_log_window>,
-    <item:mcwwindows:stripped_oak_log_window2>,
-    <item:mcwwindows:stripped_spruce_log_window>,
-    <item:mcwwindows:stripped_spruce_log_window2>,
-    <item:mcwwindows:stripped_birch_log_window>,
-    <item:mcwwindows:stripped_birch_log_window2>,
-    <item:mcwwindows:stripped_jungle_log_window>,
-    <item:mcwwindows:stripped_jungle_log_window2>,
-    <item:mcwwindows:stripped_acacia_log_window>,
-    <item:mcwwindows:stripped_acacia_log_window2>,
-    <item:mcwwindows:andesite_window>,
-    <item:mcwwindows:andesite_window2>,
-    <item:mcwwindows:diorite_window>,
-    <item:mcwwindows:diorite_window2>,
-    <item:mcwwindows:granite_window>,
-    <item:mcwwindows:granite_window2>,
-    <item:mcwwindows:stone_window>,
-    <item:mcwwindows:stone_window2>,
-    <item:mcwwindows:stripped_dark_oak_log_window>,
-    <item:mcwwindows:stripped_dark_oak_log_window2>,
-    <item:mcwwindows:crimson_planks_window2>,
-    <item:mcwwindows:stone_brick_gothic>,
-    <item:mcwwindows:prismarine_brick_gothic>
-];
+var message = new TextComponent("You haven't unlocked Carpentry yet").setStyle(<constant:formatting:red>);
+var stage = "carpentry";
+var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
+var toolTip2 = new TextComponent("Unlock Carpentry").setStyle(<constant:formatting:dark_red>);
 
-var modList as string [] = [
-    "cfm",
-    "mcwroofs"
-];
+var items = new stdlib.List<string>;
 
-var exceptItem as IItemStack [] = [
-    <item:cfm:stone_table>,
-    <item:cfm:stone_chair>,
-    <item:cfm:stone_coffee_table>,
-    <item:cfm:stone_bedside_cabinet>,
-    <item:cfm:stone_desk>,
-    <item:cfm:stone_desk_cabinet>,
-    <item:cfm:oak_hedge>,
-    <item:cfm:spruce_hedge>,
-    <item:cfm:birch_hedge>,
-    <item:cfm:jungle_hedge>,
-    <item:cfm:acacia_hedge>,
-    <item:cfm:dark_oak_hedge>,
-    <item:mcwroofs:deepslate_roof>,
-    <item:mcwroofs:deepslate_top_roof>,
-    <item:mcwroofs:deepslate_lower_roof>,
-    <item:mcwroofs:deepslate_steep_roof>,
-    <item:mcwroofs:deepslate_upper_lower_roof>,
-    <item:mcwroofs:deepslate_upper_steep_roof>,
-    <item:mcwroofs:stone_roof>,
-    <item:mcwroofs:stone_top_roof>,
-    <item:mcwroofs:stone_lower_roof>,
-    <item:mcwroofs:stone_steep_roof>,
-    <item:mcwroofs:stone_upper_lower_roof>,
-    <item:mcwroofs:stone_upper_steep_roof>,
-    <item:mcwroofs:cobblestone_roof>,
-    <item:mcwroofs:cobblestone_top_roof>,
-    <item:mcwroofs:cobblestone_lower_roof>,
-    <item:mcwroofs:cobblestone_steep_roof>,
-    <item:mcwroofs:cobblestone_upper_lower_roof>,
-    <item:mcwroofs:cobblestone_upper_steep_roof>,
-    <item:mcwroofs:sandstone_roof>,
-    <item:mcwroofs:sandstone_top_roof>,
-    <item:mcwroofs:sandstone_lower_roof>,
-    <item:mcwroofs:sandstone_steep_roof>,
-    <item:mcwroofs:sandstone_upper_lower_roof>,
-    <item:mcwroofs:sandstone_upper_steep_roof>,
-    <item:mcwroofs:red_sandstone_roof>,
-    <item:mcwroofs:red_sandstone_top_roof>,
-    <item:mcwroofs:red_sandstone_lower_roof>,
-    <item:mcwroofs:red_sandstone_steep_roof>,
-    <item:mcwroofs:red_sandstone_upper_lower_roof>,
-    <item:mcwroofs:red_sandstone_upper_steep_roof>,
-    <item:cfm:warped_upgraded_gate>,
-    <item:cfm:stripped_crimson_upgraded_gate>,
-    <item:cfm:stripped_warped_upgraded_gate>,
-    <item:cfm:crimson_crate>,
-    <item:cfm:warped_crate>,
-    <item:cfm:stripped_crimson_crate>,
-    <item:cfm:crimson_park_bench>,
-    <item:cfm:stripped_warped_crate>,
-    <item:cfm:warped_park_bench>,
-    <item:cfm:stripped_crimson_park_bench>,
-    <item:cfm:stripped_warped_park_bench>,
-    <item:cfm:crimson_mail_box>,
-    <item:cfm:warped_mail_box>,
-    <item:cfm:stripped_crimson_mail_box>,
-    <item:cfm:stripped_warped_mail_box>,
-    <item:cfm:warped_chair>,
-    <item:cfm:stripped_crimson_chair>,
-    <item:cfm:stripped_warped_chair>,
-    <item:cfm:warped_coffee_table>,
-    <item:cfm:crimson_coffee_table>,
-    <item:cfm:stripped_crimson_coffee_table>,
-    <item:cfm:crimson_cabinet>
-      
-];
-
-var exceptTag as MCTag [] = [
-    <tag:items:cfm:fence_gates/picket>,
-    <tag:items:cfm:fence_gates/upgraded>,
-    <tag:items:cfm:fences/upgraded>,
-    <tag:items:cfm:fences/picket>
-];
-
-for item in listItem {
-    setStagedItem("carpentry", item);
+items.add("mcwbridges:oak_log_bridge_middle");
+items.add("mcwbridges:birch_log_bridge_middle");
+items.add("mcwbridges:acacia_log_bridge_middle");
+items.add("mcwbridges:spruce_log_bridge_middle");
+items.add("mcwbridges:jungle_log_bridge_middle");
+items.add("mcwbridges:dark_oak_log_bridge_middle");
+items.add("mcwbridges:rope_oak_bridge");
+items.add("mcwbridges:rope_birch_bridge");
+items.add("mcwbridges:rope_spruce_bridge");
+items.add("mcwbridges:rope_jungle_bridge");
+items.add("mcwbridges:rope_acacia_bridge");
+items.add("mcwbridges:rope_dark_oak_bridge");
+items.add("mcwbridges:oak_rail_bridge");
+items.add("mcwbridges:spruce_rail_bridge");
+items.add("mcwbridges:birch_rail_bridge");
+items.add("mcwbridges:jungle_rail_bridge");
+items.add("mcwbridges:acacia_rail_bridge");
+items.add("mcwbridges:dark_oak_rail_bridge");
+items.add("mcwbridges:oak_bridge_pier");
+items.add("mcwbridges:spruce_bridge_pier");
+items.add("mcwbridges:birch_bridge_pier");
+items.add("mcwbridges:jungle_bridge_pier");
+items.add("mcwbridges:acacia_bridge_pier");
+items.add("mcwbridges:dark_oak_bridge_pier");
+items.add("mcwbridges:oak_log_bridge_stair");
+items.add("mcwbridges:spruce_log_bridge_stair");
+items.add("mcwbridges:birch_log_bridge_stair");
+items.add("mcwbridges:jungle_log_bridge_stair");
+items.add("mcwbridges:acacia_log_bridge_stair");
+items.add("mcwbridges:dark_oak_log_bridge_stair");
+items.add("mcwbridges:oak_rope_bridge_stair");
+items.add("mcwbridges:spruce_rope_bridge_stair");
+items.add("mcwbridges:birch_rope_bridge_stair");
+items.add("mcwbridges:jungle_rope_bridge_stair");
+items.add("mcwbridges:acacia_rope_bridge_stair");
+items.add("mcwbridges:dark_oak_rope_bridge_stair");
+items.add("mcwfences:oak_stockade_fence");
+items.add("mcwfences:spruce_stockade_fence");
+items.add("mcwfences:birch_stockade_fence");
+items.add("mcwfences:jungle_stockade_fence");
+items.add("mcwfences:acacia_stockade_fence");
+items.add("mcwfences:dark_oak_stockade_fence");
+items.add("mcwfences:oak_horse_fence");
+items.add("mcwfences:spruce_horse_fence");
+items.add("mcwfences:birch_horse_fence");
+items.add("mcwfences:jungle_horse_fence");
+items.add("mcwfences:acacia_horse_fence");
+items.add("mcwfences:dark_oak_horse_fence");
+items.add("mcwfences:oak_wired_fence");
+items.add("mcwfences:spruce_wired_fence");
+items.add("mcwfences:birch_wired_fence");
+items.add("mcwfences:jungle_wired_fence");
+items.add("mcwfences:acacia_wired_fence");
+items.add("mcwfences:dark_oak_wired_fence");
+items.add("mcwfences:oak_highley_gate");
+items.add("mcwfences:spruce_highley_gate");
+items.add("mcwfences:birch_highley_gate");
+items.add("mcwfences:jungle_highley_gate");
+items.add("mcwfences:acacia_highley_gate");
+items.add("mcwfences:dark_oak_highley_gate");
+items.add("mcwfences:oak_pyramid_gate");
+items.add("mcwfences:spruce_pyramid_gate");
+items.add("mcwfences:birch_pyramid_gate");
+items.add("mcwfences:jungle_pyramid_gate");
+items.add("mcwfences:acacia_pyramid_gate");
+items.add("mcwfences:dark_oak_pyramid_gate");
+items.add("mcwfences:modern_andesite_wall");
+items.add("mcwfences:modern_diorite_wall");
+items.add("mcwfences:modern_granite_wall");
+items.add("mcwfences:railing_stone_brick_wall");
+items.add("mcwfences:railing_andesite_wall");
+items.add("mcwfences:railing_diorite_wall");
+items.add("mcwfences:railing_granite_wall");
+items.add("mcwfences:railing_sandstone_wall");
+items.add("mcwfences:railing_red_sandstone_wall");
+items.add("mcwfences:railing_deepslate_wall");
+items.add("mcwfences:railing_deepslate_brick_wall");
+items.add("mcwfences:stone_brick_railing_gate");
+items.add("mcwfences:andesite_railing_gate");
+items.add("mcwfences:diorite_railing_gate");
+items.add("mcwfences:granite_railing_gate");
+items.add("mcwfences:sandstone_railing_gate");
+items.add("mcwfences:red_sandstone_railing_gate");
+items.add("mcwfences:deepslate_railing_gate");
+items.add("mcwfences:deepslate_brick_railing_gate");
+items.add("mcwfences:oak_picket_fence");
+items.add("mcwfences:spruce_picket_fence");
+items.add("mcwfences:birch_picket_fence");
+items.add("mcwfences:jungle_picket_fence");
+items.add("mcwfences:acacia_picket_fence");
+items.add("mcwfences:dark_oak_picket_fence");
+items.add("mcwwindows:window_base");
+items.add("mcwwindows:window_centre_bar_base");
+items.add("mcwwindows:oak_window");
+items.add("mcwwindows:spruce_window");
+items.add("mcwwindows:birch_window");
+items.add("mcwwindows:jungle_window");
+items.add("mcwwindows:acacia_window");
+items.add("mcwwindows:dark_oak_window");
+items.add("mcwwindows:oak_plank_window");
+items.add("mcwwindows:spruce_plank_window");
+items.add("mcwwindows:birch_plank_window");
+items.add("mcwwindows:jungle_plank_window");
+items.add("mcwwindows:acacia_plank_window");
+items.add("mcwwindows:dark_oak_plank_window");
+items.add("mcwwindows:oak_window2");
+items.add("mcwwindows:oak_plank_window2");
+items.add("mcwwindows:spruce_window2");
+items.add("mcwwindows:spruce_plank_window2");
+items.add("mcwwindows:birch_window2");
+items.add("mcwwindows:birch_plank_window2");
+items.add("mcwwindows:jungle_window2");
+items.add("mcwwindows:jungle_plank_window2");
+items.add("mcwwindows:acacia_window2");
+items.add("mcwwindows:acacia_plank_window2");
+items.add("mcwwindows:dark_oak_window2");
+items.add("mcwwindows:dark_oak_plank_window2");
+items.add("mcwwindows:stripped_oak_log_window");
+items.add("mcwwindows:stripped_oak_log_window2");
+items.add("mcwwindows:stripped_spruce_log_window");
+items.add("mcwwindows:stripped_spruce_log_window2");
+items.add("mcwwindows:stripped_birch_log_window");
+items.add("mcwwindows:stripped_birch_log_window2");
+items.add("mcwwindows:stripped_jungle_log_window");
+items.add("mcwwindows:stripped_jungle_log_window2");
+items.add("mcwwindows:stripped_acacia_log_window");
+items.add("mcwwindows:stripped_acacia_log_window2");
+items.add("mcwwindows:andesite_window");
+items.add("mcwwindows:andesite_window2");
+items.add("mcwwindows:diorite_window");
+items.add("mcwwindows:diorite_window2");
+items.add("mcwwindows:granite_window");
+items.add("mcwwindows:granite_window2");
+items.add("mcwwindows:stone_window");
+items.add("mcwwindows:stone_window2");
+items.add("mcwwindows:stripped_dark_oak_log_window");
+items.add("mcwwindows:stripped_dark_oak_log_window2");
+items.add("mcwwindows:crimson_planks_window2");
+items.add("mcwwindows:stone_brick_gothic");
+items.add("mcwwindows:prismarine_brick_gothic");
+items.add("projectbrazier:orange_open_barrel");
+items.add("projectbrazier:apple_open_barrel");
+items.add("projectbrazier:birch_open_barrel");
+items.add("projectbrazier:oak_open_barrel");
+items.add("projectbrazier:acacia_open_barrel");
+items.add("projectbrazier:jungle_open_barrel");
+items.add("projectbrazier:dark_oak_open_barrel");
+items.add("projectbrazier:spruce_open_barrel");
+items.add("projectbrazier:orange_closed_barrel");
+items.add("projectbrazier:apple_closed_barrel");
+items.add("projectbrazier:birch_closed_barrel");
+items.add("projectbrazier:oak_closed_barrel");
+items.add("projectbrazier:acacia_closed_barrel");
+items.add("projectbrazier:jungle_closed_barrel");
+items.add("projectbrazier:dark_oak_closed_barrel");
+items.add("projectbrazier:spruce_closed_barrel");
+items.add("projectbrazier:orange_plank_chair");
+items.add("projectbrazier:apple_plank_chair");
+items.add("projectbrazier:birch_plank_chair");
+items.add("projectbrazier:oak_plank_chair");
+items.add("projectbrazier:acacia_plank_chair");
+items.add("projectbrazier:jungle_plank_chair");
+items.add("projectbrazier:dark_oak_plank_chair");
+items.add("projectbrazier:spruce_plank_chair");
+items.add("projectbrazier:orange_solid_chair");
+items.add("projectbrazier:apple_solid_chair");
+items.add("projectbrazier:birch_solid_chair");
+items.add("projectbrazier:oak_solid_chair");
+items.add("projectbrazier:acacia_solid_chair");
+items.add("projectbrazier:jungle_solid_chair");
+items.add("projectbrazier:dark_oak_solid_chair");
+items.add("projectbrazier:spruce_solid_chair");
+items.add("projectbrazier:orange_stool");
+items.add("projectbrazier:apple_stool");
+items.add("projectbrazier:birch_stool");
+items.add("projectbrazier:oak_stool");
+items.add("projectbrazier:acacia_stool");
+items.add("projectbrazier:jungle_stool");
+items.add("projectbrazier:dark_oak_stool");
+items.add("projectbrazier:spruce_stool");
+items.add("projectbrazier:orange_armrest_chair");
+items.add("projectbrazier:apple_armrest_chair");
+items.add("projectbrazier:birch_armrest_chair");
+items.add("projectbrazier:oak_armrest_chair");
+items.add("projectbrazier:acacia_armrest_chair");
+items.add("projectbrazier:jungle_armrest_chair");
+items.add("projectbrazier:dark_oak_armrest_chair");
+items.add("projectbrazier:spruce_armrest_chair");
+items.add("projectbrazier:orange_bench");
+items.add("projectbrazier:apple_bench");
+items.add("projectbrazier:birch_bench");
+items.add("projectbrazier:oak_bench");
+items.add("projectbrazier:acacia_bench");
+items.add("projectbrazier:jungle_bench");
+items.add("projectbrazier:dark_oak_bench");
+items.add("projectbrazier:spruce_bench");
+items.add("projectbrazier:orange_log_chair");
+items.add("projectbrazier:apple_log_chair");
+items.add("projectbrazier:birch_log_chair");
+items.add("projectbrazier:oak_log_chair");
+items.add("projectbrazier:acacia_log_chair");
+items.add("projectbrazier:jungle_log_chair");
+items.add("projectbrazier:dark_oak_log_chair");
+items.add("projectbrazier:spruce_log_chair");
+items.add("projectbrazier:orange_log_bench");
+items.add("projectbrazier:apple_log_bench");
+items.add("projectbrazier:birch_log_bench");
+items.add("projectbrazier:oak_log_bench");
+items.add("projectbrazier:acacia_log_bench");
+items.add("projectbrazier:jungle_log_bench");
+items.add("projectbrazier:dark_oak_log_bench");
+items.add("projectbrazier:spruce_log_bench");
+items.add("projectbrazier:stripped_orange_log_chair");
+items.add("projectbrazier:stripped_apple_log_chair");
+items.add("projectbrazier:stripped_birch_log_chair");
+items.add("projectbrazier:stripped_oak_log_chair");
+items.add("projectbrazier:stripped_acacia_log_chair");
+items.add("projectbrazier:stripped_jungle_log_chair");
+items.add("projectbrazier:stripped_dark_oak_log_chair");
+items.add("projectbrazier:stripped_spruce_log_chair");
+items.add("projectbrazier:stripped_orange_log_bench");
+items.add("projectbrazier:stripped_apple_log_bench");
+items.add("projectbrazier:stripped_birch_log_bench");
+items.add("projectbrazier:stripped_oak_log_bench");
+items.add("projectbrazier:stripped_acacia_log_bench");
+items.add("projectbrazier:stripped_jungle_log_bench");
+items.add("projectbrazier:stripped_dark_oak_log_bench");
+items.add("projectbrazier:stripped_spruce_log_bench");
+items.add("projectbrazier:solid_orange_table");
+items.add("projectbrazier:solid_apple_table");
+items.add("projectbrazier:solid_birch_table");
+items.add("projectbrazier:solid_oak_table");
+items.add("projectbrazier:solid_acacia_table");
+items.add("projectbrazier:solid_jungle_table");
+items.add("projectbrazier:solid_dark_oak_table");
+items.add("projectbrazier:solid_spruce_table");
+items.add("projectbrazier:orange_cross_lattice");
+items.add("projectbrazier:apple_cross_lattice");
+items.add("projectbrazier:birch_cross_lattice");
+items.add("projectbrazier:oak_cross_lattice");
+items.add("projectbrazier:acacia_cross_lattice");
+items.add("projectbrazier:jungle_cross_lattice");
+items.add("projectbrazier:dark_oak_cross_lattice");
+items.add("projectbrazier:spruce_cross_lattice");
+items.add("projectbrazier:orange_dense_vertical_lattice");
+items.add("projectbrazier:apple_dense_vertical_lattice");
+items.add("projectbrazier:birch_dense_vertical_lattice");
+items.add("projectbrazier:oak_dense_vertical_lattice");
+items.add("projectbrazier:acacia_dense_vertical_lattice");
+items.add("projectbrazier:jungle_dense_vertical_lattice");
+items.add("projectbrazier:dark_oak_dense_vertical_lattice");
+items.add("projectbrazier:spruce_dense_vertical_lattice");
+items.add("projectbrazier:orange_diamond_lattice");
+items.add("projectbrazier:apple_diamond_lattice");
+items.add("projectbrazier:birch_diamond_lattice");
+items.add("projectbrazier:oak_diamond_lattice");
+items.add("projectbrazier:acacia_diamond_lattice");
+items.add("projectbrazier:jungle_diamond_lattice");
+items.add("projectbrazier:dark_oak_diamond_lattice");
+items.add("projectbrazier:spruce_diamond_lattice");
+items.add("projectbrazier:orange_grid_lattice");
+items.add("projectbrazier:apple_grid_lattice");
+items.add("projectbrazier:birch_grid_lattice");
+items.add("projectbrazier:oak_grid_lattice");
+items.add("projectbrazier:acacia_grid_lattice");
+items.add("projectbrazier:jungle_grid_lattice");
+items.add("projectbrazier:dark_oak_grid_lattice");
+items.add("projectbrazier:spruce_grid_lattice");
+items.add("projectbrazier:orange_vertical_lattice");
+items.add("projectbrazier:apple_vertical_lattice");
+items.add("projectbrazier:birch_vertical_lattice");
+items.add("projectbrazier:oak_vertical_lattice");
+items.add("projectbrazier:acacia_vertical_lattice");
+items.add("projectbrazier:jungle_vertical_lattice");
+items.add("projectbrazier:dark_oak_vertical_lattice");
+items.add("projectbrazier:spruce_vertical_lattice");
+items.add("projectbrazier:white_polstered_orange_bench");
+items.add("projectbrazier:white_polstered_apple_bench");
+items.add("projectbrazier:white_polstered_birch_bench");
+items.add("projectbrazier:white_polstered_oak_bench");
+items.add("projectbrazier:white_polstered_acacia_bench");
+items.add("projectbrazier:white_polstered_jungle_bench");
+items.add("projectbrazier:white_polstered_dark_oak_bench");
+items.add("projectbrazier:white_polstered_spruce_bench");
+items.add("projectbrazier:white_polstered_oak_bench");
+items.add("projectbrazier:white_polstered_acacia_bench");
+items.add("projectbrazier:white_polstered_jungle_bench");
+items.add("projectbrazier:white_polstered_dark_oak_bench");
+items.add("projectbrazier:white_polstered_spruce_bench");
+items.add("projectbrazier:orange_polstered_orange_bench");
+items.add("projectbrazier:orange_polstered_apple_bench");
+items.add("projectbrazier:orange_polstered_birch_bench");
+items.add("projectbrazier:orange_polstered_oak_bench");
+items.add("projectbrazier:orange_polstered_acacia_bench");
+items.add("projectbrazier:orange_polstered_jungle_bench");
+items.add("projectbrazier:orange_polstered_dark_oak_bench");
+items.add("projectbrazier:orange_polstered_spruce_bench");
+items.add("projectbrazier:magenta_polstered_orange_bench");
+items.add("projectbrazier:magenta_polstered_apple_bench");
+items.add("projectbrazier:magenta_polstered_birch_bench");
+items.add("projectbrazier:magenta_polstered_oak_bench");
+items.add("projectbrazier:magenta_polstered_acacia_bench");
+items.add("projectbrazier:magenta_polstered_jungle_bench");
+items.add("projectbrazier:magenta_polstered_dark_oak_bench");
+items.add("projectbrazier:magenta_polstered_spruce_bench");
+items.add("projectbrazier:light_blue_polstered_orange_bench");
+items.add("projectbrazier:light_blue_polstered_apple_bench");
+items.add("projectbrazier:light_blue_polstered_birch_bench");
+items.add("projectbrazier:light_blue_polstered_oak_bench");
+items.add("projectbrazier:light_blue_polstered_acacia_bench");
+items.add("projectbrazier:light_blue_polstered_jungle_bench");
+items.add("projectbrazier:light_blue_polstered_dark_oak_bench");
+items.add("projectbrazier:light_blue_polstered_spruce_bench");
+items.add("projectbrazier:yellow_polstered_orange_bench");
+items.add("projectbrazier:yellow_polstered_apple_bench");
+items.add("projectbrazier:yellow_polstered_birch_bench");
+items.add("projectbrazier:yellow_polstered_oak_bench");
+items.add("projectbrazier:yellow_polstered_acacia_bench");
+items.add("projectbrazier:yellow_polstered_jungle_bench");
+items.add("projectbrazier:yellow_polstered_dark_oak_bench");
+items.add("projectbrazier:yellow_polstered_spruce_bench");
+items.add("projectbrazier:lime_polstered_orange_bench");
+items.add("projectbrazier:lime_polstered_apple_bench");
+items.add("projectbrazier:lime_polstered_birch_bench");
+items.add("projectbrazier:lime_polstered_oak_bench");
+items.add("projectbrazier:lime_polstered_acacia_bench");
+items.add("projectbrazier:lime_polstered_jungle_bench");
+items.add("projectbrazier:lime_polstered_dark_oak_bench");
+items.add("projectbrazier:lime_polstered_spruce_bench");
+items.add("projectbrazier:pink_polstered_orange_bench");
+items.add("projectbrazier:pink_polstered_apple_bench");
+items.add("projectbrazier:pink_polstered_birch_bench");
+items.add("projectbrazier:pink_polstered_oak_bench");
+items.add("projectbrazier:pink_polstered_acacia_bench");
+items.add("projectbrazier:pink_polstered_jungle_bench");
+items.add("projectbrazier:pink_polstered_dark_oak_bench");
+items.add("projectbrazier:pink_polstered_spruce_bench");
+items.add("projectbrazier:gray_polstered_orange_bench");
+items.add("projectbrazier:gray_polstered_apple_bench");
+items.add("projectbrazier:gray_polstered_birch_bench");
+items.add("projectbrazier:gray_polstered_oak_bench");
+items.add("projectbrazier:gray_polstered_acacia_bench");
+items.add("projectbrazier:gray_polstered_jungle_bench");
+items.add("projectbrazier:gray_polstered_dark_oak_bench");
+items.add("projectbrazier:gray_polstered_spruce_bench");
+items.add("projectbrazier:light_gray_polstered_orange_bench");
+items.add("projectbrazier:light_gray_polstered_apple_bench");
+items.add("projectbrazier:light_gray_polstered_birch_bench");
+items.add("projectbrazier:light_gray_polstered_oak_bench");
+items.add("projectbrazier:light_gray_polstered_acacia_bench");
+items.add("projectbrazier:light_gray_polstered_jungle_bench");
+items.add("projectbrazier:light_gray_polstered_dark_oak_bench");
+items.add("projectbrazier:light_gray_polstered_spruce_bench");
+items.add("projectbrazier:cyan_polstered_orange_bench");
+items.add("projectbrazier:cyan_polstered_apple_bench");
+items.add("projectbrazier:cyan_polstered_birch_bench");
+items.add("projectbrazier:cyan_polstered_oak_bench");
+items.add("projectbrazier:cyan_polstered_acacia_bench");
+items.add("projectbrazier:cyan_polstered_jungle_bench");
+items.add("projectbrazier:cyan_polstered_dark_oak_bench");
+items.add("projectbrazier:cyan_polstered_spruce_bench");
+items.add("projectbrazier:purple_polstered_orange_bench");
+items.add("projectbrazier:purple_polstered_apple_bench");
+items.add("projectbrazier:purple_polstered_birch_bench");
+items.add("projectbrazier:purple_polstered_oak_bench");
+items.add("projectbrazier:purple_polstered_acacia_bench");
+items.add("projectbrazier:purple_polstered_jungle_bench");
+items.add("projectbrazier:purple_polstered_dark_oak_bench");
+items.add("projectbrazier:purple_polstered_spruce_bench");
+items.add("projectbrazier:blue_polstered_orange_bench");
+items.add("projectbrazier:blue_polstered_apple_bench");
+items.add("projectbrazier:blue_polstered_birch_bench");
+items.add("projectbrazier:blue_polstered_oak_bench");
+items.add("projectbrazier:blue_polstered_acacia_bench");
+items.add("projectbrazier:blue_polstered_jungle_bench");
+items.add("projectbrazier:blue_polstered_dark_oak_bench");
+items.add("projectbrazier:blue_polstered_spruce_bench");
+items.add("projectbrazier:brown_polstered_orange_bench");
+items.add("projectbrazier:brown_polstered_apple_bench");
+items.add("projectbrazier:brown_polstered_birch_bench");
+items.add("projectbrazier:brown_polstered_oak_bench");
+items.add("projectbrazier:brown_polstered_acacia_bench");
+items.add("projectbrazier:brown_polstered_jungle_bench");
+items.add("projectbrazier:brown_polstered_dark_oak_bench");
+items.add("projectbrazier:brown_polstered_spruce_bench");
+items.add("projectbrazier:green_polstered_orange_bench");
+items.add("projectbrazier:green_polstered_apple_bench");
+items.add("projectbrazier:green_polstered_birch_bench");
+items.add("projectbrazier:green_polstered_oak_bench");
+items.add("projectbrazier:green_polstered_acacia_bench");
+items.add("projectbrazier:green_polstered_jungle_bench");
+items.add("projectbrazier:green_polstered_dark_oak_bench");
+items.add("projectbrazier:green_polstered_spruce_bench");
+items.add("projectbrazier:red_polstered_orange_bench");
+items.add("projectbrazier:red_polstered_apple_bench");
+items.add("projectbrazier:red_polstered_birch_bench");
+items.add("projectbrazier:red_polstered_oak_bench");
+items.add("projectbrazier:red_polstered_acacia_bench");
+items.add("projectbrazier:red_polstered_jungle_bench");
+items.add("projectbrazier:red_polstered_dark_oak_bench");
+items.add("projectbrazier:red_polstered_spruce_bench");
+items.add("projectbrazier:black_polstered_orange_bench");
+items.add("projectbrazier:black_polstered_apple_bench");
+items.add("projectbrazier:black_polstered_birch_bench");
+items.add("projectbrazier:black_polstered_oak_bench");
+items.add("projectbrazier:black_polstered_acacia_bench");
+items.add("projectbrazier:black_polstered_jungle_bench");
+items.add("projectbrazier:black_polstered_dark_oak_bench");
+items.add("projectbrazier:black_polstered_spruce_bench");
+items.add("projectbrazier:orange_platform");
+items.add("projectbrazier:apple_platform");
+items.add("projectbrazier:birch_platform");
+items.add("projectbrazier:oak_platform");
+items.add("projectbrazier:acacia_platform");
+items.add("projectbrazier:jungle_platform");
+items.add("projectbrazier:dark_oak_platform");
+items.add("projectbrazier:spruce_platform");
+items.add("supplementaries:daub");
+items.add("supplementaries:daub_frame");
+items.add("supplementaries:daub_brace");
+items.add("supplementaries:daub_cross_brace");
+items.add("supplementaries:timber_frame");
+items.add("supplementaries:timber_brace");
+items.add("supplementaries:timber_cross_brace");
+items.add("supplementaries:ash_bricks");
+items.add("supplementaries:ash_bricks_slab");
+items.add("supplementaries:ash_bricks_stairs");
+items.add("supplementaries:stone_lamp");
+items.add("supplementaries:deepslate_lamp");
+items.add("cfm:spatula");
+items.add("cfm:oak_table");
+items.add("cfm:spruce_table");
+items.add("cfm:birch_table");
+items.add("cfm:jungle_table");
+items.add("cfm:acacia_table");
+items.add("cfm:dark_oak_table");
+items.add("cfm:granite_table");
+items.add("cfm:diorite_table");
+items.add("cfm:andesite_table");
+items.add("cfm:stripped_oak_table");
+items.add("cfm:stripped_spruce_table");
+items.add("cfm:stripped_birch_table");
+items.add("cfm:stripped_jungle_table");
+items.add("cfm:stripped_acacia_table");
+items.add("cfm:stripped_dark_oak_table");
+items.add("cfm:stripped_warped_table");
+items.add("cfm:oak_chair");
+items.add("cfm:spruce_chair");
+items.add("cfm:birch_chair");
+items.add("cfm:jungle_chair");
+items.add("cfm:acacia_chair");
+items.add("cfm:dark_oak_chair");
+items.add("cfm:granite_chair");
+items.add("cfm:diorite_chair");
+items.add("cfm:andesite_chair");
+items.add("cfm:stripped_oak_chair");
+items.add("cfm:stripped_spruce_chair");
+items.add("cfm:stripped_birch_chair");
+items.add("cfm:stripped_jungle_chair");
+items.add("cfm:stripped_acacia_chair");
+items.add("cfm:stripped_dark_oak_chair");
+items.add("cfm:oak_coffee_table");
+items.add("cfm:spruce_coffee_table");
+items.add("cfm:birch_coffee_table");
+items.add("cfm:jungle_coffee_table");
+items.add("cfm:acacia_coffee_table");
+items.add("cfm:dark_oak_coffee_table");
+items.add("cfm:granite_coffee_table");
+items.add("cfm:diorite_coffee_table");
+items.add("cfm:andesite_coffee_table");
+items.add("cfm:stripped_oak_coffee_table");
+items.add("cfm:stripped_spruce_coffee_table");
+items.add("cfm:stripped_birch_coffee_table");
+items.add("cfm:stripped_jungle_coffee_table");
+items.add("cfm:stripped_acacia_coffee_table");
+items.add("cfm:stripped_dark_oak_coffee_table");
+items.add("cfm:oak_cabinet");
+items.add("cfm:spruce_cabinet");
+items.add("cfm:birch_cabinet");
+items.add("cfm:jungle_cabinet");
+items.add("cfm:acacia_cabinet");
+items.add("cfm:dark_oak_cabinet");
+items.add("cfm:granite_cabinet");
+items.add("cfm:diorite_cabinet");
+items.add("cfm:andesite_cabinet");
+items.add("cfm:stripped_oak_cabinet");
+items.add("cfm:stripped_spruce_cabinet");
+items.add("cfm:stripped_birch_cabinet");
+items.add("cfm:stripped_jungle_cabinet");
+items.add("cfm:stripped_acacia_cabinet");
+items.add("cfm:stripped_dark_oak_cabinet");
+items.add("cfm:oak_bedside_cabinet");
+items.add("cfm:spruce_bedside_cabinet");
+items.add("cfm:birch_bedside_cabinet");
+items.add("cfm:jungle_bedside_cabinet");
+items.add("cfm:acacia_bedside_cabinet");
+items.add("cfm:dark_oak_bedside_cabinet");
+items.add("cfm:granite_bedside_cabinet");
+items.add("cfm:diorite_bedside_cabinet");
+items.add("cfm:andesite_bedside_cabinet");
+items.add("cfm:stripped_oak_bedside_cabinet");
+items.add("cfm:stripped_spruce_bedside_cabinet");
+items.add("cfm:stripped_birch_bedside_cabinet");
+items.add("cfm:stripped_jungle_bedside_cabinet");
+items.add("cfm:stripped_acacia_bedside_cabinet");
+items.add("cfm:stripped_dark_oak_bedside_cabinet");
+items.add("cfm:oak_desk");
+items.add("cfm:spruce_desk");
+items.add("cfm:birch_desk");
+items.add("cfm:jungle_desk");
+items.add("cfm:acacia_desk");
+items.add("cfm:dark_oak_desk");
+items.add("cfm:granite_desk");
+items.add("cfm:diorite_desk");
+items.add("cfm:andesite_desk");
+items.add("cfm:stripped_oak_desk");
+items.add("cfm:stripped_spruce_desk");
+items.add("cfm:stripped_birch_desk");
+items.add("cfm:stripped_jungle_desk");
+items.add("cfm:stripped_acacia_desk");
+items.add("cfm:stripped_dark_oak_desk");
+items.add("cfm:oak_desk_cabinet");
+items.add("cfm:spruce_desk_cabinet");
+items.add("cfm:birch_desk_cabinet");
+items.add("cfm:jungle_desk_cabinet");
+items.add("cfm:acacia_desk_cabinet");
+items.add("cfm:dark_oak_desk_cabinet");
+items.add("cfm:granite_desk_cabinet");
+items.add("cfm:diorite_desk_cabinet");
+items.add("cfm:andesite_desk_cabinet");
+items.add("cfm:stripped_oak_desk_cabinet");
+items.add("cfm:stripped_spruce_desk_cabinet");
+items.add("cfm:stripped_birch_desk_cabinet");
+items.add("cfm:stripped_jungle_desk_cabinet");
+items.add("cfm:stripped_acacia_desk_cabinet");
+items.add("cfm:stripped_dark_oak_desk_cabinet");
+items.add("cfm:white_sofa");
+items.add("cfm:orange_sofa");
+items.add("cfm:magenta_sofa");
+items.add("cfm:light_blue_sofa");
+items.add("cfm:yellow_sofa");
+items.add("cfm:lime_sofa");
+items.add("cfm:pink_sofa");
+items.add("cfm:gray_sofa");
+items.add("cfm:light_gray_sofa");
+items.add("cfm:cyan_sofa");
+items.add("cfm:purple_sofa");
+items.add("cfm:blue_sofa");
+items.add("cfm:brown_sofa");
+items.add("cfm:green_sofa");
+items.add("cfm:red_sofa");
+items.add("cfm:black_sofa");
+items.add("cfm:rainbow_sofa");
+items.add("cfm:oak_blinds");
+items.add("cfm:spruce_blinds");
+items.add("cfm:birch_blinds");
+items.add("cfm:jungle_blinds");
+items.add("cfm:acacia_blinds");
+items.add("cfm:dark_oak_blinds");
+items.add("cfm:stripped_oak_blinds");
+items.add("cfm:stripped_spruce_blinds");
+items.add("cfm:stripped_birch_blinds");
+items.add("cfm:stripped_jungle_blinds");
+items.add("cfm:stripped_acacia_blinds");
+items.add("cfm:stripped_dark_oak_blinds");
+items.add("cfm:oak_crate");
+items.add("cfm:spruce_crate");
+items.add("cfm:birch_crate");
+items.add("cfm:jungle_crate");
+items.add("cfm:acacia_crate");
+items.add("cfm:dark_oak_crate");
+items.add("cfm:stripped_oak_crate");
+items.add("cfm:stripped_spruce_crate");
+items.add("cfm:stripped_birch_crate");
+items.add("cfm:stripped_jungle_crate");
+items.add("cfm:stripped_acacia_crate");
+items.add("cfm:stripped_dark_oak_crate");
+items.add("cfm:oak_park_bench");
+items.add("cfm:spruce_park_bench");
+items.add("cfm:birch_park_bench");
+items.add("cfm:jungle_park_bench");
+items.add("cfm:acacia_park_bench");
+items.add("cfm:dark_oak_park_bench");
+items.add("cfm:stripped_oak_park_bench");
+items.add("cfm:stripped_spruce_park_bench");
+items.add("cfm:stripped_birch_park_bench");
+items.add("cfm:stripped_jungle_park_bench");
+items.add("cfm:stripped_acacia_park_bench");
+items.add("cfm:stripped_dark_oak_park_bench");
+items.add("cfm:post_box");
+items.add("cfm:oak_mail_box");
+items.add("cfm:spruce_mail_box");
+items.add("cfm:birch_mail_box");
+items.add("cfm:jungle_mail_box");
+items.add("cfm:acacia_mail_box");
+items.add("cfm:dark_oak_mail_box");
+items.add("cfm:stripped_oak_mail_box");
+items.add("cfm:stripped_spruce_mail_box");
+items.add("cfm:stripped_birch_mail_box");
+items.add("cfm:stripped_jungle_mail_box");
+items.add("cfm:stripped_acacia_mail_box");
+items.add("cfm:stripped_dark_oak_mail_box");
+items.add("cfm:rock_path");
+items.add("cfm:trampoline");
+items.add("cfm:white_cooler");
+items.add("cfm:orange_cooler");
+items.add("cfm:magenta_cooler");
+items.add("cfm:light_blue_cooler");
+items.add("cfm:yellow_cooler");
+items.add("cfm:lime_cooler");
+items.add("cfm:pink_cooler");
+items.add("cfm:gray_cooler");
+items.add("cfm:light_gray_cooler");
+items.add("cfm:cyan_cooler");
+items.add("cfm:purple_cooler");
+items.add("cfm:blue_cooler");
+items.add("cfm:brown_cooler");
+items.add("cfm:green_cooler");
+items.add("cfm:red_cooler");
+items.add("cfm:black_cooler");
+items.add("cfm:white_grill");
+items.add("cfm:orange_grill");
+items.add("cfm:magenta_grill");
+items.add("cfm:light_blue_grill");
+items.add("cfm:yellow_grill");
+items.add("cfm:lime_grill");
+items.add("cfm:pink_grill");
+items.add("cfm:gray_grill");
+items.add("cfm:light_gray_grill");
+items.add("cfm:cyan_grill");
+items.add("cfm:purple_grill");
+items.add("cfm:blue_grill");
+items.add("cfm:brown_grill");
+items.add("cfm:green_grill");
+items.add("cfm:red_grill");
+items.add("cfm:black_grill");
+items.add("cfm:door_mat");
+items.add("cfm:diving_board");
+items.add("cfm:oak_kitchen_counter");
+items.add("cfm:spruce_kitchen_counter");
+items.add("cfm:birch_kitchen_counter");
+items.add("cfm:jungle_kitchen_counter");
+items.add("cfm:acacia_kitchen_counter");
+items.add("cfm:dark_oak_kitchen_counter");
+items.add("cfm:stripped_oak_kitchen_counter");
+items.add("cfm:stripped_spruce_kitchen_counter");
+items.add("cfm:stripped_birch_kitchen_counter");
+items.add("cfm:stripped_jungle_kitchen_counter");
+items.add("cfm:stripped_acacia_kitchen_counter");
+items.add("cfm:stripped_dark_oak_kitchen_counter");
+items.add("cfm:white_kitchen_counter");
+items.add("cfm:orange_kitchen_counter");
+items.add("cfm:magenta_kitchen_counter");
+items.add("cfm:light_blue_kitchen_counter");
+items.add("cfm:yellow_kitchen_counter");
+items.add("cfm:lime_kitchen_counter");
+items.add("cfm:pink_kitchen_counter");
+items.add("cfm:gray_kitchen_counter");
+items.add("cfm:light_gray_kitchen_counter");
+items.add("cfm:cyan_kitchen_counter");
+items.add("cfm:purple_kitchen_counter");
+items.add("cfm:blue_kitchen_counter");
+items.add("cfm:brown_kitchen_counter");
+items.add("cfm:green_kitchen_counter");
+items.add("cfm:red_kitchen_counter");
+items.add("cfm:black_kitchen_counter");
+items.add("cfm:oak_kitchen_drawer");
+items.add("cfm:spruce_kitchen_drawer");
+items.add("cfm:birch_kitchen_drawer");
+items.add("cfm:jungle_kitchen_drawer");
+items.add("cfm:acacia_kitchen_drawer");
+items.add("cfm:dark_oak_kitchen_drawer");
+items.add("cfm:stripped_oak_kitchen_drawer");
+items.add("cfm:stripped_spruce_kitchen_drawer");
+items.add("cfm:stripped_birch_kitchen_drawer");
+items.add("cfm:stripped_jungle_kitchen_drawer");
+items.add("cfm:stripped_acacia_kitchen_drawer");
+items.add("cfm:stripped_dark_oak_kitchen_drawer");
+items.add("cfm:white_kitchen_drawer");
+items.add("cfm:orange_kitchen_drawer");
+items.add("cfm:magenta_kitchen_drawer");
+items.add("cfm:light_blue_kitchen_drawer");
+items.add("cfm:yellow_kitchen_drawer");
+items.add("cfm:lime_kitchen_drawer");
+items.add("cfm:pink_kitchen_drawer");
+items.add("cfm:gray_kitchen_drawer");
+items.add("cfm:light_gray_kitchen_drawer");
+items.add("cfm:cyan_kitchen_drawer");
+items.add("cfm:purple_kitchen_drawer");
+items.add("cfm:blue_kitchen_drawer");
+items.add("cfm:brown_kitchen_drawer");
+items.add("cfm:green_kitchen_drawer");
+items.add("cfm:red_kitchen_drawer");
+items.add("cfm:black_kitchen_drawer");
+items.add("cfm:oak_kitchen_sink_light");
+items.add("cfm:spruce_kitchen_sink_light");
+items.add("cfm:birch_kitchen_sink_light");
+items.add("cfm:jungle_kitchen_sink_light");
+items.add("cfm:acacia_kitchen_sink_light");
+items.add("cfm:dark_oak_kitchen_sink_light");
+items.add("cfm:stripped_oak_kitchen_sink_light");
+items.add("cfm:stripped_spruce_kitchen_sink_light");
+items.add("cfm:stripped_birch_kitchen_sink_light");
+items.add("cfm:stripped_jungle_kitchen_sink_light");
+items.add("cfm:stripped_acacia_kitchen_sink_light");
+items.add("cfm:stripped_dark_oak_kitchen_sink_light");
+items.add("cfm:oak_kitchen_sink_dark");
+items.add("cfm:spruce_kitchen_sink_dark");
+items.add("cfm:birch_kitchen_sink_dark");
+items.add("cfm:jungle_kitchen_sink_dark");
+items.add("cfm:acacia_kitchen_sink_dark");
+items.add("cfm:dark_oak_kitchen_sink_dark");
+items.add("cfm:stripped_oak_kitchen_sink_dark");
+items.add("cfm:stripped_spruce_kitchen_sink_dark");
+items.add("cfm:stripped_birch_kitchen_sink_dark");
+items.add("cfm:stripped_jungle_kitchen_sink_dark");
+items.add("cfm:stripped_acacia_kitchen_sink_dark");
+items.add("cfm:stripped_dark_oak_kitchen_sink_dark");
+items.add("cfm:white_kitchen_sink");
+items.add("cfm:orange_kitchen_sink");
+items.add("cfm:magenta_kitchen_sink");
+items.add("cfm:light_blue_kitchen_sink");
+items.add("cfm:yellow_kitchen_sink");
+items.add("cfm:lime_kitchen_sink");
+items.add("cfm:pink_kitchen_sink");
+items.add("cfm:gray_kitchen_sink");
+items.add("cfm:light_gray_kitchen_sink");
+items.add("cfm:cyan_kitchen_sink");
+items.add("cfm:purple_kitchen_sink");
+items.add("cfm:blue_kitchen_sink");
+items.add("cfm:brown_kitchen_sink");
+items.add("cfm:green_kitchen_sink");
+items.add("cfm:red_kitchen_sink");
+items.add("cfm:black_kitchen_sink");
+items.add("cfm:fridge_light");
+items.add("cfm:fridge_dark");
+items.add("mcwroofs:roofing_hammer");
+items.add("mcwroofs:rain_gutter");
+items.add("mcwroofs:oak_roof");
+items.add("mcwroofs:oak_attic_roof");
+items.add("mcwroofs:oak_top_roof");
+items.add("mcwroofs:oak_lower_roof");
+items.add("mcwroofs:oak_steep_roof");
+items.add("mcwroofs:oak_upper_lower_roof");
+items.add("mcwroofs:oak_upper_steep_roof");
+items.add("mcwroofs:spruce_roof");
+items.add("mcwroofs:spruce_attic_roof");
+items.add("mcwroofs:spruce_top_roof");
+items.add("mcwroofs:spruce_lower_roof");
+items.add("mcwroofs:spruce_steep_roof");
+items.add("mcwroofs:spruce_upper_lower_roof");
+items.add("mcwroofs:spruce_upper_steep_roof");
+items.add("mcwroofs:birch_roof");
+items.add("mcwroofs:birch_attic_roof");
+items.add("mcwroofs:birch_top_roof");
+items.add("mcwroofs:birch_lower_roof");
+items.add("mcwroofs:birch_steep_roof");
+items.add("mcwroofs:birch_upper_lower_roof");
+items.add("mcwroofs:birch_upper_steep_roof");
+items.add("mcwroofs:jungle_roof");
+items.add("mcwroofs:jungle_attic_roof");
+items.add("mcwroofs:jungle_top_roof");
+items.add("mcwroofs:jungle_lower_roof");
+items.add("mcwroofs:jungle_steep_roof");
+items.add("mcwroofs:jungle_upper_lower_roof");
+items.add("mcwroofs:jungle_upper_steep_roof");
+items.add("mcwroofs:acacia_roof");
+items.add("mcwroofs:acacia_attic_roof");
+items.add("mcwroofs:acacia_top_roof");
+items.add("mcwroofs:acacia_lower_roof");
+items.add("mcwroofs:acacia_steep_roof");
+items.add("mcwroofs:acacia_upper_lower_roof");
+items.add("mcwroofs:acacia_upper_steep_roof");
+items.add("mcwroofs:dark_oak_roof");
+items.add("mcwroofs:dark_oak_attic_roof");
+items.add("mcwroofs:dark_oak_top_roof");
+items.add("mcwroofs:dark_oak_lower_roof");
+items.add("mcwroofs:dark_oak_steep_roof");
+items.add("mcwroofs:dark_oak_upper_lower_roof");
+items.add("mcwroofs:dark_oak_upper_steep_roof");
+items.add("mcwroofs:crimson_roof");
+items.add("mcwroofs:crimson_attic_roof");
+items.add("mcwroofs:crimson_top_roof");
+items.add("mcwroofs:crimson_lower_roof");
+items.add("mcwroofs:crimson_steep_roof");
+items.add("mcwroofs:crimson_upper_lower_roof");
+items.add("mcwroofs:crimson_upper_steep_roof");
+items.add("mcwroofs:warped_roof");
+items.add("mcwroofs:warped_attic_roof");
+items.add("mcwroofs:warped_top_roof");
+items.add("mcwroofs:warped_lower_roof");
+items.add("mcwroofs:warped_steep_roof");
+items.add("mcwroofs:warped_upper_lower_roof");
+items.add("mcwroofs:warped_upper_steep_roof");
+items.add("mcwroofs:oak_planks_roof");
+items.add("mcwroofs:oak_planks_attic_roof");
+items.add("mcwroofs:oak_planks_top_roof");
+items.add("mcwroofs:oak_planks_lower_roof");
+items.add("mcwroofs:oak_planks_steep_roof");
+items.add("mcwroofs:oak_planks_upper_lower_roof");
+items.add("mcwroofs:oak_planks_upper_steep_roof");
+items.add("mcwroofs:spruce_planks_roof");
+items.add("mcwroofs:spruce_planks_attic_roof");
+items.add("mcwroofs:spruce_planks_top_roof");
+items.add("mcwroofs:spruce_planks_lower_roof");
+items.add("mcwroofs:spruce_planks_steep_roof");
+items.add("mcwroofs:spruce_planks_upper_lower_roof");
+items.add("mcwroofs:spruce_planks_upper_steep_roof");
+items.add("mcwroofs:birch_planks_roof");
+items.add("mcwroofs:birch_planks_attic_roof");
+items.add("mcwroofs:birch_planks_top_roof");
+items.add("mcwroofs:birch_planks_lower_roof");
+items.add("mcwroofs:birch_planks_steep_roof");
+items.add("mcwroofs:birch_planks_upper_lower_roof");
+items.add("mcwroofs:birch_planks_upper_steep_roof");
+items.add("mcwroofs:jungle_planks_roof");
+items.add("mcwroofs:jungle_planks_attic_roof");
+items.add("mcwroofs:jungle_planks_top_roof");
+items.add("mcwroofs:jungle_planks_lower_roof");
+items.add("mcwroofs:jungle_planks_steep_roof");
+items.add("mcwroofs:jungle_planks_upper_lower_roof");
+items.add("mcwroofs:jungle_planks_upper_steep_roof");
+items.add("mcwroofs:acacia_planks_roof");
+items.add("mcwroofs:acacia_planks_attic_roof");
+items.add("mcwroofs:acacia_planks_top_roof");
+items.add("mcwroofs:acacia_planks_lower_roof");
+items.add("mcwroofs:acacia_planks_steep_roof");
+items.add("mcwroofs:acacia_planks_upper_lower_roof");
+items.add("mcwroofs:acacia_planks_upper_steep_roof");
+items.add("mcwroofs:dark_oak_planks_roof");
+items.add("mcwroofs:dark_oak_planks_attic_roof");
+items.add("mcwroofs:dark_oak_planks_top_roof");
+items.add("mcwroofs:dark_oak_planks_lower_roof");
+items.add("mcwroofs:dark_oak_planks_steep_roof");
+items.add("mcwroofs:dark_oak_planks_upper_lower_roof");
+items.add("mcwroofs:dark_oak_planks_upper_steep_roof");
+items.add("mcwroofs:crimson_planks_roof");
+items.add("mcwroofs:crimson_planks_attic_roof");
+items.add("mcwroofs:crimson_planks_top_roof");
+items.add("mcwroofs:crimson_planks_lower_roof");
+items.add("mcwroofs:crimson_planks_steep_roof");
+items.add("mcwroofs:crimson_planks_upper_lower_roof");
+items.add("mcwroofs:crimson_planks_upper_steep_roof");
+items.add("mcwroofs:warped_planks_roof");
+items.add("mcwroofs:warped_planks_attic_roof");
+items.add("mcwroofs:warped_planks_top_roof");
+items.add("mcwroofs:warped_planks_lower_roof");
+items.add("mcwroofs:warped_planks_steep_roof");
+items.add("mcwroofs:warped_planks_upper_lower_roof");
+items.add("mcwroofs:warped_planks_upper_steep_roof");
+items.add("mcwroofs:white_terracotta_roof");
+items.add("mcwroofs:white_terracotta_attic_roof");
+items.add("mcwroofs:white_terracotta_top_roof");
+items.add("mcwroofs:white_terracotta_lower_roof");
+items.add("mcwroofs:white_terracotta_steep_roof");
+items.add("mcwroofs:white_terracotta_upper_lower_roof");
+items.add("mcwroofs:white_terracotta_upper_steep_roof");
+items.add("mcwroofs:light_gray_terracotta_roof");
+items.add("mcwroofs:light_gray_terracotta_attic_roof");
+items.add("mcwroofs:light_gray_terracotta_top_roof");
+items.add("mcwroofs:light_gray_terracotta_lower_roof");
+items.add("mcwroofs:light_gray_terracotta_steep_roof");
+items.add("mcwroofs:light_gray_terracotta_upper_lower_roof");
+items.add("mcwroofs:light_gray_terracotta_upper_steep_roof");
+items.add("mcwroofs:gray_terracotta_roof");
+items.add("mcwroofs:gray_terracotta_attic_roof");
+items.add("mcwroofs:gray_terracotta_top_roof");
+items.add("mcwroofs:gray_terracotta_lower_roof");
+items.add("mcwroofs:gray_terracotta_steep_roof");
+items.add("mcwroofs:gray_terracotta_upper_lower_roof");
+items.add("mcwroofs:gray_terracotta_upper_steep_roof");
+items.add("mcwroofs:black_terracotta_roof");
+items.add("mcwroofs:black_terracotta_attic_roof");
+items.add("mcwroofs:black_terracotta_top_roof");
+items.add("mcwroofs:black_terracotta_lower_roof");
+items.add("mcwroofs:black_terracotta_steep_roof");
+items.add("mcwroofs:black_terracotta_upper_lower_roof");
+items.add("mcwroofs:black_terracotta_upper_steep_roof");
+items.add("mcwroofs:blue_terracotta_roof");
+items.add("mcwroofs:blue_terracotta_attic_roof");
+items.add("mcwroofs:blue_terracotta_top_roof");
+items.add("mcwroofs:blue_terracotta_lower_roof");
+items.add("mcwroofs:blue_terracotta_steep_roof");
+items.add("mcwroofs:blue_terracotta_upper_lower_roof");
+items.add("mcwroofs:blue_terracotta_upper_steep_roof");
+items.add("mcwroofs:light_blue_terracotta_roof");
+items.add("mcwroofs:light_blue_terracotta_attic_roof");
+items.add("mcwroofs:light_blue_terracotta_top_roof");
+items.add("mcwroofs:light_blue_terracotta_lower_roof");
+items.add("mcwroofs:light_blue_terracotta_steep_roof");
+items.add("mcwroofs:light_blue_terracotta_upper_lower_roof");
+items.add("mcwroofs:light_blue_terracotta_upper_steep_roof");
+items.add("mcwroofs:cyan_terracotta_roof");
+items.add("mcwroofs:cyan_terracotta_attic_roof");
+items.add("mcwroofs:cyan_terracotta_top_roof");
+items.add("mcwroofs:cyan_terracotta_lower_roof");
+items.add("mcwroofs:cyan_terracotta_steep_roof");
+items.add("mcwroofs:cyan_terracotta_upper_lower_roof");
+items.add("mcwroofs:cyan_terracotta_upper_steep_roof");
+items.add("mcwroofs:lime_terracotta_roof");
+items.add("mcwroofs:lime_terracotta_attic_roof");
+items.add("mcwroofs:lime_terracotta_top_roof");
+items.add("mcwroofs:lime_terracotta_lower_roof");
+items.add("mcwroofs:lime_terracotta_steep_roof");
+items.add("mcwroofs:lime_terracotta_upper_lower_roof");
+items.add("mcwroofs:lime_terracotta_upper_steep_roof");
+items.add("mcwroofs:green_terracotta_roof");
+items.add("mcwroofs:green_terracotta_attic_roof");
+items.add("mcwroofs:green_terracotta_top_roof");
+items.add("mcwroofs:green_terracotta_lower_roof");
+items.add("mcwroofs:green_terracotta_steep_roof");
+items.add("mcwroofs:green_terracotta_upper_lower_roof");
+items.add("mcwroofs:green_terracotta_upper_steep_roof");
+items.add("mcwroofs:yellow_terracotta_roof");
+items.add("mcwroofs:yellow_terracotta_attic_roof");
+items.add("mcwroofs:yellow_terracotta_top_roof");
+items.add("mcwroofs:yellow_terracotta_lower_roof");
+items.add("mcwroofs:yellow_terracotta_steep_roof");
+items.add("mcwroofs:yellow_terracotta_upper_lower_roof");
+items.add("mcwroofs:yellow_terracotta_upper_steep_roof");
+items.add("mcwroofs:brown_terracotta_roof");
+items.add("mcwroofs:brown_terracotta_attic_roof");
+items.add("mcwroofs:brown_terracotta_top_roof");
+items.add("mcwroofs:brown_terracotta_lower_roof");
+items.add("mcwroofs:brown_terracotta_steep_roof");
+items.add("mcwroofs:brown_terracotta_upper_lower_roof");
+items.add("mcwroofs:brown_terracotta_upper_steep_roof");
+items.add("mcwroofs:orange_terracotta_roof");
+items.add("mcwroofs:orange_terracotta_attic_roof");
+items.add("mcwroofs:orange_terracotta_top_roof");
+items.add("mcwroofs:orange_terracotta_lower_roof");
+items.add("mcwroofs:orange_terracotta_steep_roof");
+items.add("mcwroofs:orange_terracotta_upper_lower_roof");
+items.add("mcwroofs:orange_terracotta_upper_steep_roof");
+items.add("mcwroofs:red_terracotta_roof");
+items.add("mcwroofs:red_terracotta_attic_roof");
+items.add("mcwroofs:red_terracotta_top_roof");
+items.add("mcwroofs:red_terracotta_lower_roof");
+items.add("mcwroofs:red_terracotta_steep_roof");
+items.add("mcwroofs:red_terracotta_upper_lower_roof");
+items.add("mcwroofs:red_terracotta_upper_steep_roof");
+items.add("mcwroofs:magenta_terracotta_roof");
+items.add("mcwroofs:magenta_terracotta_attic_roof");
+items.add("mcwroofs:magenta_terracotta_top_roof");
+items.add("mcwroofs:magenta_terracotta_lower_roof");
+items.add("mcwroofs:magenta_terracotta_steep_roof");
+items.add("mcwroofs:magenta_terracotta_upper_lower_roof");
+items.add("mcwroofs:magenta_terracotta_upper_steep_roof");
+items.add("mcwroofs:pink_terracotta_roof");
+items.add("mcwroofs:pink_terracotta_attic_roof");
+items.add("mcwroofs:pink_terracotta_top_roof");
+items.add("mcwroofs:pink_terracotta_lower_roof");
+items.add("mcwroofs:pink_terracotta_steep_roof");
+items.add("mcwroofs:pink_terracotta_upper_lower_roof");
+items.add("mcwroofs:pink_terracotta_upper_steep_roof");
+items.add("mcwroofs:purple_terracotta_roof");
+items.add("mcwroofs:purple_terracotta_attic_roof");
+items.add("mcwroofs:purple_terracotta_top_roof");
+items.add("mcwroofs:purple_terracotta_lower_roof");
+items.add("mcwroofs:purple_terracotta_steep_roof");
+items.add("mcwroofs:purple_terracotta_upper_lower_roof");
+items.add("mcwroofs:purple_terracotta_upper_steep_roof");
+items.add("mcwroofs:white_concrete_roof");
+items.add("mcwroofs:white_concrete_attic_roof");
+items.add("mcwroofs:white_concrete_top_roof");
+items.add("mcwroofs:white_concrete_lower_roof");
+items.add("mcwroofs:white_concrete_steep_roof");
+items.add("mcwroofs:white_concrete_upper_lower_roof");
+items.add("mcwroofs:white_concrete_upper_steep_roof");
+items.add("mcwroofs:light_gray_concrete_roof");
+items.add("mcwroofs:light_gray_concrete_attic_roof");
+items.add("mcwroofs:light_gray_concrete_top_roof");
+items.add("mcwroofs:light_gray_concrete_lower_roof");
+items.add("mcwroofs:light_gray_concrete_steep_roof");
+items.add("mcwroofs:light_gray_concrete_upper_lower_roof");
+items.add("mcwroofs:light_gray_concrete_upper_steep_roof");
+items.add("mcwroofs:gray_concrete_roof");
+items.add("mcwroofs:gray_concrete_attic_roof");
+items.add("mcwroofs:gray_concrete_top_roof");
+items.add("mcwroofs:gray_concrete_lower_roof");
+items.add("mcwroofs:gray_concrete_steep_roof");
+items.add("mcwroofs:gray_concrete_upper_lower_roof");
+items.add("mcwroofs:gray_concrete_upper_steep_roof");
+items.add("mcwroofs:black_concrete_roof");
+items.add("mcwroofs:black_concrete_attic_roof");
+items.add("mcwroofs:black_concrete_top_roof");
+items.add("mcwroofs:black_concrete_lower_roof");
+items.add("mcwroofs:black_concrete_steep_roof");
+items.add("mcwroofs:black_concrete_upper_lower_roof");
+items.add("mcwroofs:black_concrete_upper_steep_roof");
+items.add("mcwroofs:blue_concrete_roof");
+items.add("mcwroofs:blue_concrete_attic_roof");
+items.add("mcwroofs:blue_concrete_top_roof");
+items.add("mcwroofs:blue_concrete_lower_roof");
+items.add("mcwroofs:blue_concrete_steep_roof");
+items.add("mcwroofs:blue_concrete_upper_lower_roof");
+items.add("mcwroofs:blue_concrete_upper_steep_roof");
+items.add("mcwroofs:light_blue_concrete_roof");
+items.add("mcwroofs:light_blue_concrete_attic_roof");
+items.add("mcwroofs:light_blue_concrete_top_roof");
+items.add("mcwroofs:light_blue_concrete_lower_roof");
+items.add("mcwroofs:light_blue_concrete_steep_roof");
+items.add("mcwroofs:light_blue_concrete_upper_lower_roof");
+items.add("mcwroofs:light_blue_concrete_upper_steep_roof");
+items.add("mcwroofs:cyan_concrete_roof");
+items.add("mcwroofs:cyan_concrete_attic_roof");
+items.add("mcwroofs:cyan_concrete_top_roof");
+items.add("mcwroofs:cyan_concrete_lower_roof");
+items.add("mcwroofs:cyan_concrete_steep_roof");
+items.add("mcwroofs:cyan_concrete_upper_lower_roof");
+items.add("mcwroofs:cyan_concrete_upper_steep_roof");
+items.add("mcwroofs:lime_concrete_roof");
+items.add("mcwroofs:lime_concrete_attic_roof");
+items.add("mcwroofs:lime_concrete_top_roof");
+items.add("mcwroofs:lime_concrete_lower_roof");
+items.add("mcwroofs:lime_concrete_steep_roof");
+items.add("mcwroofs:lime_concrete_upper_lower_roof");
+items.add("mcwroofs:lime_concrete_upper_steep_roof");
+items.add("mcwroofs:green_concrete_roof");
+items.add("mcwroofs:green_concrete_attic_roof");
+items.add("mcwroofs:green_concrete_top_roof");
+items.add("mcwroofs:green_concrete_lower_roof");
+items.add("mcwroofs:green_concrete_steep_roof");
+items.add("mcwroofs:green_concrete_upper_lower_roof");
+items.add("mcwroofs:green_concrete_upper_steep_roof");
+items.add("mcwroofs:yellow_concrete_roof");
+items.add("mcwroofs:yellow_concrete_attic_roof");
+items.add("mcwroofs:yellow_concrete_top_roof");
+items.add("mcwroofs:yellow_concrete_lower_roof");
+items.add("mcwroofs:yellow_concrete_steep_roof");
+items.add("mcwroofs:yellow_concrete_upper_lower_roof");
+items.add("mcwroofs:yellow_concrete_upper_steep_roof");
+items.add("mcwroofs:brown_concrete_roof");
+items.add("mcwroofs:brown_concrete_attic_roof");
+items.add("mcwroofs:brown_concrete_top_roof");
+items.add("mcwroofs:brown_concrete_lower_roof");
+items.add("mcwroofs:brown_concrete_steep_roof");
+items.add("mcwroofs:brown_concrete_upper_lower_roof");
+items.add("mcwroofs:brown_concrete_upper_steep_roof");
+items.add("mcwroofs:orange_concrete_roof");
+items.add("mcwroofs:orange_concrete_attic_roof");
+items.add("mcwroofs:orange_concrete_top_roof");
+items.add("mcwroofs:orange_concrete_lower_roof");
+items.add("mcwroofs:orange_concrete_steep_roof");
+items.add("mcwroofs:orange_concrete_upper_lower_roof");
+items.add("mcwroofs:orange_concrete_upper_steep_roof");
+items.add("mcwroofs:red_concrete_roof");
+items.add("mcwroofs:red_concrete_attic_roof");
+items.add("mcwroofs:red_concrete_top_roof");
+items.add("mcwroofs:red_concrete_lower_roof");
+items.add("mcwroofs:red_concrete_steep_roof");
+items.add("mcwroofs:red_concrete_upper_lower_roof");
+items.add("mcwroofs:red_concrete_upper_steep_roof");
+items.add("mcwroofs:magenta_concrete_roof");
+items.add("mcwroofs:magenta_concrete_attic_roof");
+items.add("mcwroofs:magenta_concrete_top_roof");
+items.add("mcwroofs:magenta_concrete_lower_roof");
+items.add("mcwroofs:magenta_concrete_steep_roof");
+items.add("mcwroofs:magenta_concrete_upper_lower_roof");
+items.add("mcwroofs:magenta_concrete_upper_steep_roof");
+items.add("mcwroofs:pink_concrete_roof");
+items.add("mcwroofs:pink_concrete_attic_roof");
+items.add("mcwroofs:pink_concrete_top_roof");
+items.add("mcwroofs:pink_concrete_lower_roof");
+items.add("mcwroofs:pink_concrete_steep_roof");
+items.add("mcwroofs:pink_concrete_upper_lower_roof");
+items.add("mcwroofs:pink_concrete_upper_steep_roof");
+items.add("mcwroofs:purple_concrete_roof");
+items.add("mcwroofs:purple_concrete_attic_roof");
+items.add("mcwroofs:purple_concrete_top_roof");
+items.add("mcwroofs:purple_concrete_lower_roof");
+items.add("mcwroofs:purple_concrete_steep_roof");
+items.add("mcwroofs:purple_concrete_upper_lower_roof");
+items.add("mcwroofs:purple_concrete_upper_steep_roof");
+items.add("mcwroofs:white_roof");
+items.add("mcwroofs:white_attic_roof");
+items.add("mcwroofs:white_top_roof");
+items.add("mcwroofs:white_lower_roof");
+items.add("mcwroofs:white_steep_roof");
+items.add("mcwroofs:white_upper_lower_roof");
+items.add("mcwroofs:white_upper_steep_roof");
+items.add("mcwroofs:light_gray_roof");
+items.add("mcwroofs:light_gray_attic_roof");
+items.add("mcwroofs:light_gray_top_roof");
+items.add("mcwroofs:light_gray_lower_roof");
+items.add("mcwroofs:light_gray_steep_roof");
+items.add("mcwroofs:light_gray_upper_lower_roof");
+items.add("mcwroofs:light_gray_upper_steep_roof");
+items.add("mcwroofs:gray_roof");
+items.add("mcwroofs:gray_attic_roof");
+items.add("mcwroofs:gray_top_roof");
+items.add("mcwroofs:gray_lower_roof");
+items.add("mcwroofs:gray_steep_roof");
+items.add("mcwroofs:gray_upper_lower_roof");
+items.add("mcwroofs:gray_upper_steep_roof");
+items.add("mcwroofs:black_roof");
+items.add("mcwroofs:black_attic_roof");
+items.add("mcwroofs:black_top_roof");
+items.add("mcwroofs:black_lower_roof");
+items.add("mcwroofs:black_steep_roof");
+items.add("mcwroofs:black_upper_lower_roof");
+items.add("mcwroofs:black_upper_steep_roof");
+items.add("mcwroofs:base_roof");
+items.add("mcwroofs:base_attic_roof");
+items.add("mcwroofs:base_top_roof");
+items.add("mcwroofs:base_lower_roof");
+items.add("mcwroofs:base_steep_roof");
+items.add("mcwroofs:base_upper_lower_roof");
+items.add("mcwroofs:base_upper_steep_roof");
+items.add("mcwroofs:stone_attic_roof");
+items.add("mcwroofs:granite_roof");
+items.add("mcwroofs:granite_attic_roof");
+items.add("mcwroofs:granite_top_roof");
+items.add("mcwroofs:granite_lower_roof");
+items.add("mcwroofs:granite_steep_roof");
+items.add("mcwroofs:granite_upper_lower_roof");
+items.add("mcwroofs:granite_upper_steep_roof");
+items.add("mcwroofs:diorite_roof");
+items.add("mcwroofs:diorite_attic_roof");
+items.add("mcwroofs:diorite_top_roof");
+items.add("mcwroofs:diorite_lower_roof");
+items.add("mcwroofs:diorite_steep_roof");
+items.add("mcwroofs:diorite_upper_lower_roof");
+items.add("mcwroofs:diorite_upper_steep_roof");
+items.add("mcwroofs:andesite_roof");
+items.add("mcwroofs:andesite_attic_roof");
+items.add("mcwroofs:andesite_top_roof");
+items.add("mcwroofs:andesite_lower_roof");
+items.add("mcwroofs:andesite_steep_roof");
+items.add("mcwroofs:andesite_upper_lower_roof");
+items.add("mcwroofs:andesite_upper_steep_roof");
+items.add("mcwroofs:cobblestone_attic_roof");
+items.add("mcwroofs:sandstone_attic_roof");
+items.add("mcwroofs:red_sandstone_attic_roof");
+items.add("mcwroofs:bricks_roof");
+items.add("mcwroofs:bricks_attic_roof");
+items.add("mcwroofs:bricks_top_roof");
+items.add("mcwroofs:bricks_lower_roof");
+items.add("mcwroofs:bricks_steep_roof");
+items.add("mcwroofs:bricks_upper_lower_roof");
+items.add("mcwroofs:bricks_upper_steep_roof");
+items.add("mcwroofs:blackstone_roof");
+items.add("mcwroofs:blackstone_attic_roof");
+items.add("mcwroofs:blackstone_top_roof");
+items.add("mcwroofs:blackstone_lower_roof");
+items.add("mcwroofs:blackstone_steep_roof");
+items.add("mcwroofs:blackstone_upper_lower_roof");
+items.add("mcwroofs:blackstone_upper_steep_roof");
+items.add("mcwroofs:deepslate_attic_roof");
+items.add("mcwroofs:thatch_roof");
+items.add("mcwroofs:thatch_attic_roof");
+items.add("mcwroofs:thatch_top_roof");
+items.add("mcwroofs:thatch_lower_roof");
+items.add("mcwroofs:thatch_steep_roof");
+items.add("mcwroofs:thatch_upper_lower_roof");
+items.add("mcwroofs:thatch_upper_steep_roof");
+items.add("mcwroofs:black_striped_awning");
+items.add("mcwroofs:blue_striped_awning");
+items.add("mcwroofs:brown_striped_awning");
+items.add("mcwroofs:cyan_striped_awning");
+items.add("mcwroofs:gray_striped_awning");
+items.add("mcwroofs:green_striped_awning");
+items.add("mcwroofs:light_blue_striped_awning");
+items.add("mcwroofs:light_gray_striped_awning");
+items.add("mcwroofs:lime_striped_awning");
+items.add("mcwroofs:magenta_striped_awning");
+items.add("mcwroofs:orange_striped_awning");
+items.add("mcwroofs:pink_striped_awning");
+items.add("mcwroofs:purple_striped_awning");
+items.add("mcwroofs:red_striped_awning");
+items.add("mcwroofs:yellow_striped_awning");
+items.add("mcwroofs:gutter_base_yellow");
+items.add("mcwroofs:gutter_base_orange");
+items.add("mcwroofs:gutter_base_red");
+items.add("mcwroofs:gutter_base_pink");
+items.add("mcwroofs:gutter_base_magenta");
+items.add("mcwroofs:gutter_base_purple");
+items.add("mcwroofs:gutter_base_light_blue");
+items.add("mcwroofs:gutter_base_blue");
+items.add("mcwroofs:gutter_base_cyan");
+items.add("mcwroofs:gutter_base_lime");
+items.add("mcwroofs:gutter_base_green");
+items.add("mcwroofs:gutter_base_brown");
+items.add("mcwroofs:gutter_base");
+items.add("mcwroofs:gutter_base_black");
+items.add("mcwroofs:gutter_base_gray");
+items.add("mcwroofs:gutter_base_light_gray");
+items.add("mcwroofs:gutter_base_white");
+items.add("mcwroofs:gutter_middle_yellow");
+items.add("mcwroofs:gutter_middle_orange");
+items.add("mcwroofs:gutter_middle_red");
+items.add("mcwroofs:gutter_middle_pink");
+items.add("mcwroofs:gutter_middle_magenta");
+items.add("mcwroofs:gutter_middle_purple");
+items.add("mcwroofs:gutter_middle_light_blue");
+items.add("mcwroofs:gutter_middle_blue");
+items.add("mcwroofs:gutter_middle_cyan");
+items.add("mcwroofs:gutter_middle_lime");
+items.add("mcwroofs:gutter_middle_green");
+items.add("mcwroofs:gutter_middle_brown");
+items.add("mcwroofs:gutter_middle");
+items.add("mcwroofs:gutter_middle_black");
+items.add("mcwroofs:gutter_middle_gray");
+items.add("mcwroofs:gutter_middle_light_gray");
+items.add("mcwroofs:gutter_middle_white");
+items.add("cfm:oak_upgraded_fence");
+items.add("cfm:spruce_upgraded_fence");
+items.add("cfm:birch_upgraded_fence");
+items.add("cfm:jungle_upgraded_fence");
+items.add("cfm:acacia_upgraded_fence");
+items.add("cfm:dark_oak_upgraded_fence");
+items.add("cfm:stripped_oak_upgraded_fence");
+items.add("cfm:stripped_spruce_upgraded_fence");
+items.add("cfm:stripped_birch_upgraded_fence");
+items.add("cfm:stripped_jungle_upgraded_fence");
+items.add("cfm:stripped_acacia_upgraded_fence");
+items.add("cfm:stripped_dark_oak_upgraded_fence");
+items.add("cfm:oak_upgraded_gate");
+items.add("cfm:spruce_upgraded_gate");
+items.add("cfm:birch_upgraded_gate");
+items.add("cfm:jungle_upgraded_gate");
+items.add("cfm:acacia_upgraded_gate");
+items.add("cfm:dark_oak_upgraded_gate");
+items.add("cfm:stripped_oak_upgraded_gate");
+items.add("cfm:stripped_spruce_upgraded_gate");
+items.add("cfm:stripped_birch_upgraded_gate");
+items.add("cfm:stripped_jungle_upgraded_gate");
+items.add("cfm:stripped_acacia_upgraded_gate");
+items.add("cfm:stripped_dark_oak_upgraded_gate");
+items.add("cfm:white_picket_fence");
+items.add("cfm:orange_picket_fence");
+items.add("cfm:magenta_picket_fence");
+items.add("cfm:light_blue_picket_fence");
+items.add("cfm:yellow_picket_fence");
+items.add("cfm:lime_picket_fence");
+items.add("cfm:pink_picket_fence");
+items.add("cfm:gray_picket_fence");
+items.add("cfm:light_gray_picket_fence");
+items.add("cfm:cyan_picket_fence");
+items.add("cfm:purple_picket_fence");
+items.add("cfm:blue_picket_fence");
+items.add("cfm:brown_picket_fence");
+items.add("cfm:green_picket_fence");
+items.add("cfm:red_picket_fence");
+items.add("cfm:black_picket_fence");
+items.add("cfm:white_picket_gate");
+items.add("cfm:orange_picket_gate");
+items.add("cfm:magenta_picket_gate");
+items.add("cfm:light_blue_picket_gate");
+items.add("cfm:yellow_picket_gate");
+items.add("cfm:lime_picket_gate");
+items.add("cfm:pink_picket_gate");
+items.add("cfm:gray_picket_gate");
+items.add("cfm:light_gray_picket_gate");
+items.add("cfm:cyan_picket_gate");
+items.add("cfm:purple_picket_gate");
+items.add("cfm:blue_picket_gate");
+items.add("cfm:brown_picket_gate");
+items.add("cfm:green_picket_gate");
+items.add("cfm:red_picket_gate");
+items.add("cfm:black_picket_gate");
+items.add("supplementaries:ash_bricks_wall");
+//set stage to items
+for item in items {
+    setStageItem(stage, item);
 }
 
-for mod in modList {
-    setStagedMod("carpentry", mod);
-}
+//LeftClick/Interact
+CTEventManager.register<PlayerInteractEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
 
-for item in exceptItem {
-    removeStagedItem(item);
-}
+    //check item on hand and the block interacting with
+    for item in items {
+        if event.getItemStack().registryName.toString() == item && level.getBlockState(pos).block.registryName.toString() != "minecraft:air"{
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
 
-for tag in exceptTag  {
-    removeStagedTag(tag);
-}
+        if level.getBlockState(pos).block.registryName.toString() == item {
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+});
+
+//RightClick
+CTEventManager.register<RightClickBlockEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    for item in items {
+        if level.getBlockState(pos).block.registryName.toString() == item{
+            println(item);
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+
+});
+
+CTEventManager.register<RightClickItemEvent>((event) => {
+    var player = event.player;
+    var level = player.level;
+    var pos = event.blockPos;
+
+    for item in items {
+        if event.getItemStack().registryName.toString() == item{
+            println(item);
+            if !player.hasGameStage(stage) {
+                player.displayClientMessage(message, true);
+                event.cancel();
+            }
+        }
+    }
+});
+
+CTEventManager.register<ItemTooltipEvent>((event) => {
+    var maybePlayer = event.player;
+    if maybePlayer != null {
+        val player = maybePlayer as Player;
+        for item in items {
+            if !player.hasGameStage(stage) {
+                if BracketHandlers.getItem(item).ingredient.matches(event.itemStack) {
+                    event.tooltip.add(toolTip1);
+                    event.tooltip.add(toolTip2);
+                }
+            }
+        }
+    }
+});
