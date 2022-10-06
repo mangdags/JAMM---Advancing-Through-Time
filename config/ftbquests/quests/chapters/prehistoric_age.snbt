@@ -431,24 +431,14 @@
 				"7E717801F7C30EE3"
 			]
 			id: "6B4B0AE28E57D03A"
-			tasks: [
-				{
-					id: "6B719D361491AA6C"
-					type: "item"
-					title: "Craft a Sail"
-					icon: "smallships:sail_item"
-					item: "smallships:sail_item"
-					consume_items: true
-				}
-				{
-					id: "553A3EC8C8FD78DD"
-					type: "advancement"
-					title: "Locate a ship"
-					icon: "smallships:acacia_brigg"
-					advancement: "dungeons_arise:find_undead_pirate_ship"
-					criterion: ""
-				}
-			]
+			tasks: [{
+				id: "553A3EC8C8FD78DD"
+				type: "advancement"
+				title: "Locate a ship"
+				icon: "smallships:acacia_brigg"
+				advancement: "dungeons_arise:find_undead_pirate_ship"
+				criterion: ""
+			}]
 			rewards: [
 				{
 					id: "308C27C78BBECD43"

@@ -47,7 +47,6 @@ items.add("alexsmobs:blood_sprayer");
 items.add("alexsmobs:rattlesnake_rattle");
 items.add("alexsmobs:chorus_on_a_stick");
 items.add("alexsmobs:shark_tooth");
-items.add("alexsmobs:shark_tooth_arrow");
 items.add("alexsmobs:lobster_tail");
 items.add("alexsmobs:lobster_bucket");
 items.add("alexsmobs:komodo_spit");

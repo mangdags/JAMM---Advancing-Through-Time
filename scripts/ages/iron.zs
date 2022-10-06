@@ -19,403 +19,424 @@ import crafttweaker.api.entity.type.player.Player;
 
 var message = new TextComponent("You haven't unlocked Iron Age yet").setStyle(<constant:formatting:red>);
 var stage = "iron_age";
+var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
+var toolTip2 = new TextComponent("Unlock Iron Age").setStyle(<constant:formatting:dark_red>);
 
-var items as string [] = [
-    "alcocraft:spruce_mug_magnet_pilsner",
-    "create:ornate_iron_window",
-    "farmersdelight:golden_knife",
-    "immersiveposts:fence_iron",
-    "jousting:lance_iron",
-    "minecraft:anvil",
-    "minecraft:redstone_ore",
-    "minecraft:deepslate_redstone_ore",
-    "minecraft:redstone",
-    "minecraft:redstone_torch",
-    "minecraft:redstone_block",
-    "minecraft:redstone_lamp",
-    "minecraft:deepslate_iron_ore",
-    "minecraft:iron_axe",
-    "minecraft:iron_bars",
-    "minecraft:iron_block",
-    "minecraft:iron_boots",
-    "minecraft:iron_chestplate",
-    "minecraft:iron_door",
-    "minecraft:iron_helmet",
-    "minecraft:iron_hoe",
-    "minecraft:iron_horse_armor",
-    "minecraft:iron_ingot",
-    "minecraft:iron_leggings",
-    "minecraft:iron_nugget",
-    "minecraft:iron_ore",
-    "minecraft:iron_pickaxe",
-    "minecraft:iron_shovel",
-    "minecraft:iron_sword",
-    "minecraft:iron_trapdoor",
-    "minecraft:raw_iron",
-    "minecraft:raw_iron_block",
-    "minecraft:flint_and_steel",
-    "minecraft:bucket",
-    "minecraft:shield",
-    "minecraft:name_tag",
-    "minecraft:cauldron",
-    "minecraft:shears",
-    "minecraft:compass",
-    "minecraft:water_bucket",
-    "minecraft:lava_bucket",
-    "minecraft:powder_snow_bucket",
-    "minecraft:milk_bucket",
-    "minecraft:pufferfish_bucket",
-    "minecraft:salmon_bucket",
-    "minecraft:cod_bucket",
-    "minecraft:tropical_fish_bucket",
-    "minecraft:axolotl_bucket",
-    "minecraft:tripwire_hook",
-    "minecraft:blast_furnace",
-    "minecraft:stonecutter",
-    "minecraft:lantern",
-    "minecraft:soul_lantern",
-    "minecraft:piston",
-    "minecraft:sticky_piston",
-    "minecraft:hopper",
-    "minecraft:heavy_weighted_pressure_plate",
-    "minecraft:chain",
-    "minecraft:trapped_chest",
-    "minecraft:chest_minecart",
-    "minecraft:smithing_table",
-    "minecraft:rail",
-    "minecraft:activator_rail",
-    "minecraft:detector_rail",
-    "minecraft:minecart",
-    "minecraft:furnace_minecart",
-    "minecraft:tnt_minecart",
-    "minecraft:hopper_minecart",
-    "minecraft:crossbow",
-    "minecraft:redstone",
-    "minecraft:obsidian",
-    "minecraft:crying_obsidian",
-    "minecraft:clock",
-    "minecraft:enchanting_table",
-    "minecraft:observer",
-    "minecraft:dispenser",
-    "minecraft:dropper",
-    "minecraft:target",
-    "minecraft:daylight_detector",
-    "minecraft:chipped_anvil",
-    "minecraft:damaged_anvil",
-    "minecraft:ender_chest",
-    "fusion:fusion_furnace",
-    "minecraft:chainmail_helmet",
-    "minecraft:chainmail_chestplate",
-    "minecraft:chainmail_leggings",
-    "minecraft:chainmail_boots",
-    "minecraft:lever",
-    "minecraft:lectern",
-    "minecraft:glass_bottle",
-    "minecraft:bell",
-    "minecraft:fermented_spider_eye",
-    "minecraft:map",
-    "minecraft:bookshelf",
-    "minecraft:wither_skeleton_skull",
-    "minecraft:ender_pearl",
-    "minecraft:totem_of_undying",
-    "minecraft:phantom_membrane",
-    "mcwbridges:iron_bridge_pier",
-    "mcwbridges:iron_bridge_stair",
-    "mcwbridges:pliers",
-    "mcwbridges:iron_bridge",
-    "mcwdoors:metal_door",
-    "mcwdoors:metal_warning_door",
-    "mcwdoors:metal_hospital_door",
-    "mcwdoors:metal_reinforced_door",
-    "mcwdoors:metal_windowed_door",
-    "mcwdoors:jail_door",
-    "mcwdoors:garage_white_door",
-    "mcwdoors:garage_silver_door",
-    "mcwdoors:garage_gray_door",
-    "mcwdoors:garage_black_door",
-    "mcwdoors:oak_barn_glass_door",
-    "mcwdoors:spruce_barn_glass_door",
-    "mcwdoors:birch_barn_glass_door",
-    "mcwdoors:jungle_barn_glass_door",
-    "mcwdoors:acacia_barn_glass_door",
-    "mcwdoors:dark_oak_barn_glass_door",
-    "mcwdoors:crimson_barn_glass_door",
-    "mcwdoors:warped_barn_glass_door",
-    "mcwdoors:oak_glass_door",
-    "mcwdoors:spruce_glass_door",
-    "mcwdoors:birch_glass_door",
-    "mcwdoors:jungle_glass_door",
-    "mcwdoors:acacia_glass_door",
-    "mcwdoors:dark_oak_glass_door",
-    "mcwdoors:crimson_glass_door",
-    "mcwdoors:warped_glass_door",
-    "mcwdoors:oak_bark_glass_door",
-    "mcwdoors:spruce_bark_glass_door",
-    "mcwdoors:birch_bark_glass_door",
-    "mcwdoors:jungle_bark_glass_door",
-    "mcwdoors:acacia_bark_glass_door",
-    "mcwdoors:dark_oak_bark_glass_door",
-    "mcwdoors:crimson_stem_glass_door",
-    "mcwdoors:warped_stem_glass_door",
-    "mcwdoors:oak_modern_door",
-    "mcwdoors:spruce_modern_door",
-    "mcwdoors:birch_modern_door",
-    "mcwdoors:jungle_modern_door",
-    "mcwdoors:acacia_modern_door",
-    "mcwdoors:dark_oak_modern_door",
-    "mcwdoors:crimson_modern_door",
-    "mcwdoors:warped_modern_door",
-    "mcwdoors:oak_stable_door",
-    "mcwdoors:spruce_stable_door",
-    "mcwdoors:birch_stable_door",
-    "mcwdoors:jungle_stable_door",
-    "mcwdoors:acacia_stable_door",
-    "mcwdoors:dark_oak_stable_door",
-    "mcwdoors:crimson_stable_door",
-    "mcwdoors:warped_stable_door",
-    "mcwdoors:oak_stable_head_door",
-    "mcwdoors:spruce_stable_head_door",
-    "mcwdoors:birch_stable_head_door",
-    "mcwdoors:jungle_stable_head_door",
-    "mcwdoors:acacia_stable_head_door",
-    "mcwdoors:dark_oak_stable_head_door",
-    "mcwdoors:crimson_stable_head_door",
-    "mcwdoors:warped_stable_head_door",
-    "mcwtrpdoors:metal_full_trapdoor",
-    "mcwtrpdoors:metal_warning_trapdoor",
-    "mcwtrpdoors:oak_glass_trapdoor",
-    "mcwtrpdoors:spruce_glass_trapdoor",
-    "mcwtrpdoors:birch_glass_trapdoor",
-    "mcwtrpdoors:jungle_glass_trapdoor",
-    "mcwtrpdoors:acacia_glass_trapdoor",
-    "mcwtrpdoors:dark_oak_glass_trapdoor",
-    "mcwtrpdoors:crimson_glass_trapdoor",
-    "mcwtrpdoors:warped_glass_trapdoor",
-    "mcwtrpdoors:oak_bark_trapdoor",
-    "mcwtrpdoors:spruce_bark_trapdoor",
-    "mcwtrpdoors:birch_bark_trapdoor",
-    "mcwtrpdoors:jungle_bark_trapdoor",
-    "mcwtrpdoors:acacia_bark_trapdoor",
-    "mcwtrpdoors:dark_oak_bark_trapdoor",
-    "mcwtrpdoors:crimson_bark_trapdoor",
-    "mcwtrpdoors:warped_bark_trapdoor",
-    "mcwtrpdoors:spruce_barn_trapdoor",
-    "mcwtrpdoors:birch_barn_trapdoor",
-    "mcwtrpdoors:jungle_barn_trapdoor",
-    "mcwtrpdoors:acacia_barn_trapdoor",
-    "mcwwindows:hammer",
-    "mowziesmobs:naga_fang_dagger",
-    "natprog:improved_saw",
-    "parrying:iron_mace",
-    "parrying:iron_hammer",
-    "parrying:iron_dagger",
-    "parrying:iron_spear",
-    "projectbrazier:nail",
-    "projectbrazier:iron_brazier",
-    "projectbrazier:iron_fire_bowl",
-    "projectbrazier:gold_spyglass",
-    "projectbrazier:empty_candle_holder",
-    "projectbrazier:empty_wall_candle_holder",
-    "projectbrazier:empty_wall_torch_holder",
-    "projectbrazier:jail_lattice",
-    "projectbrazier:wall_candle_holder",
-    "projectbrazier:white_wall_candle_holder",
-    "projectbrazier:orange_wall_candle_holder",
-    "projectbrazier:magenta_wall_candle_holder",
-    "projectbrazier:light_blue_wall_candle_holder",
-    "projectbrazier:yellow_wall_candle_holder",
-    "projectbrazier:lime_wall_candle_holder",
-    "projectbrazier:pink_wall_candle_holder",
-    "projectbrazier:gray_wall_candle_holder",
-    "projectbrazier:light_gray_wall_candle_holder",
-    "projectbrazier:cyan_wall_candle_holder",
-    "projectbrazier:purple_wall_candle_holder",
-    "projectbrazier:blue_wall_candle_holder",
-    "projectbrazier:brown_wall_candle_holder",
-    "projectbrazier:green_wall_candle_holder",
-    "projectbrazier:red_wall_candle_holder",
-    "projectbrazier:black_wall_candle_holder",
-    "projectbrazier:candle_holder",
-    "projectbrazier:white_candle_holder",
-    "projectbrazier:orange_candle_holder",
-    "projectbrazier:magenta_candle_holder",
-    "projectbrazier:light_blue_candle_holder",
-    "projectbrazier:yellow_candle_holder",
-    "projectbrazier:lime_candle_holder",
-    "projectbrazier:pink_candle_holder",
-    "projectbrazier:gray_candle_holder",
-    "projectbrazier:light_gray_candle_holder",
-    "projectbrazier:cyan_candle_holder",
-    "projectbrazier:purple_candle_holder",
-    "projectbrazier:blue_candle_holder",
-    "projectbrazier:brown_candle_holder",
-    "projectbrazier:green_candle_holder",
-    "projectbrazier:red_candle_holder",
-    "projectbrazier:black_candle_holder",
-    "projectbrazier:wall_torch_holder",
-    "projectbrazier:wall_soul_torch_holder",
-    "projectbrazier:traces_of_coal_ore",
-    "projectbrazier:poor_coal_ore",
-    "projectbrazier:rich_coal_ore",
-    "projectbrazier:traces_of_deepslate_coal_ore",
-    "projectbrazier:poor_deepslate_coal_ore",
-    "projectbrazier:rich_deepslate_coal_ore",
-    "supplementaries:iron_gate",
-    "supplementaries:redstone_illuminator",
-    "supplementaries:hourglass",
-    "sophisticatedstorage:iron_barrel",
-    "sophisticatedstorage:iron_chest",
-    "sophisticatedbackpacks:iron_backpack",
-    "sophisticatedbackpacks:pickup_upgrade",
-    "sophisticatedbackpacks:filter_upgrade",
-    "sophisticatedbackpacks:advanced_filter_upgrade",
-    "sophisticatedbackpacks:magnet_upgrade",
-    "sophisticatedbackpacks:feeding_upgrade",
-    "sophisticatedbackpacks:compacting_upgrade",
-    "sophisticatedbackpacks:void_upgrade",
-    "sophisticatedbackpacks:restock_upgrade",
-    "sophisticatedbackpacks:deposit_upgrade",
-    "sophisticatedbackpacks:refill_upgrade",
-    "sophisticatedbackpacks:smelting_upgrade",
-    "sophisticatedbackpacks:smoking_upgrade",
-    "sophisticatedbackpacks:blasting_upgrade",
-    "sophisticatedbackpacks:crafting_upgrade",
-    "sophisticatedbackpacks:stonecutter_upgrade",
-    "sophisticatedbackpacks:stack_upgrade_tier_1",
-    "sophisticatedbackpacks:stack_upgrade_tier_2",
-    "sophisticatedbackpacks:tool_swapper_upgrade",
-    "sophisticatedbackpacks:tank_upgrade",
-    "sophisticatedbackpacks:battery_upgrade",
-    "sophisticatedbackpacks:pump_upgrade",
-    "sophisticatedbackpacks:upgrade_base",
-    "sophisticatedstorage:storage_tool",
-    "sophisticatedstorage:packing_tape",
-    "sophisticatedstorage:pickup_upgrade",
-    "sophisticatedstorage:filter_upgrade",
-    "sophisticatedstorage:advanced_filter_upgrade",
-    "sophisticatedstorage:magnet_upgrade",
-    "sophisticatedstorage:feeding_upgrade",
-    "sophisticatedstorage:compacting_upgrade",
-    "sophisticatedstorage:void_upgrade",
-    "sophisticatedstorage:smelting_upgrade",
-    "sophisticatedstorage:smoking_upgrade",
-    "sophisticatedstorage:blasting_upgrade",
-    "sophisticatedstorage:crafting_upgrade",
-    "sophisticatedstorage:stonecutter_upgrade",
-    "sophisticatedstorage:stack_upgrade_tier_1",
-    "sophisticatedstorage:stack_upgrade_tier_2",
-    "sophisticatedstorage:stack_upgrade_tier_3",
-    "sophisticatedstorage:jukebox_upgrade",
-    "sophisticatedstorage:basic_to_iron_tier_upgrade",
-    "sophisticatedstorage:iron_to_gold_tier_upgrade",
-    "sophisticatedstorage:upgrade_base",
-    "sophisticatedstorage:basic_tier_upgrade",
-    "supplementaries:trapped_present_white",
-    "supplementaries:trapped_present_orange",
-    "supplementaries:trapped_present_magenta",
-    "supplementaries:trapped_present_light_blue",
-    "supplementaries:trapped_present_yellow",
-    "supplementaries:trapped_present_lime",
-    "supplementaries:trapped_present_pink",
-    "supplementaries:trapped_present_gray",
-    "supplementaries:trapped_present_light_gray",
-    "supplementaries:trapped_present_cyan",
-    "supplementaries:trapped_present_purple",
-    "supplementaries:trapped_present_blue",
-    "supplementaries:trapped_present_brown",
-    "supplementaries:trapped_present_green",
-    "supplementaries:trapped_present_red",
-    "supplementaries:trapped_present_black",
-    "supplementaries:trapped_present",
-    "supplementaries:cage",
-    "supplementaries:spring_launcher",
-    "supplementaries:soap",
-    "supplementaries:bubble_blower",
-    "supplementaries:clock_block",
-    "supplementaries:pulley_block",
-    "supplementaries:wind_vane",
-    "supplementaries:faucet",
-    "supplementaries:dispenser_minecart",
-    "supplementaries:bomb",
-    "supplementaries:jar",
-    "supplementaries:soap_block",
-    "supplementaries:goblet",
-    "supplementaries:lock_block",
-    "supplementaries:turn_table",
-    "supplementaries:sconce",
-    "supplementaries:sconce_soul",
-    "supplementaries:sconce_lever",
-    "supplementaries:crank",
-    "supplementaries:candle_holder",
-    "supplementaries:candle_holder_white",
-    "supplementaries:candle_holder_orange",
-    "supplementaries:candle_holder_magenta",
-    "supplementaries:candle_holder_light_blue",
-    "supplementaries:candle_holder_yellow",
-    "supplementaries:candle_holder_lime",
-    "supplementaries:candle_holder_pink",
-    "supplementaries:candle_holder_gray",
-    "supplementaries:candle_holder_light_gray",
-    "supplementaries:candle_holder_cyan",
-    "supplementaries:candle_holder_purple",
-    "supplementaries:candle_holder_blue",
-    "supplementaries:candle_holder_brown",
-    "supplementaries:candle_holder_green",
-    "supplementaries:candle_holder_red",
-    "supplementaries:candle_holder_black",
-    "supplementaries:relayer",
-    "theoneprobe:iron_helmet_probe",
-    "toolleveling:tool_leveling_table",
-    "toms_storage:ts.paint_kit",
-    "toms_storage:ts.level_emitter",
-    "toms_storage:ts.inventory_hopper_basic",
-    "toms_storage:ts.paint_kit",
-    "valhelsia_structures:metal_framed_glass_pane",
-    "valhelsia_structures:brazier",
-    "valhelsia_structures:special_spawner",
-    "createaddition:iron_rod",
-    "minecraft:tinted_glass",
-    "minecraft:white_stained_glass",
-    "minecraft:orange_stained_glass",
-    "minecraft:magenta_stained_glass",
-    "minecraft:light_blue_stained_glass",
-    "minecraft:yellow_stained_glass",
-    "minecraft:lime_stained_glass",
-    "minecraft:pink_stained_glass",
-    "minecraft:gray_stained_glass",
-    "minecraft:light_gray_stained_glass",
-    "minecraft:cyan_stained_glass",
-    "minecraft:purple_stained_glass",
-    "minecraft:blue_stained_glass",
-    "minecraft:brown_stained_glass",
-    "minecraft:green_stained_glass",
-    "minecraft:red_stained_glass",
-    "minecraft:black_stained_glass",
-    "minecraft:white_stained_glass_pane",
-    "minecraft:orange_stained_glass_pane",
-    "minecraft:magenta_stained_glass_pane",
-    "minecraft:light_blue_stained_glass_pane",
-    "minecraft:yellow_stained_glass_pane",
-    "minecraft:lime_stained_glass_pane",
-    "minecraft:pink_stained_glass_pane",
-    "minecraft:gray_stained_glass_pane",
-    "minecraft:light_gray_stained_glass_pane",
-    "minecraft:cyan_stained_glass_pane",
-    "minecraft:purple_stained_glass_pane",
-    "minecraft:blue_stained_glass_pane",
-    "minecraft:brown_stained_glass_pane",
-    "minecraft:green_stained_glass_pane",
-    "minecraft:red_stained_glass_pane",
-    "minecraft:black_stained_glass_pane"
-];
+var items = new stdlib.List<string>;
 
+items.add("alcocraft:spruce_mug_magnet_pilsner");
+items.add("create:ornate_iron_window");
+items.add("farmersdelight:golden_knife");
+items.add("immersiveposts:fence_iron");
+items.add("jousting:lance_iron");
+items.add("minecraft:anvil");
+items.add("minecraft:redstone_ore");
+items.add("minecraft:deepslate_redstone_ore");
+items.add("minecraft:redstone");
+items.add("minecraft:redstone_torch");
+items.add("minecraft:redstone_block");
+items.add("minecraft:redstone_lamp");
+items.add("minecraft:deepslate_iron_ore");
+items.add("minecraft:iron_axe");
+items.add("minecraft:iron_bars");
+items.add("minecraft:iron_block");
+items.add("minecraft:iron_boots");
+items.add("minecraft:iron_chestplate");
+items.add("minecraft:iron_door");
+items.add("minecraft:iron_helmet");
+items.add("minecraft:iron_hoe");
+items.add("minecraft:iron_horse_armor");
+items.add("minecraft:iron_ingot");
+items.add("minecraft:iron_leggings");
+items.add("minecraft:iron_nugget");
+items.add("minecraft:iron_ore");
+items.add("minecraft:iron_pickaxe");
+items.add("minecraft:iron_shovel");
+items.add("minecraft:iron_sword");
+items.add("minecraft:iron_trapdoor");
+items.add("minecraft:raw_iron");
+items.add("minecraft:raw_iron_block");
+items.add("minecraft:flint_and_steel");
+items.add("minecraft:bucket");
+items.add("minecraft:shield");
+items.add("minecraft:name_tag");
+items.add("minecraft:cauldron");
+items.add("minecraft:shears");
+items.add("minecraft:compass");
+items.add("minecraft:water_bucket");
+items.add("minecraft:lava_bucket");
+items.add("minecraft:powder_snow_bucket");
+items.add("minecraft:milk_bucket");
+items.add("minecraft:pufferfish_bucket");
+items.add("minecraft:salmon_bucket");
+items.add("minecraft:cod_bucket");
+items.add("minecraft:tropical_fish_bucket");
+items.add("minecraft:axolotl_bucket");
+items.add("minecraft:tripwire_hook");
+items.add("minecraft:blast_furnace");
+items.add("minecraft:stonecutter");
+items.add("minecraft:lantern");
+items.add("minecraft:soul_lantern");
+items.add("minecraft:piston");
+items.add("minecraft:sticky_piston");
+items.add("minecraft:hopper");
+items.add("minecraft:heavy_weighted_pressure_plate");
+items.add("minecraft:chain");
+items.add("minecraft:trapped_chest");
+items.add("minecraft:chest_minecart");
+items.add("minecraft:smithing_table");
+items.add("minecraft:rail");
+items.add("minecraft:activator_rail");
+items.add("minecraft:detector_rail");
+items.add("minecraft:minecart");
+items.add("minecraft:furnace_minecart");
+items.add("minecraft:tnt_minecart");
+items.add("minecraft:hopper_minecart");
+items.add("minecraft:crossbow");
+items.add("minecraft:redstone");
+items.add("minecraft:obsidian");
+items.add("minecraft:crying_obsidian");
+items.add("minecraft:clock");
+items.add("minecraft:enchanting_table");
+items.add("minecraft:observer");
+items.add("minecraft:dispenser");
+items.add("minecraft:dropper");
+items.add("minecraft:target");
+items.add("minecraft:daylight_detector");
+items.add("minecraft:chipped_anvil");
+items.add("minecraft:damaged_anvil");
+items.add("minecraft:ender_chest");
+items.add("fusion:fusion_furnace");
+items.add("minecraft:chainmail_helmet");
+items.add("minecraft:chainmail_chestplate");
+items.add("minecraft:chainmail_leggings");
+items.add("minecraft:chainmail_boots");
+items.add("minecraft:lever");
+items.add("minecraft:lectern");
+items.add("minecraft:glass_bottle");
+items.add("minecraft:bell");
+items.add("minecraft:fermented_spider_eye");
+items.add("minecraft:map");
+items.add("minecraft:bookshelf");
+items.add("minecraft:wither_skeleton_skull");
+items.add("minecraft:ender_pearl");
+items.add("minecraft:totem_of_undying");
+items.add("minecraft:phantom_membrane");
+items.add("mcwbridges:iron_bridge_pier");
+items.add("mcwbridges:iron_bridge_stair");
+items.add("mcwbridges:pliers");
+items.add("mcwbridges:iron_bridge");
+items.add("mcwdoors:metal_door");
+items.add("mcwdoors:metal_warning_door");
+items.add("mcwdoors:metal_hospital_door");
+items.add("mcwdoors:metal_reinforced_door");
+items.add("mcwdoors:metal_windowed_door");
+items.add("mcwdoors:jail_door");
+items.add("mcwdoors:garage_white_door");
+items.add("mcwdoors:garage_silver_door");
+items.add("mcwdoors:garage_gray_door");
+items.add("mcwdoors:garage_black_door");
+items.add("mcwdoors:oak_barn_glass_door");
+items.add("mcwdoors:spruce_barn_glass_door");
+items.add("mcwdoors:birch_barn_glass_door");
+items.add("mcwdoors:jungle_barn_glass_door");
+items.add("mcwdoors:acacia_barn_glass_door");
+items.add("mcwdoors:dark_oak_barn_glass_door");
+items.add("mcwdoors:crimson_barn_glass_door");
+items.add("mcwdoors:warped_barn_glass_door");
+items.add("mcwdoors:oak_glass_door");
+items.add("mcwdoors:spruce_glass_door");
+items.add("mcwdoors:birch_glass_door");
+items.add("mcwdoors:jungle_glass_door");
+items.add("mcwdoors:acacia_glass_door");
+items.add("mcwdoors:dark_oak_glass_door");
+items.add("mcwdoors:crimson_glass_door");
+items.add("mcwdoors:warped_glass_door");
+items.add("mcwdoors:oak_bark_glass_door");
+items.add("mcwdoors:spruce_bark_glass_door");
+items.add("mcwdoors:birch_bark_glass_door");
+items.add("mcwdoors:jungle_bark_glass_door");
+items.add("mcwdoors:acacia_bark_glass_door");
+items.add("mcwdoors:dark_oak_bark_glass_door");
+items.add("mcwdoors:crimson_stem_glass_door");
+items.add("mcwdoors:warped_stem_glass_door");
+items.add("mcwdoors:oak_modern_door");
+items.add("mcwdoors:spruce_modern_door");
+items.add("mcwdoors:birch_modern_door");
+items.add("mcwdoors:jungle_modern_door");
+items.add("mcwdoors:acacia_modern_door");
+items.add("mcwdoors:dark_oak_modern_door");
+items.add("mcwdoors:crimson_modern_door");
+items.add("mcwdoors:warped_modern_door");
+items.add("mcwdoors:oak_stable_door");
+items.add("mcwdoors:spruce_stable_door");
+items.add("mcwdoors:birch_stable_door");
+items.add("mcwdoors:jungle_stable_door");
+items.add("mcwdoors:acacia_stable_door");
+items.add("mcwdoors:dark_oak_stable_door");
+items.add("mcwdoors:crimson_stable_door");
+items.add("mcwdoors:warped_stable_door");
+items.add("mcwdoors:oak_stable_head_door");
+items.add("mcwdoors:spruce_stable_head_door");
+items.add("mcwdoors:birch_stable_head_door");
+items.add("mcwdoors:jungle_stable_head_door");
+items.add("mcwdoors:acacia_stable_head_door");
+items.add("mcwdoors:dark_oak_stable_head_door");
+items.add("mcwdoors:crimson_stable_head_door");
+items.add("mcwdoors:warped_stable_head_door");
+items.add("mcwtrpdoors:metal_full_trapdoor");
+items.add("mcwtrpdoors:metal_warning_trapdoor");
+items.add("mcwtrpdoors:oak_glass_trapdoor");
+items.add("mcwtrpdoors:spruce_glass_trapdoor");
+items.add("mcwtrpdoors:birch_glass_trapdoor");
+items.add("mcwtrpdoors:jungle_glass_trapdoor");
+items.add("mcwtrpdoors:acacia_glass_trapdoor");
+items.add("mcwtrpdoors:dark_oak_glass_trapdoor");
+items.add("mcwtrpdoors:crimson_glass_trapdoor");
+items.add("mcwtrpdoors:warped_glass_trapdoor");
+items.add("mcwtrpdoors:oak_bark_trapdoor");
+items.add("mcwtrpdoors:spruce_bark_trapdoor");
+items.add("mcwtrpdoors:birch_bark_trapdoor");
+items.add("mcwtrpdoors:jungle_bark_trapdoor");
+items.add("mcwtrpdoors:acacia_bark_trapdoor");
+items.add("mcwtrpdoors:dark_oak_bark_trapdoor");
+items.add("mcwtrpdoors:crimson_bark_trapdoor");
+items.add("mcwtrpdoors:warped_bark_trapdoor");
+items.add("mcwtrpdoors:oak_barn_trapdoor");
+items.add("mcwtrpdoors:spruce_barn_trapdoor");
+items.add("mcwtrpdoors:birch_barn_trapdoor");
+items.add("mcwtrpdoors:jungle_barn_trapdoor");
+items.add("mcwtrpdoors:acacia_barn_trapdoor");
+items.add("mcwwindows:hammer");
+items.add("mowziesmobs:naga_fang_dagger");
+items.add("natprog:improved_saw");
+items.add("parrying:iron_mace");
+items.add("parrying:iron_hammer");
+items.add("parrying:iron_dagger");
+items.add("parrying:iron_spear");
+items.add("projectbrazier:nail");
+items.add("projectbrazier:iron_brazier");
+items.add("projectbrazier:iron_fire_bowl");
+items.add("projectbrazier:gold_spyglass");
+items.add("projectbrazier:empty_candle_holder");
+items.add("projectbrazier:empty_wall_candle_holder");
+items.add("projectbrazier:empty_wall_torch_holder");
+items.add("projectbrazier:jail_lattice");
+items.add("projectbrazier:wall_candle_holder");
+items.add("projectbrazier:white_wall_candle_holder");
+items.add("projectbrazier:orange_wall_candle_holder");
+items.add("projectbrazier:magenta_wall_candle_holder");
+items.add("projectbrazier:light_blue_wall_candle_holder");
+items.add("projectbrazier:yellow_wall_candle_holder");
+items.add("projectbrazier:lime_wall_candle_holder");
+items.add("projectbrazier:pink_wall_candle_holder");
+items.add("projectbrazier:gray_wall_candle_holder");
+items.add("projectbrazier:light_gray_wall_candle_holder");
+items.add("projectbrazier:cyan_wall_candle_holder");
+items.add("projectbrazier:purple_wall_candle_holder");
+items.add("projectbrazier:blue_wall_candle_holder");
+items.add("projectbrazier:brown_wall_candle_holder");
+items.add("projectbrazier:green_wall_candle_holder");
+items.add("projectbrazier:red_wall_candle_holder");
+items.add("projectbrazier:black_wall_candle_holder");
+items.add("projectbrazier:candle_holder");
+items.add("projectbrazier:white_candle_holder");
+items.add("projectbrazier:orange_candle_holder");
+items.add("projectbrazier:magenta_candle_holder");
+items.add("projectbrazier:light_blue_candle_holder");
+items.add("projectbrazier:yellow_candle_holder");
+items.add("projectbrazier:lime_candle_holder");
+items.add("projectbrazier:pink_candle_holder");
+items.add("projectbrazier:gray_candle_holder");
+items.add("projectbrazier:light_gray_candle_holder");
+items.add("projectbrazier:cyan_candle_holder");
+items.add("projectbrazier:purple_candle_holder");
+items.add("projectbrazier:blue_candle_holder");
+items.add("projectbrazier:brown_candle_holder");
+items.add("projectbrazier:green_candle_holder");
+items.add("projectbrazier:red_candle_holder");
+items.add("projectbrazier:black_candle_holder");
+items.add("projectbrazier:wall_torch_holder");
+items.add("projectbrazier:wall_soul_torch_holder");
+items.add("projectbrazier:traces_of_coal_ore");
+items.add("projectbrazier:poor_coal_ore");
+items.add("projectbrazier:rich_coal_ore");
+items.add("projectbrazier:traces_of_deepslate_coal_ore");
+items.add("projectbrazier:poor_deepslate_coal_ore");
+items.add("projectbrazier:rich_deepslate_coal_ore");
+items.add("supplementaries:iron_gate");
+items.add("supplementaries:redstone_illuminator");
+items.add("supplementaries:hourglass");
+items.add("sophisticatedstorage:iron_barrel");
+items.add("sophisticatedstorage:iron_chest");
+items.add("sophisticatedbackpacks:iron_backpack");
+items.add("sophisticatedbackpacks:pickup_upgrade");
+items.add("sophisticatedbackpacks:filter_upgrade");
+items.add("sophisticatedbackpacks:advanced_filter_upgrade");
+items.add("sophisticatedbackpacks:magnet_upgrade");
+items.add("sophisticatedbackpacks:feeding_upgrade");
+items.add("sophisticatedbackpacks:compacting_upgrade");
+items.add("sophisticatedbackpacks:void_upgrade");
+items.add("sophisticatedbackpacks:restock_upgrade");
+items.add("sophisticatedbackpacks:deposit_upgrade");
+items.add("sophisticatedbackpacks:refill_upgrade");
+items.add("sophisticatedbackpacks:smelting_upgrade");
+items.add("sophisticatedbackpacks:smoking_upgrade");
+items.add("sophisticatedbackpacks:blasting_upgrade");
+items.add("sophisticatedbackpacks:crafting_upgrade");
+items.add("sophisticatedbackpacks:stonecutter_upgrade");
+items.add("sophisticatedbackpacks:stack_upgrade_tier_1");
+items.add("sophisticatedbackpacks:stack_upgrade_tier_2");
+items.add("sophisticatedbackpacks:tool_swapper_upgrade");
+items.add("sophisticatedbackpacks:tank_upgrade");
+items.add("sophisticatedbackpacks:battery_upgrade");
+items.add("sophisticatedbackpacks:pump_upgrade");
+items.add("sophisticatedbackpacks:upgrade_base");
+items.add("sophisticatedstorage:storage_tool");
+items.add("sophisticatedstorage:packing_tape");
+items.add("sophisticatedstorage:pickup_upgrade");
+items.add("sophisticatedstorage:filter_upgrade");
+items.add("sophisticatedstorage:advanced_filter_upgrade");
+items.add("sophisticatedstorage:magnet_upgrade");
+items.add("sophisticatedstorage:feeding_upgrade");
+items.add("sophisticatedstorage:compacting_upgrade");
+items.add("sophisticatedstorage:void_upgrade");
+items.add("sophisticatedstorage:smelting_upgrade");
+items.add("sophisticatedstorage:smoking_upgrade");
+items.add("sophisticatedstorage:blasting_upgrade");
+items.add("sophisticatedstorage:crafting_upgrade");
+items.add("sophisticatedstorage:stonecutter_upgrade");
+items.add("sophisticatedstorage:stack_upgrade_tier_1");
+items.add("sophisticatedstorage:stack_upgrade_tier_2");
+items.add("sophisticatedstorage:stack_upgrade_tier_3");
+items.add("sophisticatedstorage:jukebox_upgrade");
+items.add("sophisticatedstorage:basic_to_iron_tier_upgrade");
+items.add("sophisticatedstorage:iron_to_gold_tier_upgrade");
+items.add("sophisticatedstorage:upgrade_base");
+items.add("sophisticatedstorage:basic_tier_upgrade");
+items.add("supplementaries:trapped_present_white");
+items.add("supplementaries:trapped_present_orange");
+items.add("supplementaries:trapped_present_magenta");
+items.add("supplementaries:trapped_present_light_blue");
+items.add("supplementaries:trapped_present_yellow");
+items.add("supplementaries:trapped_present_lime");
+items.add("supplementaries:trapped_present_pink");
+items.add("supplementaries:trapped_present_gray");
+items.add("supplementaries:trapped_present_light_gray");
+items.add("supplementaries:trapped_present_cyan");
+items.add("supplementaries:trapped_present_purple");
+items.add("supplementaries:trapped_present_blue");
+items.add("supplementaries:trapped_present_brown");
+items.add("supplementaries:trapped_present_green");
+items.add("supplementaries:trapped_present_red");
+items.add("supplementaries:trapped_present_black");
+items.add("supplementaries:trapped_present");
+items.add("supplementaries:cage");
+items.add("supplementaries:spring_launcher");
+items.add("supplementaries:soap");
+items.add("supplementaries:bubble_blower");
+items.add("supplementaries:clock_block");
+items.add("supplementaries:pulley_block");
+items.add("supplementaries:wind_vane");
+items.add("supplementaries:faucet");
+items.add("supplementaries:dispenser_minecart");
+items.add("supplementaries:bomb");
+items.add("supplementaries:jar");
+items.add("supplementaries:soap_block");
+items.add("supplementaries:goblet");
+items.add("supplementaries:lock_block");
+items.add("supplementaries:turn_table");
+items.add("supplementaries:sconce");
+items.add("supplementaries:sconce_soul");
+items.add("supplementaries:sconce_lever");
+items.add("supplementaries:crank");
+items.add("supplementaries:candle_holder");
+items.add("supplementaries:candle_holder_white");
+items.add("supplementaries:candle_holder_orange");
+items.add("supplementaries:candle_holder_magenta");
+items.add("supplementaries:candle_holder_light_blue");
+items.add("supplementaries:candle_holder_yellow");
+items.add("supplementaries:candle_holder_lime");
+items.add("supplementaries:candle_holder_pink");
+items.add("supplementaries:candle_holder_gray");
+items.add("supplementaries:candle_holder_light_gray");
+items.add("supplementaries:candle_holder_cyan");
+items.add("supplementaries:candle_holder_purple");
+items.add("supplementaries:candle_holder_blue");
+items.add("supplementaries:candle_holder_brown");
+items.add("supplementaries:candle_holder_green");
+items.add("supplementaries:candle_holder_red");
+items.add("supplementaries:candle_holder_black");
+items.add("supplementaries:relayer");
+items.add("theoneprobe:iron_helmet_probe");
+items.add("toolleveling:tool_leveling_table");
+items.add("toms_storage:ts.paint_kit");
+items.add("toms_storage:ts.level_emitter");
+items.add("toms_storage:ts.inventory_hopper_basic");
+items.add("toms_storage:ts.paint_kit");
+items.add("valhelsia_structures:metal_framed_glass");
+items.add("valhelsia_structures:metal_framed_glass_pane");
+items.add("valhelsia_structures:brazier");
+items.add("valhelsia_structures:special_spawner");
+items.add("minecraft:tinted_glass");
+items.add("minecraft:white_stained_glass");
+items.add("minecraft:orange_stained_glass");
+items.add("minecraft:magenta_stained_glass");
+items.add("minecraft:light_blue_stained_glass");
+items.add("minecraft:yellow_stained_glass");
+items.add("minecraft:lime_stained_glass");
+items.add("minecraft:pink_stained_glass");
+items.add("minecraft:gray_stained_glass");
+items.add("minecraft:light_gray_stained_glass");
+items.add("minecraft:cyan_stained_glass");
+items.add("minecraft:purple_stained_glass");
+items.add("minecraft:blue_stained_glass");
+items.add("minecraft:brown_stained_glass");
+items.add("minecraft:green_stained_glass");
+items.add("minecraft:red_stained_glass");
+items.add("minecraft:black_stained_glass");
+items.add("minecraft:white_stained_glass_pane");
+items.add("minecraft:orange_stained_glass_pane");
+items.add("minecraft:magenta_stained_glass_pane");
+items.add("minecraft:light_blue_stained_glass_pane");
+items.add("minecraft:yellow_stained_glass_pane");
+items.add("minecraft:lime_stained_glass_pane");
+items.add("minecraft:pink_stained_glass_pane");
+items.add("minecraft:gray_stained_glass_pane");
+items.add("minecraft:light_gray_stained_glass_pane");
+items.add("minecraft:cyan_stained_glass_pane");
+items.add("minecraft:purple_stained_glass_pane");
+items.add("minecraft:blue_stained_glass_pane");
+items.add("minecraft:brown_stained_glass_pane");
+items.add("minecraft:green_stained_glass_pane");
+items.add("minecraft:red_stained_glass_pane");
+items.add("minecraft:black_stained_glass_pane");
+items.add("minecraft:cut_copper_slab");
+items.add("minecraft:exposed_cut_copper_slab");
+items.add("minecraft:weathered_cut_copper_slab");
+items.add("minecraft:oxidized_cut_copper_slab");
+items.add("minecraft:waxed_cut_copper_slab");
+items.add("minecraft:waxed_exposed_cut_copper_slab");
+items.add("minecraft:waxed_weathered_cut_copper_slab");
+items.add("minecraft:waxed_oxidized_cut_copper_slab");
+items.add("minecraft:glass");
+items.add("minecraft:glass_pane");
+
+for item in game.items {
+    if (item.registryName.namespace == "myrtrees"){
+        items.add(item.registryName.toString());
+    }
+}
+
+//set stage to items
 for item in items {
     setStageItem(stage, item);
 }
 
+tagToList(items, <tag:items:forge:books>);
 
 //LeftClick/Interact
-CTEventManager.register<PlayerInteractEvent>((event) =>{
+CTEventManager.register<PlayerInteractEvent>((event) => {
     var player = event.player;
     var level = player.level;
     var pos = event.blockPos;
@@ -472,10 +493,6 @@ CTEventManager.register<RightClickItemEvent>((event) => {
     }
 });
 
-var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => 
-    style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
-var toolTip2 = new TextComponent("Unlock Iron Age").setStyle(<constant:formatting:dark_red>);
-
 CTEventManager.register<ItemTooltipEvent>((event) => {
     var maybePlayer = event.player;
     if maybePlayer != null {
@@ -491,18 +508,6 @@ CTEventManager.register<ItemTooltipEvent>((event) => {
     }
 });
 
-
-var listTag as MCTag [] = [
-    <tag:items:forge:ingots/iron>,
-    <tag:items:forge:rods/iron>,
-    <tag:items:forge:glass>,
-    <tag:items:forge:glass_panes>,
-    <tag:items:forge:books>
-];
-
-var listMod as string [] = [
-    "myrtrees"
-];
 
 var exceptItem as IItemStack [] = [
     <item:sophisticatedbackpacks:diamond_backpack>,

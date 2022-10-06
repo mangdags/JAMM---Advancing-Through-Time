@@ -19,246 +19,249 @@ import crafttweaker.api.entity.type.player.Player;
 
 var message = new TextComponent("You haven't unlocked Paleolithic Age yet").setStyle(<constant:formatting:red>);
 var stage = "paleolithic_age";
+var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
+var toolTip2 = new TextComponent("Unlock Paleolithic Age").setStyle(<constant:formatting:dark_red>);
 
-var items as string [] = [
-    "minecraft:wooden_sword",
-    "minecraft:wooden_shovel",
-    "minecraft:wooden_pickaxe",
-    "minecraft:wooden_axe",
-    "minecraft:wooden_hoe",
-    "minecraft:fishing_rod",
-    "minecraft:string",
-    "minecraft:campfire",
-    "minecraft:chest",
-    "minecraft:ladder",
-    "minecraft:armor_stand",
-    "minecraft:loom",
-    "minecraft:composter",
-    "minecraft:barrel",
-    "minecraft:fletching_table",
-    "minecraft:bone_block",
-    "minecraft:bone_meal",
-    "minecraft:bone",
-    "parrying:wooden_mace",
-    "parrying:wooden_hammer",
-    "parrying:wooden_dagger",
-    "parrying:wood_flail",
-    "parrying:wood_spear",
-    "jousting:lance_wood",
-    "valhelsia_structures:bone_pile",
-    "valhelsia_structures:bone_pile_block",
-    "natprog:bone_pickaxe",
-    "natprog:bone_knife",
-    "natprog:bone_shard",
-    "alexsmobs:bone_serpent_tooth",
-    "alexsmobs:fish_bones",
-    "projectbrazier:bone_war_horn",
-    "minecraft:coal",
-    "minecraft:coal_ore",
-    "minecraft:deepslate_coal_ore",
-    "minecraft:coal_block",
-    "minecraft:coal",
-    "minecraft:scute",
-    "minecraft:turtle_helmet",
-    "minecraft:charcoal",
-    "projectbrazier:traces_of_coal_ore",
-    "projectbrazier:poor_coal_ore",
-    "projectbrazier:rich_coal_ore",
-    "projectbrazier:traces_of_deepslate_coal_ore",
-    "projectbrazier:poor_deepslate_coal_ore",
-    "projectbrazier:rich_deepslate_coal_ore",
-    "supplementaries:flax",
-    "supplementaries:flax_block",
-    "supplementaries:rope",
-    "supplementaries:sack",
-    "supplementaries:doormat",
-    "minecraft:farmland",
-    "minecraft:carrot_on_a_stick",
-    "minecraft:torch",
-    "supplementaries:feather_block",
-    "minecraft:rabbit_hide",
-    "minecraft:rabbit_foot",
-    "mcwwindows:oak_log_parapet",
-    "mcwwindows:spruce_log_parapet",
-    "mcwwindows:birch_log_parapet",
-    "mcwwindows:jungle_log_parapet",
-    "mcwwindows:acacia_log_parapet",
-    "mcwwindows:dark_oak_log_parapet",
-    "mcwwindows:oak_plank_parapet",
-    "mcwwindows:spruce_plank_parapet",
-    "mcwwindows:birch_plank_parapet",
-    "mcwwindows:jungle_plank_parapet",
-    "mcwwindows:acacia_plank_parapet",
-    "mcwwindows:dark_oak_plank_parapet",
-    "minecraft:brown_mushroom_block",
-    "minecraft:red_mushroom_block",
-    "minecraft:mushroom_stem",
-    "projectbrazier:hoof_fungus",
-    "minecraft:oak_stairs",
-    "minecraft:spruce_stairs",
-    "minecraft:birch_stairs",
-    "minecraft:jungle_stairs",
-    "minecraft:acacia_stairs",
-    "minecraft:dark_oak_stairs",
-    "minecraft:oak_slab",
-    "minecraft:spruce_slab",
-    "minecraft:birch_slab",
-    "minecraft:jungle_slab",
-    "minecraft:acacia_slab",
-    "minecraft:dark_oak_slab",
-    "minecraft:oak_fence",
-    "minecraft:spruce_fence",
-    "minecraft:birch_fence",
-    "minecraft:jungle_fence",
-    "minecraft:acacia_fence",
-    "minecraft:dark_oak_fence",
-    "minecraft:oak_sign",
-    "minecraft:spruce_sign",
-    "minecraft:birch_sign",
-    "minecraft:jungle_sign",
-    "minecraft:acacia_sign",
-    "minecraft:dark_oak_sign",
-    "farmersdelight:white_canvas_sign",
-    "farmersdelight:orange_canvas_sign",
-    "farmersdelight:magenta_canvas_sign",
-    "farmersdelight:light_blue_canvas_sign",
-    "farmersdelight:yellow_canvas_sign",
-    "farmersdelight:lime_canvas_sign",
-    "farmersdelight:pink_canvas_sign",
-    "farmersdelight:gray_canvas_sign",
-    "farmersdelight:light_gray_canvas_sign",
-    "farmersdelight:cyan_canvas_sign",
-    "farmersdelight:purple_canvas_sign",
-    "farmersdelight:blue_canvas_sign",
-    "farmersdelight:brown_canvas_sign",
-    "farmersdelight:green_canvas_sign",
-    "farmersdelight:red_canvas_sign",
-    "farmersdelight:black_canvas_sign",
-    "minecraft:item_frame",
-    "minecraft:glow_item_frame",
-    "minecraft:white_banner",
-    "minecraft:orange_banner",
-    "minecraft:magenta_banner",
-    "minecraft:light_blue_banner",
-    "minecraft:yellow_banner",
-    "minecraft:lime_banner",
-    "minecraft:pink_banner",
-    "minecraft:gray_banner",
-    "minecraft:light_gray_banner",
-    "minecraft:cyan_banner",
-    "minecraft:purple_banner",
-    "minecraft:blue_banner",
-    "minecraft:brown_banner",
-    "minecraft:green_banner",
-    "minecraft:red_banner",
-    "minecraft:black_banner",
-    "minecraft:oak_button",
-    "minecraft:spruce_button",
-    "minecraft:birch_button",
-    "minecraft:jungle_button",
-    "minecraft:acacia_button",
-    "minecraft:dark_oak_button",
-    "minecraft:oak_pressure_plate",
-    "minecraft:spruce_pressure_plate",
-    "minecraft:birch_pressure_plate",
-    "minecraft:jungle_pressure_plate",
-    "minecraft:acacia_pressure_plate",
-    "minecraft:dark_oak_pressure_plate",
-    "minecraft:oak_door",
-    "minecraft:spruce_door",
-    "minecraft:birch_door",
-    "minecraft:jungle_door",
-    "minecraft:acacia_door",
-    "minecraft:dark_oak_door",
-    "mcwdoors:oak_barn_door",
-    "mcwdoors:spruce_barn_door",
-    "mcwdoors:birch_barn_door",
-    "mcwdoors:jungle_barn_door",
-    "mcwdoors:acacia_barn_door",
-    "mcwdoors:dark_oak_barn_door",
-    "mcwdoors:oak_western_door",
-    "mcwdoors:spruce_western_door",
-    "mcwdoors:birch_western_door",
-    "mcwdoors:jungle_western_door",
-    "mcwdoors:acacia_western_door",
-    "mcwdoors:dark_oak_western_door",
-    "minecraft:oak_trapdoor",
-    "minecraft:spruce_trapdoor",
-    "minecraft:birch_trapdoor",
-    "minecraft:jungle_trapdoor",
-    "minecraft:acacia_trapdoor",
-    "minecraft:dark_oak_trapdoor",
-    "mcwtrpdoors:oak_ranch_trapdoor",
-    "mcwtrpdoors:spruce_ranch_trapdoor",
-    "mcwtrpdoors:birch_ranch_trapdoor",
-    "mcwtrpdoors:jungle_ranch_trapdoor",
-    "mcwtrpdoors:acacia_ranch_trapdoor",
-    "mcwtrpdoors:dark_oak_ranch_trapdoor",
-    "minecraft:white_carpet",
-    "minecraft:orange_carpet",
-    "minecraft:magenta_carpet",
-    "minecraft:light_blue_carpet",
-    "minecraft:yellow_carpet",
-    "minecraft:lime_carpet",
-    "minecraft:pink_carpet",
-    "minecraft:gray_carpet",
-    "minecraft:light_gray_carpet",
-    "minecraft:cyan_carpet",
-    "minecraft:purple_carpet",
-    "minecraft:blue_carpet",
-    "minecraft:brown_carpet",
-    "minecraft:green_carpet",
-    "minecraft:red_carpet",
-    "minecraft:black_carpet",
-    "minecraft:oak_fence_gate",
-    "minecraft:spruce_fence_gate",
-    "minecraft:birch_fence_gate",
-    "minecraft:jungle_fence_gate",
-    "minecraft:acacia_fence_gate",
-    "minecraft:dark_oak_fence_gate",
-    "supplementaries:sign_post_oak",
-    "supplementaries:sign_post_spruce",
-    "supplementaries:sign_post_birch",
-    "supplementaries:sign_post_jungle",
-    "supplementaries:sign_post_acacia",
-    "supplementaries:sign_post_dark_oak",
-    "supplementaries:valhelsia_structures/sign_post_lapidified_jungle",
-    "valhelsia_structures:oak_post",
-    "valhelsia_structures:spruce_post",
-    "valhelsia_structures:birch_post",
-    "valhelsia_structures:jungle_post",
-    "valhelsia_structures:acacia_post",
-    "valhelsia_structures:dark_oak_post",
-    "valhelsia_structures:cut_oak_post",
-    "valhelsia_structures:cut_spruce_post",
-    "valhelsia_structures:cut_birch_post",
-    "valhelsia_structures:cut_jungle_post",
-    "valhelsia_structures:cut_acacia_post",
-    "valhelsia_structures:cut_dark_oak_post",
-    "supplementaries:flag_white",
-    "supplementaries:flag_orange",
-    "supplementaries:flag_magenta",
-    "supplementaries:flag_light_blue",
-    "supplementaries:flag_yellow",
-    "supplementaries:flag_lime",
-    "supplementaries:flag_pink",
-    "supplementaries:flag_gray",
-    "supplementaries:flag_light_gray",
-    "supplementaries:flag_cyan",
-    "supplementaries:flag_purple",
-    "supplementaries:flag_blue",
-    "supplementaries:flag_brown",
-    "supplementaries:flag_green",
-    "supplementaries:flag_red",
-    "supplementaries:flag_black"
-];
+var items = new stdlib.List<string>;
 
+items.add("minecraft:wooden_sword");
+items.add("minecraft:wooden_shovel");
+items.add("minecraft:wooden_pickaxe");
+items.add("minecraft:wooden_axe");
+items.add("minecraft:wooden_hoe");
+items.add("minecraft:fishing_rod");
+items.add("minecraft:string");
+items.add("minecraft:campfire");
+items.add("minecraft:chest");
+items.add("minecraft:ladder");
+items.add("minecraft:armor_stand");
+items.add("minecraft:loom");
+items.add("minecraft:composter");
+items.add("minecraft:barrel");
+items.add("minecraft:fletching_table");
+items.add("minecraft:bone_block");
+items.add("minecraft:bone_meal");
+items.add("minecraft:bone");
+items.add("parrying:wooden_mace");
+items.add("parrying:wooden_hammer");
+items.add("parrying:wooden_dagger");
+items.add("parrying:wood_flail");
+items.add("parrying:wood_spear");
+items.add("jousting:lance_wood");
+items.add("valhelsia_structures:bone_pile");
+items.add("valhelsia_structures:bone_pile_block");
+items.add("natprog:bone_pickaxe");
+items.add("natprog:bone_knife");
+items.add("natprog:bone_shard");
+items.add("projectbrazier:bone_war_horn");
+items.add("minecraft:coal");
+items.add("minecraft:coal_ore");
+items.add("minecraft:deepslate_coal_ore");
+items.add("minecraft:coal_block");
+items.add("minecraft:coal");
+items.add("minecraft:scute");
+items.add("minecraft:turtle_helmet");
+items.add("minecraft:charcoal");
+items.add("supplementaries:flax");
+items.add("supplementaries:flax_block");
+items.add("supplementaries:rope");
+items.add("supplementaries:sack");
+items.add("supplementaries:doormat");
+items.add("minecraft:farmland");
+items.add("minecraft:carrot_on_a_stick");
+items.add("minecraft:torch");
+items.add("supplementaries:feather_block");
+items.add("minecraft:rabbit_hide");
+items.add("minecraft:rabbit_foot");
+items.add("mcwwindows:oak_log_parapet");
+items.add("mcwwindows:spruce_log_parapet");
+items.add("mcwwindows:birch_log_parapet");
+items.add("mcwwindows:jungle_log_parapet");
+items.add("mcwwindows:acacia_log_parapet");
+items.add("mcwwindows:dark_oak_log_parapet");
+items.add("mcwwindows:oak_plank_parapet");
+items.add("mcwwindows:spruce_plank_parapet");
+items.add("mcwwindows:birch_plank_parapet");
+items.add("mcwwindows:jungle_plank_parapet");
+items.add("mcwwindows:acacia_plank_parapet");
+items.add("mcwwindows:dark_oak_plank_parapet");
+items.add("minecraft:brown_mushroom_block");
+items.add("minecraft:red_mushroom_block");
+items.add("minecraft:mushroom_stem");
+items.add("projectbrazier:hoof_fungus");
+items.add("minecraft:oak_stairs");
+items.add("minecraft:spruce_stairs");
+items.add("minecraft:birch_stairs");
+items.add("minecraft:jungle_stairs");
+items.add("minecraft:acacia_stairs");
+items.add("minecraft:dark_oak_stairs");
+items.add("minecraft:oak_slab");
+items.add("minecraft:spruce_slab");
+items.add("minecraft:birch_slab");
+items.add("minecraft:jungle_slab");
+items.add("minecraft:acacia_slab");
+items.add("minecraft:dark_oak_slab");
+items.add("minecraft:painted_acacia_slab");
+items.add("minecraft:oak_fence");
+items.add("minecraft:spruce_fence");
+items.add("minecraft:birch_fence");
+items.add("minecraft:jungle_fence");
+items.add("minecraft:acacia_fence");
+items.add("minecraft:dark_oak_fence");
+items.add("minecraft:oak_sign");
+items.add("minecraft:spruce_sign");
+items.add("minecraft:birch_sign");
+items.add("minecraft:jungle_sign");
+items.add("minecraft:acacia_sign");
+items.add("minecraft:dark_oak_sign");
+items.add("farmersdelight:white_canvas_sign");
+items.add("farmersdelight:orange_canvas_sign");
+items.add("farmersdelight:magenta_canvas_sign");
+items.add("farmersdelight:light_blue_canvas_sign");
+items.add("farmersdelight:yellow_canvas_sign");
+items.add("farmersdelight:lime_canvas_sign");
+items.add("farmersdelight:pink_canvas_sign");
+items.add("farmersdelight:gray_canvas_sign");
+items.add("farmersdelight:light_gray_canvas_sign");
+items.add("farmersdelight:cyan_canvas_sign");
+items.add("farmersdelight:purple_canvas_sign");
+items.add("farmersdelight:blue_canvas_sign");
+items.add("farmersdelight:brown_canvas_sign");
+items.add("farmersdelight:green_canvas_sign");
+items.add("farmersdelight:red_canvas_sign");
+items.add("farmersdelight:black_canvas_sign");
+items.add("minecraft:item_frame");
+items.add("minecraft:glow_item_frame");
+items.add("minecraft:white_banner");
+items.add("minecraft:orange_banner");
+items.add("minecraft:magenta_banner");
+items.add("minecraft:light_blue_banner");
+items.add("minecraft:yellow_banner");
+items.add("minecraft:lime_banner");
+items.add("minecraft:pink_banner");
+items.add("minecraft:gray_banner");
+items.add("minecraft:light_gray_banner");
+items.add("minecraft:cyan_banner");
+items.add("minecraft:purple_banner");
+items.add("minecraft:blue_banner");
+items.add("minecraft:brown_banner");
+items.add("minecraft:green_banner");
+items.add("minecraft:red_banner");
+items.add("minecraft:black_banner");
+items.add("minecraft:oak_button");
+items.add("minecraft:spruce_button");
+items.add("minecraft:birch_button");
+items.add("minecraft:jungle_button");
+items.add("minecraft:acacia_button");
+items.add("minecraft:dark_oak_button");
+items.add("minecraft:oak_pressure_plate");
+items.add("minecraft:spruce_pressure_plate");
+items.add("minecraft:birch_pressure_plate");
+items.add("minecraft:jungle_pressure_plate");
+items.add("minecraft:acacia_pressure_plate");
+items.add("minecraft:dark_oak_pressure_plate");
+items.add("minecraft:oak_door");
+items.add("minecraft:spruce_door");
+items.add("minecraft:birch_door");
+items.add("minecraft:jungle_door");
+items.add("minecraft:acacia_door");
+items.add("minecraft:dark_oak_door");
+items.add("mcwdoors:oak_barn_door");
+items.add("mcwdoors:spruce_barn_door");
+items.add("mcwdoors:birch_barn_door");
+items.add("mcwdoors:jungle_barn_door");
+items.add("mcwdoors:acacia_barn_door");
+items.add("mcwdoors:dark_oak_barn_door");
+items.add("mcwdoors:oak_western_door");
+items.add("mcwdoors:spruce_western_door");
+items.add("mcwdoors:birch_western_door");
+items.add("mcwdoors:jungle_western_door");
+items.add("mcwdoors:acacia_western_door");
+items.add("mcwdoors:dark_oak_western_door");
+items.add("minecraft:oak_trapdoor");
+items.add("minecraft:spruce_trapdoor");
+items.add("minecraft:birch_trapdoor");
+items.add("minecraft:jungle_trapdoor");
+items.add("minecraft:acacia_trapdoor");
+items.add("minecraft:dark_oak_trapdoor");
+items.add("mcwtrpdoors:oak_ranch_trapdoor");
+items.add("mcwtrpdoors:spruce_ranch_trapdoor");
+items.add("mcwtrpdoors:birch_ranch_trapdoor");
+items.add("mcwtrpdoors:jungle_ranch_trapdoor");
+items.add("mcwtrpdoors:acacia_ranch_trapdoor");
+items.add("mcwtrpdoors:dark_oak_ranch_trapdoor");
+items.add("minecraft:white_carpet");
+items.add("minecraft:orange_carpet");
+items.add("minecraft:magenta_carpet");
+items.add("minecraft:light_blue_carpet");
+items.add("minecraft:yellow_carpet");
+items.add("minecraft:lime_carpet");
+items.add("minecraft:pink_carpet");
+items.add("minecraft:gray_carpet");
+items.add("minecraft:light_gray_carpet");
+items.add("minecraft:cyan_carpet");
+items.add("minecraft:purple_carpet");
+items.add("minecraft:blue_carpet");
+items.add("minecraft:brown_carpet");
+items.add("minecraft:green_carpet");
+items.add("minecraft:red_carpet");
+items.add("minecraft:black_carpet");
+items.add("minecraft:oak_fence_gate");
+items.add("minecraft:spruce_fence_gate");
+items.add("minecraft:birch_fence_gate");
+items.add("minecraft:jungle_fence_gate");
+items.add("minecraft:acacia_fence_gate");
+items.add("minecraft:dark_oak_fence_gate");
+items.add("supplementaries:sign_post_oak");
+items.add("supplementaries:sign_post_spruce");
+items.add("supplementaries:sign_post_birch");
+items.add("supplementaries:sign_post_jungle");
+items.add("supplementaries:sign_post_acacia");
+items.add("supplementaries:sign_post_dark_oak");
+items.add("supplementaries:valhelsia_structures/sign_post_lapidified_jungle");
+items.add("valhelsia_structures:oak_post");
+items.add("valhelsia_structures:spruce_post");
+items.add("valhelsia_structures:birch_post");
+items.add("valhelsia_structures:jungle_post");
+items.add("valhelsia_structures:acacia_post");
+items.add("valhelsia_structures:dark_oak_post");
+items.add("valhelsia_structures:cut_oak_post");
+items.add("valhelsia_structures:cut_spruce_post");
+items.add("valhelsia_structures:cut_birch_post");
+items.add("valhelsia_structures:cut_jungle_post");
+items.add("valhelsia_structures:cut_acacia_post");
+items.add("valhelsia_structures:cut_dark_oak_post");
+items.add("supplementaries:flag_white");
+items.add("supplementaries:flag_orange");
+items.add("supplementaries:flag_magenta");
+items.add("supplementaries:flag_light_blue");
+items.add("supplementaries:flag_yellow");
+items.add("supplementaries:flag_lime");
+items.add("supplementaries:flag_pink");
+items.add("supplementaries:flag_gray");
+items.add("supplementaries:flag_light_gray");
+items.add("supplementaries:flag_cyan");
+items.add("supplementaries:flag_purple");
+items.add("supplementaries:flag_blue");
+items.add("supplementaries:flag_brown");
+items.add("supplementaries:flag_green");
+items.add("supplementaries:flag_red");
+items.add("supplementaries:flag_black");
+items.add"supplementaries:hanging_sign_oak");
+items.add"supplementaries:hanging_sign_spruce");
+items.add"supplementaries:hanging_sign_birch");
+items.add"supplementaries:hanging_sign_jungle");
+items.add"supplementaries:hanging_sign_acacia");
+items.add"supplementaries:hanging_sign_dark_oak");
+items.add"supplementaries:myrtrees/hanging_sign_rubberwood");
+items.add"supplementaries:valhelsia_structures/hanging_sign_lapidified_jungle");
+//set stage to items
 for item in items {
     setStageItem(stage, item);
 }
 
 //LeftClick/Interact
-CTEventManager.register<PlayerInteractEvent>((event) =>{
+CTEventManager.register<PlayerInteractEvent>((event) => {
     var player = event.player;
     var level = player.level;
     var pos = event.blockPos;
@@ -315,10 +318,6 @@ CTEventManager.register<RightClickItemEvent>((event) => {
     }
 });
 
-var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => 
-    style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
-var toolTip2 = new TextComponent("Unlock Paleolithic Age").setStyle(<constant:formatting:dark_red>);
-
 CTEventManager.register<ItemTooltipEvent>((event) => {
     var maybePlayer = event.player;
     if maybePlayer != null {
@@ -353,266 +352,4 @@ var listTag as MCTag [] = [
     <tag:items:valhelsia_structures:posts>,
     <tag:items:valhelsia_structures:cut_posts>,
     <tag:items:supplementaries:flags>
-];
-
-var exceptItem as IItemStack [] = [
-    <item:minecraft:crimson_sign>,
-    <item:minecraft:warped_sign>,
-    <item:minecraft:crimson_door>,
-    <item:minecraft:warped_door>,
-    <item:minecraft:crimson_trapdoor>,
-    <item:minecraft:warped_trapdoor>,
-    <item:minecraft:crimson_fence_gate>,
-    <item:minecraft:warped_fence_gate>,
-    <item:minecraft:crimson_planks>,
-    <item:minecraft:warped_planks>,
-    <item:minecraft:crimson_slab>,
-    <item:minecraft:warped_slab>,
-    <item:minecraft:crimson_stem>,
-    <item:minecraft:warped_stem>,
-    <item:fusion:bronze_door>,
-    <item:fusion:steel_door>,
-    <item:fusion:thyrium_door>,
-    <item:fusion:sinisite_door>,
-    <item:mcwdoors:oak_japanese_door>,
-    <item:mcwdoors:spruce_japanese_door>,
-    <item:mcwdoors:birch_japanese_door>,
-    <item:mcwdoors:jungle_japanese_door>,
-    <item:mcwdoors:acacia_japanese_door>,
-    <item:mcwdoors:dark_oak_japanese_door>,
-    <item:mcwdoors:crimson_japanese_door>,
-    <item:mcwdoors:warped_japanese_door>,
-    <item:mcwdoors:oak_japanese2_door>,
-    <item:mcwdoors:spruce_japanese2_door>,
-    <item:mcwdoors:birch_japanese2_door>,
-    <item:mcwdoors:jungle_japanese2_door>,
-    <item:mcwdoors:acacia_japanese2_door>,
-    <item:mcwdoors:dark_oak_japanese2_door>,
-    <item:mcwdoors:crimson_japanese2_door>,
-    <item:mcwdoors:warped_japanese2_door>,
-    <item:mcwdoors:oak_paper_door>,
-    <item:mcwdoors:spruce_paper_door>,
-    <item:mcwdoors:jungle_paper_door>,
-    <item:mcwdoors:acacia_paper_door>,
-    <item:mcwdoors:dark_oak_paper_door>,
-    <item:mcwdoors:crimson_paper_door>,
-    <item:mcwdoors:warped_paper_door>,
-    <item:mcwtrpdoors:oak_paper_trapdoor>,
-    <item:mcwtrpdoors:spruce_paper_trapdoor>,
-    <item:mcwtrpdoors:jungle_paper_trapdoor>,
-    <item:mcwtrpdoors:acacia_paper_trapdoor>,
-    <item:mcwtrpdoors:dark_oak_paper_trapdoor>,
-    <item:mcwtrpdoors:crimson_paper_trapdoor>,
-    <item:mcwtrpdoors:warped_paper_trapdoor>,
-    <item:mcwdoors:oak_barn_glass_door>,
-    <item:mcwdoors:spruce_barn_glass_door>,
-    <item:mcwdoors:birch_barn_glass_door>,
-    <item:mcwdoors:jungle_barn_glass_door>,
-    <item:mcwdoors:acacia_barn_glass_door>,
-    <item:mcwdoors:dark_oak_barn_glass_door>,
-    <item:mcwdoors:crimson_barn_glass_door>,
-    <item:mcwdoors:warped_barn_glass_door>,
-    <item:mcwdoors:oak_glass_door>,
-    <item:mcwdoors:spruce_glass_door>,
-    <item:mcwdoors:birch_glass_door>,
-    <item:mcwdoors:jungle_glass_door>,
-    <item:mcwdoors:acacia_glass_door>,
-    <item:mcwdoors:dark_oak_glass_door>,
-    <item:mcwdoors:crimson_glass_door>,
-    <item:mcwdoors:warped_glass_door>,
-    <item:mcwdoors:oak_bark_glass_door>,
-    <item:mcwdoors:spruce_bark_glass_door>,
-    <item:mcwdoors:birch_bark_glass_door>,
-    <item:mcwdoors:jungle_bark_glass_door>,
-    <item:mcwdoors:acacia_bark_glass_door>,
-    <item:mcwdoors:dark_oak_bark_glass_door>,
-    <item:mcwdoors:crimson_stem_glass_door>,
-    <item:mcwdoors:warped_stem_glass_door>,
-    <item:mcwtrpdoors:oak_glass_trapdoor>,
-    <item:mcwtrpdoors:spruce_glass_trapdoor>,
-    <item:mcwtrpdoors:birch_glass_trapdoor>,
-    <item:mcwtrpdoors:jungle_glass_trapdoor>,
-    <item:mcwtrpdoors:acacia_glass_trapdoor>,
-    <item:mcwtrpdoors:dark_oak_glass_trapdoor>,
-    <item:mcwtrpdoors:crimson_glass_trapdoor>,
-    <item:mcwtrpdoors:warped_glass_trapdoor>,
-    <item:mcwtrpdoors:oak_bark_trapdoor>,
-    <item:mcwtrpdoors:spruce_bark_trapdoor>,
-    <item:mcwtrpdoors:birch_bark_trapdoor>,
-    <item:mcwtrpdoors:jungle_bark_trapdoor>,
-    <item:mcwdoors:oak_cottage_door>,
-    <item:mcwdoors:birch_cottage_door>,
-    <item:mcwdoors:jungle_cottage_door>,
-    <item:mcwdoors:acacia_cottage_door>,
-    <item:mcwdoors:dark_oak_cottage_door>,
-    <item:mcwdoors:crimson_cottage_door>,
-    <item:mcwdoors:warped_cottage_door>,
-    <item:mcwdoors:spruce_classic_door>,
-    <item:mcwdoors:birch_classic_door>,
-    <item:mcwdoors:jungle_classic_door>,
-    <item:mcwdoors:acacia_classic_door>,
-    <item:mcwdoors:dark_oak_classic_door>,
-    <item:mcwdoors:crimson_classic_door>,
-    <item:mcwdoors:warped_classic_door>,
-    <item:mcwdoors:oak_beach_door>,
-    <item:mcwdoors:spruce_beach_door>,
-    <item:mcwdoors:birch_beach_door>,
-    <item:mcwdoors:acacia_beach_door>,
-    <item:mcwdoors:dark_oak_beach_door>,
-    <item:mcwdoors:crimson_beach_door>,
-    <item:mcwdoors:warped_beach_door>,
-    <item:mcwdoors:oak_four_panel_door>,
-    <item:mcwdoors:spruce_four_panel_door>,
-    <item:mcwdoors:birch_four_panel_door>,
-    <item:mcwdoors:jungle_four_panel_door>,
-    <item:mcwdoors:acacia_four_panel_door>,
-    <item:mcwdoors:crimson_four_panel_door>,
-    <item:mcwdoors:warped_four_panel_door>,
-    <item:mcwdoors:oak_tropical_door>,
-    <item:mcwdoors:spruce_tropical_door>,
-    <item:mcwdoors:birch_tropical_door>,
-    <item:mcwdoors:jungle_tropical_door>,
-    <item:mcwdoors:dark_oak_tropical_door>,
-    <item:mcwdoors:crimson_tropical_door>,
-    <item:mcwdoors:warped_tropical_door>,
-    <item:mcwdoors:oak_modern_door>,
-    <item:mcwdoors:spruce_modern_door>,
-    <item:mcwdoors:birch_modern_door>,
-    <item:mcwdoors:jungle_modern_door>,
-    <item:mcwdoors:acacia_modern_door>,
-    <item:mcwdoors:dark_oak_modern_door>,
-    <item:mcwdoors:crimson_modern_door>,
-    <item:mcwdoors:warped_modern_door>,
-    <item:mcwdoors:oak_stable_door>,
-    <item:mcwdoors:spruce_stable_door>,
-    <item:mcwdoors:birch_stable_door>,
-    <item:mcwdoors:jungle_stable_door>,
-    <item:mcwdoors:acacia_stable_door>,
-    <item:mcwdoors:dark_oak_stable_door>,
-    <item:mcwdoors:crimson_stable_door>,
-    <item:mcwdoors:warped_stable_door>,
-    <item:mcwdoors:oak_stable_head_door>,
-    <item:mcwdoors:spruce_stable_head_door>,
-    <item:mcwdoors:birch_stable_head_door>,
-    <item:mcwdoors:jungle_stable_head_door>,
-    <item:mcwdoors:acacia_stable_head_door>,
-    <item:mcwdoors:dark_oak_stable_head_door>,
-    <item:mcwdoors:crimson_stable_head_door>,
-    <item:mcwdoors:warped_stable_head_door>,
-    <item:mcwdoors:oak_mystic_door>,
-    <item:mcwdoors:spruce_mystic_door>,
-    <item:mcwdoors:birch_mystic_door>,
-    <item:mcwdoors:jungle_mystic_door>,
-    <item:mcwdoors:acacia_mystic_door>,
-    <item:mcwdoors:dark_oak_mystic_door>,
-    <item:mcwdoors:crimson_mystic_door>,
-    <item:mcwdoors:oak_nether_door>,
-    <item:mcwdoors:spruce_nether_door>,
-    <item:mcwdoors:birch_nether_door>,
-    <item:mcwdoors:jungle_nether_door>,
-    <item:mcwdoors:acacia_nether_door>,
-    <item:mcwdoors:dark_oak_nether_door>,
-    <item:mcwdoors:warped_nether_door>,
-    <item:mcwdoors:oak_swamp_door>,
-    <item:mcwdoors:spruce_swamp_door>,
-    <item:mcwdoors:birch_swamp_door>,
-    <item:mcwdoors:jungle_swamp_door>,
-    <item:mcwdoors:acacia_swamp_door>,
-    <item:mcwdoors:dark_oak_swamp_door>,
-    <item:mcwdoors:crimson_swamp_door>,
-    <item:mcwdoors:warped_swamp_door>,
-    <item:mcwtrpdoors:oak_barred_trapdoor>,
-    <item:mcwtrpdoors:oak_beach_trapdoor>,
-    <item:mcwtrpdoors:oak_cottage_trapdoor>,
-    <item:mcwtrpdoors:oak_four_panel_trapdoor>,
-    <item:mcwtrpdoors:oak_mystic_trapdoor>,
-    <item:mcwtrpdoors:oak_tropical_trapdoor>,
-    <item:mcwtrpdoors:oak_swamp_trapdoor>,
-    <item:mcwtrpdoors:spruce_barn_trapdoor>,
-    <item:mcwtrpdoors:spruce_barred_trapdoor>,
-    <item:mcwtrpdoors:spruce_beach_trapdoor>,
-    <item:mcwtrpdoors:spruce_classic_trapdoor>,
-    <item:mcwtrpdoors:spruce_four_panel_trapdoor>,
-    <item:mcwtrpdoors:spruce_mystic_trapdoor>,
-    <item:mcwtrpdoors:spruce_tropical_trapdoor>,
-    <item:mcwtrpdoors:spruce_swamp_trapdoor>,
-    <item:mcwtrpdoors:birch_barn_trapdoor>,
-    <item:mcwtrpdoors:birch_barred_trapdoor>,
-    <item:mcwtrpdoors:birch_beach_trapdoor>,
-    <item:mcwtrpdoors:birch_classic_trapdoor>,
-    <item:mcwtrpdoors:birch_cottage_trapdoor>,
-    <item:mcwtrpdoors:birch_four_panel_trapdoor>,
-    <item:mcwtrpdoors:birch_mystic_trapdoor>,
-    <item:mcwtrpdoors:birch_tropical_trapdoor>,
-    <item:mcwtrpdoors:birch_swamp_trapdoor>,
-    <item:mcwtrpdoors:jungle_barn_trapdoor>,
-    <item:mcwtrpdoors:jungle_barred_trapdoor>,
-    <item:mcwtrpdoors:jungle_classic_trapdoor>,
-    <item:mcwtrpdoors:jungle_cottage_trapdoor>,
-    <item:mcwtrpdoors:jungle_four_panel_trapdoor>,
-    <item:mcwtrpdoors:jungle_mystic_trapdoor>,
-    <item:mcwtrpdoors:jungle_tropical_trapdoor>,
-    <item:mcwtrpdoors:jungle_swamp_trapdoor>,
-    <item:mcwtrpdoors:acacia_barn_trapdoor>,
-    <item:mcwtrpdoors:acacia_barred_trapdoor>,
-    <item:mcwtrpdoors:acacia_beach_trapdoor>,
-    <item:mcwtrpdoors:acacia_classic_trapdoor>,
-    <item:mcwtrpdoors:acacia_cottage_trapdoor>,
-    <item:mcwtrpdoors:acacia_four_panel_trapdoor>,
-    <item:mcwtrpdoors:acacia_mystic_trapdoor>,
-    <item:mcwtrpdoors:acacia_swamp_trapdoor>,
-    <item:mcwtrpdoors:dark_oak_barred_trapdoor>,
-    <item:mcwtrpdoors:dark_oak_beach_trapdoor>,
-    <item:mcwtrpdoors:dark_oak_classic_trapdoor>,
-    <item:mcwtrpdoors:dark_oak_cottage_trapdoor>,
-    <item:mcwtrpdoors:dark_oak_mystic_trapdoor>,
-    <item:mcwtrpdoors:dark_oak_tropical_trapdoor>,
-    <item:mcwtrpdoors:dark_oak_swamp_trapdoor>,
-    <item:mcwtrpdoors:crimson_beach_trapdoor>,
-    <item:mcwtrpdoors:crimson_classic_trapdoor>,
-    <item:mcwtrpdoors:crimson_cottage_trapdoor>,
-    <item:mcwtrpdoors:crimson_four_panel_trapdoor>,
-    <item:mcwtrpdoors:crimson_mystic_trapdoor>,
-    <item:mcwtrpdoors:crimson_tropical_trapdoor>,
-    <item:mcwtrpdoors:crimson_swamp_trapdoor>,
-    <item:mcwtrpdoors:warped_barred_trapdoor>,
-    <item:mcwtrpdoors:warped_beach_trapdoor>,
-    <item:mcwtrpdoors:warped_classic_trapdoor>,
-    <item:mcwtrpdoors:warped_cottage_trapdoor>,
-    <item:mcwtrpdoors:warped_four_panel_trapdoor>,
-    <item:mcwtrpdoors:warped_tropical_trapdoor>,
-    <item:mcwtrpdoors:warped_swamp_trapdoor>,
-    <item:mcwtrpdoors:bamboo_trapdoor>,
-    <item:minecraft:stripped_crimson_stem>,
-    <item:minecraft:stripped_warped_stem>,
-    <item:minecraft:stripped_crimson_hyphae>,
-    <item:minecraft:stripped_warped_hyphae>,
-    <item:minecraft:crimson_hyphae>,
-    <item:minecraft:warped_hyphae>,
-    <item:minecraft:crimson_fence>,
-    <item:minecraft:warped_fence>,
-    <item:minecraft:warped_stairs>,
-    <item:minecraft:crimson_stairs>,
-    <item:mcwdoors:crimson_barn_door>,
-    <item:mcwdoors:warped_barn_door>,
-    <item:mcwdoors:crimson_western_door>,
-    <item:mcwdoors:warped_western_door>,
-    <item:mcwtrpdoors:crimson_barn_trapdoor>,
-    <item:mcwtrpdoors:warped_barn_trapdoor>,
-    <item:mcwtrpdoors:crimson_ranch_trapdoor>,
-    <item:mcwtrpdoors:warped_ranch_trapdoor>,
-    <item:supplementaries:hanging_sign_crimson>,
-    <item:supplementaries:hanging_sign_warped>,
-    <item:supplementaries:sign_post_crimson>,
-    <item:supplementaries:sign_post_warped>,
-    <item:minecraft:crimson_button>,
-    <item:minecraft:warped_button>,
-    <item:minecraft:crimson_pressure_plate>,
-    <item:minecraft:warped_pressure_plate>,
-    <item:projectbrazier:traces_of_coal_ore>,
-    <item:projectbrazier:poor_coal_ore>,
-    <item:projectbrazier:rich_coal_ore>,
-    <item:projectbrazier:traces_of_deepslate_coal_ore>,
-    <item:projectbrazier:poor_deepslate_coal_ore>,
-    <item:projectbrazier:rich_deepslate_coal_ore>
 ];

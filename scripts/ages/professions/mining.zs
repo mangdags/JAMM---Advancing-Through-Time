@@ -5,5 +5,5 @@ var listItem as IItemStack [] = [
 ];
 
 for item in listItem {
-    setStagedItem("mining", item);
+    //setStagedItem("mining", item);
 }

@@ -18,100 +18,101 @@ import crafttweaker.api.event.entity.player.ItemTooltipEvent;
 import crafttweaker.api.entity.type.player.Player;
 
 
-#priority 101
+var message = new TextComponent("You haven't unlocked Prehistoric Age yet").setStyle(<constant:formatting:red>);
+var stage = "prehistoric_age";
+var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
+var toolTip2 = new TextComponent("Unlock Prehistoric Age").setStyle(<constant:formatting:dark_red>);
 
-var items as string [] = [
-    "natprog:flint_hatchet",
-    "farmersdelight:flint_knife",
-    "minecraft:flint",
-    "natprog:basic_saw",
-    "supplementaries:flint_block",
-    "minecraft:sand",
-    "minecraft:gravel",
-    "minecraft:carrot",
-    "minecraft:potato",
-    "minecraft:wheat",
-    "minecraft:bread",
-    "minecraft:beetroot",
-    "minecraft:apple",
-    "minecraft:wheat_seeds",
-    "projectbrazier:white_cabbage",
-    "minecraft:stick",
-    "minecraft:crafting_table",
-    "minecraft:oak_log",
-    "minecraft:spruce_log",
-    "minecraft:birch_log",
-    "minecraft:jungle_log",
-    "minecraft:acacia_log",
-    "minecraft:dark_oak_log",
-    "minecraft:stripped_oak_log",
-    "minecraft:stripped_spruce_log",
-    "minecraft:stripped_birch_log",
-    "minecraft:stripped_jungle_log",
-    "minecraft:stripped_acacia_log",
-    "minecraft:stripped_dark_oak_log",
-    "minecraft:stripped_oak_wood",
-    "minecraft:stripped_spruce_wood",
-    "minecraft:stripped_birch_wood",
-    "minecraft:stripped_jungle_wood",
-    "minecraft:stripped_acacia_wood",
-    "minecraft:stripped_dark_oak_wood",
-    "minecraft:oak_wood",
-    "minecraft:spruce_wood",
-    "minecraft:birch_wood",
-    "minecraft:jungle_wood",
-    "minecraft:acacia_wood",
-    "minecraft:dark_oak_wood",
-    "minecraft:white_wool",
-    "minecraft:orange_wool",
-    "minecraft:magenta_wool",
-    "minecraft:light_blue_wool",
-    "minecraft:yellow_wool",
-    "minecraft:lime_wool",
-    "minecraft:pink_wool",
-    "minecraft:gray_wool",
-    "minecraft:light_gray_wool",
-    "minecraft:cyan_wool",
-    "minecraft:purple_wool",
-    "minecraft:blue_wool",
-    "minecraft:brown_wool",
-    "minecraft:green_wool",
-    "minecraft:red_wool",
-    "minecraft:black_wool",
-    "minecraft:oak_planks",
-    "minecraft:spruce_planks",
-    "minecraft:birch_planks",
-    "minecraft:jungle_planks",
-    "minecraft:acacia_planks",
-    "minecraft:dark_oak_planks",
-    "minecraft:white_bed",
-    "minecraft:orange_bed",
-    "minecraft:magenta_bed",
-    "minecraft:light_blue_bed",
-    "minecraft:yellow_bed",
-    "minecraft:lime_bed",
-    "minecraft:pink_bed",
-    "minecraft:gray_bed",
-    "minecraft:light_gray_bed",
-    "minecraft:cyan_bed",
-    "minecraft:purple_bed",
-    "minecraft:blue_bed",
-    "minecraft:brown_bed",
-    "minecraft:green_bed",
-    "minecraft:red_bed",
-    "minecraft:black_bed"
-];
+var items = new stdlib.List<string>;
+
+items.add("natprog:flint_hatchet");
+items.add("farmersdelight:flint_knife");
+items.add("minecraft:flint");
+items.add("natprog:basic_saw");
+items.add("supplementaries:flint_block");
+items.add("minecraft:sand");
+items.add("minecraft:gravel");
+items.add("minecraft:carrot");
+items.add("minecraft:potato");
+items.add("minecraft:wheat");
+items.add("minecraft:bread");
+items.add("minecraft:beetroot");
+items.add("minecraft:apple");
+items.add("minecraft:wheat_seeds");
+items.add("projectbrazier:white_cabbage");
+items.add("minecraft:stick");
+items.add("minecraft:crafting_table");
+items.add("minecraft:oak_log");
+items.add("minecraft:spruce_log");
+items.add("minecraft:birch_log");
+items.add("minecraft:jungle_log");
+items.add("minecraft:acacia_log");
+items.add("minecraft:dark_oak_log");
+items.add("minecraft:stripped_oak_log");
+items.add("minecraft:stripped_spruce_log");
+items.add("minecraft:stripped_birch_log");
+items.add("minecraft:stripped_jungle_log");
+items.add("minecraft:stripped_acacia_log");
+items.add("minecraft:stripped_dark_oak_log");
+items.add("minecraft:stripped_oak_wood");
+items.add("minecraft:stripped_spruce_wood");
+items.add("minecraft:stripped_birch_wood");
+items.add("minecraft:stripped_jungle_wood");
+items.add("minecraft:stripped_acacia_wood");
+items.add("minecraft:stripped_dark_oak_wood");
+items.add("minecraft:oak_wood");
+items.add("minecraft:spruce_wood");
+items.add("minecraft:birch_wood");
+items.add("minecraft:jungle_wood");
+items.add("minecraft:acacia_wood");
+items.add("minecraft:dark_oak_wood");
+items.add("minecraft:white_wool");
+items.add("minecraft:orange_wool");
+items.add("minecraft:magenta_wool");
+items.add("minecraft:light_blue_wool");
+items.add("minecraft:yellow_wool");
+items.add("minecraft:lime_wool");
+items.add("minecraft:pink_wool");
+items.add("minecraft:gray_wool");
+items.add("minecraft:light_gray_wool");
+items.add("minecraft:cyan_wool");
+items.add("minecraft:purple_wool");
+items.add("minecraft:blue_wool");
+items.add("minecraft:brown_wool");
+items.add("minecraft:green_wool");
+items.add("minecraft:red_wool");
+items.add("minecraft:black_wool");
+items.add("minecraft:oak_planks");
+items.add("minecraft:spruce_planks");
+items.add("minecraft:birch_planks");
+items.add("minecraft:jungle_planks");
+items.add("minecraft:acacia_planks");
+items.add("minecraft:dark_oak_planks");
+items.add("mowziesmobs:painted_acacia");
+items.add("minecraft:white_bed");
+items.add("minecraft:orange_bed");
+items.add("minecraft:magenta_bed");
+items.add("minecraft:light_blue_bed");
+items.add("minecraft:yellow_bed");
+items.add("minecraft:lime_bed");
+items.add("minecraft:pink_bed");
+items.add("minecraft:gray_bed");
+items.add("minecraft:light_gray_bed");
+items.add("minecraft:cyan_bed");
+items.add("minecraft:purple_bed");
+items.add("minecraft:blue_bed");
+items.add("minecraft:brown_bed");
+items.add("minecraft:green_bed");
+items.add("minecraft:red_bed");
+items.add("minecraft:black_bed");
 
 //set stage to items
 for item in items {
-    setStageItem("prehistoric_age", item);
+    setStageItem(stage, item);
 }
 
-var message = new TextComponent("You haven't unlocked Prehistoric Age yet").setStyle(<constant:formatting:red>);
-var stage = "prehistoric_age";
-
 //LeftClick/Interact
-CTEventManager.register<PlayerInteractEvent>((event) =>{
+CTEventManager.register<PlayerInteractEvent>((event) => {
     var player = event.player;
     var level = player.level;
     var pos = event.blockPos;
@@ -167,10 +168,6 @@ CTEventManager.register<RightClickItemEvent>((event) => {
         }
     }
 });
-
-var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => 
-    style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
-var toolTip2 = new TextComponent("Unlock Prehistoric Age").setStyle(<constant:formatting:dark_red>);
 
 CTEventManager.register<ItemTooltipEvent>((event) => {
     var maybePlayer = event.player;

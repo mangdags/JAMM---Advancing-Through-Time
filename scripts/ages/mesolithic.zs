@@ -16,109 +16,116 @@ import crafttweaker.api.item.type.block.BlockItem;
 import crafttweaker.api.tag.manager.ITagManager;
 import crafttweaker.api.event.entity.player.ItemTooltipEvent;
 import crafttweaker.api.entity.type.player.Player;
+import crafttweaker.api.ingredient.IIngredient;
+import crafttweaker.api.item.ItemDefinition;
+import stdlib.List;
 
 var message = new TextComponent("You haven't unlocked Mesolithic Age yet").setStyle(<constant:formatting:red>);
 var stage = "mesolithic_age";
+var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
+var toolTip2 = new TextComponent("Unlock Mesolithic Age").setStyle(<constant:formatting:dark_red>);
 
-var items as string [] = [
-    "alexsmobs:banana",
-    "immersiveengineering:ersatz_leather",
-    "mcwbridges:bamboo_bridge",
-    "mcwbridges:dry_bamboo_bridge",
-    "mcwbridges:bamboo_bridge_pier",
-    "mcwbridges:dry_bamboo_bridge_pier",
-    "mcwbridges:bamboo_bridge_stair",
-    "mcwbridges:dry_bamboo_bridge_stair",
-    "mcwfences:bamboo_fence",
-    "mcwtrpdoors:bamboo_trapdoor",
-    "mcwwindows:oak_blinds",
-    "mcwwindows:spruce_blinds",
-    "mcwwindows:birch_blinds",
-    "mcwwindows:jungle_blinds",
-    "mcwwindows:acacia_blinds",
-    "mcwwindows:dark_oak_blinds",
-    "mcwwindows:andesite_parapet",
-    "mcwwindows:diorite_parapet",
-    "mcwwindows:granite_parapet",
-    "minecraft:furnace",
-    "minecraft:stone",
-    "minecraft:cobblestone",
-    "minecraft:leather_helmet",
-    "minecraft:leather_chestplate",
-    "minecraft:leather_boots",
-    "minecraft:leather_leggings",
-    "minecraft:leather",
-    "minecraft:leather_horse_armor",
-    "minecraft:item_frame",
-    "minecraft:stone_sword",
-    "minecraft:stone_shovel",
-    "minecraft:stone_pickaxe",
-    "minecraft:stone_axe",
-    "minecraft:stone_hoe",
-    "minecraft:lapis_ore",
-    "minecraft:deepslate_lapis_ore",
-    "minecraft:lapis_block",
-    "minecraft:lapis_lazuli",
-    "minecraft:bamboo",
-    "minecraft:scaffolding",
-    "minecraft:bow",
-    "minecraft:glow_item_frame",
-    "minecraft:arrow",
-    "minecraft:packed_ice",
-    "minecraft:moss_carpet",
-    "minecraft:moss_block",
-    "parrying:stone_mace",
-    "parrying:stone_hammer",
-    "parrying:stone_dagger",
-    "parrying:stone_flail",
-    "parrying:stone_spear",
-    "projectbrazier:birch_firewood",
-    "projectbrazier:oak_firewood",
-    "projectbrazier:acacia_firewood",
-    "projectbrazier:jungle_firewood",
-    "projectbrazier:dark_oak_firewood",
-    "projectbrazier:spruce_firewood",
-    "projectbrazier:rope",
-    "supplementaries:bamboo_spikes",
-    "supplementaries:flute",
-    "supplementaries:bellows",
-    "supplementaries:lapis_bricks",
-    "supplementaries:lapis_bricks_stairs",
-    "sophisticatedbackpacks:backpack",
-    "minecraft:cobbled_deepslate",
-    "minecraft:mossy_cobblestone",
-    "minecraft:infested_cobblestone",
-    "natprog:cobbled_andesite",
-    "natprog:cobbled_diorite",
-    "natprog:cobbled_granite",
-    "natprog:cobbled_sandstone",
-    "natprog:cobbled_red_sandstone",
-    "natprog:cobbled_tuff",
-    "natprog:cobbled_dripstone_block",
-    "minecraft:white_dye",
-    "minecraft:orange_dye",
-    "minecraft:magenta_dye",
-    "minecraft:light_blue_dye",
-    "minecraft:yellow_dye",
-    "minecraft:lime_dye",
-    "minecraft:pink_dye",
-    "minecraft:gray_dye",
-    "minecraft:light_gray_dye",
-    "minecraft:cyan_dye",
-    "minecraft:purple_dye",
-    "minecraft:blue_dye",
-    "minecraft:brown_dye",
-    "minecraft:green_dye",
-    "minecraft:red_dye",
-    "minecraft:black_dye"
-];
+var items = new stdlib.List<string>;
 
+items.add("alexsmobs:banana");
+items.add("immersiveengineering:ersatz_leather");
+items.add("mcwbridges:bamboo_bridge");
+items.add("mcwbridges:dry_bamboo_bridge");
+items.add("mcwbridges:bamboo_bridge_pier");
+items.add("mcwbridges:dry_bamboo_bridge_pier");
+items.add("mcwbridges:bamboo_bridge_stair");
+items.add("mcwbridges:dry_bamboo_bridge_stair");
+items.add("mcwfences:bamboo_fence");
+items.add("mcwtrpdoors:bamboo_trapdoor");
+items.add("mcwwindows:oak_blinds");
+items.add("mcwwindows:spruce_blinds");
+items.add("mcwwindows:birch_blinds");
+items.add("mcwwindows:jungle_blinds");
+items.add("mcwwindows:acacia_blinds");
+items.add("mcwwindows:dark_oak_blinds");
+items.add("mcwwindows:andesite_parapet");
+items.add("mcwwindows:diorite_parapet");
+items.add("mcwwindows:granite_parapet");
+items.add("minecraft:furnace");
+items.add("minecraft:stone");
+items.add("minecraft:cobblestone");
+items.add("minecraft:leather_helmet");
+items.add("minecraft:leather_chestplate");
+items.add("minecraft:leather_boots");
+items.add("minecraft:leather_leggings");
+items.add("minecraft:leather");
+items.add("minecraft:leather_horse_armor");
+items.add("minecraft:item_frame");
+items.add("minecraft:stone_sword");
+items.add("minecraft:stone_shovel");
+items.add("minecraft:stone_pickaxe");
+items.add("minecraft:stone_axe");
+items.add("minecraft:stone_hoe");
+items.add("minecraft:lapis_ore");
+items.add("minecraft:deepslate_lapis_ore");
+items.add("minecraft:lapis_block");
+items.add("minecraft:lapis_lazuli");
+items.add("minecraft:bamboo");
+items.add("minecraft:scaffolding");
+items.add("minecraft:bow");
+items.add("minecraft:glow_item_frame");
+items.add("minecraft:packed_ice");
+items.add("minecraft:moss_carpet");
+items.add("minecraft:moss_block");
+items.add("parrying:stone_mace");
+items.add("parrying:stone_hammer");
+items.add("parrying:stone_dagger");
+items.add("parrying:stone_flail");
+items.add("parrying:stone_spear");
+items.add("projectbrazier:birch_firewood");
+items.add("projectbrazier:oak_firewood");
+items.add("projectbrazier:acacia_firewood");
+items.add("projectbrazier:jungle_firewood");
+items.add("projectbrazier:dark_oak_firewood");
+items.add("projectbrazier:spruce_firewood");
+items.add("projectbrazier:rope");
+items.add("supplementaries:bamboo_spikes");
+items.add("supplementaries:flute");
+items.add("supplementaries:bellows");
+items.add("supplementaries:lapis_bricks");
+items.add("supplementaries:lapis_bricks_stairs");
+items.add("sophisticatedbackpacks:backpack");
+items.add("minecraft:cobbled_deepslate");
+items.add("minecraft:mossy_cobblestone");
+items.add("minecraft:infested_cobblestone");
+items.add("natprog:cobbled_andesite");
+items.add("natprog:cobbled_diorite");
+items.add("natprog:cobbled_granite");
+items.add("natprog:cobbled_sandstone");
+items.add("natprog:cobbled_red_sandstone");
+items.add("natprog:cobbled_tuff");
+items.add("natprog:cobbled_dripstone_block");
+items.add("minecraft:white_dye");
+items.add("minecraft:orange_dye");
+items.add("minecraft:magenta_dye");
+items.add("minecraft:light_blue_dye");
+items.add("minecraft:yellow_dye");
+items.add("minecraft:lime_dye");
+items.add("minecraft:pink_dye");
+items.add("minecraft:gray_dye");
+items.add("minecraft:light_gray_dye");
+items.add("minecraft:cyan_dye");
+items.add("minecraft:purple_dye");
+items.add("minecraft:blue_dye");
+items.add("minecraft:brown_dye");
+items.add("minecraft:green_dye");
+items.add("minecraft:red_dye");
+items.add("minecraft:black_dye");
+
+//set stage to items
 for item in items {
     setStageItem(stage, item);
 }
 
+tagToList(items, <tag:items:minecraft:arrows>);
+
 //LeftClick/Interact
-CTEventManager.register<PlayerInteractEvent>((event) =>{
+CTEventManager.register<PlayerInteractEvent>((event) => {
     var player = event.player;
     var level = player.level;
     var pos = event.blockPos;
@@ -174,10 +181,6 @@ CTEventManager.register<RightClickItemEvent>((event) => {
         }
     }
 });
-
-var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => 
-    style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
-var toolTip2 = new TextComponent("Unlock Mesolithic Age").setStyle(<constant:formatting:dark_red>);
 
 CTEventManager.register<ItemTooltipEvent>((event) => {
     var maybePlayer = event.player;

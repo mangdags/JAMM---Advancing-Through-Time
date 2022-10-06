@@ -27,10 +27,6 @@ var toolTip2 = new TextComponent("Unlock Machine Age").setStyle(<constant:format
 
 var items = new stdlib.List<string>;
 
-items.add("bygonenether:gilded_netherite_helmet");
-items.add("bygonenether:gilded_netherite_chestplate");
-items.add("bygonenether:gilded_netherite_leggings");
-items.add("bygonenether:gilded_netherite_boots");
 items.add("jousting:lance_netherite");
 items.add("minecraft:netherite_ingot");
 items.add("minecraft:lodestone");

@@ -16,95 +16,101 @@ import crafttweaker.api.item.type.block.BlockItem;
 import crafttweaker.api.tag.manager.ITagManager;
 import crafttweaker.api.event.entity.player.ItemTooltipEvent;
 import crafttweaker.api.entity.type.player.Player;
+import crafttweaker.api.ingredient.IIngredient;
+import crafttweaker.api.item.ItemDefinition;
+import stdlib.List;
 
 var message = new TextComponent("You haven't unlocked Bronze Age yet").setStyle(<constant:formatting:red>);
 var stage = "bronze_age";
+var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
+var toolTip2 = new TextComponent("Unlock Bronze Age").setStyle(<constant:formatting:dark_red>);
 
-var items as string [] = [
-    "fusion:bronze_ingot",
-    "fusion:bronze_helmet",
-    "fusion:bronze_leggings",
-    "fusion:bronze_chestplate",
-    "fusion:bronze_boots",
-    "fusion:bronze_sword",
-    "fusion:bronze_pickaxe",
-    "fusion:bronze_axe",
-    "fusion:bronze_shovel",
-    "fusion:bronze_hoe",
-    "fusion:bronze_shears",
-    "fusion:bronze_block",
-    "fusion:bronze_bricks",
-    "fusion:bronze_brick_slab",
-    "fusion:bronze_brick_stairs",
-    "fusion:bronze_bars",
-    "fusion:bronze_door",
-    "fusion:bronze_nugget",
-    "fusion:large_bronze_chunk",
-    "fusion:medium_bronze_chunk",
-    "jousting:lance_gold",
-    "mekanism:ingot_bronze",
-    "mekanism:nugget_bronze",
-    "mekanism:block_bronze",
-    "mekanism:ingot_tin",
-    "mekanism:raw_tin",
-    "mekanism:nugget_tin",
-    "mekanism:block_tin",
-    "mekanism:block_raw_tin",
-    "mekanism:tin_ore",
-    "mekanism:deepslate_tin_ore",
-    "minecraft:raw_gold",
-    "minecraft:light_weighted_pressure_plate",
-    "minecraft:golden_boots",
-    "minecraft:golden_helmet",
-    "minecraft:golden_sword",
-    "minecraft:raw_gold_block",
-    "minecraft:golden_horse_armor",
-    "minecraft:golden_carrot",
-    "minecraft:glistering_melon_slice",
-    "minecraft:gold_ore",
-    "minecraft:golden_pickaxe",
-    "minecraft:gold_nugget",
-    "minecraft:gold_ingot",
-    "minecraft:golden_apple",
-    "minecraft:golden_shovel",
-    "minecraft:deepslate_gold_ore",
-    "minecraft:golden_axe",
-    "minecraft:gold_block",
-    "minecraft:golden_leggings",
-    "minecraft:golden_hoe",
-    "minecraft:golden_chestplate",
-    "natprog:bronze_saw",
-    "natprog:golden_saw",
-    "parrying:golden_hammer",
-    "parrying:golden_mace",
-    "parrying:golden_dagger",
-    "parrying:gold_spear",
-    "parrying:gold_flail",
-    "sophisticatedstorage:gold_barrel",
-    "sophisticatedstorage:gold_chest",
-    "sophisticatedbackpacks:gold_backpack",
-    "supplementaries:gold_door",
-    "supplementaries:gold_trapdoor",
-    "supplementaries:key",
-    "toms_storage:ts.inventory_connector",
-    "toms_storage:ts.storage_terminal",
-    "toms_storage:ts.open_crate",
-    "toms_storage:ts.trim",
-    "toms_storage:ts.inventory_cable",
-    "toms_storage:ts.inventory_cable_framed",
-    "toms_storage:ts.inventory_cable_connector",
-    "toms_storage:ts.inventory_cable_connector_filtered",
-    "toms_storage:ts.inventory_proxy",
-    "toms_storage:ts.crafting_terminal",
-    "toms_storage:ts.inventory_cable_connector_framed"
-];
+var items = new stdlib.List<string>;
 
+items.add("fusion:bronze_ingot");
+items.add("fusion:bronze_helmet");
+items.add("fusion:bronze_leggings");
+items.add("fusion:bronze_chestplate");
+items.add("fusion:bronze_boots");
+items.add("fusion:bronze_sword");
+items.add("fusion:bronze_pickaxe");
+items.add("fusion:bronze_axe");
+items.add("fusion:bronze_shovel");
+items.add("fusion:bronze_hoe");
+items.add("fusion:bronze_shears");
+items.add("fusion:bronze_block");
+items.add("fusion:bronze_bricks");
+items.add("fusion:bronze_brick_slab");
+items.add("fusion:bronze_brick_stairs");
+items.add("fusion:bronze_bars");
+items.add("fusion:bronze_door");
+items.add("fusion:bronze_nugget");
+items.add("fusion:large_bronze_chunk");
+items.add("fusion:medium_bronze_chunk");
+items.add("jousting:lance_gold");
+items.add("mekanism:ingot_bronze");
+items.add("mekanism:nugget_bronze");
+items.add("mekanism:block_bronze");
+items.add("mekanism:ingot_tin");
+items.add("mekanism:raw_tin");
+items.add("mekanism:nugget_tin");
+items.add("mekanism:block_tin");
+items.add("mekanism:block_raw_tin");
+items.add("mekanism:tin_ore");
+items.add("mekanism:deepslate_tin_ore");
+items.add("minecraft:raw_gold");
+items.add("minecraft:light_weighted_pressure_plate");
+items.add("minecraft:golden_boots");
+items.add("minecraft:golden_helmet");
+items.add("minecraft:golden_sword");
+items.add("minecraft:raw_gold_block");
+items.add("minecraft:golden_horse_armor");
+items.add("minecraft:golden_carrot");
+items.add("minecraft:glistering_melon_slice");
+items.add("minecraft:gold_ore");
+items.add("minecraft:golden_pickaxe");
+items.add("minecraft:gold_nugget");
+items.add("minecraft:gold_ingot");
+items.add("minecraft:golden_apple");
+items.add("minecraft:golden_shovel");
+items.add("minecraft:deepslate_gold_ore");
+items.add("minecraft:golden_axe");
+items.add("minecraft:gold_block");
+items.add("minecraft:golden_leggings");
+items.add("minecraft:golden_hoe");
+items.add("minecraft:golden_chestplate");
+items.add("natprog:bronze_saw");
+items.add("natprog:golden_saw");
+items.add("parrying:golden_hammer");
+items.add("parrying:golden_mace");
+items.add("parrying:golden_dagger");
+items.add("parrying:gold_spear");
+items.add("parrying:gold_flail");
+items.add("sophisticatedstorage:gold_barrel");
+items.add("sophisticatedstorage:gold_chest");
+items.add("sophisticatedbackpacks:gold_backpack");
+items.add("supplementaries:gold_door");
+items.add("supplementaries:gold_trapdoor");
+items.add("supplementaries:key");
+items.add("toms_storage:ts.inventory_connector");
+items.add("toms_storage:ts.storage_terminal");
+items.add("toms_storage:ts.open_crate");
+items.add("toms_storage:ts.trim");
+items.add("toms_storage:ts.inventory_cable");
+items.add("toms_storage:ts.inventory_cable_framed");
+items.add("toms_storage:ts.inventory_cable_connector");
+items.add("toms_storage:ts.inventory_cable_connector_filtered");
+items.add("toms_storage:ts.inventory_proxy");
+items.add("toms_storage:ts.crafting_terminal");
+items.add("toms_storage:ts.inventory_cable_connector_framed");
+
+//set stage to items
 for item in items {
     setStageItem(stage, item);
 }
 
 //LeftClick/Interact
-CTEventManager.register<PlayerInteractEvent>((event) =>{
+CTEventManager.register<PlayerInteractEvent>((event) => {
     var player = event.player;
     var level = player.level;
     var pos = event.blockPos;
@@ -160,10 +166,6 @@ CTEventManager.register<RightClickItemEvent>((event) => {
         }
     }
 });
-
-var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => 
-    style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
-var toolTip2 = new TextComponent("Unlock Bronze Age").setStyle(<constant:formatting:dark_red>);
 
 CTEventManager.register<ItemTooltipEvent>((event) => {
     var maybePlayer = event.player;

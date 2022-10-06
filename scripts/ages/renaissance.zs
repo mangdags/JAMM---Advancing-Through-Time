@@ -22,8 +22,11 @@ import stdlib.List;
 
 var message = new TextComponent("You haven't unlocked Renaissance Age yet").setStyle(<constant:formatting:red>);
 var stage = "renaissance_age";
+var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
+var toolTip2 = new TextComponent("Unlock Renaissance Age").setStyle(<constant:formatting:dark_red>);
 
-var items = new stdlib.List<string>();
+var items = new stdlib.List<string>;
+
 items.add("cfm:warped_table");
 items.add("cfm:stripped_warped_table");
 items.add("cfm:warped_chair");
@@ -228,7 +231,6 @@ items.add("mcwwindows:crimson_stem_window");
 items.add("mcwwindows:crimson_stem_window2");
 items.add("mcwwindows:stripped_crimson_stem_window");
 items.add("mcwwindows:stripped_crimson_stem_window2");
-items.add("mcwwindows:crimson_planks_window");
 items.add("mcwwindows:crimson_planks_window");
 items.add("mcwwindows:crimson_stem_parapet");
 items.add("mcwwindows:crimson_plank_parapet");
@@ -485,6 +487,8 @@ items.add("sophisticatedstorage:gold_to_diamond_tier_upgrade");
 items.add("supplementaries:crimson_lantern");
 items.add("supplementaries:blackstone_tile");
 items.add("supplementaries:blackstone_tile_stairs");
+items.add("supplementaries:blackstone_tile_slab");
+items.add("supplementaries:blackstone_tile_wall");
 items.add("supplementaries:blackstone_lamp");
 items.add("supplementaries:planter_rich");
 items.add("supplementaries:blackboard");
@@ -517,6 +521,7 @@ items.add("alcocraft:spruce_mug_ice_beer");
 items.add("alcocraft:spruce_mug_kvass");
 items.add("alcocraft:spruce_mug_leprechaun_cider");
 items.add("alcocraft:spruce_keg");
+items.add("minecraft:nether_brick_slab");
 
 for item in game.items {
     if(item.registryName.namespace == "bygonenether") {
@@ -528,7 +533,6 @@ tagToList(items, <tag:items:forge:concrete_powders>);
 tagToList(items, <tag:items:forge:concrete>);
 tagToList(items, <tag:items:forge:terracotta>);
 tagToList(items, <tag:items:supplementaries:bamboo_spikes_tipped>);
-
 
 //set stage to items
 for item in items {
@@ -592,10 +596,6 @@ CTEventManager.register<RightClickItemEvent>((event) => {
         }
     }
 });
-
-var toolTip1 = new TextComponent("UNAVAILABLE ITEM").withStyle(style => 
-    style.withColor(<constant:minecraft:formatting:gold>).withItalic(true));
-var toolTip2 = new TextComponent("Unlock Renaissance Age").setStyle(<constant:formatting:dark_red>);
 
 CTEventManager.register<ItemTooltipEvent>((event) => {
     var maybePlayer = event.player;
