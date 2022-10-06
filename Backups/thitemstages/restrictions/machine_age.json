@@ -1,0 +1,86 @@
+{
+  "Restriction Data": {
+    "stage": "machine_age",
+    "itemList": [
+      "bygonenether:gilded_netherite_helmet",
+      "bygonenether:gilded_netherite_chestplate",
+      "bygonenether:gilded_netherite_leggings",
+      "bygonenether:gilded_netherite_boots",
+      "jousting:lance_netherite",
+      "minecraft:netherite_ingot",
+      "minecraft:lodestone",
+      "parrying:netherite_mace",
+      "parrying:netherite_hammer",
+      "parrying:netherite_dagger",
+      "parrying:netherite_flail",
+      "parrying:netherite_spear",
+      "supplementaries:lead_door",
+      "supplementaries:silver_door",
+      "supplementaries:lead_lantern",
+      "supplementaries:silver_trapdoor",
+      "supplementaries:lead_trapdoor",
+      "toms_storage:ts.adv_wireless_terminal",
+      "mekanism:ingot_uranium",
+      "mekanism:raw_uranium",
+      "mekanism:nugget_uranium",
+      "mekanism:block_uranium",
+      "mekanism:block_raw_uranium",
+      "mekanism:uranium_ore",
+      "mekanism:deepslate_uranium_ore",
+      "mekanism:dust_tin",
+      "mekanism:block_lead"
+    ],
+    "blockList": [
+    ],
+    "modList": [
+      "mtmechs",
+      "immersiveengineering",
+      "immersiveposts"
+    ],
+    "tagList": [
+    ],
+    "exceptionList": [
+      "immersiveengineering:hammer",
+      "immersiveengineering:alu_post",
+      "immersiveengineering:ingot_aluminum",
+      "immersiveengineering:raw_aluminum",
+      "immersiveengineering:raw_block_aluminum",
+      "immersiveengineering:deepslate_ore_aluminum",
+      "immersiveengineering:ore_aluminum",
+      "immersiveengineering:alu_scaffolding_standard",
+      "immersiveengineering:slab_alu_scaffolding_standard",
+      "immersiveengineering:stairs_alu_scaffolding_standard",
+      "immersiveengineering:alu_scaffolding_grate_top",
+      "immersiveengineering:slab_alu_scaffolding_grate_top",
+      "immersiveengineering:stairs_alu_scaffolding_grate_top",
+      "immersiveengineering:alu_scaffolding_wooden_top",
+      "immersiveengineering:slab_alu_scaffolding_wooden_top",
+      "immersiveengineering:stairs_alu_scaffolding_wooden_top",
+      "immersiveengineering:stick_aluminum",
+      "immersiveengineering:stick_iron",
+      "immersiveposts:fence_iron",
+      "immersiveengineering:ersatz_leather"
+    ],
+    "containerList": [
+      "net.minecraft.inventory.container.WorkbenchContainer", 
+      "thitemstages.inventoryMenu.CraftingGrid",
+      "top.theillusivec4.curios.common.inventory.container.CuriosContainer",
+      "net.minecraft.world.inventory.ChestMenu",
+      "net.minecraft.world.inventory.FurnaceMenu"
+    ],
+    "dimensionList": [
+    ]
+  },
+  "Settings": {
+    "advancedTooltips": "ALWAYS",
+    "itemTitle": "Unavailable Item",
+    "pickupDelay": 15,
+    "hideInJEI": true,
+    "canPickup": true,
+    "containerListWhitelist": false,
+    "checkPlayerInventory": true,
+    "checkPlayerEquipment": true,
+    "usableItems": false,
+    "usableBlocks": false
+  }
+}

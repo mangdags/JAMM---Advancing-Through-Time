@@ -2,15 +2,6 @@
   "Restriction Data": {
     "stage": "fishery",
     "itemList": [
-      "alexsmobs:flying_fish_bucket",
-      "alexsmobs:flying_fish_boots",
-      "alexsmobs:flying_fish",
-      "alexsmobs:large_catfish_bucket",
-      "alexsmobs:medium_catfish_bucket",
-      "alexsmobs:pupfish_locator",
-      "alexsmobs:devils_hole_pupfish_bucket",
-      "alexsmobs:fish_oil",
-      "alexsmobs:blobfish_bucket",
       "minecraft:dead_tube_coral_block",
       "minecraft:dead_brain_coral_block",
       "minecraft:dead_bubble_coral_block",
@@ -54,8 +45,7 @@
       "minecraft:kelp",
       "minecraft:pufferfish",
       "minecraft:ink_sac",
-      "minecraft:glow_ink_sac",
-      "smallships:sail_item"
+      "minecraft:glow_ink_sac"
     ],
     "blockList": [
     ],
@@ -77,7 +67,7 @@
     ]
   },
   "Settings": {
-    "advancedTooltips": "ALWAYS",
+    "advancedTooltips": "NONE",
     "itemTitle": "Unavailable Item",
     "pickupDelay": 15,
     "hideInJEI": true,

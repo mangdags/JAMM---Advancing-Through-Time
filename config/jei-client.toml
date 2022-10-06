@@ -1,7 +1,7 @@
 
 [advanced]
 	#Debug mode enabled
-	DebugMode = true
+	DebugMode = false
 	#Display search bar in the center
 	CenterSearch = false
 	#Set low-memory mode (makes search very slow, but uses less RAM)
@@ -89,5 +89,5 @@
 	#Allowed Values: ENABLED, AUTO_HIDE, DISABLED
 	ButtonNavigationVisibility = "ENABLED"
 	#Set to true to draw a background texture behind the gui.
-	DrawBackground = false
+	DrawBackground = true
 

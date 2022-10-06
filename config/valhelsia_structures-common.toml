@@ -7,115 +7,115 @@
 		flatness_delta = 4
 		#How many chunks need to be at least between two structures? (in chunks) [default: 5]
 		#Range: 0 ~ 64
-		min_structure_distance = 7
+		min_structure_distance = 10
 
 	[structures.castle]
 		#Spawn Chance [default: 0.5]. 
 		# 1.0 = generate the structure always, 0.0 = never generate the structure
 		#Range: 0.0 ~ 1.0
-		spawn_chance = 0.5
+		spawn_chance = 0.3
 		#Spacing (in chunks) [default: 37]
 		#Range: 0 ~ 200
-		spacing = 37
+		spacing = 47
 		#Minimum Separation (in chunks) [default: 7]
 		#Range: 0 ~ 200
-		separation = 10
+		separation = 14
 
 	[structures.castle_ruin]
 		#Spawn Chance [default: 0.6]. 
 		# 1.0 = generate the structure always, 0.0 = never generate the structure
 		#Range: 0.0 ~ 1.0
-		spawn_chance = 0.5
+		spawn_chance = 0.3
 		#Spacing (in chunks) [default: 33]
 		#Range: 0 ~ 200
-		spacing = 33
+		spacing = 43
 		#Minimum Separation (in chunks) [default: 7]
 		#Range: 0 ~ 200
-		separation = 10
+		separation = 14
 
 	[structures.desert_house]
 		#Spawn Chance [default: 0.7]. 
 		# 1.0 = generate the structure always, 0.0 = never generate the structure
 		#Range: 0.0 ~ 1.0
-		spawn_chance = 0.5
+		spawn_chance = 0.3
 		#Spacing (in chunks) [default: 28]
 		#Range: 0 ~ 200
-		spacing = 28
+		spacing = 38
 		#Minimum Separation (in chunks) [default: 7]
 		#Range: 0 ~ 200
-		separation = 7
+		separation = 14
 
 	[structures.forge]
 		#Spawn Chance [default: 0.7]. 
 		# 1.0 = generate the structure always, 0.0 = never generate the structure
 		#Range: 0.0 ~ 1.0
-		spawn_chance = 0.5
+		spawn_chance = 0.3
 		#Spacing (in chunks) [default: 28]
 		#Range: 0 ~ 200
-		spacing = 28
+		spacing = 38
 		#Minimum Separation (in chunks) [default: 7]
 		#Range: 0 ~ 200
-		separation = 10
+		separation = 14
 
 	[structures.player_house]
 		#Spawn Chance [default: 0.7]. 
 		# 1.0 = generate the structure always, 0.0 = never generate the structure
 		#Range: 0.0 ~ 1.0
-		spawn_chance = 0.7
+		spawn_chance = 0.4
 		#Spacing (in chunks) [default: 28]
 		#Range: 0 ~ 200
-		spacing = 28
+		spacing = 38
 		#Minimum Separation (in chunks) [default: 7]
 		#Range: 0 ~ 200
-		separation = 7
+		separation = 14
 
 	[structures.spawner_dungeon]
 		#Spawn Chance [default: 0.7]. 
 		# 1.0 = generate the structure always, 0.0 = never generate the structure
 		#Range: 0.0 ~ 1.0
-		spawn_chance = 0.5
+		spawn_chance = 0.3
 		#Spacing (in chunks) [default: 28]
 		#Range: 0 ~ 200
-		spacing = 28
+		spacing = 38
 		#Minimum Separation (in chunks) [default: 7]
 		#Range: 0 ~ 200
-		separation = 10
+		separation = 14
 
 	[structures.tower_ruin]
 		#Spawn Chance [default: 0.8]. 
 		# 1.0 = generate the structure always, 0.0 = never generate the structure
 		#Range: 0.0 ~ 1.0
-		spawn_chance = 0.8
+		spawn_chance = 0.3
 		#Spacing (in chunks) [default: 23]
 		#Range: 0 ~ 200
-		spacing = 23
+		spacing = 33
 		#Minimum Separation (in chunks) [default: 7]
 		#Range: 0 ~ 200
-		separation = 7
+		separation = 14
 
 	[structures.witch_hut]
 		#Spawn Chance [default: 0.85]. 
 		# 1.0 = generate the structure always, 0.0 = never generate the structure
 		#Range: 0.0 ~ 1.0
-		spawn_chance = 0.85
+		spawn_chance = 0.55
 		#Spacing (in chunks) [default: 23]
 		#Range: 0 ~ 200
-		spacing = 23
+		spacing = 33
 		#Minimum Separation (in chunks) [default: 6]
 		#Range: 0 ~ 200
-		separation = 6
+		separation = 12
 
 	[structures.big_tree]
 		#Spawn Chance [default: 0.7]. 
 		# 1.0 = generate the structure always, 0.0 = never generate the structure
 		#Range: 0.0 ~ 1.0
-		spawn_chance = 0.8
+		spawn_chance = 0.3
 		#Spacing (in chunks) [default: 28]
 		#Range: 0 ~ 200
-		spacing = 28
+		spacing = 38
 		#Minimum Separation (in chunks) [default: 7]
 		#Range: 0 ~ 200
-		separation = 7
+		separation = 14
 
 [blocks]
 

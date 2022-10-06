@@ -71,17 +71,13 @@ items.add("minecraft:kelp");
 items.add("minecraft:pufferfish");
 items.add("minecraft:ink_sac");
 items.add("minecraft:glow_ink_sac");
-items.add("minecraft:oak_boat");
-items.add("minecraft:spruce_boat");
-items.add("minecraft:birch_boat");
-items.add("minecraft:jungle_boat");
-items.add("minecraft:acacia_boat");
-items.add("minecraft:dark_oak_boat");
 
 //set stage to items
 for item in items {
     setStageItem(stage, item);
 }
+
+tagToList(items, <tag:items:minecraft:boats>);
 
 //LeftClick/Interact
 CTEventManager.register<PlayerInteractEvent>((event) => {

@@ -217,28 +217,13 @@ items.add("supplementaries:notice_board");
 items.add("supplementaries:cog_block");
 items.add("sereneseasons:calendar");
 items.add("valhelsia_structures:paper_wall");
-items.add("supplementaries:present_white");
-items.add("supplementaries:present_orange");
-items.add("supplementaries:present_magenta");
-items.add("supplementaries:present_light_blue");
-items.add("supplementaries:present_yellow");
-items.add("supplementaries:present_lime");
-items.add("supplementaries:present_pink");
-items.add("supplementaries:present_gray");
-items.add("supplementaries:present_light_gray");
-items.add("supplementaries:present_cyan");
-items.add("supplementaries:present_purple");
-items.add("supplementaries:present_blue");
-items.add("supplementaries:present_brown");
-items.add("supplementaries:present_green");
-items.add("supplementaries:present_red");
-items.add("supplementaries:present_black");
-items.add("supplementaries:present");
 
 //set stage to items
 for item in items {
     setStageItem(stage, item);
 }
+
+tagToList(items, <tag:items:supplementaries:presents>);
 
 //LeftClick/Interact
 CTEventManager.register<PlayerInteractEvent>((event) => {

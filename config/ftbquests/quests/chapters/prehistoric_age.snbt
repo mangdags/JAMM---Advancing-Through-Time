@@ -282,7 +282,7 @@
 					}
 					count: 64L
 					consume_items: true
-					only_from_crafting: true
+					only_from_crafting: false
 				}
 				{
 					id: "1BD41EB74525B389"

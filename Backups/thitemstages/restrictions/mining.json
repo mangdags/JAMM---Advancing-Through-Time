@@ -1,0 +1,37 @@
+{
+  "Restriction Data": {
+    "stage": "mining",
+    "itemList": [
+    ],
+    "blockList": [
+    ],
+    "modList": [
+    ],
+    "tagList": [
+      
+    ],
+    "exceptionList": [
+    ],
+    "containerList": [
+      "net.minecraft.inventory.container.WorkbenchContainer", 
+      "thitemstages.inventoryMenu.CraftingGrid",
+      "top.theillusivec4.curios.common.inventory.container.CuriosContainer",
+      "net.minecraft.world.inventory.ChestMenu",
+      "net.minecraft.world.inventory.FurnaceMenu"
+    ],
+    "dimensionList": [
+    ]
+  },
+  "Settings": {
+    "advancedTooltips": "ALWAYS",
+    "itemTitle": "Unavailable Item",
+    "pickupDelay": 15,
+    "hideInJEI": true,
+    "canPickup": false,
+    "containerListWhitelist": false,
+    "checkPlayerInventory": true,
+    "checkPlayerEquipment": true,
+    "usableItems": false,
+    "usableBlocks": false
+  }
+}

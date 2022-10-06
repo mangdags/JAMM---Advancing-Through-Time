@@ -234,6 +234,7 @@ items.add("alexsmobs:bison_fur_block");
 items.add("alexsmobs:bison_carpet");
 items.add("alexsmobs:sand_circle");
 items.add("alexsmobs:red_sand_circle");
+items.add("alexsmobs:blobfish_bucket");
 
 
 //set stage to items

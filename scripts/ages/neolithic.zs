@@ -222,6 +222,8 @@ items.add("minecraft:red_candle");
 items.add("minecraft:black_candle");
 items.add("supplementaries:stone_tile_slab");
 items.add("supplementaries:stone_tile_wall");
+items.add("supplementaries:lapis_bricks_slab");
+items.add("supplementaries:lapis_bricks_wall");
 
 
 //set stage to items

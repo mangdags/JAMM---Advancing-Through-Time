@@ -86,9 +86,6 @@
     "tagList": [
     ],
     "exceptionList": [
-      "sophisticatedbackpacks:iron_backpack",
-      "sophisticatedbackpacks:diamond_backpack",
-      "sophisticatedbackpacks:netherite_backpack"
     ],
     "containerList": [
       "net.minecraft.inventory.container.WorkbenchContainer", 
@@ -102,11 +99,11 @@
     ]
   },
   "Settings": {
-    "advancedTooltips": "ALWAYS",
+    "advancedTooltips": "NONE",
     "itemTitle": "Unavailable Item",
     "pickupDelay": 15,
     "hideInJEI": true,
-    "canPickup": true,
+    "canPickup": false,
     "containerListWhitelist": false,
     "checkPlayerInventory": true,
     "checkPlayerEquipment": true,

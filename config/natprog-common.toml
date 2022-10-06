@@ -3,10 +3,10 @@
 [general]
 	#The maximum number of pebbles that can be found in each chunk
 	#Range: 0 ~ 256
-	maxPebblesPerChunk = 3
+	maxPebblesPerChunk = 5
 	#The maximum number of twigs that can be found in each chunk
 	#Range: 0 ~ 256
-	maxTwigsPerChunk = 1
+	maxTwigsPerChunk = 3
 	#Setting this to true prevents the ability to use wooden tools, though you can still craft them for compatibility.
 	removeWoodenToolFunctionality = false
 	#Setting this to true prevents the ability to use stone tools, though you can still craft them for compatibility.

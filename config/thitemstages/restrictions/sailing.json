@@ -7,7 +7,11 @@
       "minecraft:trident",
       "minecraft:prismarine_bricks",
       "minecraft:dark_prismarine",
-      "minecraft:prismarine"
+      "minecraft:prismarine",
+      "minecraft:prismarine_wall",
+      "minecraft:dark_prismarine_slab",
+      "minecraft:prismarine_slab",
+      "minecraft:prismarine_brick_slab"
     ],
     "blockList": [
     ],
@@ -19,7 +23,6 @@
       
     ],
     "exceptionList": [
-      "smallships:sail_item"
     ],
     "containerList": [
       "net.minecraft.inventory.container.WorkbenchContainer", 
@@ -32,7 +35,7 @@
     ]
   },
   "Settings": {
-    "advancedTooltips": "ALWAYS",
+    "advancedTooltips": "NONE",
     "itemTitle": "Unavailable Item",
     "pickupDelay": 15,
     "hideInJEI": true,

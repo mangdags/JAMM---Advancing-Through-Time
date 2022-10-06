@@ -23,9 +23,10 @@
     "minecraft:silk_touch"
   ],
   "enchantmentCaps": {
-    "minecraft:fire_protection": 10
+    "minecraft:fire_protection": 10,
+    "minecraft:protection": 10
   },
   "enchantmentUpgradeCostModifier": {
-    "minecraft:looting": 2.0
+    "minecraft:looting": 2.5
   }
 }

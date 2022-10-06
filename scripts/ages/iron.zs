@@ -207,6 +207,7 @@ items.add("mcwtrpdoors:spruce_barn_trapdoor");
 items.add("mcwtrpdoors:birch_barn_trapdoor");
 items.add("mcwtrpdoors:jungle_barn_trapdoor");
 items.add("mcwtrpdoors:acacia_barn_trapdoor");
+items.add("mcwtrpdoors:dark_oak_barn_trapdoor");
 items.add("mcwwindows:hammer");
 items.add("mowziesmobs:naga_fang_dagger");
 items.add("natprog:improved_saw");

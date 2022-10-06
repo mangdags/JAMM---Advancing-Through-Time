@@ -96,7 +96,7 @@
     ]
   },
   "Settings": {
-    "advancedTooltips": "ALWAYS",
+    "advancedTooltips": "NONE",
     "itemTitle": "Unavailable Item",
     "pickupDelay": 15,
     "hideInJEI": true,

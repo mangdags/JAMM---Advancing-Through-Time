@@ -715,6 +715,17 @@ items.add("create:small_veridium_brick_slab");
 items.add("create:small_veridium_brick_wall");
 items.add("create:layered_veridium");
 items.add("create:veridium_pillar");
+items.add("create:tiled_glass_pane");
+items.add("create:framed_glass_pane");
+items.add("create:horizontal_framed_glass_pane");
+items.add("create:vertical_framed_glass_pane");
+items.add("create:oak_window_pane");
+items.add("create:spruce_window_pane");
+items.add("create:birch_window_pane");
+items.add("create:jungle_window_pane");
+items.add("create:acacia_window_pane");
+items.add("create:dark_oak_window_pane");
+items.add("create:ornate_iron_window_pane");
 
 for item in game.items {
     if(item.registryName.namespace == "createaddition") { 
@@ -731,10 +742,6 @@ for item in game.items {
 
     if(item.registryName.namespace == "refinedpipes") { 
         items.add(item.registryName.toString()); 
-    }
-
-    if(item.registryName.namespace == "create") { 
-        println(item.registryName.toString()); 
     }
 }
 

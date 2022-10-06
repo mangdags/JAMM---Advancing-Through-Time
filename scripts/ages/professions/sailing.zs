@@ -33,6 +33,10 @@ items.add("minecraft:trident");
 items.add("minecraft:prismarine_bricks");
 items.add("minecraft:dark_prismarine");
 items.add("minecraft:prismarine");
+items.add("minecraft:prismarine_wall");
+items.add("minecraft:dark_prismarine_slab");
+items.add("minecraft:prismarine_slab");
+items.add("minecraft:prismarine_brick_slab");
 
 for item in game.items {
     if(item.registryName.namespace == "smallships") {

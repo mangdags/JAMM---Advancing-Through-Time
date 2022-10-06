@@ -36,9 +36,12 @@ items.add("alcocraft:spruce_mug_nether_star_lager");
 items.add("minecraft:purpur_block");
 items.add("minecraft:purpur_pillar");
 items.add("minecraft:purpur_stairs");
+items.add("minecraft:purpur_slab");
 items.add("minecraft:end_stone");
 items.add("minecraft:end_stone_bricks");
 items.add("minecraft:end_stone_brick_stairs");
+items.add("minecraft:end_stone_brick_wall");
+items.add("minecraft:end_stone_brick_slab");
 items.add("minecraft:chorus_plant");
 items.add("minecraft:chorus_flower");
 items.add("minecraft:dragon_head");
@@ -425,10 +428,6 @@ for item in game.items {
     }
     if(item.registryName.namespace == "mekanismgenerators") {
         items.add(item.registryName.toString());
-    }
-
-    if(item.registryName.namespace == "mekanism") {
-        println(item.registryName.toString());
     }
 }
 

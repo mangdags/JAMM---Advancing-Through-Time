@@ -100,22 +100,6 @@ items.add("natprog:cobbled_sandstone");
 items.add("natprog:cobbled_red_sandstone");
 items.add("natprog:cobbled_tuff");
 items.add("natprog:cobbled_dripstone_block");
-items.add("minecraft:white_dye");
-items.add("minecraft:orange_dye");
-items.add("minecraft:magenta_dye");
-items.add("minecraft:light_blue_dye");
-items.add("minecraft:yellow_dye");
-items.add("minecraft:lime_dye");
-items.add("minecraft:pink_dye");
-items.add("minecraft:gray_dye");
-items.add("minecraft:light_gray_dye");
-items.add("minecraft:cyan_dye");
-items.add("minecraft:purple_dye");
-items.add("minecraft:blue_dye");
-items.add("minecraft:brown_dye");
-items.add("minecraft:green_dye");
-items.add("minecraft:red_dye");
-items.add("minecraft:black_dye");
 
 //set stage to items
 for item in items {
@@ -123,6 +107,7 @@ for item in items {
 }
 
 tagToList(items, <tag:items:minecraft:arrows>);
+tagToList(items, <tag:items:minecraft:dyes>);
 
 //LeftClick/Interact
 CTEventManager.register<PlayerInteractEvent>((event) => {

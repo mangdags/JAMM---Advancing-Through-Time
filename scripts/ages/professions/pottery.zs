@@ -27,58 +27,9 @@ var toolTip2 = new TextComponent("Unlock Pottery").setStyle(<constant:formatting
 
 var items = new stdlib.List<string>;
 
-items.add("valhelsia_structures:glazed_jar");
-items.add("valhelsia_structures:cracked_glazed_jar");
-items.add("valhelsia_structures:white_glazed_jar");
-items.add("valhelsia_structures:orange_glazed_jar");
-items.add("valhelsia_structures:magenta_glazed_jar");
-items.add("valhelsia_structures:light_blue_glazed_jar");
-items.add("valhelsia_structures:yellow_glazed_jar");
-items.add("valhelsia_structures:lime_glazed_jar");
-items.add("valhelsia_structures:pink_glazed_jar");
-items.add("valhelsia_structures:gray_glazed_jar");
-items.add("valhelsia_structures:light_gray_glazed_jar");
-items.add("valhelsia_structures:cyan_glazed_jar");
-items.add("valhelsia_structures:purple_glazed_jar");
-items.add("valhelsia_structures:blue_glazed_jar");
-items.add("valhelsia_structures:brown_glazed_jar");
-items.add("valhelsia_structures:green_glazed_jar");
-items.add("valhelsia_structures:red_glazed_jar");
-items.add("valhelsia_structures:black_glazed_jar");
-items.add("valhelsia_structures:big_glazed_jar");
-items.add("valhelsia_structures:cracked_big_glazed_jar");
-items.add("valhelsia_structures:big_white_glazed_jar");
-items.add("valhelsia_structures:big_orange_glazed_jar");
-items.add("valhelsia_structures:big_magenta_glazed_jar");
-items.add("valhelsia_structures:big_light_blue_glazed_jar");
-items.add("valhelsia_structures:big_yellow_glazed_jar");
-items.add("valhelsia_structures:big_lime_glazed_jar");
-items.add("valhelsia_structures:big_pink_glazed_jar");
-items.add("valhelsia_structures:big_gray_glazed_jar");
-items.add("valhelsia_structures:big_light_gray_glazed_jar");
-items.add("valhelsia_structures:big_cyan_glazed_jar");
-items.add("valhelsia_structures:big_purple_glazed_jar");
-items.add("valhelsia_structures:big_blue_glazed_jar");
-items.add("valhelsia_structures:big_brown_glazed_jar");
-items.add("valhelsia_structures:big_green_glazed_jar");
-items.add("valhelsia_structures:big_red_glazed_jar");
-items.add("valhelsia_structures:big_black_glazed_jar");
-items.add("minecraft:white_glazed_terracotta");
-items.add("minecraft:orange_glazed_terracotta");
-items.add("minecraft:magenta_glazed_terracotta");
-items.add("minecraft:light_blue_glazed_terracotta");
-items.add("minecraft:yellow_glazed_terracotta");
-items.add("minecraft:lime_glazed_terracotta");
-items.add("minecraft:pink_glazed_terracotta");
-items.add("minecraft:gray_glazed_terracotta");
-items.add("minecraft:light_gray_glazed_terracotta");
-items.add("minecraft:cyan_glazed_terracotta");
-items.add("minecraft:purple_glazed_terracotta");
-items.add("minecraft:blue_glazed_terracotta");
-items.add("minecraft:brown_glazed_terracotta");
-items.add("minecraft:green_glazed_terracotta");
-items.add("minecraft:red_glazed_terracotta");
-items.add("minecraft:black_glazed_terracotta");
+tagToList(items, <tag:items:ctov:glazed_terracotta>);
+tagToList(items, <tag:items:valhelsia_structures:big_colored_jars>);
+tagToList(items, <tag:items:valhelsia_structures:colored_jars>);
 
 //LeftClick/Interact
 CTEventManager.register<PlayerInteractEvent>((event) => {

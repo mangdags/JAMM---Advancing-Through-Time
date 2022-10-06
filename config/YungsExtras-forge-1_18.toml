@@ -32,31 +32,31 @@
 		["YUNG's Extras"."Desert Decorations"."Desert Wells"]
 			# Determines the spawn rate of small normal wells.
 			# Default: 1200
-			"Normal Well Spawn Rate (Small)" = 1200
+			"Normal Well Spawn Rate (Small)" = 1700
 			# Determines the spawn rate of medium-sized normal wells.
 			# Default: 1200
-			"Normal Well Spawn Rate (Medium)" = 1200
+			"Normal Well Spawn Rate (Medium)" = 1700
 			# Determines the spawn rate of large normal wells.
 			# Default: 1200
-			"Normal Well Spawn Rate (Large)" = 1200
+			"Normal Well Spawn Rate (Large)" = 1700
 			# Determines the spawn rate of small Wishing Wells.
 			# Default: 1200
-			"Wishing Well Spawn Rate (Small)" = 1200
+			"Wishing Well Spawn Rate (Small)" = 1700
 			# Determines the spawn rate of medium-sized Wishing Wells.
 			# Default: 1200
-			"Wishing Well Spawn Rate (Medium)" = 1200
+			"Wishing Well Spawn Rate (Medium)" = 1700
 			# Determines the spawn rate of large Wishing Wells.
 			# Default: 1200
-			"Wishing Well Spawn Rate (Large)" = 1200
+			"Wishing Well Spawn Rate (Large)" = 1700
 			# Determines the spawn rate of small dry wells.
 			# Default: 1200
-			"Dry Well Spawn Rate (Small)" = 1200
+			"Dry Well Spawn Rate (Small)" = 1700
 			# Determines the spawn rate of medium-sized dry wells.
 			# Default: 1200
-			"Dry Well Spawn Rate (Medium)" = 1200
+			"Dry Well Spawn Rate (Medium)" = 1700
 			# Determines the spawn rate of large dry wells.
 			# Default: 1200
-			"Dry Well Spawn Rate (Large)" = 1200
+			"Dry Well Spawn Rate (Large)" = 1700
 
 		###########################################################################################################
 		## Settings for the different Desert Obelisk variations.

@@ -237,6 +237,7 @@ items.add("mcwwindows:crimson_plank_parapet");
 items.add("mcwwindows:crimson_blinds");
 items.add("minecraft:bricks");
 items.add("minecraft:brick");
+items.add("minecraft:brick_slab");
 items.add("minecraft:brick_stairs");
 items.add("minecraft:diamond_ore");
 items.add("minecraft:diamond");
@@ -316,6 +317,8 @@ items.add("minecraft:quartz_pillar");
 items.add("minecraft:quartz_stairs");
 items.add("minecraft:smooth_quartz_stairs");
 items.add("minecraft:quartz");
+items.add("minecraft:quartz_slab");
+items.add("minecraft:smooth_quartz_slab");
 items.add("minecraft:magma_block");
 items.add("minecraft:nether_gold_ore");
 items.add("minecraft:netherrack");
@@ -347,6 +350,7 @@ items.add("minecraft:polished_blackstone_wall");
 items.add("minecraft:polished_blackstone_brick_wall");
 items.add("minecraft:polished_blackstone_button");
 items.add("minecraft:polished_blackstone_pressure_plate");
+items.add("minecraft:brick_wall");
 items.add("natprog:diamond_saw");
 items.add("natprog:cobbled_netherrack");
 items.add("parrying:diamond_mace");
@@ -525,6 +529,9 @@ items.add("minecraft:nether_brick_slab");
 
 for item in game.items {
     if(item.registryName.namespace == "bygonenether") {
+        items.add(item.registryName.toString());
+    }
+    if(item.registryName.namespace == "simpleshops") {
         items.add(item.registryName.toString());
     }
 }

@@ -1,0 +1,67 @@
+{
+  "Restriction Data": {
+    "stage": "prehistoric_age",
+    "itemList": [
+      "farmersdelight:flint_knife",
+      "minecraft:flint",
+      "minecraft:sand",
+      "minecraft:gravel",
+      "minecraft:apple",
+      "minecraft:carrot",
+      "minecraft:potato",
+      "minecraft:wheat",
+      "minecraft:bread",
+      "minecraft:beetroot",
+      "minecraft:wheat_seeds",
+      "minecraft:stick",
+      "minecraft:crafting_table",
+      "natprog:basic_saw",
+      "natprog:flint_hatchet",
+      "projectbrazier:white_cabbage",
+      "supplementaries:flint_block"
+    ],
+    "blockList": [
+    ],
+    "modList": [
+    ],
+    "tagList": [
+      "minecraft:wool",
+      "minecraft:logs",
+      "minecraft:crafting_table",
+      "minecraft:planks",
+      "minecraft:beds"
+    ],
+    "exceptionList": [
+      "immersiveengineering:fiberboard",
+      "minecraft:crimson_planks",
+      "minecraft:warped_planks",
+      "minecraft:crimson_slab",
+      "minecraft:warped_slab",
+      "minecraft:crimson_stem",
+      "minecraft:warped_stem"
+
+    ],
+    "containerList": [
+      "net.minecraft.inventory.container.WorkbenchContainer", 
+      "thitemstages.inventoryMenu.CraftingGrid",
+      "top.theillusivec4.curios.common.inventory.container.CuriosContainer",
+      "net.minecraft.world.inventory.ChestMenu",
+      "net.p3pp3rf1y.sophisticatedstorage.common.gui.StorageContainerMenu",
+      "net.minecraft.world.inventory.FurnaceMenu"
+    ],
+    "dimensionList": [
+    ]
+  },
+  "Settings": {
+    "advancedTooltips": "ALWAYS",
+    "itemTitle": "Unavailable Item",
+    "pickupDelay": 15,
+    "hideInJEI": true,
+    "canPickup": false,
+    "containerListWhitelist": false,
+    "checkPlayerInventory": true,
+    "checkPlayerEquipment": true,
+    "usableItems": false,
+    "usableBlocks": false
+  }
+}
